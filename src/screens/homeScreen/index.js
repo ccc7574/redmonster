@@ -28,33 +28,18 @@ const cardImage1 = require("../../../assets/tea1.jpg");
 const cardImage2 = require("../../../assets/tea2.jpg");
 const ENTRIES1 = [
   {
-    title: 'Beautiful and dramatic Antelope Canyon',
-    subtitle: 'Lorem ipsum dolor sit amet et nuncat mergitur',
+    title: '五一放假通知',
+    subtitle: '劳动节以及五一停牌放假通知: 劳动节放假时间为4月29日5月1日, 期间平台停运',
     illustration: "https://i.imgur.com/UYiroysl.jpg"
   },
   {
-    title: 'Earlier this morning, NYC',
-    subtitle: 'Lorem ipsum dolor sit amet',
-    illustration: 'https://i.imgur.com/UPrs1EWl.jpg'
-  },
-  {
-    title: 'White Pocket Sunset',
-    subtitle: 'Lorem ipsum dolor sit amet et nuncat ',
-    illustration: 'https://i.imgur.com/MABUbpDl.jpg'
-  },
-  {
-    title: 'Acrocorinth, Greece',
-    subtitle: 'Lorem ipsum dolor sit amet et nuncat mergitur',
-    illustration: 'https://i.imgur.com/KZsmUi2l.jpg'
-  },
-  {
-    title: 'The lone tree, majestic landscape of New Zealand',
-    subtitle: 'Lorem ipsum dolor sit amet',
+    title: '春节放假通知',
+    subtitle: '春节停牌放假通知: 劳动节放假时间为4月29日5月1日, 期间平台停运',
     illustration: 'https://i.imgur.com/2nCt3Sbl.jpg'
   },
   {
-    title: 'Middle Earth, Germany',
-    subtitle: 'Lorem ipsum dolor sit amet',
+    title: '国庆节放假通知',
+    subtitle: '国庆节停牌放假通知: 劳动节放假时间为4月29日5月1日, 期间平台停运',
     illustration: 'https://i.imgur.com/lceHsT6l.jpg'
   }
 ];
@@ -85,14 +70,14 @@ class HomeScreen extends Component {
   render() {
     return (
       <Container style={styles.container}>
-        <Header>
+        <Header style={styles.header}>
           <Left>
             <Button  transparent onPress={() => this.props.navigation.navigate("DrawerOpen")}>
               <Icon name="arrow-back" />
             </Button>
           </Left>
           <Body>
-          <Title>首页</Title>
+          <Title style={{color:'white'}}>首页</Title>
           </Body>
           <Right />
         </Header>
@@ -114,7 +99,7 @@ class HomeScreen extends Component {
               loop={true}
               loopClonesPerSide={2}
               autoplay={true}
-              autoplayDelay={500}
+              autoplayDelay={700}
               autoplayInterval={3000}
               onSnapToItem={(index) => this.setState({ slider1ActiveSlide: index }) }
             />

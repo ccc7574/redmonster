@@ -23,6 +23,7 @@ export default StyleSheet.create({
         width: itemWidth,
         height: slideHeight,
         paddingHorizontal: itemHorizontalMargin,
+        backgroundColor:colors.backgroundBlack,
         paddingBottom: 18 // needed for shadow
     },
     shadow: {
@@ -31,7 +32,7 @@ export default StyleSheet.create({
         left: itemHorizontalMargin,
         right: itemHorizontalMargin,
         bottom: 18,
-        shadowColor: colors.black,
+        shadowColor: colors.hlGray,
         shadowOpacity: 0.25,
         shadowOffset: { width: 0, height: 10 },
         shadowRadius: 10,
@@ -45,7 +46,7 @@ export default StyleSheet.create({
         borderTopRightRadius: entryBorderRadius
     },
     imageContainerEven: {
-        backgroundColor: colors.black
+        backgroundColor: colors.hlGray
     },
     image: {
         ...StyleSheet.absoluteFillObject,
@@ -61,31 +62,31 @@ export default StyleSheet.create({
         left: 0,
         right: 0,
         height: entryBorderRadius,
-        backgroundColor: 'white'
+        backgroundColor: colors.hlGray
     },
     radiusMaskEven: {
-        backgroundColor: colors.black
+        backgroundColor: colors.hlGray
     },
     textContainer: {
         justifyContent: 'center',
         paddingTop: 20 - entryBorderRadius,
         paddingBottom: 20,
         paddingHorizontal: 16,
-        backgroundColor: 'white',
+        backgroundColor: colors.hlGray,
         borderBottomLeftRadius: entryBorderRadius,
         borderBottomRightRadius: entryBorderRadius
     },
     textContainerEven: {
-        backgroundColor: colors.black
+        backgroundColor: colors.hlGray
     },
     title: {
-        color: colors.black,
+        color: colors.hlTitle,
         fontSize: 13,
         fontWeight: 'bold',
         letterSpacing: 0.5
     },
     titleEven: {
-        color: 'white'
+        color: colors.hlTitle
     },
     subtitle: {
         marginTop: 6,
@@ -94,6 +95,6 @@ export default StyleSheet.create({
         fontStyle: 'italic'
     },
     subtitleEven: {
-        color: 'rgba(255, 255, 255, 0.7)'
+        color: colors.gray
     }
 });

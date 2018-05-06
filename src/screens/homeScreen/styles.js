@@ -2,9 +2,12 @@ import { StyleSheet } from 'react-native';
 
 export const colors = {
   black: '#1a1917',
+  backgroundBlack:'#000000',
   gray: '#888888',
   background1: '#B721FF',
-  background2: '#21D4FD'
+  background2: '#21D4FD',
+  hlGray:'#1a1a1a',
+  hlTitle:'#a5a5a5',
 };
 
 export default StyleSheet.create({
@@ -15,7 +18,11 @@ export default StyleSheet.create({
   mb: {
     marginBottom: 15
   },
+  header:{
+    backgroundColor: colors.hlGray
+  },
   container: {
+    backgroundColor:colors.backgroundBlack,
     flex: 1,
   },
   gradient: {

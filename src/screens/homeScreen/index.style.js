@@ -2,7 +2,9 @@ import { StyleSheet } from 'react-native';
 
 export const colors = {
     black: '#1a1917',
-    gray: '#888888',
+    gray: '#686868',
+    hlGray:'#1a1a1a',
+    hlTitle:'#a5a5a5',
     background1: '#B721FF',
     background2: '#21D4FD'
 };

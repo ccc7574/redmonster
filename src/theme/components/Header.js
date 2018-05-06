@@ -323,7 +323,7 @@ export default (variables = variable) => {
     justifyContent: "center",
     paddingTop: platform === "ios" ? (variables.isIphoneX ? 39 : 15) : 0,
     borderBottomWidth:
-      platform === "ios" ? 1 / PixelRatio.getPixelSizeForLayoutSize(1) : 0,
+      platform === "ios" ? 0 / PixelRatio.getPixelSizeForLayoutSize(0) : 0,
     borderBottomColor: variables.toolbarDefaultBorder,
     height:
       variables.platform === "ios" && variables.platformStyle === "material"
