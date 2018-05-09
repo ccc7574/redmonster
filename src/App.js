@@ -123,6 +123,8 @@ import Actionsheet from "./screens/actionsheet";
 import WareHouse from "./screens/warehouse";
 import Register from "./screens/register";
 import Login from "./screens/login";
+import Settings from "./screens/settings";
+import Nickname from './screens/nickname';
 import HomeScreen from "./screens/homeScreen";
 
 const Drawer = DrawerNavigator(
@@ -275,7 +277,9 @@ const AppNavigator = StackNavigator(
     WareHouse:{screen:WareHouse},
     Register:{screen:Register},
     Login:{screen:Login},
-    History:{screen:History}
+    History:{screen:History},
+    Settings: {screen: Settings},
+    Nickname: {screen: Nickname},
   },
   {
     initialRouteName: "Drawer",
