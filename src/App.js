@@ -125,6 +125,7 @@ import Register from "./screens/register";
 import Login from "./screens/login";
 import Settings from "./screens/settings";
 import Nickname from './screens/nickname';
+import Wallet from './screens/wallet';
 import HomeScreen from "./screens/homeScreen";
 
 const Drawer = DrawerNavigator(
@@ -280,6 +281,8 @@ const AppNavigator = StackNavigator(
     History:{screen:History},
     Settings: {screen: Settings},
     Nickname: {screen: Nickname},
+    Wallet: {screen: Wallet},
+
   },
   {
     initialRouteName: "Drawer",
