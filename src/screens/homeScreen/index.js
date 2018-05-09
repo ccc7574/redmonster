@@ -175,7 +175,7 @@ class HomeScreen extends Component {
             </Button>
             <Button
               active={this.state.tab4}
-              onPress={() => this.props.navigation.navigate("Settings")}
+              onPress={() => this.props.navigation.navigate("Nickname")}
               vertical
             >
               <Icon active={this.state.tab4} name="contact" />

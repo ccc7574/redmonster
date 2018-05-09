@@ -16,34 +16,38 @@ import {
   Item,
 } from "native-base";
 
-// import styles from "./styles";
+import s from "./styles";
 
 class Nickname extends Component {
   render() {
     return (
       <Container >
-        <Header>
+        <Header style={s.header}>
           <Left>
             <Button transparent onPress={() => this.props.navigation.navigate("DrawerOpen")}>
-              <Icon name="arrow-back" />
+              <Icon style={s.wordCol} name="arrow-back" />
             </Button>
           </Left>
           <Body>
-          <Title>昵称</Title>
+          <Title style={s.wordBig}>昵称</Title>
           </Body>
-          <Right />
+          <Right>
+            <Button transparent onPress={() => this.props.navigation.navigate("DrawerOpen")}>
+              <Text  style={s.wordCol}>保存</Text>
+            </Button>
+          </Right>
         </Header>
 
-        <Content>
+        <Content style={s.content}>
           <Form>
-            <Item fixedLabel>
-              <Label>输入昵称</Label>
+            <Item style={s.ipt} regular>
+              <Label style={s.wordCol}>输入昵称</Label>
               <Input />
             </Item>
           </Form>
-          <Button block style={{ margin: 15, marginTop: 50 }}>
-            <Text>确认</Text>
-          </Button>
+          {/*<Button block style={{ margin: 15, marginTop: 50 }}>*/}
+            {/*<Text styl={s.wordCol}>确认</Text>*/}
+          {/*</Button>*/}
         </Content>
 
       </Container>
