@@ -124,6 +124,9 @@ import WareHouse from "./screens/warehouse";
 import Register from "./screens/register";
 import Login from "./screens/login";
 import HomeScreen from "./screens/homeScreen";
+import PickUp from "./screens/pickUp";
+import PickUpAddress from "./screens/pickUpAddress";
+import Buy from "./screens/buy";
 
 const Drawer = DrawerNavigator(
   {
@@ -275,7 +278,10 @@ const AppNavigator = StackNavigator(
     WareHouse:{screen:WareHouse},
     Register:{screen:Register},
     Login:{screen:Login},
-    History:{screen:History}
+    History:{screen:History},
+    PickUp:{screen:PickUp},
+    PickUpAddress:{screen:PickUpAddress},
+    Buy:{screen:Buy},
   },
   {
     initialRouteName: "Drawer",
