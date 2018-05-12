@@ -1,3 +1,5 @@
+const borderColor = "#383838";
+
 export default {
   container: {
     backgroundColor: "#FFF"
@@ -55,7 +57,6 @@ export default {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    // padding: 20,
   },
   innerContainer: {
     width: "85%",
@@ -67,7 +68,7 @@ export default {
     paddingBottom: 19,
     paddingHorizontal: 20,
     borderBottomWidth: 1,
-    borderBottomColor: "#585858",
+    borderBottomColor: borderColor,
   },
   modalHeader: {
     color: "#848484",
@@ -112,7 +113,8 @@ export default {
     fontSize: 19,
   },
   borderRight: {
+    borderRadius: 0,
     borderRightWidth: 1,
-    borderRightColor: "#585858",
+    borderRightColor: borderColor,
   }
 };
