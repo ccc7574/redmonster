@@ -83,7 +83,11 @@ class WareHouse extends Component {
           <Button block style={{margin: 6}}>
             <Text>卖出</Text>
           </Button>
-          <Button block style={{margin: 6, backgroundColor: "#C80813"}}>
+          <Button
+            block
+            style={{margin: 6, backgroundColor: "#C80813"}}
+            onPress={() => this.props.navigation.navigate("PickUp")}
+          >
             <Text>提货</Text>
           </Button>
           <Button block style={{margin: 6, backgroundColor: "#1FC923"}}>

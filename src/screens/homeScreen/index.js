@@ -122,7 +122,7 @@ class HomeScreen extends Component {
               </Left>
               <Right>
                 <Text>当前价格: ¥229.00</Text>
-                <Button style={styles.mb15}>
+                <Button style={styles.mb15} onPress={() => this.props.navigation.navigate("Buy")}>
                   <Text>买入</Text>
                 </Button>
               </Right>
@@ -142,7 +142,7 @@ class HomeScreen extends Component {
               </Left>
               <Right>
                 <Text>当前价格: ¥518.00</Text>
-                <Button style={styles.mb15}>
+                <Button style={styles.mb15} onPress={() => this.props.navigation.navigate("Buy")}>
                   <Text>买入</Text>
                 </Button>
               </Right>
