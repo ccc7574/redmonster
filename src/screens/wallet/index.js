@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Image } from "react-native";
 import {
   Container,
   Header,
@@ -15,9 +16,11 @@ import {
   Item,
   Thumbnail,
   Label,
+  View
 } from "native-base";
 
 import s from "./styles";
+import Img from '../../../assets/wallet.png';
 
 class Wallet extends Component {
   constructor(props) {
@@ -30,7 +33,7 @@ class Wallet extends Component {
   render() {
     const {  } = this.state;
     return (
-      <Container style={{backgroundColor: '#141414'}}>
+      <Container style={{backgroundColor: '#141414',}}>
         <Header style={s.header}>
           <Left>
             <Button transparent onPress={() => this.props.navigation.navigate("DrawerOpen")}>
@@ -46,16 +49,25 @@ class Wallet extends Component {
             </Button>
           </Right>
         </Header>
-        <Content style={{marginTop: 160}}>
-          <Text style={{marginBottom: 10, textAlign: 'center'}}>账户余额</Text>
-          <Text style={{fontSize: 32, textAlign: 'center'}}>￥{'189.23'}</Text>
+        <Content style={{backgroundColor: '#1a1a1a', height: 224, marginTop: 100}}>
+          <View style={s.imgWrapper}>
+            <Image
+              style={{
+                width: '100%',
+                height: '100%',
+              }}
+              source={Img}
+            />
+          </View>
+          <Text style={s.amtText}>账户余额(元)</Text>
+          <Text style={s.amt}>8888.00</Text>
         </Content>
         <Content >
-          <Button block primary style={{ margin: 15, marginTop: 120 }}>
-            <Text>储值优惠</Text>
+          <Button block style={{ margin: 15, backgroundColor: '#D1B27A', borderRadius:28}}>
+            <Text style={{color: '#000',}}>储值优惠</Text>
           </Button>
-          <Button bordered block primary style={{ margin: 15, marginTop: 10 }}>
-            <Text>提现</Text>
+          <Button bordered borderColor={'#D1B27A'} borderWidth block style={{ margin: 15, marginTop: 10,  backgroundColor: '#000', borderRadius:28,borderWidth:3, borderColor:'#D1B27A' }}>
+            <Text style={{color:'#D1B27A',}}>提现</Text>
           </Button>
         </Content>
       </Container>
