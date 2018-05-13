@@ -33,7 +33,7 @@ class Wallet extends Component {
   render() {
     const {  } = this.state;
     return (
-      <Container style={{backgroundColor: '#141414',}}>
+      <Container style={{backgroundColor: '#000',}}>
         <Header style={s.header}>
           <Left>
             <Button transparent onPress={() => this.props.navigation.navigate("DrawerOpen")}>
@@ -49,26 +49,29 @@ class Wallet extends Component {
             </Button>
           </Right>
         </Header>
-        <Content style={{backgroundColor: '#1a1a1a', height: 224, marginTop: 100}}>
-          <View style={s.imgWrapper}>
-            <Image
-              style={{
-                width: '100%',
-                height: '100%',
-              }}
-              source={Img}
-            />
+        <Content>
+          <View style={{backgroundColor: '#1a1a1a', height: 224,}}>
+            <View style={s.imgWrapper}>
+              <Image
+                style={{
+                  width: '100%',
+                  height: '100%',
+                }}
+                source={Img}
+              />
+            </View>
+            <Text style={s.amtText}>账户余额(元)</Text>
+            <Text style={s.amt}>8888.00</Text>
           </View>
-          <Text style={s.amtText}>账户余额(元)</Text>
-          <Text style={s.amt}>8888.00</Text>
-        </Content>
-        <Content >
-          <Button block style={{ margin: 15, backgroundColor: '#D1B27A', borderRadius:28}}>
-            <Text style={{color: '#000',}}>储值优惠</Text>
-          </Button>
-          <Button bordered borderColor={'#D1B27A'} borderWidth block style={{ margin: 15, marginTop: 10,  backgroundColor: '#000', borderRadius:28,borderWidth:3, borderColor:'#D1B27A' }}>
-            <Text style={{color:'#D1B27A',}}>提现</Text>
-          </Button>
+
+          <View style={{marginTop: 85}}>
+            <Button block style={{ margin: 15, backgroundColor: '#D1B27A', borderRadius:28}}>
+              <Text style={{color: '#000',}}>储值优惠</Text>
+            </Button>
+            <Button bordered borderColor={'#D1B27A'} borderWidth block style={{ margin: 15, marginTop: 10,  backgroundColor: '#000', borderRadius:28,borderWidth:3, borderColor:'#D1B27A' }}>
+              <Text style={{color:'#D1B27A',}}>提现</Text>
+            </Button>
+          </View>
         </Content>
       </Container>
     );

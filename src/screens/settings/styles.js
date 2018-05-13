@@ -6,7 +6,7 @@ export default {
     backgroundColor: '#000',
   },
   form: {
-    backgroundColor: "#2E2A2A"
+    backgroundColor: "#1a1a1a"
   },
   formItemTall: {
     height: 90,

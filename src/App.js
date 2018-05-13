@@ -131,6 +131,7 @@ import PickUp from "./screens/pickUp";
 import PickUpAddress from "./screens/pickUpAddress";
 import Buy from "./screens/buy";
 import Bill from './screens/bill';
+import Deposit from './screens/deposit';
 
 const Drawer = DrawerNavigator(
   {
@@ -290,6 +291,8 @@ const AppNavigator = StackNavigator(
     PickUpAddress:{screen:PickUpAddress},
     Buy:{screen:Buy},
     Bill: {screen: Bill},
+    Deposit: {screen: Deposit},
+
   },
   {
     initialRouteName: "Drawer",

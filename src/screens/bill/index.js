@@ -45,28 +45,6 @@ class Bill extends Component {
     }
   }
 
-  // temp = ()=> (
-  //   <ListItem avatar>
-  //     <Left/>
-  //     <Body>
-  //     <Text style={{marginBottom: 10, fontSize: 16}}>
-  //       {data.text}
-  //     </Text>
-  //     <Text style={{marginBottom: 10, fontWeight: 'bold'}} note>
-  //       {data.note}
-  //     </Text>
-  //     </Body>
-  //     <Right>
-  //       <Text style={{marginBottom: 10}} note>
-  //         {data.time}
-  //       </Text>
-  //       <Text >
-  //         {data.amount}
-  //       </Text>
-  //     </Right>
-  //   </ListItem>
-  // )
-
   render() {
     const {  } = this.state;
     return (
