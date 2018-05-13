@@ -132,6 +132,7 @@ import PickUpAddress from "./screens/pickUpAddress";
 import Buy from "./screens/buy";
 import Bill from './screens/bill';
 import Deposit from './screens/deposit';
+import DepositSuccess from './screens/depositSuccess';
 
 const Drawer = DrawerNavigator(
   {
@@ -292,6 +293,7 @@ const AppNavigator = StackNavigator(
     Buy:{screen:Buy},
     Bill: {screen: Bill},
     Deposit: {screen: Deposit},
+    DepositSuccess: {screen: DepositSuccess},
 
   },
   {
