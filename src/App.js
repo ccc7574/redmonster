@@ -130,6 +130,7 @@ import HomeScreen from "./screens/homeScreen";
 import PickUp from "./screens/pickUp";
 import PickUpAddress from "./screens/pickUpAddress";
 import Buy from "./screens/buy";
+import Bill from './screens/bill';
 
 const Drawer = DrawerNavigator(
   {
@@ -288,6 +289,7 @@ const AppNavigator = StackNavigator(
     PickUp:{screen:PickUp},
     PickUpAddress:{screen:PickUpAddress},
     Buy:{screen:Buy},
+    Bill: {screen: Bill},
   },
   {
     initialRouteName: "Drawer",
