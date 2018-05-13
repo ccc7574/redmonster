@@ -153,7 +153,7 @@ class HomeScreen extends Component {
           <FooterTab>
             <Button
               active={this.state.tab1}
-              onPress={() => this.props.navigation.navigate("Wallet")}
+              onPress={() => this.props.navigation.navigate("Settings")}
               vertical
             >
               <Icon active={this.state.tab1} name="apps"/>
@@ -175,7 +175,7 @@ class HomeScreen extends Component {
             </Button>
             <Button
               active={this.state.tab4}
-              onPress={() => this.props.navigation.navigate("DepositSuccess")}
+              onPress={() => this.props.navigation.navigate("Withdrew")}
               vertical
             >
               <Icon active={this.state.tab4} name="contact" />

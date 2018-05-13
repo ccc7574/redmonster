@@ -66,7 +66,7 @@ class DepositSuccess extends Component {
 
           <View style={{marginTop: 85}}>
             <Button block onPress={this.handleBtn} style={{ margin: 15, backgroundColor: '#D1B27A', borderRadius:28}}>
-              <Text style={{color: '#000',}}>储值优惠</Text>
+              <Text style={{color: '#000',}}>完成</Text>
             </Button>
           </View>
         </Content>
