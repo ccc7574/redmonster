@@ -1,3 +1,5 @@
+const borderColor = "#383838";
+
 export default {
   container: {
     backgroundColor: "#FFF"
@@ -41,10 +43,78 @@ export default {
     textAlign: "center",
     fontSize: 15
   },
-  headerB:{
+  headerB: {
     flex: 1,
     flexDirection: "row",
     justifyContent: "space-between",
     marginRight: 15
   },
+  modalBackgroundStyle: {
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+    width: "100%",
+  },
+  modalContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  innerContainer: {
+    width: "85%",
+    borderRadius: 14,
+    backgroundColor: "#1A1A1A",
+  },
+  modalContentBox: {
+    paddingTop: 16,
+    paddingBottom: 19,
+    paddingHorizontal: 20,
+    borderBottomWidth: 1,
+    borderBottomColor: borderColor,
+  },
+  modalHeader: {
+    color: "#848484",
+    fontSize: 16,
+    marginBottom: 15,
+  },
+  modalContent: {
+    color: "#a5a5a5",
+    fontSize: 19,
+  },
+  countSec: {
+    flexDirection: "row",
+    justifyContent: "flex-end",
+    alignItems: "center",
+    marginTop: 25,
+    marginBottom: 30,
+  },
+  modalTips: {
+    fontSize: 14,
+    color: "#848484",
+    marginBottom: 3,
+  },
+  modalFoot: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  footBtn: {
+    flex: 1,
+    height: 55,
+    backgroundColor: "transparent",
+  },
+  cancelBtn: {
+    width: "100%",
+    textAlign: "center",
+    color: "#848484",
+    fontSize: 19,
+  },
+  confirmBtn: {
+    width: "100%",
+    textAlign: "center",
+    color: "#D0B17D",
+    fontSize: 19,
+  },
+  borderRight: {
+    borderRadius: 0,
+    borderRightWidth: 1,
+    borderRightColor: borderColor,
+  }
 };
