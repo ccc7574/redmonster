@@ -49,7 +49,7 @@ class History extends Component {
             </Button>
           </Left>
           <Body style={styles.headerB}>
-          <Button rounded small>
+          <Button rounded small onPress={() => this.props.navigation.navigate("TeamDrive")}>
             <Text>红积分</Text>
           </Button>
           <Button rounded small>
