@@ -136,6 +136,7 @@ import DepositSuccess from './screens/depositSuccess';
 import Withdrew from './screens/withdrew';
 import TeamDrive from "./screens/teamDrive";
 import BindCard from './screens/bindCard';
+import AddCard from './screens/addCard';
 
 const Drawer = DrawerNavigator(
   {
@@ -300,6 +301,8 @@ const AppNavigator = StackNavigator(
     Withdrew: {screen: Withdrew},
     TeamDrive: {screen: TeamDrive},
     BindCard: {screen: BindCard},
+    AddCard: {screen: AddCard},
+
   },
   {
     initialRouteName: "Drawer",
