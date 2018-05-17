@@ -12,7 +12,7 @@ import {
   Text,
 } from "native-base";
 import { View } from "react-native";
-import styles from "./styles";
+import s from "./styles";
 
 class FixedLabel extends Component {
   constructor(props) {
@@ -33,52 +33,102 @@ class FixedLabel extends Component {
 
   render() {
     return (
-      <Container style={styles.container}>
+      <Container style={s.container}>
         <Header style={{backgroundColor: "#1A1A1A", borderBottomWidth: 0}}>
           <Left>
             <Button transparent onPress={() => this.props.navigation.goBack()}>
-              <Icon name="arrow-back" style={styles.fontWhite}/>
+              <Icon name="arrow-back" style={s.fontWhite}/>
             </Button>
           </Left>
           <Body>
-          <View style={styles.title}>
-            <Button small style={styles.tabBtn} onPress={() => this.handleTab(1)}>
-              <Text style={styles.fontWhite}>直推</Text>
+          <View style={s.title}>
+            <Button small style={s.tabBtn} onPress={() => this.handleTab(1)}>
+              <Text style={s.fontWhite}>直推</Text>
             </Button>
             <Button small onPress={() => this.handleTab(2)}>
-              <Text style={styles.fontWhite}>团队</Text>
+              <Text style={s.fontWhite}>团队</Text>
             </Button>
           </View>
           </Body>
           <Right />
         </Header>
 
-        <Content style={{ padding: 12}}>
-          <View style={{backgroundColor: "#1A1A1A"}}>
-            <View style={{ padding: 12}}>
-              <View style={{flexDirection: "row", justifyContent: "space-between", marginBottom: 10}}>
-                <Text style={styles.fontWhite}>天福茗茶直营店(提货点)</Text>
-                <Text style={{color: "#ccc", fontSize: 14}}>距离 2km</Text>
+        <Content style={s.content}>
+          <View style={s.viewBlock}>
+            <View style={s.content}>
+              <View style={s.rowTop}>
+                <View>
+                  <Text style={[s.fontWhite, s.topLine, s.userName]}>李大路</Text>
+                  <Text style={s.fontWhite}>账号 15098098432</Text>
+                </View>
+                <View style={s.rightBox}>
+                  <View style={s.flexBottom}>
+                    <Text style={[s.fontGold, s.topLine, s.textRight]}>￥534</Text>
+                    <Text style={[s.fontWhite, s.fontSmall]}>本月消费</Text>
+                  </View>
+                  <View>
+                    <Text style={[s.fontGold, s.topLine, s.textRight]}>￥239</Text>
+                    <Text style={[s.fontWhite, s.fontSmall]}>本月业绩</Text>
+                  </View>
+                </View>
               </View>
-              <View style={{flexDirection: "row", justifyContent: "space-between", alignItems: "center"}}>
-                <Text style={styles.fontWhite}>地址：</Text>
-                <Text style={{ width: "85%", color: "#ccc", textAlign: "justify"}}>江苏省无锡市滨湖区蠡湖大道1800号江南大学南门24栋5号</Text>
+              <View style={s.rowBottom}>
+                <Text style={s.fontWhite}>总业绩 ￥234</Text>
+                <Text style={[s.fontWhite, s.left20]}>佣金 ￥234</Text>
               </View>
             </View>
           </View>
 
-          <View style={{backgroundColor: "#1A1A1A", marginTop: 10}}>
-            <View style={{ padding: 12}}>
-              <View style={{flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginBottom: 10}}>
-                <Text style={styles.fontWhite}>天福茗茶直营店(提货点)</Text>
-                <Text style={{color: "#ccc", fontSize: 14}}>距离 980m</Text>
+          <View style={s.viewBlock}>
+            <View style={s.content}>
+              <View style={s.rowTop}>
+                <View>
+                  <Text style={[s.fontWhite, s.topLine, s.userName]}>李小路</Text>
+                  <Text style={s.fontWhite}>账号 15098098432</Text>
+                </View>
+                <View style={s.rightBox}>
+                  <View style={s.flexBottom}>
+                    <Text style={[s.fontGold, s.topLine, s.textRight]}>￥534</Text>
+                    <Text style={[s.fontWhite, s.fontSmall]}>本月消费</Text>
+                  </View>
+                  <View>
+                    <Text style={[s.fontGold, s.topLine, s.textRight]}>￥239</Text>
+                    <Text style={[s.fontWhite, s.fontSmall]}>本月业绩</Text>
+                  </View>
+                </View>
               </View>
-              <View style={{flexDirection: "row", justifyContent: "space-between"}}>
-                <Text style={styles.fontWhite}>地址：</Text>
-                <Text style={{ width: "85%", color: "#ccc", textAlign: "justify"}}>江苏省无锡市滨湖区蠡湖大道1800号江南大学南门24栋5号</Text>
+              <View style={s.rowBottom}>
+                <Text style={s.fontWhite}>总业绩 ￥234</Text>
+                <Text style={[s.fontWhite, s.left20]}>佣金 ￥234</Text>
               </View>
             </View>
           </View>
+
+          <View style={s.viewBlock}>
+            <View style={s.content}>
+              <View style={s.rowTop}>
+                <View>
+                  <Text style={[s.fontWhite, s.topLine, s.userName]}>王晓晓</Text>
+                  <Text style={s.fontWhite}>账号 15098098432</Text>
+                </View>
+                <View style={s.rightBox}>
+                  <View style={s.flexBottom}>
+                    <Text style={[s.fontGold, s.topLine, s.textRight]}>￥534</Text>
+                    <Text style={[s.fontWhite, s.fontSmall]}>本月消费</Text>
+                  </View>
+                  <View>
+                    <Text style={[s.fontGold, s.topLine, s.textRight]}>￥239</Text>
+                    <Text style={[s.fontWhite, s.fontSmall]}>本月业绩</Text>
+                  </View>
+                </View>
+              </View>
+              <View style={s.rowBottom}>
+                <Text style={s.fontWhite}>总业绩 ￥234</Text>
+                <Text style={[s.fontWhite, s.left20]}>佣金 ￥234</Text>
+              </View>
+            </View>
+          </View>
+          <Text style={s.bottomTip}>已显示全部</Text>
         </Content>
       </Container>
     );
