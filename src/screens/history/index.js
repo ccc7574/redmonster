@@ -52,7 +52,7 @@ class History extends Component {
           <Button rounded small onPress={() => this.props.navigation.navigate("TeamDrive")}>
             <Text>红积分</Text>
           </Button>
-          <Button rounded small>
+          <Button rounded small onPress={() => this.props.navigation.navigate("Team")}>
             <Text>炉积分</Text>
           </Button>
           </Body>

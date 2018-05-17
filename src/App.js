@@ -135,6 +135,7 @@ import Deposit from './screens/deposit';
 import DepositSuccess from './screens/depositSuccess';
 import Withdrew from './screens/withdrew';
 import TeamDrive from "./screens/teamDrive";
+import Team from "./screens/team";
 import BindCard from './screens/bindCard';
 import AddCard from './screens/addCard';
 
@@ -300,6 +301,7 @@ const AppNavigator = StackNavigator(
     DepositSuccess: {screen: DepositSuccess},
     Withdrew: {screen: Withdrew},
     TeamDrive: {screen: TeamDrive},
+    Team: {screen: Team},
     BindCard: {screen: BindCard},
     AddCard: {screen: AddCard},
 
