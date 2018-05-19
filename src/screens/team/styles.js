@@ -3,7 +3,7 @@ export default {
     backgroundColor: "#000"
   },
   content: {
-    padding: 12,
+    paddingVertical: 12,
   },
   viewBlock: {
     backgroundColor: "#1A1A1A",
@@ -62,5 +62,22 @@ export default {
     textAlign: "center",
     color: "#999",
     fontSize: 13,
-  }
+  },
+  input: {
+    height: 40,
+  },
+  listItem: {
+    backgroundColor: "#1A1A1A",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    paddingHorizontal: 10,
+    height: 50,
+    borderColor: "#333",
+    borderBottomWidth: 1
+  },
+  listCell: {
+    textAlign: "center",
+    fontSize: 15
+  },
 };

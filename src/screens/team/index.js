@@ -10,10 +10,21 @@ import {
   Right,
   Icon,
   Text,
-  Input
+  Input,
+  List,
 } from "native-base";
 import { View } from "react-native";
 import s from "./styles";
+
+const DATA = [
+  ["姓名", "账号", "注册日期", "最近购买"],
+  ["李四四", "15098765432", "2018/06/23", "从未购买"],
+  ["李四四", "15098765432", "2018/06/23", "今天"],
+  ["李四四", "15098765432", "2018/06/23", "一天以前"],
+  ["李四四", "15098765432", "2018/06/23", "一天以前"],
+  ["李四四", "15098765432", "2018/06/23", "一天以前"],
+  ["李四四", "15098765432", "2018/06/23", "一天以前"],
+];
 
 class FixedLabel extends Component {
   constructor(props) {
@@ -55,81 +66,43 @@ class FixedLabel extends Component {
         </Header>
 
         <Content style={s.content}>
-          <Input placeholder={'输入您想搜索的人'}/>
-          <View style={s.viewBlock}>
-            <View style={s.content}>
-              <View style={s.rowTop}>
-                <View>
-                  <Text style={[s.fontWhite, s.topLine, s.userName]}>李大路</Text>
-                  <Text style={s.fontWhite}>账号 15098098432</Text>
+          <Input style={s.input} placeholder={'输入您想搜索的人'}/>
+          <View>
+            <List
+              style={s.listTable}
+              dataArray={DATA}
+              renderRow={data => (
+                <View style={s.listItem}>
+                  {data && data.map((item, key) => {
+                    let width = 0;
+                    switch (key) {
+                      case 0:
+                        width = "20%";
+                        break;
+                      case 1:
+                        width = "30%";
+                        break;
+                      case 2:
+                        width = "30%";
+                        break;
+                      case 3:
+                        width = "20%";
+                        break;
+                      default:
+                        width = 0;
+                        break;
+                    }
+                    return (
+                      <Text style={[s.listCell, s.fontWhite, { width: width }]} key={key}>
+                        {item}
+                      </Text>
+                    )})
+                  }
                 </View>
-                <View style={s.rightBox}>
-                  <View style={s.flexBottom}>
-                    <Text style={[s.fontGold, s.topLine, s.textRight]}>￥534</Text>
-                    <Text style={[s.fontWhite, s.fontSmall]}>本月消费</Text>
-                  </View>
-                  <View>
-                    <Text style={[s.fontGold, s.topLine, s.textRight]}>￥239</Text>
-                    <Text style={[s.fontWhite, s.fontSmall]}>本月业绩</Text>
-                  </View>
-                </View>
-              </View>
-              <View style={s.rowBottom}>
-                <Text style={s.fontWhite}>总业绩 ￥234</Text>
-                <Text style={[s.fontWhite, s.left20]}>佣金 ￥234</Text>
-              </View>
-            </View>
+              )}
+            />
           </View>
 
-          <View style={s.viewBlock}>
-            <View style={s.content}>
-              <View style={s.rowTop}>
-                <View>
-                  <Text style={[s.fontWhite, s.topLine, s.userName]}>李小路</Text>
-                  <Text style={s.fontWhite}>账号 15098098432</Text>
-                </View>
-                <View style={s.rightBox}>
-                  <View style={s.flexBottom}>
-                    <Text style={[s.fontGold, s.topLine, s.textRight]}>￥534</Text>
-                    <Text style={[s.fontWhite, s.fontSmall]}>本月消费</Text>
-                  </View>
-                  <View>
-                    <Text style={[s.fontGold, s.topLine, s.textRight]}>￥239</Text>
-                    <Text style={[s.fontWhite, s.fontSmall]}>本月业绩</Text>
-                  </View>
-                </View>
-              </View>
-              <View style={s.rowBottom}>
-                <Text style={s.fontWhite}>总业绩 ￥234</Text>
-                <Text style={[s.fontWhite, s.left20]}>佣金 ￥234</Text>
-              </View>
-            </View>
-          </View>
-
-          <View style={s.viewBlock}>
-            <View style={s.content}>
-              <View style={s.rowTop}>
-                <View>
-                  <Text style={[s.fontWhite, s.topLine, s.userName]}>王晓晓</Text>
-                  <Text style={s.fontWhite}>账号 15098098432</Text>
-                </View>
-                <View style={s.rightBox}>
-                  <View style={s.flexBottom}>
-                    <Text style={[s.fontGold, s.topLine, s.textRight]}>￥534</Text>
-                    <Text style={[s.fontWhite, s.fontSmall]}>本月消费</Text>
-                  </View>
-                  <View>
-                    <Text style={[s.fontGold, s.topLine, s.textRight]}>￥239</Text>
-                    <Text style={[s.fontWhite, s.fontSmall]}>本月业绩</Text>
-                  </View>
-                </View>
-              </View>
-              <View style={s.rowBottom}>
-                <Text style={s.fontWhite}>总业绩 ￥234</Text>
-                <Text style={[s.fontWhite, s.left20]}>佣金 ￥234</Text>
-              </View>
-            </View>
-          </View>
           <Text style={s.bottomTip}>已显示全部</Text>
         </Content>
       </Container>
