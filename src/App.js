@@ -141,8 +141,6 @@ import AddCard from './screens/addCard';
 import AddCard2 from './screens/addCard2';
 import AddCard3 from './screens/addCard3';
 import AddCard4 from './screens/addCard4';
-import AddCard5 from './screens/addCard5';
-import AddCard6 from './screens/addCard6';
 
 const Drawer = DrawerNavigator(
   {
@@ -310,10 +308,8 @@ const AppNavigator = StackNavigator(
     BindCard: {screen: BindCard},
     AddCard: {screen: AddCard},
     AddCard2: {screen: AddCard2},
-    AddCard3: {screen: AddCard2},
-    AddCard4: {screen: AddCard2},
-    AddCard5: {screen: AddCard2},
-    AddCard6: {screen: AddCard2},
+    AddCard3: {screen: AddCard3},
+    AddCard4: {screen: AddCard4},
 
   },
   {
