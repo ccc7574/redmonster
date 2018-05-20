@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {Dimensions, Image} from "react-native";
 import {
   Container,
   Header,
@@ -15,9 +16,19 @@ import {
   Text,
   Switch,
   Footer,
-  FooterTab
-} from "native-base";
+  FooterTab,
+  View,
+
+}
+from "native-base";
 import styles from "./styles";
+
+const Head = require("../../../assets/login/head.png");
+const BgMsk = require( "../../../assets/login/bgMsk@2x.png");
+
+const Bg = require("../../../assets/login/bg.png");
+const deviceHeight = Dimensions.get("window").height;
+const deviceWidth = Dimensions.get("window").width;
 
 class Login extends Component {
   constructor(props) {
@@ -40,6 +51,7 @@ class Login extends Component {
   render() {
     return (
       <Container style={styles.container}>
+
         <Header>
           <Left>
             <Button transparent  onPress={() => this.props.navigation.navigate("Home")}>
@@ -53,8 +65,45 @@ class Login extends Component {
         </Header>
 
         <Content>
-          <Text style={styles.header}>欢迎来到红炉</Text>
-          <Form>
+            <View>
+                <Image
+                    style={{
+                        width: deviceWidth,
+                        height: deviceHeight,
+                        position:'absolute',
+                        left:0,
+                        top:0,
+                        zIndex:1
+                    }}
+                    source={Bg}
+                />
+                <Image
+                    style={{
+                        width: deviceWidth,
+                        height: deviceHeight,
+                        position:'absolute',
+                        left:0,
+                        top:0,
+                        zIndex:2
+                    }}
+                    source={BgMsk}
+                />
+            </View>
+
+
+            <View style={{display:"flex",flex:1,justifyContent:"center",alignItems:"center"}}>
+                <Image
+                    style={{
+                        width: deviceWidth-290,
+                        height: deviceWidth-290,
+                        marginBottom:40,
+                        marginTop:45,
+                    }}
+                    source={Head}
+                />
+            </View>
+
+          <Form style={{width:deviceWidth - 104,marginLeft:52}}>
             <Item fixedLabel style={styles.itemRow}>
               <Icon active name="phone-portrait" style={styles.icon}/>
               <Input placeholder="手机号码"/>
@@ -65,12 +114,15 @@ class Login extends Component {
               <Switch value={this.state.switchFlag} onTintColor="#4688F1" onValueChange={this.handleChange} style={{marginRight: 10}}/>
             </Item>
           </Form>
-          <Button block style={{ margin: 15, marginTop: 50 }}>
-            <Text style={{fontSize: 18}}>登 录</Text>
+          <Button block style={{...styles.btnLogin,width:deviceWidth-114,}}>
+            <Text style={{fontSize: 18,color:"#1A1A1A"}}>登 录</Text>
           </Button>
-          <Button block transparent onPress={() => this.props.navigation.navigate("Register")}>
-            <Text style={{fontSize: 18}}>注 册</Text>
+          <Button block transparent onPress={() => this.props.navigation.navigate("Register")} style={{border:"solid 1px #D1B179",borderRadius:8}}>
+            <Text style={{fontSize: 18,color:"#D1B27A", width:deviceWidth-114,marginLeft:57,marginTop:20,}}>注 册</Text>
           </Button>
+           <View style={{marginLeft:52}}>
+            <Text style={{fontSize:13,color:'#E7E7E7',marginTop:13}}>忘记密码</Text>
+           </View>
         </Content>
         <Footer>
           <FooterTab>

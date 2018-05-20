@@ -1,7 +1,8 @@
 export default {
   container: {
-    backgroundColor: "#FFF",
-    padding: 10
+    // backgroundColor: "#000",
+    padding: 10,
+    position:'relative'
   },
   header: {
     marginTop: 50,
@@ -16,4 +17,16 @@ export default {
   itemRow: {
     height: 60
   },
+  fntText:{
+    fontSize:15,
+    color:'#848484',
+  },
+ btnLogin:{
+     marginTop: 40,
+     marginLeft:57,
+     height:50,
+     backgroundColor:"#CCAD75",
+     borderRadius:8
+ }
+
 };
