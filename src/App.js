@@ -141,6 +141,8 @@ import AddCard from './screens/addCard';
 import AddCard2 from './screens/addCard2';
 import AddCard3 from './screens/addCard3';
 import AddCard4 from './screens/addCard4';
+import Coupon from './screens/coupon';
+import PickHouse from "./screens/pickHouse";
 
 const Drawer = DrawerNavigator(
   {
@@ -310,6 +312,8 @@ const AppNavigator = StackNavigator(
     AddCard2: {screen: AddCard2},
     AddCard3: {screen: AddCard3},
     AddCard4: {screen: AddCard4},
+    Coupon: {screen: Coupon},
+    PickHouse: {screen: PickHouse},
 
   },
   {

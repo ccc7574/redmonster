@@ -149,13 +149,20 @@ export default {
     alignItems: "center"
   },
   goldBtn: {
-    height: 18,
-    padding: 0,
-    paddingTop: 0,
-    paddingBottom: 0,
-    marginLeft: 5,
-    backgroundColor: "#D1B27A",
-    borderRadius: 9
+    height: 46,
+    borderColor: "#D1B27A",
+    borderWidth: 1,
+    borderRadius: 23,
+    backgroundColor: "transparent",
+    alignItems: "center",
+    paddingHorizontal: 20,
+  },
+  consume: {
+    textAlign: 'center',
+    fontSize: 18
+  },
+  fontBig: {
+    fontSize: 42,
   },
   fontNormal: {
     fontSize: 15,

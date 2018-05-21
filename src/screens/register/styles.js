@@ -1,6 +1,6 @@
 export default {
   container: {
-    backgroundColor: "#FFF"
+    backgroundColor: "#000"
   },
   header: {
     marginTop: 50,
