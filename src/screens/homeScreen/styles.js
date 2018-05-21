@@ -16,7 +16,12 @@ export default StyleSheet.create({
     backgroundColor: colors.black
   },
   mb: {
-    marginBottom: 15
+    marginBottom: 15,
+    marginLeft:10,
+    marginRight:10,
+    marginTop:15,
+    backgroundColor:'#1A1A1A',
+    borderRadius:2
   },
   header:{
     backgroundColor: colors.hlGray
@@ -92,4 +97,6 @@ export default StyleSheet.create({
     color:"#b09872"
   },
   iconStyle:{fontSize: 20, color: '#A5A5A5'},
+  majorProduct:{fontSize: 13, color: '#3D3D3D',paddingLeft:12},
+  majorProductStart:{borderLeftColor:'#b09872',borderLeftWidth:2,marginLeft:12},
 });

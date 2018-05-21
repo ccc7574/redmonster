@@ -107,10 +107,8 @@ class HomeScreen extends Component {
             />
 
           </View>
-
-
-          <Card style={styles.mb}>
-            <CardItem>
+          <View style={styles.majorProductStart}><Text style={styles.majorProduct}>主打商品</Text></View>
+          <View style={styles.mb}>
               <Left>
                 <Image
                   style={{
@@ -128,28 +126,8 @@ class HomeScreen extends Component {
                   <Text>买入</Text>
                 </Button>
               </Right>
-            </CardItem>
-            <CardItem>
-              <Left>
-                <Image
-                  onPress={() => this.props.navigation.navigate("History")}
-                  style={{
-                    resizeMode: "cover",
-                    width: null,
-                    height: 200,
-                    flex: 1
-                  }}
-                  source={cardImage2}
-                />
-              </Left>
-              <Right>
-                <Text>当前价格: ¥518.00</Text>
-                <Button style={styles.mb15} onPress={() => this.props.navigation.navigate("Buy")}>
-                  <Text>买入</Text>
-                </Button>
-              </Right>
-            </CardItem>
-          </Card>
+
+          </View>
         </Content>
         <Footer>
           <FooterTab>
