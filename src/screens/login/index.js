@@ -51,7 +51,19 @@ class Login extends Component {
   render() {
     return (
       <Container style={styles.container}>
-
+        <View>
+            <Image
+                style={{
+                    width: deviceWidth,
+                    height: deviceHeight,
+                    position:'absolute',
+                    left:0,
+                    top:0,
+                    zIndex:2
+                }}
+                source={BgMsk}
+            />
+        </View>
         <Header>
           <Left>
             <Button transparent  onPress={() => this.props.navigation.navigate("Home")}>
@@ -59,7 +71,7 @@ class Login extends Component {
             </Button>
           </Left>
           <Body>
-          <Title>登录</Title>
+          <Title style={{color:'#fff'}}>登录</Title>
           </Body>
           <Right />
         </Header>
@@ -77,17 +89,7 @@ class Login extends Component {
                     }}
                     source={Bg}
                 />
-                <Image
-                    style={{
-                        width: deviceWidth,
-                        height: deviceHeight,
-                        position:'absolute',
-                        left:0,
-                        top:0,
-                        zIndex:2
-                    }}
-                    source={BgMsk}
-                />
+
             </View>
 
 

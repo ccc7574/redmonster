@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {Dimensions, Image} from "react-native";
 import {
   Container,
   Header,
@@ -19,6 +20,14 @@ import {
   CheckBox
 } from "native-base";
 import styles from "./styles";
+
+
+const Head = require("../../../assets/login/head.png");
+const BgMsk = require( "../../../assets/login/bgMsk2x.png");
+
+const Bg = require("../../../assets/login/bg.png");
+const deviceHeight = Dimensions.get("window").height;
+const deviceWidth = Dimensions.get("window").width;
 
 class Register extends Component {
   constructor(props) {
@@ -42,7 +51,21 @@ class Register extends Component {
   render() {
     return (
       <Container style={styles.container}>
-        <Header>
+          <View>
+              <Image
+                  style={{
+                      width: deviceWidth,
+                      height: deviceHeight,
+                      position:'absolute',
+                      left:0,
+                      top:0,
+                      zIndex:2
+                  }}
+                  source={BgMsk}
+              />
+          </View>
+
+        <Header style={{backgroundColor:'#000'}}>
           <Left>
             <Button transparent onPress={() => this.props.navigation.goBack()}>
               <Icon name="arrow-back" />
@@ -54,8 +77,34 @@ class Register extends Component {
           <Right />
         </Header>
 
-        <Content style={{ margin: 15, marginTop: 20 }}>
-          <Text style={styles.header}>注册红炉会员</Text>
+        <Content style={{paddingRight:15}}>
+            <View>
+                <Image
+                    style={{
+                        width: deviceWidth,
+                        height: deviceHeight,
+                        position:'absolute',
+                        left:0,
+                        top:0,
+                        zIndex:1
+                    }}
+                    source={Bg}
+                />
+
+            </View>
+            <View style={{display:"flex",flex:1,justifyContent:"center",alignItems:"center"}}>
+                <Image
+                    style={{
+                        width: deviceWidth-290,
+                        height: deviceWidth-290,
+                        marginBottom:40,
+                        marginTop:45,
+                    }}
+                    source={Head}
+                />
+            </View>
+
+
           <Form>
             <Item fixedLabel style={styles.itemRow}>
               <Icon active name="phone-portrait" style={styles.icon}/>
