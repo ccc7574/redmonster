@@ -17,10 +17,10 @@ import {View, Modal, Button as NativeBtn} from "react-native";
 import s from "./styles";
 
 const datas = [
-  ["商品", "数量", "买入价", "现价", "盈利"],
-  ["普洱茶叶", "2", "234", "123", "213"],
-  ["产品1号", "2", "211", "545", "21"],
-  ["产品2号", "1", "242", "665", "234"]
+  ["商品", "数量", "买入价"],
+  ["普洱茶叶", "2", "234"],
+  ["产品1号", "2", "211"],
+  ["产品2号", "1", "242"]
 ];
 
 class WareHouse extends Component {
@@ -111,30 +111,12 @@ class WareHouse extends Component {
 
         <Content style={s.content}>
           <View style={s.topSec}>
+            <Text style={[s.fontNormal, s.fontGrey]}>消费积分</Text>
             <View style={s.flexBetween}>
-              <View style={s.flexItem}>
-                <View style={s.alignCenter}>
-                  <Text style={[s.fontNormal, s.fontGrey]}>批发积分</Text>
-                  <Button style={s.goldBtn}>
-                    <Text style={s.fontSmall}>去使用</Text>
-                  </Button>
-                </View>
-                <Text style={[s.amountFont, s.fontGold]}>2838</Text>
-              </View>
-              <View style={s.flexItem}>
-                <Text style={[s.fontNormal, s.fontGrey]}>总盈利(元)</Text>
-                <Text style={[s.amountFont, s.fontGold]}>645.78</Text>
-              </View>
-            </View>
-            <View style={s.rowSection2}>
-              <View style={s.flexItem}>
-                <Text style={[s.fontNormal, s.fontGrey]}>总资产(元)</Text>
-                <Text style={[s.amountFont, s.fontWhite]}>1445.78</Text>
-              </View>
-              <View style={s.flexItem}>
-                <Text style={[s.fontNormal, s.fontGrey]}>可用现金(元)</Text>
-                <Text style={[s.amountFont, s.fontWhite]}>445.78</Text>
-              </View>
+              <Text style={[s.fontBig, s.fontGold]}>2000</Text>
+              <Button samll style={s.goldBtn}>
+                <Text style={[s.fontGold, s.consume]}>消费</Text>
+              </Button>
             </View>
           </View>
           <List
@@ -156,13 +138,6 @@ class WareHouse extends Component {
             onPress={() => this.props.navigation.navigate("PickUp")}
           >
             <Text style={[s.fontBlack, s.btnText]}>提货</Text>
-          </Button>
-          <Button
-            block
-            style={s.sellBtn}
-            onPress={this.showModalSell}
-          >
-            <Text style={[s.fontGold, s.btnText]}>卖出</Text>
           </Button>
           <Button
             block
