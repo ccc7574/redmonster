@@ -91,5 +91,5 @@ export default StyleSheet.create({
   priceTag:{
     color:"#b09872"
   },
-
+  iconStyle:{fontSize: 20, color: '#A5A5A5'},
 });

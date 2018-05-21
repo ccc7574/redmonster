@@ -73,13 +73,15 @@ class HomeScreen extends Component {
         <Header style={styles.header}>
           <Left>
             <Button  transparent onPress={() => this.props.navigation.navigate("DrawerOpen")}>
-              <Icon name="arrow-back" />
+              <Icon type="MaterialCommunityIcons" name="qrcode-scan" style={styles.iconStyle}/>
             </Button>
           </Left>
           <Body>
-          <Title style={{color:'white'}}>首页</Title>
+          <Title style={styles.iconStyle}>首页</Title>
           </Body>
-          <Right />
+          <Right>
+              <Icon type="MaterialCommunityIcons" name="tooltip-outline" style={styles.iconStyle}/>
+          </Right>
         </Header>
 
         <Content>

@@ -24,7 +24,7 @@ from "native-base";
 import styles from "./styles";
 
 const Head = require("../../../assets/login/head.png");
-const BgMsk = require( "../../../assets/login/bgMsk@2x.png");
+const BgMsk = require( "../../../assets/login/bgMsk2x.png");
 
 const Bg = require("../../../assets/login/bg.png");
 const deviceHeight = Dimensions.get("window").height;
