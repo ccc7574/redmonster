@@ -4,6 +4,10 @@ export default {
   container: {
     backgroundColor: "#FFF"
   },
+  content: {
+    marginTop: 20,
+    backgroundColor: "#000",
+  },
   header: {
     marginTop: 50,
     marginBottom: 30,
@@ -19,7 +23,6 @@ export default {
     alignItems: "center",
     justifyContent: "space-between",
     marginTop: 15,
-    padding: 5,
   },
   listTable: {
     margin: 6,
@@ -116,5 +119,65 @@ export default {
     borderRadius: 0,
     borderRightWidth: 1,
     borderRightColor: borderColor,
+  },
+  topSec: {
+    paddingVertical: 24,
+    paddingHorizontal: 15,
+    backgroundColor: "#1A1A1A"
+  },
+  fontGold: {
+    color: "#D1B27A",
+  },
+  fontWhite: {
+    color: "#ccc"
+  },
+  fontGrey: {
+    color: "#aaa"
+  },
+  fontBlack: {
+    color: "#000"
+  },
+  flexBetween: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  flexItem: {
+    flex: 1
+  },
+  alignCenter: {
+    flexDirection: "row",
+    alignItems: "center"
+  },
+  goldBtn: {
+    height: 18,
+    padding: 0,
+    paddingTop: 0,
+    paddingBottom: 0,
+    marginLeft: 5,
+    backgroundColor: "#D1B27A",
+    borderRadius: 9
+  },
+  fontNormal: {
+    fontSize: 15,
+  },
+  fontSmall: {
+    fontSize: 12,
+  },
+  amountFont: {
+    marginTop: 3,
+    fontSize: 26
+  },
+  sellBtn: {
+    margin: 6,
+    borderColor: "#D1B27A",
+    borderWidth: 1,
+    backgroundColor: "transparent"
+  },
+  pickBtn: {
+    backgroundColor: "#D1B27A",
+    color: "#000",
+  },
+  btnText: {
+    fontSize: 20,
   }
 };
