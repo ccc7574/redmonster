@@ -25,6 +25,9 @@ import styles from "./styles";
 
 const Head = require("../../../assets/login/head.png");
 const BgMsk = require( "../../../assets/login/bgMsk2x.png");
+const Sina = require("../../../assets/login/sina2x.png");
+const Webchat = require( "../../../assets/login/webChat2x.png");
+
 
 const Bg = require("../../../assets/login/bg.png");
 const deviceHeight = Dimensions.get("window").height;
@@ -51,19 +54,6 @@ class Login extends Component {
   render() {
     return (
       <Container style={styles.container}>
-        <View>
-            <Image
-                style={{
-                    width: deviceWidth,
-                    height: deviceHeight,
-                    position:'absolute',
-                    left:0,
-                    top:0,
-                    zIndex:2
-                }}
-                source={BgMsk}
-            />
-        </View>
         <Header>
           <Left>
             <Button transparent  onPress={() => this.props.navigation.navigate("Home")}>
@@ -89,9 +79,20 @@ class Login extends Component {
                     }}
                     source={Bg}
                 />
-
             </View>
-
+            <View>
+                <Image
+                    style={{
+                        width: deviceWidth,
+                        height: deviceHeight,
+                        position:'absolute',
+                        left:0,
+                        top:0,
+                        zIndex:2
+                    }}
+                    source={BgMsk}
+                />
+            </View>
 
             <View style={{display:"flex",flex:1,justifyContent:"center",alignItems:"center"}}>
                 <Image
@@ -116,17 +117,31 @@ class Login extends Component {
               <Switch value={this.state.switchFlag} onTintColor="#4688F1" onValueChange={this.handleChange} style={{marginRight: 10}}/>
             </Item>
           </Form>
-          <Button block style={{...styles.btnLogin,width:deviceWidth-114,}}>
+          <Button block rounded style={{...styles.btnLogin,width:deviceWidth-114,}}>
             <Text style={{fontSize: 18,color:"#1A1A1A"}}>登 录</Text>
           </Button>
-          <Button block transparent onPress={() => this.props.navigation.navigate("Register")} style={{border:"solid 1px #D1B179",borderRadius:8}}>
-            <Text style={{fontSize: 18,color:"#D1B27A", width:deviceWidth-114,marginLeft:57,marginTop:20,}}>注 册</Text>
+          <Button block rounded transparent bordered onPress={() => this.props.navigation.navigate("Register")} style={{ width:deviceWidth-114,marginLeft:57,marginTop:20,}}>
+            <Text style={{fontSize: 18,color:"#D1B27A",}}>注 册</Text>
           </Button>
            <View style={{marginLeft:52}}>
             <Text style={{fontSize:13,color:'#E7E7E7',marginTop:13}}>忘记密码</Text>
            </View>
+           <View style={{marginTop:40,display:'flex',flex:1,flexDirection:'row',alignItems:'center'}}>
+               <View style={{width:(deviceWidth-58)/2,height:1,backgroundColor:'#585858',display:'flex',flexDirection:'row',justifyContent:'flex-start'}}></View>
+               <View style={{marginLeft:20,marginRight:20,display:'flex',justifyContent:'center',flexDirection:'row',}}><Text style={{fontSize:14,color:'#585858'}}>or</Text></View>
+               <View style={{width:(deviceWidth-58)/2,height:1,backgroundColor:'#585858',display:'flex',flexDirection:'row',justifyContent:'flex-end'}}></View>
+           </View>
+           <View style={{display:'flex',flex:1,flexDirection:'row',height:42,marginTop:18}}>
+               <View style={{display:'flex',flexDirection:'row', justifyContent:'space-between',alignItems:'center'}}>
+                   <Image source={Sina} style={{width:42,height:42}}/>
+               </View>
+               <View style={{display:'flex',flexDirection:'row',justifyContent:'space-between',alignItems:'center',marginLeft:70}}>
+                   <Image source={Webchat} style={{width:42,height:42}}/>
+               </View>
+           </View>
         </Content>
-        <Footer>
+
+        <Footer style={{margin:0}}>
           <FooterTab>
             <Button
               active={this.state.tab1}

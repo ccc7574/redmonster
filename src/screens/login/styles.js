@@ -15,7 +15,7 @@ export default {
     width: 20
   },
   itemRow: {
-    height: 60
+    height: 60,
   },
   fntText:{
     fontSize:15,
@@ -25,8 +25,7 @@ export default {
      marginTop: 40,
      marginLeft:57,
      height:50,
-     backgroundColor:"#CCAD75",
-     borderRadius:8
+     backgroundColor:"#CCAD75"
  }
 
 };
