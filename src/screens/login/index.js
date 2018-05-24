@@ -54,14 +54,14 @@ class Login extends Component {
   render() {
     return (
       <Container style={styles.container}>
-        <Header>
+        <Header style={{backgroundColor: "rgba(0, 0, 0, .6)",}}>
           <Left>
             <Button transparent  onPress={() => this.props.navigation.navigate("Home")}>
-              <Icon name="arrow-back" />
+              <Icon name="arrow-back" style={{color: "#818181"}} />
             </Button>
           </Left>
           <Body>
-          <Title style={{color:'#fff'}}>登录</Title>
+          <Title style={{color:'#fff',}}>登录</Title>
           </Body>
           <Right />
         </Header>
@@ -97,8 +97,8 @@ class Login extends Component {
             <View style={{display:"flex",flex:1,justifyContent:"center",alignItems:"center"}}>
                 <Image
                     style={{
-                        width: deviceWidth-290,
-                        height: deviceWidth-290,
+                        width: 84,
+                        height: 84,
                         marginBottom:40,
                         marginTop:45,
                     }}
@@ -120,22 +120,24 @@ class Login extends Component {
           <Button block rounded style={{...styles.btnLogin,width:deviceWidth-114,}}>
             <Text style={{fontSize: 18,color:"#1A1A1A"}}>登 录</Text>
           </Button>
-          <Button block rounded transparent bordered onPress={() => this.props.navigation.navigate("Register")} style={{ width:deviceWidth-114,marginLeft:57,marginTop:20,}}>
+          <Button block rounded transparent bordered
+                  onPress={() => this.props.navigation.navigate("Register")}
+                  style={{ width:deviceWidth-114,marginLeft:57,marginTop:20,borderColor:"#D1B27A"}}>
             <Text style={{fontSize: 18,color:"#D1B27A",}}>注 册</Text>
           </Button>
            <View style={{marginLeft:52}}>
-            <Text style={{fontSize:13,color:'#E7E7E7',marginTop:13}}>忘记密码</Text>
+            <Text style={{fontSize:13,color:'#E7E7E7',marginTop:13,marginLeft:8}}>忘记密码</Text>
            </View>
            <View style={{marginTop:40,display:'flex',flex:1,flexDirection:'row',alignItems:'center'}}>
                <View style={{width:(deviceWidth-58)/2,height:1,backgroundColor:'#585858',display:'flex',flexDirection:'row',justifyContent:'flex-start'}}></View>
                <View style={{marginLeft:20,marginRight:20,display:'flex',justifyContent:'center',flexDirection:'row',}}><Text style={{fontSize:14,color:'#585858'}}>or</Text></View>
                <View style={{width:(deviceWidth-58)/2,height:1,backgroundColor:'#585858',display:'flex',flexDirection:'row',justifyContent:'flex-end'}}></View>
            </View>
-           <View style={{display:'flex',flex:1,flexDirection:'row',height:42,marginTop:18}}>
-               <View style={{display:'flex',flexDirection:'row', justifyContent:'space-between',alignItems:'center'}}>
+           <View style={styles.shareBox}>
+               <View style={styles.shareIcon}>
                    <Image source={Sina} style={{width:42,height:42}}/>
                </View>
-               <View style={{display:'flex',flexDirection:'row',justifyContent:'space-between',alignItems:'center',marginLeft:70}}>
+               <View style={{...styles.shareIcon,marginLeft:70}}>
                    <Image source={Webchat} style={{width:42,height:42}}/>
                </View>
            </View>

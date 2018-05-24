@@ -1,4 +1,6 @@
-export default {
+import { StyleSheet } from 'react-native';
+
+export default StyleSheet.create({
   container: {
     backgroundColor: "#000"
   },
@@ -20,10 +22,10 @@ export default {
     marginRight: 10,
     padding: 10,
     borderWidth: 1,
-    borderColor: "#4688F1",
-    borderRadius: 5,
+    borderColor: "#D1B27A",
+    borderRadius: 100,
   },
   fontColor: {
     color: "#666"
   }
-};
+});
