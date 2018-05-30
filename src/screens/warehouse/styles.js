@@ -175,7 +175,6 @@ export default {
   },
   pickBtn: {
     backgroundColor: "#D1B27A",
-    color: "#000",
   },
   btnText: {
     fontSize: 20,

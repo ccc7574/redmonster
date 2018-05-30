@@ -26,7 +26,6 @@ export default {
   },
   mr10: {
     marginRight: 10,
-    color: "#434343"
   },
   content: {
     paddingTop: 25,

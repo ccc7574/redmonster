@@ -76,12 +76,6 @@ class WareHouse extends Component {
     });
   };
 
-  showModalSell = () => {
-    this.setState({
-      modalVisibleSell: true
-    });
-  };
-
   closeModal = () => {
     this.setState({
       modalVisible: false,
@@ -154,37 +148,6 @@ class WareHouse extends Component {
           visible={this.state.modalVisible}
           onRequestClose={this.closeModal}
         >
-          <View style={[s.modalContainer, s.modalBackgroundStyle]}>
-            <View style={s.innerContainer}>
-              <View style={s.modalContentBox}>
-                <Text style={s.modalHeader}>兑换申请</Text>
-                <Text style={s.modalContent}>精品普洱茶饼(6年)</Text>
-                <View style={s.countSec}>
-                  <Button small style={{backgroundColor: "#4A4A4A"}} onPress={this.handleMinus}>
-                    <Text style={{color: "#aaa", fontSize: 19}}>-</Text>
-                  </Button>
-                  <Text style={{paddingLeft: 14, paddingRight: 14, color: "#aaa", fontSize: 18}}>
-                    {this.state.countAmt}
-                  </Text>
-                  <Button small style={{backgroundColor: "#D0B17D"}} onPress={this.handleAdd}>
-                    <Text style={{color: "#333", fontSize: 19}}>+</Text>
-                  </Button>
-                </View>
-                <View>
-                  <Text style={s.modalTips}>批发积分用来配合下期主推产品</Text>
-                  <Text style={s.modalTips}>积分=买入价²/发行价</Text>
-                </View>
-              </View>
-              <View style={s.modalFoot}>
-                <Button style={[s.footBtn, s.borderRight]} onPress={this.closeModal}>
-                  <Text style={s.cancelBtn}>取消</Text>
-                </Button>
-                <Button style={s.footBtn} onPress={this.closeModal}>
-                  <Text style={s.confirmBtn}>确定</Text>
-                </Button>
-              </View>
-            </View>
-          </View>
         </Modal>
 
         <Modal
@@ -193,37 +156,7 @@ class WareHouse extends Component {
           visible={this.state.modalVisibleSell}
           onRequestClose={this.closeModal}
         >
-          <View style={[s.modalContainer, s.modalBackgroundStyle]}>
-            <View style={s.innerContainer}>
-              <View style={s.modalContentBox}>
-                <Text style={s.modalHeader}>卖出申请</Text>
-                <Text style={s.modalContent}>精品普洱茶饼(6年)</Text>
-                <View style={s.countSec}>
-                  <Button small style={{backgroundColor: "#4A4A4A"}} onPress={this.handleMinusSell}>
-                    <Text style={{color: "#aaa", fontSize: 19}}>-</Text>
-                  </Button>
-                  <Text style={{paddingLeft: 14, paddingRight: 14, color: "#aaa", fontSize: 18}}>
-                    {this.state.countAmtSell}
-                  </Text>
-                  <Button small style={{backgroundColor: "#D0B17D"}} onPress={this.handleAddSell}>
-                    <Text style={{color: "#333", fontSize: 19}}>+</Text>
-                  </Button>
-                </View>
-                <View>
-                  <Text style={s.modalTips}>批发积分用来配合下期主推产品</Text>
-                  <Text style={s.modalTips}>积分=买入价²/发行价</Text>
-                </View>
-              </View>
-              <View style={s.modalFoot}>
-                <Button style={[s.footBtn, s.borderRight]} onPress={this.closeModal}>
-                  <Text style={s.cancelBtn}>取消</Text>
-                </Button>
-                <Button style={s.footBtn} onPress={this.closeModal}>
-                  <Text style={s.confirmBtn}>确定</Text>
-                </Button>
-              </View>
-            </View>
-          </View>
+
         </Modal>
 
         <Footer>

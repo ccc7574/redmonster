@@ -13,7 +13,7 @@ import {
   Footer,
   FooterTab,
 } from "native-base";
-import {View, Modal, Button as NativeBtn} from "react-native";
+import {View, Modal} from "react-native";
 import s from "./styles";
 
 const datas = [
