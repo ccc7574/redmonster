@@ -13,10 +13,6 @@ import Header7 from "./screens/Header/7";
 import Header8 from "./screens/Header/8";
 import HeaderSpan from "./screens/Header/header-span";
 import HeaderNoShadow from "./screens/Header/header-no-shadow";
-import BasicFooter from "./screens/footer/basicFooter";
-import IconFooter from "./screens/footer/iconFooter";
-import IconText from "./screens/footer/iconText";
-import BadgeFooter from "./screens/footer/badgeFooter";
 import Default from "./screens/button/default";
 import Outline from "./screens/button/outline";
 import Rounded from "./screens/button/rounded";
@@ -96,7 +92,6 @@ import AdvancedDeck from "./screens/deckswiper/advanced";
 
 import History from "./screens/history/";
 import Anatomy from "./screens/anatomy/";
-import Footer from "./screens/footer/";
 import NHBadge from "./screens/badge/";
 import NHButton from "./screens/button/";
 import NHCard from "./screens/card/";
@@ -149,7 +144,6 @@ const Drawer = DrawerNavigator(
     Home: { screen: HomeScreen },
     Anatomy: { screen: Anatomy },
     Header: { screen: Header },
-    Footer: { screen: Footer },
     NHBadge: { screen: NHBadge },
     NHButton: { screen: NHButton },
     NHCard: { screen: NHCard },
@@ -195,11 +189,6 @@ const AppNavigator = StackNavigator(
     Header8: { screen: Header8 },
     HeaderSpan: { screen: HeaderSpan },
     HeaderNoShadow: { screen: HeaderNoShadow },
-
-    BasicFooter: { screen: BasicFooter },
-    IconFooter: { screen: IconFooter },
-    IconText: { screen: IconText },
-    BadgeFooter: { screen: BadgeFooter },
 
     Default: { screen: Default },
     Outline: { screen: Outline },
