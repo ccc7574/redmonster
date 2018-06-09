@@ -8,20 +8,16 @@ import {
   Body,
   Left,
   Right,
-  Icon,
   Text,
   View,
   Footer,
   FooterTab,
-  Card,
-  CardItem,
 } from "native-base";
 import { Image } from "react-native";
 import { Dimensions, Platform } from 'react-native';
 import { sliderWidth, itemWidth } from './SliderEntry.style';
 import Carousel from "react-native-snap-carousel";
 import styles from "./styles";
-import fs from '../footer/styles';
 const { width: viewportWidth, height: viewportHeight } = Dimensions.get('window');
 const SLIDER_1_FIRST_ITEM = 1;
 import SliderEntry from './SliderEntry';
@@ -75,14 +71,14 @@ class HomeScreen extends Component {
         <Header style={styles.header}>
           <Left>
             <Button  transparent onPress={() => this.props.navigation.navigate("DrawerOpen")}>
-              <Icon type="MaterialCommunityIcons" name="qrcode-scan" style={styles.iconStyle}/>
+              <Image style={styles.headerIcon} source={require('../../../assets/home/scan.png')} />
             </Button>
           </Left>
           <Body>
           <Title style={styles.iconStyle}>首页</Title>
           </Body>
           <Right>
-              <Icon type="MaterialCommunityIcons" name="tooltip-outline" style={styles.iconStyle}/>
+            <Image style={styles.headerIcon} source={require('../../../assets/home/message.png')} />
           </Right>
         </Header>
 

@@ -93,6 +93,9 @@ export default StyleSheet.create({
     justifyContent: "space-between",
     marginRight: 15
   },
+  headerIcon:{
+    width:22,height:22
+  },
   priceTag:{
     color:"#b09872"
   },
