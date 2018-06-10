@@ -23,7 +23,7 @@ import Used from '../../../assets/couponUsed.png';
 import Expired from '../../../assets/expired.png';
 import Empty from '../../../assets/couponEmpty.png';
 
-class Coupon extends Component {
+class CouponForQueue extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -81,7 +81,7 @@ class Coupon extends Component {
             </Button>
           </Left>
           <Body>
-          <Title style={s.wordBig}>我的优惠券</Title>
+          <Title style={s.wordBig}>我的排单券</Title>
           </Body>
           <Right/>
         </Header>
@@ -321,7 +321,7 @@ class Coupon extends Component {
               resizeMode="contain"
               source={Empty}
             />
-            <Text style={s.emptyTxt}>您没有优惠券</Text>
+            <Text style={s.emptyTxt}>您没有排单券</Text>
           </View>
         </Content>
       </Container>
@@ -330,4 +330,4 @@ class Coupon extends Component {
 }
 
 
-export default Coupon;
+export default CouponForQueue;

@@ -54,7 +54,7 @@ class HLFooter extends Component {
             </Button>
             <Button style={fs.footerButton}
                     active={this.state.tab4}
-                    onPress={() => this.props.navigation.navigate("Coupon")}
+                    onPress={() => this.props.navigation.navigate("CouponForQueue")}
                     vertical
             >
               <View>
