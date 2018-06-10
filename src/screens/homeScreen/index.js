@@ -121,7 +121,7 @@ class HomeScreen extends Component {
 
           </View>
         </Content>
-        <HLFooter/>
+        <HLFooter navigation={this.props.navigation} />
       </Container>
     );
   }
