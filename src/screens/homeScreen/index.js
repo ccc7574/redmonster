@@ -70,7 +70,7 @@ class HomeScreen extends Component {
       <Container style={styles.container}>
         <Header style={styles.header}>
           <Left>
-            <Button  transparent onPress={() => this.props.navigation.navigate("DrawerOpen")}>
+            <Button  transparent onPress={() => this.props.navigation.navigate("PickUpOrderManagement")}>
               <Image style={styles.headerIcon} source={require('../../../assets/home/scan.png')} />
             </Button>
           </Left>
