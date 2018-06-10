@@ -140,6 +140,7 @@ import Coupon from './screens/coupon';
 import PickHouse from "./screens/pickHouse";
 import PickUpOrderManagement from "./screens/pickUpOrderManagement";
 import CouponForQueue from './screens/couponForQueue';
+import Points from './screens/points';
 
 const Drawer = DrawerNavigator(
   {
@@ -307,6 +308,7 @@ const AppNavigator = StackNavigator(
     PickHouse: {screen: PickHouse},
     PickUpOrderManagement: {screen: PickUpOrderManagement},
     CouponForQueue: {screen: CouponForQueue},
+    Points: {screen: Points},
 
   },
   {
