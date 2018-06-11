@@ -13,8 +13,10 @@ import {
   Footer,
   FooterTab,
 } from "native-base";
+import { Image } from "react-native";
 import {View, Modal} from "react-native";
 import s from "./styles";
+import fs from "../footer/styles";
 
 const datas = [
   ["商品", "数量", "买入价", "现价", "盈利"],
@@ -251,37 +253,43 @@ class WareHouse extends Component {
           </View>
         </Modal>
 
-        <Footer>
-          <FooterTab>
-            <Button
-              active={this.state.tab1}
-              onPress={() => this.props.navigation.navigate("Home")}
-              vertical
-            >
-              <Icon active={this.state.tab1} name="apps"/>
-              <Text>首页</Text>
-            </Button>
-            <Button active={this.state.tab2}
+        <Footer style={fs.footerTab}>
+          <FooterTab style={fs.footerTab}>
+            <Button style={fs.footerButton}
+                    onPress={() => this.props.navigation.navigate("Settings")}
                     vertical
+            >
+              <View>
+                <Image style={fs.footerImageHL} source={require('../../../assets/home/hl-active.png')} />
+                <Text style={fs.footerText}>红炉</Text>
+              </View>
+            </Button>
+            <Button vertical style={fs.footerButton}
                     onPress={() => this.props.navigation.navigate("WareHouse")}>
-              <Icon name="camera" active={this.state.tab2}/>
-              <Text>仓库</Text>
+              <View>
+                <Image style={fs.footerImage} source={require('../../../assets/home/storage.png')} />
+                <Text style={fs.footerText}>仓库</Text>
+              </View>
             </Button>
-            <Button
-              active={this.state.tab3}
-              onPress={() => this.props.navigation.navigate("History")}
-              vertical
+            <Button style={fs.footerButton}
+                    active={this.state.tab3}
+                    onPress={() => this.props.navigation.navigate("History")}
+                    vertical
             >
-              <Icon active={this.state.tab3} name="man"/>
-              <Text>团队</Text>
+              <View>
+                <Image style={fs.footerImage} source={require('../../../assets/home/team.png')} />
+                <Text style={fs.footerText}>团队</Text>
+              </View>
             </Button>
-            <Button
-              active={this.state.tab4}
-              onPress={() => this.props.navigation.navigate("Login")}
-              vertical
+            <Button style={fs.footerButton}
+                    active={this.state.tab4}
+                    onPress={() => this.props.navigation.navigate("Coupon")}
+                    vertical
             >
-              <Icon active={this.state.tab4} name="contact"/>
-              <Text>我的</Text>
+              <View>
+                <Image style={fs.footerImage} source={require('../../../assets/home/mine.png')} />
+                <Text style={fs.footerText}>我的</Text>
+              </View>
             </Button>
           </FooterTab>
         </Footer>

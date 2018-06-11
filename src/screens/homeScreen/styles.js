@@ -21,7 +21,23 @@ export default StyleSheet.create({
     marginRight:10,
     marginTop:15,
     backgroundColor:'#1A1A1A',
-    borderRadius:2
+    borderRadius:2,
+    width:355,
+    height:248
+  },
+  productContent:{
+    width:326,
+    height:141,
+    padding:14
+  },
+  productImage:{
+    resizeMode: "cover",
+    width: 116,
+    flex: 1,
+    height:112,
+  },
+  productDetails:{
+
   },
   header:{
     backgroundColor: colors.hlGray

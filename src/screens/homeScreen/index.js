@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import {
   Container,
   Header,
@@ -13,15 +13,17 @@ import {
   Footer,
   FooterTab,
 } from "native-base";
-import { Image } from "react-native";
-import { Dimensions, Platform } from 'react-native';
-import { sliderWidth, itemWidth } from './SliderEntry.style';
+import {Image} from "react-native";
+import {Dimensions, Platform} from 'react-native';
+import {sliderWidth, itemWidth} from './SliderEntry.style';
 import Carousel from "react-native-snap-carousel";
 import styles from "./styles";
-const { width: viewportWidth, height: viewportHeight } = Dimensions.get('window');
+
+const {width: viewportWidth, height: viewportHeight} = Dimensions.get('window');
 const SLIDER_1_FIRST_ITEM = 1;
 import SliderEntry from './SliderEntry';
-import HLFooter from '../footer/HLFooter';
+import fs from "../footer/styles";
+
 const cardImage1 = require("../../../assets/tea1.png");
 
 const ENTRIES1 = [
@@ -55,7 +57,8 @@ class HomeScreen extends Component {
       tab4: false,
     };
   }
-  _renderItemWithParallax ({item, index}, parallaxProps) {
+
+  _renderItemWithParallax({item, index}, parallaxProps) {
     return (
       <SliderEntry
         data={item}
@@ -65,20 +68,21 @@ class HomeScreen extends Component {
       />
     );
   }
+
   render() {
     return (
       <Container style={styles.container}>
         <Header style={styles.header}>
           <Left>
-            <Button  transparent onPress={() => this.props.navigation.navigate("PickUpOrderManagement")}>
-              <Image style={styles.headerIcon} source={require('../../../assets/home/scan.png')} />
+            <Button transparent onPress={() => this.props.navigation.navigate("PickUpOrderManagement")}>
+              <Image style={styles.headerIcon} source={require('../../../assets/home/scan.png')}/>
             </Button>
           </Left>
           <Body>
           <Title style={styles.iconStyle}>首页</Title>
           </Body>
           <Right>
-            <Image style={styles.headerIcon} source={require('../../../assets/home/message.png')} />
+            <Image style={styles.headerIcon} source={require('../../../assets/home/message.png')}/>
           </Right>
         </Header>
 
@@ -101,27 +105,60 @@ class HomeScreen extends Component {
               autoplay={true}
               autoplayDelay={700}
               autoplayInterval={3000}
-              onSnapToItem={(index) => this.setState({ slider1ActiveSlide: index }) }
+              onSnapToItem={(index) => this.setState({slider1ActiveSlide: index})}
             />
 
           </View>
           <View style={styles.majorProductStart}><Text style={styles.majorProduct}>主打商品</Text></View>
           <View style={styles.mb}>
-            <View>
-              <Image
-                style={{
-                  resizeMode: "cover",
-                  width: null,
-                  height: 200,
-                  flex: 1
-                }}
-                source={cardImage1}
-              />
+            <View style={styles.productContent}>
+              <Image style={styles.productImage} source={cardImage1}/>
             </View>
-
+            <View>
+            </View>
+            <Text>下一小时几个</Text>
           </View>
         </Content>
-        <HLFooter/>
+        <Footer style={fs.footerTab}>
+          <FooterTab style={fs.footerTab}>
+            <Button style={fs.footerButton}
+                    onPress={() => this.props.navigation.navigate("Settings")}
+                    vertical
+            >
+              <View>
+                <Image style={fs.footerImageHL} source={require('../../../assets/home/hl-active.png')}/>
+                <Text style={fs.footerText}>红炉</Text>
+              </View>
+            </Button>
+            <Button vertical style={fs.footerButton}
+                    onPress={() => this.props.navigation.navigate("WareHouse")}>
+              <View>
+                <Image style={fs.footerImage} source={require('../../../assets/home/storage.png')}/>
+                <Text style={fs.footerText}>仓库</Text>
+              </View>
+            </Button>
+            <Button style={fs.footerButton}
+                    active={this.state.tab3}
+                    onPress={() => this.props.navigation.navigate("History")}
+                    vertical
+            >
+              <View>
+                <Image style={fs.footerImage} source={require('../../../assets/home/team.png')}/>
+                <Text style={fs.footerText}>团队</Text>
+              </View>
+            </Button>
+            <Button style={fs.footerButton}
+                    active={this.state.tab4}
+                    onPress={() => this.props.navigation.navigate("Coupon")}
+                    vertical
+            >
+              <View>
+                <Image style={fs.footerImage} source={require('../../../assets/home/mine.png')}/>
+                <Text style={fs.footerText}>我的</Text>
+              </View>
+            </Button>
+          </FooterTab>
+        </Footer>
       </Container>
     );
   }
