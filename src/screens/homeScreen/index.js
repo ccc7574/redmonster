@@ -23,6 +23,7 @@ const {width: viewportWidth, height: viewportHeight} = Dimensions.get('window');
 const SLIDER_1_FIRST_ITEM = 1;
 import SliderEntry from './SliderEntry';
 import fs from "../footer/styles";
+import s from "../coupon/styles";
 
 const cardImage1 = require("../../../assets/tea1.png");
 
@@ -112,11 +113,29 @@ class HomeScreen extends Component {
           <View style={styles.majorProductStart}><Text style={styles.majorProduct}>主打商品</Text></View>
           <View style={styles.mb}>
             <View style={styles.productContent}>
-              <Image style={styles.productImage} source={cardImage1}/>
+              <View style={styles.productImageContainer}>
+                <Image style={styles.productImage} source={cardImage1}/>
+              </View>
+              <View style={{paddingLeft: 14, paddingTop: 5,width:'95%'}}>
+                <View>
+                  <Text style={styles.productTitle}>精品普洱茶饼(6年）</Text>
+                </View>
+                <View style={{paddingTop: 15, flexDirection: "row"}}>
+                  <Text style={styles.productPrice}>当前价</Text>
+                  <Text style={styles.productPriceDetail}>¥922.25</Text>
+                </View>
+                <View style={styles.productBuy}>
+                  <Right>
+                    <Button block bordered onPress={this.handleUse} style={styles.buyButton}>
+                      <Text style={styles.buyButtonTxt}>立即购买</Text>
+                    </Button>
+                  </Right>
+                </View>
+              </View>
             </View>
             <View>
+              <Text>下一小时几个</Text>
             </View>
-            <Text>下一小时几个</Text>
           </View>
         </Content>
         <Footer style={fs.footerTab}>
