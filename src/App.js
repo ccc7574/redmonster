@@ -172,7 +172,7 @@ const Drawer = DrawerNavigator(
     contentOptions: {
       activeTintColor: "#e91e63"
     },
-    contentComponent: props => <SideBar {...props} />
+    contentComponent: props => <HomeScreen/>
   }
 );
 
@@ -180,14 +180,6 @@ const AppNavigator = StackNavigator(
   {
     Drawer: { screen: Drawer },
 
-    Header1: { screen: Header1 },
-    Header2: { screen: Header2 },
-    Header3: { screen: Header3 },
-    Header4: { screen: Header4 },
-    Header5: { screen: Header5 },
-    Header6: { screen: Header6 },
-    Header7: { screen: Header7 },
-    Header8: { screen: Header8 },
     HeaderSpan: { screen: HeaderSpan },
     HeaderNoShadow: { screen: HeaderNoShadow },
 
