@@ -17,6 +17,7 @@ import { Image } from "react-native";
 import {View, Modal} from "react-native";
 import s from "./styles";
 import fs from "../footer/styles";
+import styles from "../homeScreen/styles";
 
 const datas = [
   ["商品", "数量", "买入价", "现价", "盈利"],
@@ -94,18 +95,18 @@ class WareHouse extends Component {
   render() {
     return (
       <Container style={s.container}>
-        <Header>
+        <Header style={s.firstHeader}>
           <Left>
             <Button transparent onPress={() => this.props.navigation.navigate("Home")}>
               <Icon name="arrow-back"/>
             </Button>
           </Left>
           <Body style={s.headerB}>
-          <Button small onPress={() => this.props.navigation.navigate("WareHouse")}>
-            <Text>批发仓</Text>
+          <Button block bordered onPress={() => this.props.navigation.navigate("WareHouse")} style={s.pfButton}>
+            <Text style={s.pfButtonTxt}>批发仓</Text>
           </Button>
-          <Button small onPress={() => this.props.navigation.navigate("PickHouse")}>
-            <Text>提货仓</Text>
+          <Button block onPress={() => this.props.navigation.navigate("PickHouse")} style={s.thButton}>
+            <Text style={s.thButtonTxt}>提货仓</Text>
           </Button>
           </Body>
           <Right/>
@@ -188,13 +189,13 @@ class WareHouse extends Component {
                 <Text style={s.modalContent}>精品普洱茶饼(6年)</Text>
                 <View style={s.countSec}>
                   <Button small style={{backgroundColor: "#4A4A4A"}} onPress={this.handleMinus}>
-                    <Text style={{color: "#aaa", fontSize: 19}}>-</Text>
+                    <Text style={{fontSize: 19}}>-</Text>
                   </Button>
                   <Text style={{paddingLeft: 14, paddingRight: 14, color: "#aaa", fontSize: 18}}>
                     {this.state.countAmt}
                   </Text>
                   <Button small style={{backgroundColor: "#D0B17D"}} onPress={this.handleAdd}>
-                    <Text style={{color: "#333", fontSize: 19}}>+</Text>
+                    <Text style={{ fontSize: 19}}>+</Text>
                   </Button>
                 </View>
                 <View>

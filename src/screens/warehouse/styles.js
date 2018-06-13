@@ -5,14 +5,42 @@ export default {
     backgroundColor: "#FFF"
   },
   content: {
-    marginTop: 20,
     backgroundColor: "#000",
+  },
+  firstHeader:{
+    backgroundColor:"#1a1a1a"
   },
   header: {
     marginTop: 50,
     marginBottom: 30,
     fontSize: 40,
     textAlign: "center"
+  },
+  pfButton:{
+    width: 90,
+    height: 30,
+    borderWidth: 1,
+    borderColor: '#D1B27A',
+    borderRadius: 22
+  },
+  pfButtonTxt: {
+    color: '#D1B27A',
+    fontSize: 14,
+    fontWeight:'bold'
+  },
+  thButton:{
+    width: 90,
+    height: 30,
+    borderWidth: 1,
+    borderColor: '#D1B27A',
+    borderRadius: 22,
+    backgroundColor:'#D1B27A',
+    marginLeft:-23
+  },
+  thButtonTxt: {
+    color: '#3D3838',
+    fontSize: 14,
+    fontWeight:'bold'
   },
   optionBtn: {
     margin: 6,
@@ -50,7 +78,9 @@ export default {
     flex: 1,
     flexDirection: "row",
     justifyContent: "space-between",
-    marginRight: 15
+    marginRight: 15,
+    width:140,
+    height:30
   },
   modalBackgroundStyle: {
     backgroundColor: "rgba(0, 0, 0, 0.5)",
