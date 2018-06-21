@@ -5,14 +5,43 @@ export default {
     backgroundColor: "#FFF"
   },
   content: {
-    marginTop: 20,
     backgroundColor: "#000",
+  },
+  firstHeader:{
+    backgroundColor:"#1a1a1a"
   },
   header: {
     marginTop: 50,
     marginBottom: 30,
     fontSize: 40,
     textAlign: "center"
+  },
+  pfButton:{
+    width: 90,
+    height: 30,
+    borderWidth: 1,
+    borderColor: '#D1B27A',
+    borderRadius: 22
+  },
+  pfButtonTxt: {
+    color: '#D1B27A',
+    fontSize: 14,
+    fontWeight:'bold',
+    marginLeft:-15,
+  },
+  thButton:{
+    width: 90,
+    height: 30,
+    borderWidth: 2,
+    borderColor: '#D1B27A',
+    borderRadius: 23,
+    backgroundColor:'#D1B27A',
+    marginLeft:-27
+  },
+  thButtonTxt: {
+    color: '#3D3838',
+    fontSize: 14,
+    fontWeight:'bold'
   },
   optionBtn: {
     margin: 6,
@@ -22,35 +51,43 @@ export default {
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    marginTop: 15,
+    marginTop: 20,
   },
   listTable: {
-    margin: 6,
-    marginTop: 30,
     marginBottom: 30,
     padding: 0,
-    borderColor: "#aaa",
-    borderWidth: 1,
-    borderBottomWidth: 0
+    backgroundColor:"#1A1A1A",
   },
   listItem: {
     height: 45,
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    borderColor: "#aaa",
-    borderBottomWidth: 1
+  },
+  listHeader:{
+    height: 45,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    paddingRight:12,
+  },
+  headerCell:{
+    flex: 1,
+    textAlign: "center",
+    fontSize: 14
   },
   listCell: {
     flex: 1,
     textAlign: "center",
-    fontSize: 15
+    fontSize: 14
   },
   headerB: {
     flex: 1,
     flexDirection: "row",
     justifyContent: "space-between",
-    marginRight: 15
+    marginRight: 15,
+    width:140,
+    height:30
   },
   modalBackgroundStyle: {
     backgroundColor: "rgba(0, 0, 0, 0.5)",
@@ -121,8 +158,10 @@ export default {
     borderRightColor: borderColor,
   },
   topSec: {
+    width:375,
+    height:158,
     paddingVertical: 24,
-    paddingHorizontal: 15,
+    paddingHorizontal: 20,
     backgroundColor: "#1A1A1A"
   },
   fontGold: {
@@ -132,7 +171,11 @@ export default {
     color: "#ccc"
   },
   fontGrey: {
-    color: "#aaa"
+    color: "#7F7F7F"
+  },
+  upIcon:{
+    width:10,
+    height:10
   },
   fontBlack: {
     color: "#000"
@@ -149,23 +192,37 @@ export default {
     alignItems: "center"
   },
   goldBtn: {
-    height: 18,
+    height: 15,
     padding: 0,
     paddingTop: 0,
     paddingBottom: 0,
     marginLeft: 5,
-    backgroundColor: "#D1B27A",
-    borderRadius: 9
+    borderColor: "#D1B27A",
+    borderRadius: 9,
+    width:38
   },
   fontNormal: {
     fontSize: 15,
   },
+  fontRed:{
+    color:'#E83032',
+  },
+  font13:{
+    fontSize:13,
+  },
   fontSmall: {
     fontSize: 12,
   },
+  font9:{
+    fontSize:9,
+    color: "#D1B27A",
+    paddingLeft:5,
+    paddingRight:4
+  },
   amountFont: {
     marginTop: 3,
-    fontSize: 26
+    fontSize: 24,
+    fontWeight:'bold'
   },
   sellBtn: {
     margin: 6,

@@ -13,11 +13,13 @@ import {
   Footer,
   FooterTab,
 } from "native-base";
+import {Image} from "react-native";
 import {View, Modal} from "react-native";
 import s from "./styles";
+import fs from "../footer/styles";
+import styles from "../homeScreen/styles";
 
 const datas = [
-  ["商品", "数量", "买入价", "现价", "盈利"],
   ["普洱茶叶", "2", "234", "123", "213"],
   ["产品1号", "2", "211", "545", "21"],
   ["产品2号", "1", "242", "665", "234"]
@@ -92,18 +94,15 @@ class WareHouse extends Component {
   render() {
     return (
       <Container style={s.container}>
-        <Header>
+        <Header style={s.firstHeader}>
           <Left>
-            <Button transparent onPress={() => this.props.navigation.navigate("Home")}>
-              <Icon name="arrow-back"/>
-            </Button>
           </Left>
           <Body style={s.headerB}>
-          <Button small onPress={() => this.props.navigation.navigate("WareHouse")}>
-            <Text>批发仓</Text>
+          <Button block bordered onPress={() => this.props.navigation.navigate("WareHouse")} style={s.pfButton}>
+            <Text style={s.pfButtonTxt}>批发仓</Text>
           </Button>
-          <Button small onPress={() => this.props.navigation.navigate("PickHouse")}>
-            <Text>提货仓</Text>
+          <Button block onPress={() => this.props.navigation.navigate("PickHouse")} style={s.thButton}>
+            <Text style={s.thButtonTxt}>提货仓</Text>
           </Button>
           </Body>
           <Right/>
@@ -113,29 +112,46 @@ class WareHouse extends Component {
           <View style={s.topSec}>
             <View style={s.flexBetween}>
               <View style={s.flexItem}>
-                <View style={s.alignCenter}>
-                  <Text style={[s.fontNormal, s.fontGrey]}>批发积分</Text>
-                  <Button style={s.goldBtn}>
-                    <Text style={s.fontSmall}>去使用</Text>
-                  </Button>
-                </View>
-                <Text style={[s.amountFont, s.fontGold]}>2838</Text>
+                <Text style={[s.font13, s.fontGrey]}>可用余额(元)</Text>
+                <Text style={[s.amountFont, s.fontGold]}>455.78</Text>
               </View>
               <View style={s.flexItem}>
-                <Text style={[s.fontNormal, s.fontGrey]}>总盈利(元)</Text>
+                <View style={s.alignCenter}>
+                  <Text style={[s.font13, s.fontGrey]}>批发积分</Text>
+                  <Button bordered style={s.goldBtn}>
+                    <Text style={s.font9}>去使用</Text>
+                  </Button>
+                </View>
                 <Text style={[s.amountFont, s.fontGold]}>645.78</Text>
               </View>
             </View>
             <View style={s.rowSection2}>
               <View style={s.flexItem}>
-                <Text style={[s.fontNormal, s.fontGrey]}>总资产(元)</Text>
-                <Text style={[s.amountFont, s.fontWhite]}>1445.78</Text>
+                <Text style={[s.font13, s.fontGrey]}>商品总值(元)</Text>
+                <Text style={[s.amountFont, s.fontGold]}>1445.78</Text>
               </View>
               <View style={s.flexItem}>
-                <Text style={[s.fontNormal, s.fontGrey]}>可用现金(元)</Text>
-                <Text style={[s.amountFont, s.fontWhite]}>445.78</Text>
+                <Text style={[s.font13, s.fontGrey]}>总利润(元)</Text>
+                <Text style={[s.amountFont, s.fontRed]}>445.78</Text>
               </View>
             </View>
+          </View>
+          <View style={s.listHeader}>
+            <Text style={[s.headerCell, s.fontGrey]}>
+              商品
+            </Text>
+            <Text style={[s.headerCell, s.fontGrey]}>
+              数量
+            </Text>
+            <Text style={[s.headerCell, s.fontGrey]}>
+              批发均价
+            </Text>
+            <Text style={[s.headerCell, s.fontGrey]}>
+              现价
+            </Text>
+            <Text style={[s.headerCell, s.fontGrey]}>
+              利润
+            </Text>
           </View>
           <List
             style={s.listTable}
@@ -143,10 +159,11 @@ class WareHouse extends Component {
             renderRow={data => (
               <View style={s.listItem}>
                 {data && data.map((item, key) => (
-                  <Text style={[s.listCell, s.fontWhite]} key={key}>
+                  <Text style={[s.listCell, s.fontGrey]} key={key}>
                     {item}
                   </Text>
                 ))}
+                <View style={{paddingRight:10}}><Image style={s.upIcon} source={require('../../../assets/warehouse/down.png')}/></View>
               </View>
             )}
           />
@@ -186,13 +203,13 @@ class WareHouse extends Component {
                 <Text style={s.modalContent}>精品普洱茶饼(6年)</Text>
                 <View style={s.countSec}>
                   <Button small style={{backgroundColor: "#4A4A4A"}} onPress={this.handleMinus}>
-                    <Text style={{color: "#aaa", fontSize: 19}}>-</Text>
+                    <Text style={{fontSize: 19}}>-</Text>
                   </Button>
                   <Text style={{paddingLeft: 14, paddingRight: 14, color: "#aaa", fontSize: 18}}>
                     {this.state.countAmt}
                   </Text>
                   <Button small style={{backgroundColor: "#D0B17D"}} onPress={this.handleAdd}>
-                    <Text style={{color: "#333", fontSize: 19}}>+</Text>
+                    <Text style={{fontSize: 19}}>+</Text>
                   </Button>
                 </View>
                 <View>
@@ -251,37 +268,43 @@ class WareHouse extends Component {
           </View>
         </Modal>
 
-        <Footer>
-          <FooterTab>
-            <Button
-              active={this.state.tab1}
-              onPress={() => this.props.navigation.navigate("Home")}
-              vertical
-            >
-              <Icon active={this.state.tab1} name="apps"/>
-              <Text>首页</Text>
-            </Button>
-            <Button active={this.state.tab2}
+        <Footer style={fs.footerTab}>
+          <FooterTab style={fs.footerTab}>
+            <Button style={fs.footerButton}
+                    onPress={() => this.props.navigation.navigate("Settings")}
                     vertical
+            >
+              <View>
+                <Image style={fs.footerImageHL} source={require('../../../assets/home/hl-active.png')}/>
+                <Text style={fs.footerText}>红炉</Text>
+              </View>
+            </Button>
+            <Button vertical style={fs.footerButton}
                     onPress={() => this.props.navigation.navigate("WareHouse")}>
-              <Icon name="camera" active={this.state.tab2}/>
-              <Text>仓库</Text>
+              <View>
+                <Image style={fs.footerImage} source={require('../../../assets/home/storage.png')}/>
+                <Text style={fs.footerText}>仓库</Text>
+              </View>
             </Button>
-            <Button
-              active={this.state.tab3}
-              onPress={() => this.props.navigation.navigate("History")}
-              vertical
+            <Button style={fs.footerButton}
+                    active={this.state.tab3}
+                    onPress={() => this.props.navigation.navigate("History")}
+                    vertical
             >
-              <Icon active={this.state.tab3} name="man"/>
-              <Text>团队</Text>
+              <View>
+                <Image style={fs.footerImage} source={require('../../../assets/home/team.png')}/>
+                <Text style={fs.footerText}>团队</Text>
+              </View>
             </Button>
-            <Button
-              active={this.state.tab4}
-              onPress={() => this.props.navigation.navigate("Login")}
-              vertical
+            <Button style={fs.footerButton}
+                    active={this.state.tab4}
+                    onPress={() => this.props.navigation.navigate("Coupon")}
+                    vertical
             >
-              <Icon active={this.state.tab4} name="contact"/>
-              <Text>我的</Text>
+              <View>
+                <Image style={fs.footerImage} source={require('../../../assets/home/mine.png')}/>
+                <Text style={fs.footerText}>我的</Text>
+              </View>
             </Button>
           </FooterTab>
         </Footer>

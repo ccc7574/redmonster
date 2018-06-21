@@ -8,6 +8,7 @@ export const colors = {
   background2: '#21D4FD',
   hlGray:'#1a1a1a',
   hlTitle:'#a5a5a5',
+  hlYellow:'#D1B27A',
 };
 
 export default StyleSheet.create({
@@ -21,7 +22,41 @@ export default StyleSheet.create({
     marginRight:10,
     marginTop:15,
     backgroundColor:'#1A1A1A',
-    borderRadius:2
+    borderRadius:2,
+    width:355,
+    height:248,
+  },
+  productContent:{
+    width:355,
+    height:141,
+    padding:14,
+    flexDirection: "row"
+  },
+  productImageContainer:{
+    width: 116,
+    height:112,
+  },
+  productImage:{
+    resizeMode: "cover",
+    width: 116,
+    flex: 1,
+    height:112
+  },
+  productDetails:{
+    flexDirection: "row",
+  },
+  productBuy:{
+    paddingTop:22
+  },
+  productPrice:{
+    fontSize:14,color:colors.gray,paddingRight:5
+  },
+  productPriceDetail:{
+    fontSize:12,color:colors.hlYellow
+  },
+  productTitle:{
+    fontSize:17,
+    color:colors.hlTitle
   },
   header:{
     backgroundColor: colors.hlGray
@@ -97,7 +132,18 @@ export default StyleSheet.create({
     width:22,height:22
   },
   priceTag:{
-    color:"#b09872"
+    color:colors.hlYellow
+  },
+  buyButton:{
+    width: 96,
+    height: 38,
+    borderWidth: 1,
+    borderColor: '#d1b27a',
+    borderRadius: 18
+  },
+  buyButtonTxt: {
+    color: '#d1b27a',
+    fontSize: 15,
   },
   iconStyle:{fontSize: 20, color: '#A5A5A5'},
   majorProduct:{fontSize: 13, color: '#3D3D3D',paddingLeft:12},

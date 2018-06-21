@@ -26,6 +26,7 @@ export default {
     fontSize:10, paddingTop:6, color:'#7f7f7f'
   },
   footerTab:{
-    backgroundColor:'#1a1a1a'
+    backgroundColor:'#1a1a1a',
+    borderTopWidth:0
   }
 };

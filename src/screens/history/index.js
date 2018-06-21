@@ -33,7 +33,7 @@ class History extends Component {
     };
   }
 
-  onValueChange2(value: string) {
+  onValueChange2=(value)=>{
     this.setState({
       selected2: value
     });
@@ -80,7 +80,7 @@ class History extends Component {
                     }}
                     itemTextStyle={{ color: "#788ad2" }}
                     selectedValue={this.state.selected2}
-                    onValueChange={this.onValueChange2.bind(this)}
+                    onValueChange={this.onValueChange2}
                   >
                     <Item label="精品红酒" value="key0"/>
                     <Item label="精品铁观音" value="key1"/>

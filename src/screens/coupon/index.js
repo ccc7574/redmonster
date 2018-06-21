@@ -76,7 +76,7 @@ class Coupon extends Component {
       <Container style={{backgroundColor: '#000'}}>
         <Header style={s.header}>
           <Left>
-            <Button transparent onPress={() => this.props.navigation.navigate("DrawerOpen")}>
+            <Button transparent  onPress={() => this.props.navigation.goBack()}>
               <Icon style={s.wordCol} name="arrow-back" />
             </Button>
           </Left>
