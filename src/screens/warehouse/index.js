@@ -13,14 +13,13 @@ import {
   Footer,
   FooterTab,
 } from "native-base";
-import { Image } from "react-native";
+import {Image} from "react-native";
 import {View, Modal} from "react-native";
 import s from "./styles";
 import fs from "../footer/styles";
 import styles from "../homeScreen/styles";
 
 const datas = [
-  ["商品", "数量", "买入价", "现价", "盈利"],
   ["普洱茶叶", "2", "234", "123", "213"],
   ["产品1号", "2", "211", "545", "21"],
   ["产品2号", "1", "242", "665", "234"]
@@ -97,9 +96,6 @@ class WareHouse extends Component {
       <Container style={s.container}>
         <Header style={s.firstHeader}>
           <Left>
-            <Button transparent onPress={() => this.props.navigation.navigate("Home")}>
-              <Icon name="arrow-back"/>
-            </Button>
           </Left>
           <Body style={s.headerB}>
           <Button block bordered onPress={() => this.props.navigation.navigate("WareHouse")} style={s.pfButton}>
@@ -116,29 +112,46 @@ class WareHouse extends Component {
           <View style={s.topSec}>
             <View style={s.flexBetween}>
               <View style={s.flexItem}>
-                <View style={s.alignCenter}>
-                  <Text style={[s.fontNormal, s.fontGrey]}>批发积分</Text>
-                  <Button style={s.goldBtn}>
-                    <Text style={s.fontSmall}>去使用</Text>
-                  </Button>
-                </View>
-                <Text style={[s.amountFont, s.fontGold]}>2838</Text>
+                <Text style={[s.font13, s.fontGrey]}>可用余额(元)</Text>
+                <Text style={[s.amountFont, s.fontGold]}>455.78</Text>
               </View>
               <View style={s.flexItem}>
-                <Text style={[s.fontNormal, s.fontGrey]}>总盈利(元)</Text>
+                <View style={s.alignCenter}>
+                  <Text style={[s.font13, s.fontGrey]}>批发积分</Text>
+                  <Button bordered style={s.goldBtn}>
+                    <Text style={s.font9}>去使用</Text>
+                  </Button>
+                </View>
                 <Text style={[s.amountFont, s.fontGold]}>645.78</Text>
               </View>
             </View>
             <View style={s.rowSection2}>
               <View style={s.flexItem}>
-                <Text style={[s.fontNormal, s.fontGrey]}>总资产(元)</Text>
-                <Text style={[s.amountFont, s.fontWhite]}>1445.78</Text>
+                <Text style={[s.font13, s.fontGrey]}>商品总值(元)</Text>
+                <Text style={[s.amountFont, s.fontGold]}>1445.78</Text>
               </View>
               <View style={s.flexItem}>
-                <Text style={[s.fontNormal, s.fontGrey]}>可用现金(元)</Text>
-                <Text style={[s.amountFont, s.fontWhite]}>445.78</Text>
+                <Text style={[s.font13, s.fontGrey]}>总利润(元)</Text>
+                <Text style={[s.amountFont, s.fontRed]}>445.78</Text>
               </View>
             </View>
+          </View>
+          <View style={s.listHeader}>
+            <Text style={[s.headerCell, s.fontGrey]}>
+              商品
+            </Text>
+            <Text style={[s.headerCell, s.fontGrey]}>
+              数量
+            </Text>
+            <Text style={[s.headerCell, s.fontGrey]}>
+              批发均价
+            </Text>
+            <Text style={[s.headerCell, s.fontGrey]}>
+              现价
+            </Text>
+            <Text style={[s.headerCell, s.fontGrey]}>
+              利润
+            </Text>
           </View>
           <List
             style={s.listTable}
@@ -146,10 +159,11 @@ class WareHouse extends Component {
             renderRow={data => (
               <View style={s.listItem}>
                 {data && data.map((item, key) => (
-                  <Text style={[s.listCell, s.fontWhite]} key={key}>
+                  <Text style={[s.listCell, s.fontGrey]} key={key}>
                     {item}
                   </Text>
                 ))}
+                <View style={{paddingRight:10}}><Image style={s.upIcon} source={require('../../../assets/warehouse/down.png')}/></View>
               </View>
             )}
           />
@@ -195,7 +209,7 @@ class WareHouse extends Component {
                     {this.state.countAmt}
                   </Text>
                   <Button small style={{backgroundColor: "#D0B17D"}} onPress={this.handleAdd}>
-                    <Text style={{ fontSize: 19}}>+</Text>
+                    <Text style={{fontSize: 19}}>+</Text>
                   </Button>
                 </View>
                 <View>
@@ -261,14 +275,14 @@ class WareHouse extends Component {
                     vertical
             >
               <View>
-                <Image style={fs.footerImageHL} source={require('../../../assets/home/hl-active.png')} />
+                <Image style={fs.footerImageHL} source={require('../../../assets/home/hl-active.png')}/>
                 <Text style={fs.footerText}>红炉</Text>
               </View>
             </Button>
             <Button vertical style={fs.footerButton}
                     onPress={() => this.props.navigation.navigate("WareHouse")}>
               <View>
-                <Image style={fs.footerImage} source={require('../../../assets/home/storage.png')} />
+                <Image style={fs.footerImage} source={require('../../../assets/home/storage.png')}/>
                 <Text style={fs.footerText}>仓库</Text>
               </View>
             </Button>
@@ -278,7 +292,7 @@ class WareHouse extends Component {
                     vertical
             >
               <View>
-                <Image style={fs.footerImage} source={require('../../../assets/home/team.png')} />
+                <Image style={fs.footerImage} source={require('../../../assets/home/team.png')}/>
                 <Text style={fs.footerText}>团队</Text>
               </View>
             </Button>
@@ -288,7 +302,7 @@ class WareHouse extends Component {
                     vertical
             >
               <View>
-                <Image style={fs.footerImage} source={require('../../../assets/home/mine.png')} />
+                <Image style={fs.footerImage} source={require('../../../assets/home/mine.png')}/>
                 <Text style={fs.footerText}>我的</Text>
               </View>
             </Button>
