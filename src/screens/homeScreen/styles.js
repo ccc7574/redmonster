@@ -221,7 +221,7 @@ export default StyleSheet.create({
     borderLeftColor: "#b09872",
     borderLeftWidth:2,
     marginLeft: 12,
-    marginTop: 8
+    marginTop: 5
   },
   orderTime: {
     color: "#aaa",

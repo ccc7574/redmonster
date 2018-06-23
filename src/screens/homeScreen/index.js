@@ -130,7 +130,7 @@ class HomeScreen extends Component {
 
   renderPurchaseOrders = () => {
     return (
-      <View>
+      <View style={{marginTop: 15}}>
         <Text style={styles.deadline}>优先排单截止时间</Text>
         <View style={styles.orderTitle}>
           <Text style={styles.majorProduct}>进货订单</Text>
