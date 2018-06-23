@@ -117,7 +117,9 @@ class History extends Component {
             {/*<View style={styles.rightTriangle}/>*/}
           </View>
           <View style={styles.headerRight}>
-            <Text style={styles.headerRightTxt}>分享</Text>
+            <TouchableHighlight onPress={() => this.props.navigation.navigate("Team")}>
+              <Text style={styles.headerRightTxt}>分享</Text>
+            </TouchableHighlight>
           </View>
         </Header>
 

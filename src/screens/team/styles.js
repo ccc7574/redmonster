@@ -1,9 +1,14 @@
+const color = {
+  grey: "#7F7F7F",
+  white: "#A5A5A5",
+  gold: "#D1B27A",
+};
+
 export default {
   container: {
     backgroundColor: "#000"
   },
   content: {
-    paddingVertical: 12,
   },
   viewBlock: {
     backgroundColor: "#1A1A1A",
@@ -66,6 +71,14 @@ export default {
   input: {
     height: 40,
   },
+  listHead: {
+    backgroundColor: "#000",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    paddingHorizontal: 10,
+    height: 50,
+  },
   listItem: {
     backgroundColor: "#1A1A1A",
     flexDirection: "row",
@@ -78,6 +91,53 @@ export default {
   },
   listCell: {
     textAlign: "center",
-    fontSize: 15
+    fontSize: 11
+  },
+  topRow: {
+    backgroundColor: "#1A1A1A",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    padding: 10,
+  },
+  topCell: {
+    flex: 1,
+  },
+  cellTitle: {
+    fontSize: 12,
+    color: color.grey
+  },
+  cellContent: {
+    marginTop: 5,
+    fontSize: 20
+  },
+  addButton: {
+    width: 87,
+    height: 33,
+    padding: 0,
+    paddingTop: 0,
+    paddingBottom: 0,
+    borderWidth: 1,
+    borderColor: color.gold,
+    borderRadius: 16
+  },
+  addButtonTxt: {
+    color: color.gold,
+    fontSize: 13,
+  },
+  pagination: {
+    marginVertical: 15,
+    paddingHorizontal: 65,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  bottomPage: {
+    color: color.gold,
+    fontSize: 13,
+  },
+  bottomPageNum: {
+    color: color.grey,
+    fontSize: 13,
   },
 };
