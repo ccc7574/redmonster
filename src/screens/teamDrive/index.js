@@ -36,7 +36,6 @@ class FixedLabel extends Component {
         <Header
           title="历史记录"
           needBack
-          rightContent="历史记录"
           navigation={this.props.navigation}
         />
 

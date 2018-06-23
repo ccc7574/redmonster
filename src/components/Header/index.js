@@ -43,11 +43,13 @@ class NewHeader extends Component {
           <Title style={styles.iconStyle}>{title}</Title>
         </View>
         <View style={styles.headerRight}>
-          { rightContent &&
-            <TouchableHighlight onPress={() => this.props.navigation.navigate(rightLinkUrl)}>
+          { rightContent && ( rightLinkUrl ?
+              <TouchableHighlight onPress={() => this.props.navigation.navigate(rightLinkUrl)}>
+                <Text style={styles.headerRightTxt}>{rightContent}</Text>
+              </TouchableHighlight>
+              :
               <Text style={styles.headerRightTxt}>{rightContent}</Text>
-            </TouchableHighlight>
-          }
+          )}
         </View>
       </Header>
     );
