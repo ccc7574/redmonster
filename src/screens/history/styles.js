@@ -8,8 +8,16 @@ export default {
     // backgroundColor: "#FFF",
     backgroundColor: "#000",
   },
+  firstHeader:{
+    backgroundColor:"#1a1a1a"
+  },
+  iconStyle: {
+    fontSize: 20,
+    color: "#999"
+  },
   mb: {
-    marginBottom: 15
+    marginBottom: 15,
+    backgroundColor: "#000",
   },
   imageContainer: {
     flex: 1,
@@ -38,7 +46,7 @@ export default {
   headerB:{
     flex: 1,
     flexDirection: "row",
-    justifyContent: "space-between",
+    justifyContent: "space-around",
     marginRight: 15
   },
   priceTag:{
@@ -74,8 +82,8 @@ export default {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    paddingHorizontal: 15,
-    paddingVertical: 10,
+    paddingHorizontal: 10,
+    paddingVertical: 15,
     borderBottomWidth: 1,
     borderBottomColor: "#666"
   },
@@ -83,7 +91,7 @@ export default {
     color: goldColor,
   },
   fontWhite: {
-    color: "#ccc"
+    color: "#999"
   },
   fontGrey: {
     color: "#7F7F7F"
@@ -138,7 +146,7 @@ export default {
     fontWeight: "bold"
   },
   chartBox: {
-    padding: 10,
+    padding: 0,
   },
   chartTitle: {
     color: "#666",

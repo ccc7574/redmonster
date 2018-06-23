@@ -8,6 +8,7 @@ import {
   FooterTab,
   Text,
   Body,
+  Title,
   Left,
   Right,
   Picker,
@@ -47,9 +48,15 @@ class History extends Component {
     };
   }
 
-  onValueChange2=(value)=>{
+  onValueChange2 = (value) => {
     this.setState({
       selected: value
+    });
+  };
+
+  changeTimeSection = (type) => {
+    this.setState({
+      timeSection: type
     });
   };
 
@@ -67,7 +74,7 @@ class History extends Component {
     );
   };
 
-  renderChart = () => {
+  renderChartTop = () => {
     const { timeSection } = this.state;
     return (
       <View style={styles.chartBox}>
@@ -102,44 +109,55 @@ class History extends Component {
     );
   };
 
-  changeTimeSection = (type) => {
-    this.setState({
-      timeSection: type
-    });
-  };
-
   render() {
     return (
       <Container style={styles.container}>
-        <Header>
+        <Header style={styles.firstHeader}>
           <Left>
             <Button transparent onPress={() => this.props.navigation.navigate("Home")}>
-              <Icon name="arrow-back"/>
+              <Icon name="arrow-back" style={{color: "#999"}}/>
             </Button>
           </Left>
-          <Body style={styles.headerB}>
-          <Button rounded small onPress={() => this.props.navigation.navigate("TeamDrive")}>
-            <Text>红积分</Text>
-          </Button>
-          <Button rounded small onPress={() => this.props.navigation.navigate("Team")}>
-            <Text>炉积分</Text>
-          </Button>
+          <Body>
+            <Title style={styles.iconStyle}>精品普洱茶</Title>
           </Body>
-          <Right/>
+          <Right>
+            <Text style={styles.fontWhite}>分享</Text>
+          </Right>
         </Header>
 
         <Content>
           <View style={styles.buyBox}>
             <Text style={styles.fontWhite}>当前价：¥402.83</Text>
-            <Button block bordered style={styles.buyButton} onPress={() => this.props.navigation.navigate("Team")}>
+            <Button block bordered style={styles.buyButton} onPress={() => this.props.navigation.navigate("Buy")}>
               <Text style={styles.buyButtonTxt}>立刻购买</Text>
             </Button>
           </View>
 
           { this.renderMoney() }
 
-          { this.renderChart() }
+          <View style={{padding: 10}}>
+            { this.renderChartTop() }
+            <Text style={styles.fontGrey}>价格: 489.00元</Text>
+            <Text style={styles.fontGrey}>成交量: 780份</Text>
+            <Text style={styles.fontGrey}>时间: 2018/06/20 13:20:20</Text>
+          </View>
 
+          <VictoryChart theme={VictoryTheme.material}>
+            <VictoryLine
+              style={{
+                data: { stroke: "#c43a31" },
+                parent: { border: "1px solid #ccc"}
+              }}
+              data={[
+                { x: 1, y: 2 },
+                { x: 2, y: 3 },
+                { x: 3, y: 5 },
+                { x: 4, y: 4 },
+                { x: 5, y: 7 }
+              ]}
+            />
+          </VictoryChart>
 
           {/*<Card style={styles.mb}>*/}
             {/*<CardItem>*/}
@@ -177,39 +195,6 @@ class History extends Component {
             {/*</Left>*/}
             {/*<Right><Text style={styles.priceTag}>481.98元</Text></Right>*/}
           {/*</ListItem>*/}
-          <VictoryChart
-            theme={VictoryTheme.material}
-          >
-            <VictoryLine
-              style={{
-                data: { stroke: "#c43a31" },
-                parent: { border: "1px solid #ccc"}
-              }}
-              data={[
-                { x: 1, y: 2 },
-                { x: 2, y: 3 },
-                { x: 3, y: 5 },
-                { x: 4, y: 4 },
-                { x: 5, y: 7 }
-              ]}
-            />
-          </VictoryChart>
-          <Card style={styles.mb}>
-            <CardItem
-              header
-            >
-              <Text>时间: 2018/04/20 13:20:20</Text>
-            </CardItem>
-            <CardItem>
-              <Body>
-              <Text>价格: 489.00元</Text>
-              </Body>
-            </CardItem>
-            <CardItem
-              footer>
-              <Text>成交量: 780份</Text>
-            </CardItem>
-          </Card>
         </Content>
 
         <Footer style={styles.footerTab}>
