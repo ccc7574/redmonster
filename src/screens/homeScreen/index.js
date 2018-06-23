@@ -23,7 +23,6 @@ const {width: viewportWidth, height: viewportHeight} = Dimensions.get('window');
 const SLIDER_1_FIRST_ITEM = 1;
 import SliderEntry from './SliderEntry';
 import fs from "../footer/styles";
-import s from "../coupon/styles";
 
 const cardImage1 = require("../../../assets/tea1.png");
 
@@ -168,7 +167,7 @@ class HomeScreen extends Component {
             </Button>
             <Button style={fs.footerButton}
                     active={this.state.tab4}
-                    onPress={() => this.props.navigation.navigate("Coupon")}
+                    onPress={() => this.props.navigation.navigate("Settings")}
                     vertical
             >
               <View>

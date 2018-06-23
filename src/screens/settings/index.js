@@ -48,7 +48,7 @@ class Settings extends Component {
       <Container style={styles.container}>
         <Header style={styles.header}>
           <Left>
-            <Button transparent onPress={() => this.props.navigation.navigate("DrawerOpen")}>
+            <Button transparent onPress={() => this.props.navigation.goBack()}>
               <Icon style={styles.white} name="arrow-back" />
             </Button>
           </Left>

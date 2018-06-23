@@ -183,9 +183,10 @@ export default {
   flexBetween: {
     flexDirection: "row",
     justifyContent: "space-between",
+    alignItems: "center",
   },
   flexItem: {
-    flex: 1
+    flex: 1,
   },
   alignCenter: {
     flexDirection: "row",
@@ -199,7 +200,7 @@ export default {
     marginLeft: 5,
     borderColor: "#D1B27A",
     borderRadius: 9,
-    width:38
+    width:40
   },
   fontNormal: {
     fontSize: 15,
