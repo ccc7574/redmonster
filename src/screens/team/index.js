@@ -118,11 +118,11 @@ class FixedLabel extends Component {
             <List
               style={s.listTable}
               dataArray={DATA}
-              renderRow={(data, index) => (
+              renderRow={data => (
                 <View style={s.listItem}>
                   { data && data.map((item, key) => {
                     let width = 100 / data.length - 2 + "%";
-                    let color = (key === 3 || key === 5) && index !== 1 ? "#E83032" : "#A5A5A5";
+                    let color = (key === 3 || key === 5) ? "#E83032" : "#A5A5A5";
                     return (
                       <Text style={[s.listCell, s.fontWhite, { width, color }]} key={key}>
                         {item}
