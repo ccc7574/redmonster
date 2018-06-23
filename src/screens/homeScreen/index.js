@@ -188,7 +188,7 @@ class HomeScreen extends Component {
             </Button>
           </Left>
           <Body>
-          <Title style={styles.iconStyle}>首页</Title>
+          <Title style={styles.iconStyle}>红炉</Title>
           </Body>
           <Right>
             <Image style={styles.headerIcon} source={require('../../../assets/home/message.png')}/>
