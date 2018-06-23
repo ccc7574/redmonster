@@ -20,7 +20,7 @@ import {
   View
 } from "native-base";
 import { VictoryLine,VictoryChart,VictoryTheme} from "victory-native";
-import { Image } from "react-native";
+import { Image, TouchableHighlight } from "react-native";
 import styles from "./styles";
 const Item = Picker.Item;
 
@@ -113,17 +113,19 @@ class History extends Component {
     return (
       <Container style={styles.container}>
         <Header style={styles.firstHeader}>
-          <Left>
-            <Button transparent onPress={() => this.props.navigation.navigate("Home")}>
+          <View style={styles.headerLeft}>
+            <TouchableHighlight onPress={() => this.props.navigation.navigate("Home")}>
               <Icon name="arrow-back" style={{color: "#999"}}/>
-            </Button>
-          </Left>
-          <Body>
+            </TouchableHighlight>
+          </View>
+          <View style={styles.headerBody}>
+            {/*<View style={styles.leftTriangle}/>*/}
             <Title style={styles.iconStyle}>精品普洱茶</Title>
-          </Body>
-          <Right>
-            <Text style={styles.fontWhite}>分享</Text>
-          </Right>
+            {/*<View style={styles.rightTriangle}/>*/}
+          </View>
+          <View style={styles.headerRight}>
+            <Text style={styles.headerRightTxt}>分享</Text>
+          </View>
         </Header>
 
         <Content>

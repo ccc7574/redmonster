@@ -9,11 +9,43 @@ export default {
     backgroundColor: "#000",
   },
   firstHeader:{
-    backgroundColor:"#1a1a1a"
+    backgroundColor: "#1a1a1a",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    paddingHorizontal: 10
+  },
+  headerLeft: {
+    flex: 1,
+  },
+  headerBody: {
+    flex: 3,
+    flexDirection: "row",
+    justifyContent: "space-around",
+  },
+  headerRight: {
+    flex: 1,
+  },
+  headerRightTxt: {
+    textAlign: "right",
+    color: "#999"
   },
   iconStyle: {
     fontSize: 20,
     color: "#999"
+  },
+  leftTriangle: {
+    width: 0,
+    height: 0,
+    borderRightWidth: 7,
+    borderRightColor: "#999",
+    borderRightStyle: "solid",
+    borderTopWidth: 7,
+    borderTopColor: "#fff",
+    borderTopStyle: "solid",
+    borderBottomWidth: 7,
+    borderBottomColor: "#fff",
+    borderBottomStyle: "solid"
   },
   mb: {
     marginBottom: 15,
