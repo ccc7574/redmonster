@@ -180,7 +180,7 @@ class History extends Component {
             >
               <View style={fs.footerView}>
                 <Image style={fs.footerImage} source={require('../../../assets/home/team-active.png')}/>
-                <Text style={fs.footerText}>团队</Text>
+                <Text style={fs.footerText}>客户</Text>
               </View>
             </Button>
             <Button style={fs.footerButton}
