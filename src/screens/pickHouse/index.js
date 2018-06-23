@@ -136,7 +136,7 @@ class WareHouse extends Component {
             </Button>
             <Button style={fs.footerButton}
                     active={this.state.tab3}
-                    onPress={() => this.props.navigation.navigate("History")}
+                    onPress={() => this.props.navigation.navigate("Team")}
                     vertical
             >
               <View style={fs.footerView}>
