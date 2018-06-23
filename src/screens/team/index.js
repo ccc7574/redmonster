@@ -1,15 +1,9 @@
 import React, { Component } from "react";
 import {
   Container,
-  Title,
   Content,
   Button,
-  Body,
-  Left,
-  Right,
-  Icon,
   Text,
-  Input,
   List,
   Footer,
   FooterTab
@@ -50,12 +44,6 @@ class FixedLabel extends Component {
       activeTab: 1,
     };
   }
-
-  handleTab = (key) => {
-    this.setState({
-      activeTab: key
-    });
-  };
 
   render() {
     const { tableHead } = this.state;

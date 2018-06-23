@@ -4,18 +4,14 @@ import {
   Header,
   Content,
   Button,
-  Footer,
-  FooterTab,
   Text,
   Title,
-  Picker,
   Icon,
   View,
 } from "native-base";
 import { VictoryLine,VictoryChart,VictoryTheme} from "victory-native";
-import { Image, TouchableHighlight } from "react-native";
+import { TouchableHighlight } from "react-native";
 import styles from "./styles";
-import fs from "../footer/styles";
 
 const MoneyCell = ({ moneyNum, moneyUnit }) => {
   return (
@@ -40,12 +36,6 @@ class History extends Component {
       timeSection: "hour",
     };
   }
-
-  onValueChange2 = (value) => {
-    this.setState({
-      selected: value
-    });
-  };
 
   changeTimeSection = (type) => {
     this.setState({
@@ -107,7 +97,7 @@ class History extends Component {
       <Container style={styles.container}>
         <Header style={styles.firstHeader}>
           <View style={styles.headerLeft}>
-            <TouchableHighlight onPress={() => this.props.navigation.navigate("Home")}>
+            <TouchableHighlight onPress={() => this.props.navigation.goBack()}>
               <Icon name="arrow-back" style={{color: "#999"}}/>
             </TouchableHighlight>
           </View>
@@ -117,9 +107,7 @@ class History extends Component {
             {/*<View style={styles.rightTriangle}/>*/}
           </View>
           <View style={styles.headerRight}>
-            <TouchableHighlight onPress={() => this.props.navigation.navigate("Team")}>
-              <Text style={styles.headerRightTxt}>分享</Text>
-            </TouchableHighlight>
+            <Text style={styles.headerRightTxt}>分享</Text>
           </View>
         </Header>
 
@@ -155,48 +143,7 @@ class History extends Component {
               ]}
             />
           </VictoryChart>
-
         </Content>
-        <Footer style={fs.footerTab}>
-          <FooterTab style={fs.footerTab}>
-            <Button style={fs.footerButton}
-                    onPress={() => this.props.navigation.navigate("Home")}
-                    vertical
-            >
-              <View style={fs.footerView}>
-                <Image style={fs.footerImageHL} source={require('../../../assets/home/hl.png')}/>
-                <Text style={fs.footerText}>红炉</Text>
-              </View>
-            </Button>
-            <Button vertical style={fs.footerButton}
-                    onPress={() => this.props.navigation.navigate("WareHouse")}>
-              <View style={fs.footerView}>
-                <Image style={fs.footerImage} source={require('../../../assets/home/storage.png')}/>
-                <Text style={fs.footerText}>仓库</Text>
-              </View>
-            </Button>
-            <Button style={fs.footerButton}
-                    active={this.state.tab3}
-                    onPress={() => this.props.navigation.navigate("History")}
-                    vertical
-            >
-              <View style={fs.footerView}>
-                <Image style={fs.footerImage} source={require('../../../assets/home/team-active.png')}/>
-                <Text style={fs.footerText}>客户</Text>
-              </View>
-            </Button>
-            <Button style={fs.footerButton}
-                    active={this.state.tab4}
-                    onPress={() => this.props.navigation.navigate("Mine")}
-                    vertical
-            >
-              <View style={fs.footerView}>
-                <Image style={fs.footerImage} source={require('../../../assets/home/mine.png')}/>
-                <Text style={fs.footerText}>我的</Text>
-              </View>
-            </Button>
-          </FooterTab>
-        </Footer>
       </Container>
     );
   }

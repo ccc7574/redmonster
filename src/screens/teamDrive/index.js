@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import {
   Container,
-  Header,
-  Title,
   Content,
   Button,
   Body,
@@ -12,6 +10,7 @@ import {
   Text,
 } from "native-base";
 import { View } from "react-native";
+import Header from "../../components/Header/index";
 import s from "./styles";
 
 class FixedLabel extends Component {
@@ -34,24 +33,12 @@ class FixedLabel extends Component {
   render() {
     return (
       <Container style={s.container}>
-        <Header style={{backgroundColor: "#1A1A1A", borderBottomWidth: 0}}>
-          <Left>
-            <Button transparent onPress={() => this.props.navigation.goBack()}>
-              <Icon name="arrow-back" style={s.fontWhite}/>
-            </Button>
-          </Left>
-          <Body>
-          <View style={s.title}>
-            <Button small style={s.tabBtn} onPress={() => this.handleTab(1)}>
-              <Text style={s.fontWhite}>直推</Text>
-            </Button>
-            <Button small onPress={() => this.handleTab(2)}>
-              <Text style={s.fontWhite}>团队</Text>
-            </Button>
-          </View>
-          </Body>
-          <Right />
-        </Header>
+        <Header
+          title="历史记录"
+          needBack
+          rightContent="历史记录"
+          navigation={this.props.navigation}
+        />
 
         <Content style={s.content}>
           <View style={s.viewBlock}>

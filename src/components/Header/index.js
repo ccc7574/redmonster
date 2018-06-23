@@ -14,7 +14,7 @@ class NewHeader extends Component {
     super(props);
     this.state = {
       needBack: props.needBack || false,
-      leftLinkUrl: props.leftLinkUrl || "Home",
+      leftLinkUrl: props.leftLinkUrl,
       title: props.title,
       rightContent: props.rightContent,
       rightLinkUrl: props.rightLinkUrl
@@ -28,7 +28,13 @@ class NewHeader extends Component {
       <Header style={styles.firstHeader}>
         <View style={styles.headerLeft}>
           { needBack &&
-            <TouchableHighlight onPress={() => this.props.navigation.navigate(leftLinkUrl)}>
+            <TouchableHighlight
+              onPress={ leftLinkUrl ?
+                () => this.props.navigation.navigate(leftLinkUrl)
+                :
+                () => this.props.navigation.goBack()
+              }
+            >
               <Icon name="arrow-back" style={{color: "#999"}}/>
             </TouchableHighlight>
           }

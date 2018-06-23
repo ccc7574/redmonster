@@ -14,9 +14,8 @@ import {
   FooterTab,
   Icon
 } from "native-base";
-import {Image} from "react-native";
-import {Dimensions} from 'react-native';
-import {sliderWidth, itemWidth} from './SliderEntry.style';
+import { Dimensions, Image, TouchableHighlight } from "react-native";
+import { sliderWidth, itemWidth } from './SliderEntry.style';
 import Carousel from "react-native-snap-carousel";
 import styles from "./styles";
 
@@ -98,7 +97,7 @@ class HomeScreen extends Component {
             </View>
             <View style={styles.productBuy}>
               <Right>
-                <Button block bordered onPress={this.handleUse} style={styles.buyButton}>
+                <Button block bordered onPress={() => this.props.navigation.navigate("Buy")} style={styles.buyButton}>
                   <Text style={styles.buyButtonTxt}>立即购买</Text>
                 </Button>
               </Right>
@@ -119,7 +118,9 @@ class HomeScreen extends Component {
               <MoneyCell moneyNum={5} moneyUnit={"分"}/>
             </View>
             <View style={styles.priceIcon}>
-              <Icon name="arrow-forward" style={{color: "#666"}}/>
+              <TouchableHighlight onPress={() => this.props.navigation.navigate("History")}>
+                <Icon name="arrow-forward" style={{color: "#666"}}/>
+              </TouchableHighlight>
             </View>
           </View>
           <View/>
