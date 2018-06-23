@@ -13,15 +13,11 @@ import {
   Footer,
   FooterTab,
 } from "native-base";
-import {View, Modal, Button as NativeBtn} from "react-native";
+import {Image} from "react-native";
+import {View, } from "react-native";
 import s from "./styles";
+import fs from "../footer/styles";
 
-const datas = [
-  ["商品", "数量", "买入价"],
-  ["普洱茶叶", "2", "234"],
-  ["产品1号", "2", "211"],
-  ["产品2号", "1", "242"]
-];
 
 class WareHouse extends Component {
   constructor(props) {
@@ -31,165 +27,120 @@ class WareHouse extends Component {
       tab2: true,
       tab3: false,
       tab4: false,
-      countAmt: 3,
-      countAmtSell: 4,
-      modalVisible: false,
-      modalVisibleSell: false
+      data: [],
+      showBtnRow: false,
     };
   }
 
-  handleAdd = () => {
-    let {countAmt} = this.state;
-    this.setState({
-      countAmt: countAmt + 1
-    });
-  };
+  componentWillMount () {
 
-  handleMinus = () => {
-    let {countAmt} = this.state;
-    countAmt = countAmt - 1;
-    if (countAmt < 1) countAmt = 1;
-    this.setState({
-      countAmt
-    });
-  };
+  }
 
-  handleAddSell = () => {
-    let {countAmtSell} = this.state;
+  toggleBtns = (index)=> {
     this.setState({
-      countAmtSell: countAmtSell + 1
-    });
-  };
+      showBtnRow: !this.state.showBtnRow,
+    })
+  }
 
-  handleMinusSell = () => {
-    let {countAmtSell} = this.state;
-    countAmtSell = countAmtSell - 1;
-    if (countAmtSell < 1) countAmtSell = 1;
-    this.setState({
-      countAmtSell
-    });
-  };
+  renderRow = (item)=> {
+    let { showBtnRow } = this.state;
+    return <View>
+      <View style={s.listRow}>
+        <Text style={[s.listCell, s.fontGrey]}>
+          {item[0]}
+        </Text>
+        <Text style={[s.listCell, s.fontGrey]}>
+          {item[1]}
+        </Text>
+        <Text style={[s.listCell, s.fontGrey]}>
+          234.88
+        </Text>
+        <Text style={[s.listCell, s.fontGrey]}>
+          654.32
+        </Text>
+        <Text style={[s.listCell, s.fontRed]}>
+          411.00
+        </Text>
+        <Button transparent onPress={this.toggleBtns}>
+          <View style={{paddingRight:10}}><Image style={s.upIcon} source={require('../../../assets/warehouse/down.png')}/></View>
+        </Button>
+      </View>
+      { showBtnRow &&
+      <View style={s.btnsRow}>
+        <View style={s.btnsWrapper}>
+          <Button block bordered onPress={this.showModal} style={s.btn}>
+            <Text style={s.btnTxt}>兑换</Text>
+          </Button>
+          <Button block bordered onPress={this.showModalSell} style={s.btn}>
+            <Text style={s.btnTxt}>卖出</Text>
+          </Button>
+          <Button block bordered onPress={() => this.props.navigation.navigate("PickUp")} style={s.btn}>
+            <Text style={s.btnTxt}>提货</Text>
+          </Button>
+        </View>
+      </View>}
+    </View>
+  }
 
-  showModal = () => {
-    this.setState({
-      modalVisible: true
-    });
-  };
-
-  closeModal = () => {
-    this.setState({
-      modalVisible: false,
-      modalVisibleSell: false,
-    });
-  };
 
   render() {
+    const { data, showBtnRow } = this.state;
     return (
       <Container style={s.container}>
-        <Header>
-          <Left>
-            <Button transparent onPress={() => this.props.navigation.navigate("Home")}>
-              <Icon name="arrow-back"/>
-            </Button>
-          </Left>
+        <Header style={s.firstHeader}>
+          <Left/>
           <Body style={s.headerB}>
-          <Button small onPress={() => this.props.navigation.navigate("WareHouse")}>
-            <Text>批发仓</Text>
+          <Button block onPress={() => this.props.navigation.navigate("WareHouse")} style={s.thButton}>
+            <Text style={s.thButtonTxt}>批发仓</Text>
           </Button>
-          <Button small onPress={() => this.props.navigation.navigate("PickHouse")}>
-            <Text>提货仓</Text>
+          <Button block bordered onPress={() => this.props.navigation.navigate("PickHouse")} style={s.pfButton}>
+            <Text style={s.pfButtonTxt}>提货仓</Text>
           </Button>
           </Body>
           <Right/>
         </Header>
 
         <Content style={s.content}>
-          <View style={s.topSec}>
-            <Text style={[s.fontNormal, s.fontGrey]}>消费积分</Text>
-            <View style={s.flexBetween}>
-              <Text style={[s.fontBig, s.fontGold]}>2000</Text>
-              <Button samll style={s.goldBtn}>
-                <Text style={[s.fontGold, s.consume]}>消费</Text>
-              </Button>
-            </View>
-          </View>
-          <List
-            style={s.listTable}
-            dataArray={datas}
-            renderRow={data => (
-              <View style={s.listItem}>
-                {data && data.map((item, key) => (
-                  <Text style={[s.listCell, s.fontWhite]} key={key}>
-                    {item}
-                  </Text>
-                ))}
-              </View>
-            )}
-          />
-          <Button
-            block
-            style={[s.sellBtn, s.pickBtn]}
-            onPress={() => this.props.navigation.navigate("PickUp")}
-          >
-            <Text style={[s.fontBlack, s.btnText]}>提货</Text>
-          </Button>
-          <Button
-            block
-            style={s.sellBtn}
-            onPress={this.showModal}
-          >
-            <Text style={[s.fontGold, s.btnText]}>兑换</Text>
-          </Button>
+
         </Content>
 
-        <Modal
-          animationType="fade"
-          transparent={true}
-          visible={this.state.modalVisible}
-          onRequestClose={this.closeModal}
-        >
-        </Modal>
-
-        <Modal
-          animationType="fade"
-          transparent={true}
-          visible={this.state.modalVisibleSell}
-          onRequestClose={this.closeModal}
-        >
-
-        </Modal>
-
-        <Footer>
-          <FooterTab>
-            <Button
-              active={this.state.tab1}
-              onPress={() => this.props.navigation.navigate("Home")}
-              vertical
-            >
-              <Icon active={this.state.tab1} name="apps"/>
-              <Text>首页</Text>
-            </Button>
-            <Button active={this.state.tab2}
+        <Footer style={fs.footerTab}>
+          <FooterTab style={fs.footerTab}>
+            <Button style={fs.footerButton}
+                    onPress={() => this.props.navigation.navigate("Home")}
                     vertical
+            >
+              <View style={fs.footerView}>
+                <Image style={fs.footerImageHL} source={require('../../../assets/home/hl.png')}/>
+                <Text style={fs.footerText}>红炉</Text>
+              </View>
+            </Button>
+            <Button vertical style={fs.footerButton}
                     onPress={() => this.props.navigation.navigate("WareHouse")}>
-              <Icon name="camera" active={this.state.tab2}/>
-              <Text>仓库</Text>
+              <View style={fs.footerView}>
+                <Image style={fs.footerImage} source={require('../../../assets/home/storage-active.png')}/>
+                <Text style={fs.footerText}>仓库</Text>
+              </View>
             </Button>
-            <Button
-              active={this.state.tab3}
-              onPress={() => this.props.navigation.navigate("History")}
-              vertical
+            <Button style={fs.footerButton}
+                    active={this.state.tab3}
+                    onPress={() => this.props.navigation.navigate("History")}
+                    vertical
             >
-              <Icon active={this.state.tab3} name="man"/>
-              <Text>团队</Text>
+              <View style={fs.footerView}>
+                <Image style={fs.footerImage} source={require('../../../assets/home/team.png')}/>
+                <Text style={fs.footerText}>客户</Text>
+              </View>
             </Button>
-            <Button
-              active={this.state.tab4}
-              onPress={() => this.props.navigation.navigate("Login")}
-              vertical
+            <Button style={fs.footerButton}
+                    active={this.state.tab4}
+                    onPress={() => this.props.navigation.navigate("Mine")}
+                    vertical
             >
-              <Icon active={this.state.tab4} name="contact"/>
-              <Text>我的</Text>
+              <View style={fs.footerView}>
+                <Image style={fs.footerImage} source={require('../../../assets/home/mine.png')}/>
+                <Text style={fs.footerText}>我的</Text>
+              </View>
             </Button>
           </FooterTab>
         </Footer>

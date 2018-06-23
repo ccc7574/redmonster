@@ -32,18 +32,20 @@ class WareHouse extends Component {
       tab2: true,
       tab3: false,
       tab4: false,
+      data: [],
       countAmt: 3,
       countAmtSell: 4,
       modalVisible: false,
       modalVisibleSell: false,
-      showBtnRow: [],
+      showBtnRow: false,
     };
   }
 
   componentWillMount () {
-    datas.forEach(()=> {
-      this.state.showBtnRow.push(false)
-    })
+    // datas.forEach(()=> {
+    //   this.state.showBtnRow.push(false)
+    // })
+    this.state.data = datas;
   }
 
   handleAdd = () => {
@@ -98,48 +100,64 @@ class WareHouse extends Component {
   };
 
   toggleBtns = (index)=> {
-    this.state.showBtnRow[index] = true;
     this.setState({
-      toggle: true,
+      showBtnRow: !this.state.showBtnRow,
     })
   }
 
   renderRow = (item)=> {
-   return <View style={s.listRow}>
-     {/*<Text style={[s.listCell, s.fontGrey]}>*/}
-       {/*{item[0]}*/}
-     {/*</Text>*/}
-     {/*<Text style={[s.listCell, s.fontGrey]}>*/}
-       {/*1*/}
-     {/*</Text>*/}
-     {/*<Text style={[s.listCell, s.fontGrey]}>*/}
-       {/*234.88*/}
-     {/*</Text>*/}
-     {/*<Text style={[s.listCell, s.fontGrey]}>*/}
-       {/*654.32*/}
-     {/*</Text>*/}
-     {/*<Text style={[s.listCell, s.fontGrey]}>*/}
-       {/*411.00*/}
-     {/*</Text>*/}
-     {/*<Button transparent onPress={() => this.toggleBtns}>*/}
-       {/*<View style={{paddingRight:10}}><Image style={s.upIcon} source={require('../../../assets/warehouse/down.png')}/></View>*/}
-     {/*</Button>*/}
-     <Text>22222</Text>
-   </View>
+    let { showBtnRow } = this.state;
+    return <View>
+      <View style={s.listRow}>
+        <Text style={[s.listCell, s.fontGrey]}>
+          {item[0]}
+        </Text>
+        <Text style={[s.listCell, s.fontGrey]}>
+          {item[1]}
+        </Text>
+        <Text style={[s.listCell, s.fontGrey]}>
+          234.88
+        </Text>
+        <Text style={[s.listCell, s.fontGrey]}>
+          654.32
+        </Text>
+        <Text style={[s.listCell, s.fontRed]}>
+          411.00
+        </Text>
+        <Button transparent onPress={this.toggleBtns}>
+          <View style={{paddingRight:10}}><Image style={s.upIcon} source={require('../../../assets/warehouse/down.png')}/></View>
+        </Button>
+      </View>
+        { showBtnRow &&
+        <View style={s.btnsRow}>
+          <View style={s.btnsWrapper}>
+            <Button block bordered onPress={this.showModal} style={s.btn}>
+              <Text style={s.btnTxt}>兑换</Text>
+            </Button>
+            <Button block bordered onPress={this.showModalSell} style={s.btn}>
+              <Text style={s.btnTxt}>卖出</Text>
+            </Button>
+            <Button block bordered onPress={() => this.props.navigation.navigate("PickUp")} style={s.btn}>
+              <Text style={s.btnTxt}>提货</Text>
+            </Button>
+          </View>
+        </View>}
+    </View>
   }
 
+
   render() {
-    const { showBtnRow } = this.state;
+    const { data, showBtnRow } = this.state;
     return (
       <Container style={s.container}>
         <Header style={s.firstHeader}>
           <Left/>
           <Body style={s.headerB}>
-          <Button block bordered onPress={() => this.props.navigation.navigate("WareHouse")} style={s.pfButton}>
-            <Text style={s.pfButtonTxt}>批发仓</Text>
+          <Button block bordered onPress={() => this.props.navigation.navigate("WareHouse")} style={s.thButton}>
+            <Text style={s.thButtonTxt}>批发仓</Text>
           </Button>
-          <Button block onPress={() => this.props.navigation.navigate("PickHouse")} style={s.thButton}>
-            <Text style={s.thButtonTxt}>提货仓</Text>
+          <Button block bordered onPress={() => this.props.navigation.navigate("PickHouse")} style={s.pfButton}>
+            <Text style={s.pfButtonTxt}>提货仓</Text>
           </Button>
           </Body>
           <Right/>
@@ -191,39 +209,7 @@ class WareHouse extends Component {
             </Text>
           </View>
 
-          {datas.forEach((item, key)=> {
-            return this.renderRow(item);
-          })}
-
-
-
-          {/*<View style={s.listTable}>*/}
-            {/*{datas.forEach((item, key)=> {*/}
-                {/*datas[key].forEach((itm, idx)=> (*/}
-                  {/*<Text style={[s.listCell, s.fontGrey]} key={idx}>*/}
-                    {/*{itm}*/}
-                  {/*</Text>*/}
-                {/*));*/}
-              {/*<Button transparent onPress={(key) => this.toggleBtns(key)}>*/}
-                {/*<View style={{paddingRight:10}}><Image style={s.upIcon} source={require('../../../assets/warehouse/down.png')}/></View>*/}
-              {/*</Button>*/}
-              {/*{ showBtnRow[key] &&*/}
-              {/*<View style={s.btnsRow}>*/}
-                {/*<View style={s.btnsWrapper}>*/}
-                  {/*<Button block bordered onPress={this.showModal} style={s.btn}>*/}
-                    {/*<Text style={s.btnTxt}>兑换</Text>*/}
-                  {/*</Button>*/}
-                  {/*<Button block bordered onPress={this.showModalSell} style={s.btn}>*/}
-                    {/*<Text style={s.btnTxt}>卖出</Text>*/}
-                  {/*</Button>*/}
-                  {/*<Button block bordered onPress={() => this.props.navigation.navigate("PickUp")} style={s.btn}>*/}
-                    {/*<Text style={s.btnTxt}>提货</Text>*/}
-                  {/*</Button>*/}
-                {/*</View>*/}
-              {/*</View>}*/}
-                {/**/}
-            {/*})}*/}
-          {/*</View>*/}
+          {this.renderRow(['name', 'count', 'count'])}
 
         </Content>
 

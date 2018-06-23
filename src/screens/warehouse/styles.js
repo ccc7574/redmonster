@@ -21,13 +21,14 @@ export default {
     height: 30,
     borderWidth: 1,
     borderColor: '#D1B27A',
-    borderRadius: 22
+    borderRadius: 22,
+    marginLeft:-27,
   },
   pfButtonTxt: {
     color: '#D1B27A',
     fontSize: 14,
     fontWeight:'bold',
-    marginLeft:-15,
+    marginLeft:11,
   },
   thButton:{
     width: 90,
@@ -36,7 +37,6 @@ export default {
     borderColor: '#D1B27A',
     borderRadius: 23,
     backgroundColor:'#D1B27A',
-    marginLeft:-27
   },
   thButtonTxt: {
     color: '#3D3838',
@@ -73,6 +73,11 @@ export default {
     backgroundColor: '#222',
   },
   btnsWrapper: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    alignSelf: 'center',
     width: 268,
     height: 30,
   },
