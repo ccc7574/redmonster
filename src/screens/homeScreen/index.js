@@ -136,6 +136,7 @@ class HomeScreen extends Component {
           <Text style={styles.majorProduct}>进货订单</Text>
           <Text style={styles.orderTime}>2018-06-02 17:30</Text>
         </View>
+
         <View style={styles.orderDetail}>
           <View style={styles.orderBoxTitle}>
             <View style={styles.orderBoxTitleLeft}>
@@ -153,6 +154,25 @@ class HomeScreen extends Component {
             <Text style={styles.orderStatus}>未成交</Text>
           </View>
         </View>
+
+        <View style={styles.orderDetail}>
+          <View style={styles.orderBoxTitle}>
+            <View style={styles.orderBoxTitleLeft}>
+              <Text style={styles.orderGoods}>精品普洱茶饼(5年)</Text>
+              <Text style={styles.orderGoodsNum}> x6</Text>
+            </View>
+          </View>
+          <Image style={styles.orderCompleteImg} source={require("../../../assets/home/order-complete.png")}/>
+          <View style={styles.orderPrice}>
+            <Text style={styles.fontGrey}>当前价</Text>
+            <Text style={styles.priceLeft}> ￥478.08</Text>
+          </View>
+          <View style={styles.orderBottom}>
+            <Text style={styles.orderBTime}>2018/6/08 15:30:45</Text>
+            <Text style={styles.orderStatus}>已完成 (5/5)</Text>
+          </View>
+        </View>
+
         <Text style={styles.bottomTxt}>隐藏已完成申购</Text>
       </View>
     );

@@ -229,8 +229,9 @@ export default StyleSheet.create({
     paddingRight: 10,
   },
   orderDetail: {
+    position: "relative",
     margin: 10,
-    marginBottom: 0,
+    // marginBottom: 0,
     backgroundColor: colors.hlGray,
     borderRadius: 5,
     paddingHorizontal: 15,
@@ -257,6 +258,7 @@ export default StyleSheet.create({
   cancelOrder: {
     color: "#666",
     fontSize: 15,
+    textDecorationLine: "underline"
   },
   orderPrice: {
     flexDirection: "row",
@@ -280,11 +282,19 @@ export default StyleSheet.create({
   orderStatus: {
     color: colors.white,
   },
+  orderCompleteImg: {
+    position: "absolute",
+    top: 0,
+    right: 0,
+    height: 34,
+    width: 47
+  },
 
   bottomTxt: {
     textAlign: "center",
     color: "#3D3D3D",
     fontSize: 15,
-    marginVertical: 20,
+    marginTop: 15,
+    marginBottom: 30
   }
 });
