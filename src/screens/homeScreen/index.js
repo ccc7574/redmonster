@@ -12,6 +12,7 @@ import {
   View,
   Footer,
   FooterTab,
+  Icon
 } from "native-base";
 import {Image} from "react-native";
 import {Dimensions, Platform} from 'react-native';
@@ -44,6 +45,17 @@ const ENTRIES1 = [
   }
 ];
 
+const MoneyCell = ({ moneyNum, moneyUnit }) => {
+  return (
+    <View style={styles.moneyItem}>
+      <View style={styles.moneyItemBox}>
+        <Text style={styles.moneyItemNum}>{moneyNum}</Text>
+      </View>
+      <Text style={styles.moneyItemUnit}>{moneyUnit}</Text>
+    </View>
+  );
+};
+
 class HomeScreen extends Component {
   constructor(props) {
     super(props);
@@ -68,6 +80,53 @@ class HomeScreen extends Component {
       />
     );
   }
+
+  renderGoodsDiv = () => {
+    return (
+      <View style={styles.mb}>
+        <View style={styles.productContent}>
+          <View style={styles.productImageContainer}>
+            <Image style={styles.productImage} source={cardImage1}/>
+          </View>
+          <View style={{paddingLeft: 14, paddingTop: 5,width:'95%'}}>
+            <View>
+              <Text style={styles.productTitle}>精品普洱茶饼(6年）</Text>
+            </View>
+            <View style={{paddingTop: 15, flexDirection: "row"}}>
+              <Text style={styles.productPrice}>当前价</Text>
+              <Text style={styles.productPriceDetail}>¥922.25</Text>
+            </View>
+            <View style={styles.productBuy}>
+              <Right>
+                <Button block bordered onPress={this.handleUse} style={styles.buyButton}>
+                  <Text style={styles.buyButtonTxt}>立即购买</Text>
+                </Button>
+              </Right>
+            </View>
+          </View>
+        </View>
+        <View style={styles.productDivider}></View>
+        <View style={styles.priceDiv}>
+          <View><Text style={styles.nextHour}>下一小时价格</Text></View>
+          <View style={styles.priceDetails}>
+            <View style={styles.moneyContainer}>
+              <MoneyCell moneyNum={0} moneyUnit={"千"}/>
+              <MoneyCell moneyNum={9} moneyUnit={"百"}/>
+              <MoneyCell moneyNum={2} moneyUnit={"十"}/>
+              <MoneyCell moneyNum={2} moneyUnit={"元"}/>
+              <Text style={styles.point}>.</Text>
+              <MoneyCell moneyNum={2} moneyUnit={"角"}/>
+              <MoneyCell moneyNum={5} moneyUnit={"分"}/>
+            </View>
+            <View style={styles.priceIcon}>
+              <Icon name="arrow-forward" style={{color: "#666"}}/>
+            </View>
+          </View>
+          <View/>
+        </View>
+      </View>
+    );
+  };
 
   render() {
     return (
@@ -110,39 +169,8 @@ class HomeScreen extends Component {
 
           </View>
           <View style={styles.majorProductStart}><Text style={styles.majorProduct}>主打商品</Text></View>
-          <View style={styles.mb}>
-            <View style={styles.productContent}>
-              <View style={styles.productImageContainer}>
-                <Image style={styles.productImage} source={cardImage1}/>
-              </View>
-              <View style={{paddingLeft: 14, paddingTop: 5,width:'95%'}}>
-                <View>
-                  <Text style={styles.productTitle}>精品普洱茶饼(6年）</Text>
-                </View>
-                <View style={{paddingTop: 15, flexDirection: "row"}}>
-                  <Text style={styles.productPrice}>当前价</Text>
-                  <Text style={styles.productPriceDetail}>¥922.25</Text>
-                </View>
-                <View style={styles.productBuy}>
-                  <Right>
-                    <Button block bordered onPress={this.handleUse} style={styles.buyButton}>
-                      <Text style={styles.buyButtonTxt}>立即购买</Text>
-                    </Button>
-                  </Right>
-                </View>
-              </View>
-            </View>
-            <View style={styles.productDivider}></View>
-            <View style={styles.priceDiv}>
-              <View><Text style={styles.nextHour}>下一小时价格</Text></View>
-              <View style={styles.priceDetails}>
-                <View style={styles.priceNumber}>
-                  <Text style={styles.priceNumberDetails}>9</Text>
-                </View>
-              </View>
-              <View/>
-            </View>
-          </View>
+          { this.renderGoodsDiv() }
+          { this.renderGoodsDiv() }
         </Content>
         <Footer style={fs.footerTab}>
           <FooterTab style={fs.footerTab}>

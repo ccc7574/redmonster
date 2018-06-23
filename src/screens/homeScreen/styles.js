@@ -151,7 +151,56 @@ export default StyleSheet.create({
   productDivider:{paddingLeft:12,height:0.1,borderWidth:0.3, borderColor:'#3D3D3D',paddingRight:12,marginLeft:12,marginRight:12},
   nextHour:{fontSize:11,color: '#3D3D3D'},
   priceDiv:{marginRight:12,marginLeft:12,top:12},
-  priceDetails:{top:10},
+  // priceDetails:{top:10},
   priceNumber:{width:44,height:44,backgroundColor:'#d1b27a',borderRadius:2,display:'flex'},
-  priceNumberDetails:{fontSize:30,lineHeight:44,color:'#1A1A1A',fontWeight: 'bold',textAlign:'center',justifyContent:'center'}
+  priceNumberDetails:{fontSize:30,lineHeight:44,color:'#1A1A1A',fontWeight: 'bold',textAlign:'center',justifyContent:'center'},
+
+  priceDetails: {
+    top: 10,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "flex-start",
+  },
+  moneyContainer: {
+    flex: 10,
+    flexDirection: "row",
+    justifyContent: "space-around",
+    alignItems: "center",
+  },
+  moneyItem: {
+    width: 40,
+  },
+  moneyItemBox: {
+    flexDirection: "row",
+    justifyContent: "space-around",
+    alignItems: "center",
+    width: 40,
+    height: 40,
+    backgroundColor: colors.hlYellow,
+    borderRadius: 10
+  },
+  moneyItemNum: {
+    color: colors.black,
+    fontSize: 26,
+    textAlign: "center"
+  },
+  moneyItemUnit: {
+    marginTop: 5,
+    color: "#6d6d6d",
+    fontSize: 14,
+    textAlign: "center"
+  },
+  point: {
+    color: colors.hlYellow,
+    paddingBottom: 14,
+    fontSize: 28,
+    fontWeight: "bold"
+  },
+  priceIcon: {
+    flex: 1,
+    height: 42,
+    flexDirection: "row",
+    justifyContent: "space-around",
+    alignItems: "center",
+  }
 });
