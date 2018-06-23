@@ -149,34 +149,32 @@ class FixedLabel extends Component {
                     vertical
             >
               <View style={fs.footerView}>
-                <Image style={fs.footerImageHL} source={require('../../../assets/home/hl-active.png')}/>
+                <Image style={fs.footerImageHL} source={require("../../../assets/home/hl.png")}/>
                 <Text style={fs.footerText}>红炉</Text>
               </View>
             </Button>
             <Button vertical style={fs.footerButton}
                     onPress={() => this.props.navigation.navigate("WareHouse")}>
               <View style={fs.footerView}>
-                <Image style={fs.footerImage} source={require('../../../assets/home/storage.png')}/>
+                <Image style={fs.footerImage} source={require("../../../assets/home/storage.png")}/>
                 <Text style={fs.footerText}>仓库</Text>
               </View>
             </Button>
             <Button style={fs.footerButton}
-                    active={this.state.tab3}
                     onPress={() => this.props.navigation.navigate("Team")}
                     vertical
             >
               <View style={fs.footerView}>
-                <Image style={fs.footerImage} source={require('../../../assets/home/team.png')}/>
+                <Image style={fs.footerImage} source={require("../../../assets/home/team-active.png")}/>
                 <Text style={fs.footerText}>客户</Text>
               </View>
             </Button>
             <Button style={fs.footerButton}
-                    active={this.state.tab4}
                     onPress={() => this.props.navigation.navigate("WareHouse")}
                     vertical
             >
               <View style={fs.footerView}>
-                <Image style={fs.footerImage} source={require('../../../assets/home/mine.png')}/>
+                <Image style={fs.footerImage} source={require("../../../assets/home/mine.png")}/>
                 <Text style={fs.footerText}>我的</Text>
               </View>
             </Button>
