@@ -72,8 +72,6 @@ export default StyleSheet.create({
   scrollview: {
     flex: 1
   },
-  exampleContainer: {
-  },
   exampleContainerDark: {
     backgroundColor: colors.black
   },

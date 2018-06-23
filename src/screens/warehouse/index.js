@@ -17,7 +17,6 @@ import {Image} from "react-native";
 import {View, Modal} from "react-native";
 import s from "./styles";
 import fs from "../footer/styles";
-import styles from "../homeScreen/styles";
 
 const datas = [
   ["普洱茶叶", "2", "234", "123", "213"],
@@ -267,22 +266,21 @@ class WareHouse extends Component {
             </View>
           </View>
         </Modal>
-
         <Footer style={fs.footerTab}>
           <FooterTab style={fs.footerTab}>
             <Button style={fs.footerButton}
-                    onPress={() => this.props.navigation.navigate("Settings")}
+                    onPress={() => this.props.navigation.navigate("Home")}
                     vertical
             >
-              <View>
-                <Image style={fs.footerImageHL} source={require('../../../assets/home/hl-active.png')}/>
+              <View style={fs.footerView}>
+                <Image style={fs.footerImageHL} source={require('../../../assets/home/hl.png')}/>
                 <Text style={fs.footerText}>红炉</Text>
               </View>
             </Button>
             <Button vertical style={fs.footerButton}
                     onPress={() => this.props.navigation.navigate("WareHouse")}>
-              <View>
-                <Image style={fs.footerImage} source={require('../../../assets/home/storage.png')}/>
+              <View style={fs.footerView}>
+                <Image style={fs.footerImage} source={require('../../../assets/home/storage-active.png')}/>
                 <Text style={fs.footerText}>仓库</Text>
               </View>
             </Button>
@@ -291,17 +289,17 @@ class WareHouse extends Component {
                     onPress={() => this.props.navigation.navigate("History")}
                     vertical
             >
-              <View>
+              <View style={fs.footerView}>
                 <Image style={fs.footerImage} source={require('../../../assets/home/team.png')}/>
                 <Text style={fs.footerText}>团队</Text>
               </View>
             </Button>
             <Button style={fs.footerButton}
                     active={this.state.tab4}
-                    onPress={() => this.props.navigation.navigate("Coupon")}
+                    onPress={() => this.props.navigation.navigate("Mine")}
                     vertical
             >
-              <View>
+              <View style={fs.footerView}>
                 <Image style={fs.footerImage} source={require('../../../assets/home/mine.png')}/>
                 <Text style={fs.footerText}>我的</Text>
               </View>

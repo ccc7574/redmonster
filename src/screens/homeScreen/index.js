@@ -15,7 +15,7 @@ import {
   Icon
 } from "native-base";
 import {Image} from "react-native";
-import {Dimensions, Platform} from 'react-native';
+import {Dimensions} from 'react-native';
 import {sliderWidth, itemWidth} from './SliderEntry.style';
 import Carousel from "react-native-snap-carousel";
 import styles from "./styles";
@@ -197,9 +197,8 @@ class HomeScreen extends Component {
             <Image style={styles.headerIcon} source={require('../../../assets/home/message.png')}/>
           </Right>
         </Header>
-
         <Content>
-          <View style={styles.exampleContainer}>
+          <View>
             <Carousel
               data={ENTRIES1}
               renderItem={this._renderItemWithParallax}
@@ -231,17 +230,17 @@ class HomeScreen extends Component {
         <Footer style={fs.footerTab}>
           <FooterTab style={fs.footerTab}>
             <Button style={fs.footerButton}
-                    onPress={() => this.props.navigation.navigate("Settings")}
+                    onPress={() => this.props.navigation.navigate("Home")}
                     vertical
             >
-              <View>
+              <View style={fs.footerView}>
                 <Image style={fs.footerImageHL} source={require('../../../assets/home/hl-active.png')}/>
                 <Text style={fs.footerText}>红炉</Text>
               </View>
             </Button>
             <Button vertical style={fs.footerButton}
                     onPress={() => this.props.navigation.navigate("WareHouse")}>
-              <View>
+              <View style={fs.footerView}>
                 <Image style={fs.footerImage} source={require('../../../assets/home/storage.png')}/>
                 <Text style={fs.footerText}>仓库</Text>
               </View>
@@ -251,7 +250,7 @@ class HomeScreen extends Component {
                     onPress={() => this.props.navigation.navigate("History")}
                     vertical
             >
-              <View>
+              <View style={fs.footerView}>
                 <Image style={fs.footerImage} source={require('../../../assets/home/team.png')}/>
                 <Text style={fs.footerText}>团队</Text>
               </View>
@@ -261,7 +260,7 @@ class HomeScreen extends Component {
                     onPress={() => this.props.navigation.navigate("Mine")}
                     vertical
             >
-              <View>
+              <View style={fs.footerView}>
                 <Image style={fs.footerImage} source={require('../../../assets/home/mine.png')}/>
                 <Text style={fs.footerText}>我的</Text>
               </View>

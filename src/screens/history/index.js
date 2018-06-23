@@ -7,22 +7,15 @@ import {
   Footer,
   FooterTab,
   Text,
-  Body,
   Title,
-  Left,
-  Right,
   Picker,
-  Form,
   Icon,
-  Card,
-  CardItem,
-  ListItem,
-  View
+  View,
 } from "native-base";
 import { VictoryLine,VictoryChart,VictoryTheme} from "victory-native";
 import { Image, TouchableHighlight } from "react-native";
 import styles from "./styles";
-const Item = Picker.Item;
+import fs from "../footer/styles";
 
 const MoneyCell = ({ moneyNum, moneyUnit }) => {
   return (
@@ -161,80 +154,43 @@ class History extends Component {
             />
           </VictoryChart>
 
-          {/*<Card style={styles.mb}>*/}
-            {/*<CardItem>*/}
-              {/*<Left>*/}
-                {/*<Text style={{ color: "#b09872" }}>精品普洱茶</Text>*/}
-              {/*</Left>*/}
-              {/*<Right>*/}
-                {/*<Form>*/}
-                  {/*<Picker*/}
-                    {/*mode="dropdown"*/}
-                    {/*iosIcon={<Icon name="ios-arrow-down-outline"/>}*/}
-                    {/*style={{ width: undefined }}*/}
-                    {/*placeholder="选择其他产品"*/}
-                    {/*textStyle={{ color: "#b09872" }}*/}
-                    {/*itemStyle={{*/}
-                      {/*backgroundColor: "#d3d3d3",*/}
-                      {/*marginLeft: 0,*/}
-                      {/*paddingLeft: 10*/}
-                    {/*}}*/}
-                    {/*itemTextStyle={{ color: "#788ad2" }}*/}
-                    {/*selectedValue={this.state.selected}*/}
-                    {/*onValueChange={this.onValueChange2}*/}
-                  {/*>*/}
-                    {/*<Item label="精品红酒" value="key0"/>*/}
-                    {/*<Item label="精品铁观音" value="key1"/>*/}
-                    {/*<Item label="精品碧螺春" value="key2"/>*/}
-                  {/*</Picker>*/}
-                {/*</Form>*/}
-              {/*</Right>*/}
-            {/*</CardItem>*/}
-          {/*</Card>*/}
-          {/*<ListItem>*/}
-            {/*<Left>*/}
-              {/*<Text>最新价格: </Text>*/}
-            {/*</Left>*/}
-            {/*<Right><Text style={styles.priceTag}>481.98元</Text></Right>*/}
-          {/*</ListItem>*/}
         </Content>
-
-        <Footer style={styles.footerTab}>
-          <FooterTab style={styles.footerTab}>
-            <Button style={styles.footerButton}
-                    onPress={() => this.props.navigation.navigate("Settings")}
+        <Footer style={fs.footerTab}>
+          <FooterTab style={fs.footerTab}>
+            <Button style={fs.footerButton}
+                    onPress={() => this.props.navigation.navigate("Home")}
                     vertical
             >
-              <View>
-                <Image style={styles.footerImageHL} source={require("../../../assets/home/hl-active.png")}/>
-                <Text style={styles.footerText}>红炉</Text>
+              <View style={fs.footerView}>
+                <Image style={fs.footerImageHL} source={require('../../../assets/home/hl.png')}/>
+                <Text style={fs.footerText}>红炉</Text>
               </View>
             </Button>
-            <Button vertical style={styles.footerButton}
+            <Button vertical style={fs.footerButton}
                     onPress={() => this.props.navigation.navigate("WareHouse")}>
-              <View>
-                <Image style={styles.footerImage} source={require("../../../assets/home/storage.png")}/>
-                <Text style={styles.footerText}>仓库</Text>
+              <View style={fs.footerView}>
+                <Image style={fs.footerImage} source={require('../../../assets/home/storage.png')}/>
+                <Text style={fs.footerText}>仓库</Text>
               </View>
             </Button>
-            <Button style={styles.footerButton}
+            <Button style={fs.footerButton}
                     active={this.state.tab3}
                     onPress={() => this.props.navigation.navigate("History")}
                     vertical
             >
-              <View>
-                <Image style={styles.footerImage} source={require("../../../assets/home/team.png")}/>
-                <Text style={styles.footerText}>团队</Text>
+              <View style={fs.footerView}>
+                <Image style={fs.footerImage} source={require('../../../assets/home/team-active.png')}/>
+                <Text style={fs.footerText}>团队</Text>
               </View>
             </Button>
-            <Button style={styles.footerButton}
+            <Button style={fs.footerButton}
                     active={this.state.tab4}
-                    onPress={() => this.props.navigation.navigate("Coupon")}
+                    onPress={() => this.props.navigation.navigate("Mine")}
                     vertical
             >
-              <View>
-                <Image style={styles.footerImage} source={require("../../../assets/home/mine.png")}/>
-                <Text style={styles.footerText}>我的</Text>
+              <View style={fs.footerView}>
+                <Image style={fs.footerImage} source={require('../../../assets/home/mine.png')}/>
+                <Text style={fs.footerText}>我的</Text>
               </View>
             </Button>
           </FooterTab>

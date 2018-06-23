@@ -16,6 +16,10 @@ export default {
   footerButton:{
     width:93,height:49
   },
+  footerView:{
+    flex:1,
+    alignItems:'center'
+  },
   footerImageHL:{
     width:25,height:17
   },

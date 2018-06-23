@@ -3,19 +3,15 @@ import { Image, ScrollView } from "react-native";
 import {
   Container,
   Header,
-  Title,
-  Content,
   Text,
   Button,
   Icon,
   Left,
   Right,
   Body,
-  Input,
-  Form,
-  Item,
-  Label,
   View,
+  Footer,
+  FooterTab,
 } from "native-base";
 import s from './styles';
 import BG from '../../../assets/mine/mineBG.png';
@@ -32,6 +28,7 @@ import Address from '../../../assets/mine/address.png';
 import Service from '../../../assets/mine/service.png';
 import Feedback from '../../../assets/mine/feedback.png';
 import Rules from '../../../assets/mine/rules.png';
+import fs from "../footer/styles";
 
 class Mine extends Component {
   constructor(props) {
@@ -325,6 +322,46 @@ class Mine extends Component {
             </Button>
           </View>
         </ScrollView>
+        <Footer style={fs.footerTab}>
+          <FooterTab style={fs.footerTab}>
+            <Button style={fs.footerButton}
+                    onPress={() => this.props.navigation.navigate("Home")}
+                    vertical
+            >
+              <View style={fs.footerView}>
+                <Image style={fs.footerImageHL} source={require('../../../assets/home/hl.png')}/>
+                <Text style={fs.footerText}>红炉</Text>
+              </View>
+            </Button>
+            <Button vertical style={fs.footerButton}
+                    onPress={() => this.props.navigation.navigate("WareHouse")}>
+              <View style={fs.footerView}>
+                <Image style={fs.footerImage} source={require('../../../assets/home/storage.png')}/>
+                <Text style={fs.footerText}>仓库</Text>
+              </View>
+            </Button>
+            <Button style={fs.footerButton}
+                    active={this.state.tab3}
+                    onPress={() => this.props.navigation.navigate("History")}
+                    vertical
+            >
+              <View style={fs.footerView}>
+                <Image style={fs.footerImage} source={require('../../../assets/home/team.png')}/>
+                <Text style={fs.footerText}>团队</Text>
+              </View>
+            </Button>
+            <Button style={fs.footerButton}
+                    active={this.state.tab4}
+                    onPress={() => this.props.navigation.navigate("Mine")}
+                    vertical
+            >
+              <View style={fs.footerView}>
+                <Image style={fs.footerImage} source={require('../../../assets/home/mine-active.png')}/>
+                <Text style={fs.footerText}>我的</Text>
+              </View>
+            </Button>
+          </FooterTab>
+        </Footer>
       </Container>
     );
   }
