@@ -64,8 +64,33 @@ export default {
     justifyContent: "space-between",
     alignItems: "center",
   },
+  btnsRow: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    width: '100%',
+    height: 51,
+    backgroundColor: '#222',
+  },
+  btnsWrapper: {
+    width: 268,
+    height: 30,
+  },
+  btn: {
+    width: 70,
+    height: 30,
+    borderWidth: 1,
+    borderColor: '#d1b27a',
+    borderRadius: 18
+  },
+  btnTxt: {
+    height: 20,
+    color: '#d1b27a',
+    fontSize: 14,
+  },
+
   listHeader:{
-    height: 45,
+    height: 50,
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
@@ -76,9 +101,17 @@ export default {
     textAlign: "center",
     fontSize: 14
   },
+  listRow: {
+    display: 'flex',
+    flexDirection: 'row',
+    height: 50,
+    backgroundColor: '#1a1a1a',
+
+  },
   listCell: {
     flex: 1,
     textAlign: "center",
+    alignSelf: 'center',
     fontSize: 14
   },
   headerB: {
@@ -172,6 +205,9 @@ export default {
   },
   fontGrey: {
     color: "#7F7F7F"
+  },
+  fontRed: {
+    color: '#DA374D',
   },
   upIcon:{
     width:10,

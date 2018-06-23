@@ -35,8 +35,15 @@ class WareHouse extends Component {
       countAmt: 3,
       countAmtSell: 4,
       modalVisible: false,
-      modalVisibleSell: false
+      modalVisibleSell: false,
+      showBtnRow: [],
     };
+  }
+
+  componentWillMount () {
+    datas.forEach(()=> {
+      this.state.showBtnRow.push(false)
+    })
   }
 
   handleAdd = () => {
@@ -90,12 +97,43 @@ class WareHouse extends Component {
     });
   };
 
+  toggleBtns = (index)=> {
+    this.state.showBtnRow[index] = true;
+    this.setState({
+      toggle: true,
+    })
+  }
+
+  renderRow = (item)=> {
+   return <View style={s.listRow}>
+     {/*<Text style={[s.listCell, s.fontGrey]}>*/}
+       {/*{item[0]}*/}
+     {/*</Text>*/}
+     {/*<Text style={[s.listCell, s.fontGrey]}>*/}
+       {/*1*/}
+     {/*</Text>*/}
+     {/*<Text style={[s.listCell, s.fontGrey]}>*/}
+       {/*234.88*/}
+     {/*</Text>*/}
+     {/*<Text style={[s.listCell, s.fontGrey]}>*/}
+       {/*654.32*/}
+     {/*</Text>*/}
+     {/*<Text style={[s.listCell, s.fontGrey]}>*/}
+       {/*411.00*/}
+     {/*</Text>*/}
+     {/*<Button transparent onPress={() => this.toggleBtns}>*/}
+       {/*<View style={{paddingRight:10}}><Image style={s.upIcon} source={require('../../../assets/warehouse/down.png')}/></View>*/}
+     {/*</Button>*/}
+     <Text>22222</Text>
+   </View>
+  }
+
   render() {
+    const { showBtnRow } = this.state;
     return (
       <Container style={s.container}>
         <Header style={s.firstHeader}>
-          <Left>
-          </Left>
+          <Left/>
           <Body style={s.headerB}>
           <Button block bordered onPress={() => this.props.navigation.navigate("WareHouse")} style={s.pfButton}>
             <Text style={s.pfButtonTxt}>批发仓</Text>
@@ -152,41 +190,41 @@ class WareHouse extends Component {
               利润
             </Text>
           </View>
-          <List
-            style={s.listTable}
-            dataArray={datas}
-            renderRow={data => (
-              <View style={s.listItem}>
-                {data && data.map((item, key) => (
-                  <Text style={[s.listCell, s.fontGrey]} key={key}>
-                    {item}
-                  </Text>
-                ))}
-                <View style={{paddingRight:10}}><Image style={s.upIcon} source={require('../../../assets/warehouse/down.png')}/></View>
-              </View>
-            )}
-          />
-          <Button
-            block
-            style={[s.sellBtn, s.pickBtn]}
-            onPress={() => this.props.navigation.navigate("PickUp")}
-          >
-            <Text style={[s.fontBlack, s.btnText]}>提货</Text>
-          </Button>
-          <Button
-            block
-            style={s.sellBtn}
-            onPress={this.showModalSell}
-          >
-            <Text style={[s.fontGold, s.btnText]}>卖出</Text>
-          </Button>
-          <Button
-            block
-            style={s.sellBtn}
-            onPress={this.showModal}
-          >
-            <Text style={[s.fontGold, s.btnText]}>兑换</Text>
-          </Button>
+
+          {datas.forEach((item, key)=> {
+            return this.renderRow(item);
+          })}
+
+
+
+          {/*<View style={s.listTable}>*/}
+            {/*{datas.forEach((item, key)=> {*/}
+                {/*datas[key].forEach((itm, idx)=> (*/}
+                  {/*<Text style={[s.listCell, s.fontGrey]} key={idx}>*/}
+                    {/*{itm}*/}
+                  {/*</Text>*/}
+                {/*));*/}
+              {/*<Button transparent onPress={(key) => this.toggleBtns(key)}>*/}
+                {/*<View style={{paddingRight:10}}><Image style={s.upIcon} source={require('../../../assets/warehouse/down.png')}/></View>*/}
+              {/*</Button>*/}
+              {/*{ showBtnRow[key] &&*/}
+              {/*<View style={s.btnsRow}>*/}
+                {/*<View style={s.btnsWrapper}>*/}
+                  {/*<Button block bordered onPress={this.showModal} style={s.btn}>*/}
+                    {/*<Text style={s.btnTxt}>兑换</Text>*/}
+                  {/*</Button>*/}
+                  {/*<Button block bordered onPress={this.showModalSell} style={s.btn}>*/}
+                    {/*<Text style={s.btnTxt}>卖出</Text>*/}
+                  {/*</Button>*/}
+                  {/*<Button block bordered onPress={() => this.props.navigation.navigate("PickUp")} style={s.btn}>*/}
+                    {/*<Text style={s.btnTxt}>提货</Text>*/}
+                  {/*</Button>*/}
+                {/*</View>*/}
+              {/*</View>}*/}
+                {/**/}
+            {/*})}*/}
+          {/*</View>*/}
+
         </Content>
 
         <Modal
