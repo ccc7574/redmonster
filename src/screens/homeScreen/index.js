@@ -105,7 +105,7 @@ class HomeScreen extends Component {
             </View>
           </View>
         </View>
-        <View style={styles.productDivider}></View>
+        <View style={styles.productDivider}/>
         <View style={styles.priceDiv}>
           <View><Text style={styles.nextHour}>下一小时价格</Text></View>
           <View style={styles.priceDetails}>
@@ -124,6 +124,36 @@ class HomeScreen extends Component {
           </View>
           <View/>
         </View>
+      </View>
+    );
+  };
+
+  renderPurchaseOrders = () => {
+    return (
+      <View>
+        <Text style={styles.deadline}>优先排单截止时间</Text>
+        <View style={styles.orderTitle}>
+          <Text style={styles.majorProduct}>进货订单</Text>
+          <Text style={styles.orderTime}>2018-06-02 17:30</Text>
+        </View>
+        <View style={styles.orderDetail}>
+          <View style={styles.orderBoxTitle}>
+            <View style={styles.orderBoxTitleLeft}>
+              <Text style={styles.orderGoods}>精品普洱茶饼(5年)</Text>
+              <Text style={styles.orderGoodsNum}> x6</Text>
+            </View>
+            <Text style={styles.cancelOrder}>取消排单</Text>
+          </View>
+          <View style={styles.orderPrice}>
+            <Text style={styles.fontGrey}>当前价</Text>
+            <Text style={styles.priceLeft}> ￥922.25</Text>
+          </View>
+          <View style={styles.orderBottom}>
+            <Text style={styles.orderBTime}>2018/6/20 10:30:45</Text>
+            <Text style={styles.orderStatus}>未成交</Text>
+          </View>
+        </View>
+        <Text style={styles.bottomTxt}>隐藏已完成申购</Text>
       </View>
     );
   };
@@ -171,6 +201,9 @@ class HomeScreen extends Component {
           <View style={styles.majorProductStart}><Text style={styles.majorProduct}>主打商品</Text></View>
           { this.renderGoodsDiv() }
           { this.renderGoodsDiv() }
+
+          { this.renderPurchaseOrders() }
+
         </Content>
         <Footer style={fs.footerTab}>
           <FooterTab style={fs.footerTab}>

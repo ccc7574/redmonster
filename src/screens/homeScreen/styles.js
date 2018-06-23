@@ -4,6 +4,7 @@ export const colors = {
   black: '#1a1917',
   backgroundBlack:'#000000',
   gray: '#888888',
+  white: '#aaa',
   background1: '#B721FF',
   background2: '#21D4FD',
   hlGray:'#1a1a1a',
@@ -155,6 +156,10 @@ export default StyleSheet.create({
   priceNumber:{width:44,height:44,backgroundColor:'#d1b27a',borderRadius:2,display:'flex'},
   priceNumberDetails:{fontSize:30,lineHeight:44,color:'#1A1A1A',fontWeight: 'bold',textAlign:'center',justifyContent:'center'},
 
+  fontGrey: {
+    color: colors.gray
+  },
+
   priceDetails: {
     top: 10,
     flexDirection: "row",
@@ -202,5 +207,84 @@ export default StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-around",
     alignItems: "center",
+  },
+  deadline: {
+    fontSize: 12,
+    color: "#3D3D3D",
+    textAlign: "right",
+    paddingRight: 10
+  },
+  orderTitle: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    borderLeftColor: "#b09872",
+    borderLeftWidth:2,
+    marginLeft: 12,
+    marginTop: 8
+  },
+  orderTime: {
+    color: "#aaa",
+    fontSize: 13,
+    paddingRight: 10,
+  },
+  orderDetail: {
+    margin: 10,
+    marginBottom: 0,
+    backgroundColor: colors.hlGray,
+    borderRadius: 5,
+    paddingHorizontal: 15,
+    paddingVertical: 10
+  },
+  orderBoxTitle: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  orderBoxTitleLeft: {
+    flexDirection: "row",
+    justifyContent: "flex-start",
+    alignItems: "flex-end",
+  },
+  orderGoods: {
+    color: "#999",
+    fontSize: 18,
+  },
+  orderGoodsNum: {
+    color: "#999",
+    fontSize: 13,
+  },
+  cancelOrder: {
+    color: "#666",
+    fontSize: 15,
+  },
+  orderPrice: {
+    flexDirection: "row",
+    justifyContent: "flex-start",
+    alignItems: "center",
+    marginVertical: 12
+  },
+  priceLeft: {
+    color: colors.hlYellow,
+    fontSize: 16
+  },
+  orderBottom: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  orderBTime: {
+    color: colors.gray,
+    fontSize: 14
+  },
+  orderStatus: {
+    color: colors.white,
+  },
+
+  bottomTxt: {
+    textAlign: "center",
+    color: "#3D3D3D",
+    fontSize: 15,
+    marginVertical: 20,
   }
 });
