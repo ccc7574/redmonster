@@ -170,7 +170,7 @@ class FixedLabel extends Component {
               </View>
             </Button>
             <Button style={fs.footerButton}
-                    onPress={() => this.props.navigation.navigate("WareHouse")}
+                    onPress={() => this.props.navigation.navigate("Mine")}
                     vertical
             >
               <View style={fs.footerView}>
