@@ -148,4 +148,10 @@ export default StyleSheet.create({
   iconStyle:{fontSize: 20, color: '#A5A5A5'},
   majorProduct:{fontSize: 13, color: '#3D3D3D',paddingLeft:12},
   majorProductStart:{borderLeftColor:'#b09872',borderLeftWidth:2,marginLeft:12},
+  productDivider:{paddingLeft:12,height:0.1,borderWidth:0.3, borderColor:'#3D3D3D',paddingRight:12,marginLeft:12,marginRight:12},
+  nextHour:{fontSize:11,color: '#3D3D3D'},
+  priceDiv:{marginRight:12,marginLeft:12,top:12},
+  priceDetails:{top:10},
+  priceNumber:{width:44,height:44,backgroundColor:'#d1b27a',borderRadius:2,display:'flex'},
+  priceNumberDetails:{fontSize:30,lineHeight:44,color:'#1A1A1A',fontWeight: 'bold',textAlign:'center',justifyContent:'center'}
 });

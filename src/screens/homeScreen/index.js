@@ -132,8 +132,15 @@ class HomeScreen extends Component {
                 </View>
               </View>
             </View>
-            <View>
-              <Text>下一小时几个</Text>
+            <View style={styles.productDivider}></View>
+            <View style={styles.priceDiv}>
+              <View><Text style={styles.nextHour}>下一小时价格</Text></View>
+              <View style={styles.priceDetails}>
+                <View style={styles.priceNumber}>
+                  <Text style={styles.priceNumberDetails}>9</Text>
+                </View>
+              </View>
+              <View/>
             </View>
           </View>
         </Content>
