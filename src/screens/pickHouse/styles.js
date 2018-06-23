@@ -2,10 +2,7 @@ const borderColor = "#383838";
 
 export default {
   container: {
-    backgroundColor: "#FFF"
-  },
-  content: {
-    backgroundColor: "#000",
+    backgroundColor: "#000"
   },
   firstHeader:{
     backgroundColor:"#1a1a1a"
@@ -21,14 +18,15 @@ export default {
     height: 30,
     borderWidth: 1,
     borderColor: '#D1B27A',
+    backgroundColor: 'transparent',
     borderRadius: 22,
-    marginLeft:-27,
+    marginRight:-27,
   },
   pfButtonTxt: {
     color: '#D1B27A',
     fontSize: 14,
     fontWeight:'bold',
-    marginLeft:11,
+    marginRight:11,
   },
   thButton:{
     width: 90,
@@ -43,9 +41,47 @@ export default {
     fontSize: 14,
     fontWeight:'bold'
   },
+  wrapper: {
+    backgroundColor: "#000",
+  },
+  upper: {
+    width: '100%',
+    height: 116,
+    backgroundColor: '#1a1a1a',
+    paddingLeft: 15,
+    paddingRight: 22,
+  },
+  upperRowOne: {
+    height: 20,
+    marginTop: 24,
+    fontSize: 14,
+    color: '#848484',
 
-
-
+  },
+  upperRowTwo: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    height: 56,
+  },
+  upperRowTwoTxt: {
+    marginTop: 2,
+    fontSize: 40,
+    color: '#D1B27A',
+  },
+  upperRowTwoBtn: {
+    alignSelf: 'center',
+    width: 87,
+    height: 33,
+    borderWidth: 1,
+    borderColor: '#d1b27a',
+    borderRadius: 20,
+  },
+  upperRowTwoBtnTxt: {
+    height: 22,
+    color: '#d1b27a',
+    fontSize: 16,
+  },
 
 
 

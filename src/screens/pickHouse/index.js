@@ -36,6 +36,10 @@ class WareHouse extends Component {
 
   }
 
+  handleUse = ()=> {
+
+  }
+
   toggleBtns = (index)=> {
     this.setState({
       showBtnRow: !this.state.showBtnRow,
@@ -90,18 +94,26 @@ class WareHouse extends Component {
         <Header style={s.firstHeader}>
           <Left/>
           <Body style={s.headerB}>
-          <Button block onPress={() => this.props.navigation.navigate("WareHouse")} style={s.thButton}>
-            <Text style={s.thButtonTxt}>批发仓</Text>
+          <Button block onPress={() => this.props.navigation.navigate("WareHouse")} style={s.pfButton}>
+            <Text style={s.pfButtonTxt}>批发仓</Text>
           </Button>
-          <Button block bordered onPress={() => this.props.navigation.navigate("PickHouse")} style={s.pfButton}>
-            <Text style={s.pfButtonTxt}>提货仓</Text>
+          <Button block bordered onPress={() => this.props.navigation.navigate("PickHouse")} style={s.thButton}>
+            <Text style={s.thButtonTxt}>提货仓</Text>
           </Button>
           </Body>
           <Right/>
         </Header>
 
-        <Content style={s.content}>
-
+        <Content style={s.wrapper}>
+          <View style={s.upper}>
+            <Text style={s.upperRowOne}>消费积分</Text>
+            <View style={s.upperRowTwo}>
+              <Text style={s.upperRowTwoTxt}>2000</Text>
+              <Button block bordered onPress={this.handleUse} style={s.upperRowTwoBtn}>
+                <Text style={s.upperRowTwoBtnTxt}>消费</Text>
+              </Button>
+            </View>
+          </View>
         </Content>
 
         <Footer style={fs.footerTab}>

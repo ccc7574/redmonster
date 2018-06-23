@@ -257,7 +257,7 @@ class HomeScreen extends Component {
             </Button>
             <Button style={fs.footerButton}
                     active={this.state.tab4}
-                    onPress={() => this.props.navigation.navigate("WareHouse")}
+                    onPress={() => this.props.navigation.navigate("PickHouse")}
                     vertical
             >
               <View style={fs.footerView}>
