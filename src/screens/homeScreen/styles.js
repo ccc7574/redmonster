@@ -279,8 +279,18 @@ export default StyleSheet.create({
     color: colors.gray,
     fontSize: 14
   },
+  orderStatusBox: {
+    flexDirection: "row",
+    justifyContent: "flex-end",
+    alignItems: "center",
+  },
   orderStatus: {
     color: colors.white,
+  },
+  statusIcon: {
+    marginLeft: 10,
+    color: colors.gray,
+    fontSize: 18
   },
   orderCompleteImg: {
     position: "absolute",

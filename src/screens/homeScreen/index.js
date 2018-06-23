@@ -140,7 +140,7 @@ class HomeScreen extends Component {
         <View style={styles.orderDetail}>
           <View style={styles.orderBoxTitle}>
             <View style={styles.orderBoxTitleLeft}>
-              <Text style={styles.orderGoods}>精品普洱茶饼(5年)</Text>
+              <Text style={styles.orderGoods}>精品普洱茶饼(6年)</Text>
               <Text style={styles.orderGoodsNum}> x6</Text>
             </View>
             <Text style={styles.cancelOrder}>取消排单</Text>
@@ -158,7 +158,7 @@ class HomeScreen extends Component {
         <View style={styles.orderDetail}>
           <View style={styles.orderBoxTitle}>
             <View style={styles.orderBoxTitleLeft}>
-              <Text style={styles.orderGoods}>精品普洱茶饼(5年)</Text>
+              <Text style={styles.orderGoods}>精品普洱茶饼(6年)</Text>
               <Text style={styles.orderGoodsNum}> x6</Text>
             </View>
           </View>
@@ -169,7 +169,10 @@ class HomeScreen extends Component {
           </View>
           <View style={styles.orderBottom}>
             <Text style={styles.orderBTime}>2018/6/08 15:30:45</Text>
-            <Text style={styles.orderStatus}>已完成 (5/5)</Text>
+            <View style={styles.orderStatusBox}>
+              <Text style={styles.orderStatus}>已完成 (5/5)</Text>
+              <Icon name="arrow-down" style={styles.statusIcon}/>
+            </View>
           </View>
         </View>
 
