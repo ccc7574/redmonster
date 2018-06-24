@@ -82,10 +82,16 @@ export default {
     color: '#d1b27a',
     fontSize: 16,
   },
-
-
-
-
+  upIcon:{
+    width:10,
+    height:10
+  },
+  fontGrey: {
+    color: "#7F7F7F"
+  },
+  fontRed: {
+    color: '#DA374D',
+  },
   listTable: {
     marginBottom: 30,
     padding: 0,
@@ -160,4 +166,21 @@ export default {
     width:140,
     height:30
   },
+  emptyWrapper: {
+    display: 'flex',
+    // flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    alignSelf: 'center',
+    width: 143,
+    height: 143,
+    marginTop: 117,
+  },
+  emptyTxt: {
+    marginTop: 43,
+    height: 18,
+    fontSize: 13,
+    color: '#3d3d3d',
+  }
+
 };

@@ -17,7 +17,9 @@ import {Image} from "react-native";
 import {View, } from "react-native";
 import s from "./styles";
 import fs from "../footer/styles";
+import Empty from '../../../assets/pickhouseEmpty.png';
 
+const DATA = ['name', 'count', 'count'];
 
 class WareHouse extends Component {
   constructor(props) {
@@ -40,6 +42,10 @@ class WareHouse extends Component {
 
   }
 
+  handleExchange = ()=> {
+
+  }
+
   toggleBtns = (index)=> {
     this.setState({
       showBtnRow: !this.state.showBtnRow,
@@ -57,13 +63,7 @@ class WareHouse extends Component {
           {item[1]}
         </Text>
         <Text style={[s.listCell, s.fontGrey]}>
-          234.88
-        </Text>
-        <Text style={[s.listCell, s.fontGrey]}>
-          654.32
-        </Text>
-        <Text style={[s.listCell, s.fontRed]}>
-          411.00
+          {item[2]}
         </Text>
         <Button transparent onPress={this.toggleBtns}>
           <View style={{paddingRight:10}}><Image style={s.upIcon} source={require('../../../assets/warehouse/down.png')}/></View>
@@ -72,11 +72,8 @@ class WareHouse extends Component {
       { showBtnRow &&
       <View style={s.btnsRow}>
         <View style={s.btnsWrapper}>
-          <Button block bordered onPress={this.showModal} style={s.btn}>
+          <Button block bordered onPress={this.handleExchange} style={s.btn}>
             <Text style={s.btnTxt}>兑换</Text>
-          </Button>
-          <Button block bordered onPress={this.showModalSell} style={s.btn}>
-            <Text style={s.btnTxt}>卖出</Text>
           </Button>
           <Button block bordered onPress={() => this.props.navigation.navigate("PickUp")} style={s.btn}>
             <Text style={s.btnTxt}>提货</Text>
@@ -88,7 +85,7 @@ class WareHouse extends Component {
 
 
   render() {
-    const { data, showBtnRow } = this.state;
+    const {  } = this.state;
     return (
       <Container style={s.container}>
         <Header style={s.firstHeader}>
@@ -114,6 +111,33 @@ class WareHouse extends Component {
               </Button>
             </View>
           </View>
+
+          {/*<View style={s.listHeader}>*/}
+            {/*<Text style={[s.headerCell, s.fontGrey]}>*/}
+              {/*商品*/}
+            {/*</Text>*/}
+            {/*<Text style={[s.headerCell, s.fontGrey]}>*/}
+              {/*数量*/}
+            {/*</Text>*/}
+            {/*<Text style={[s.headerCell, s.fontGrey]}>*/}
+              {/*市场价*/}
+            {/*</Text>*/}
+          {/*</View>*/}
+
+          {/*{this.renderRow(DATA)}*/}
+
+          <View style={s.emptyWrapper}>
+            <Image
+              style={{
+                width: "100%",
+                height: "100%"
+              }}
+              resizeMode={'contain'}
+              source={Empty}
+            />
+            <Text style={s.emptyTxt}>无商品</Text>
+          </View>
+
         </Content>
 
         <Footer style={fs.footerTab}>
