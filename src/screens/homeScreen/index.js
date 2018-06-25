@@ -106,7 +106,7 @@ class HomeScreen extends Component {
         </View>
         <View style={styles.productDivider}/>
         <View style={styles.priceDiv}>
-          <View><Text style={styles.nextHour}>下一小时价格</Text></View>
+          <View><Text style={styles.nextHour}>实时价</Text></View>
           <View style={styles.priceDetails}>
             <View style={styles.moneyContainer}>
               <MoneyCell moneyNum={0} moneyUnit={"千"}/>

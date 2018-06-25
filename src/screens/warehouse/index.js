@@ -7,8 +7,6 @@ import {
   Body,
   Left,
   Right,
-  Icon,
-  List,
   Text,
   Footer,
   FooterTab,
@@ -41,10 +39,7 @@ class WareHouse extends Component {
     };
   }
 
-  componentWillMount () {
-    // datas.forEach(()=> {
-    //   this.state.showBtnRow.push(false)
-    // })
+  componentWillMount() {
     this.state.data = datas;
   }
 
@@ -99,55 +94,56 @@ class WareHouse extends Component {
     });
   };
 
-  toggleBtns = (index)=> {
+  toggleBtns = (index) => {
     this.setState({
       showBtnRow: !this.state.showBtnRow,
     })
   }
 
-  renderRow = (item)=> {
-    let { showBtnRow } = this.state;
+  renderRow = (item) => {
+    let {showBtnRow} = this.state;
     return <View>
       <View style={s.listRow}>
-        <Text style={[s.listCell, s.fontGrey]}>
+        <Text style={[s.listCell, s.fontGrey]} onPress={this.toggleBtns}>
           {item[0]}
         </Text>
-        <Text style={[s.listCell, s.fontGrey]}>
+        <Text style={[s.listCell, s.fontGrey]} onPress={this.toggleBtns}>
           {item[1]}
         </Text>
-        <Text style={[s.listCell, s.fontGrey]}>
+        <Text style={[s.listCell, s.fontGrey]} onPress={this.toggleBtns}>
           234.88
         </Text>
-        <Text style={[s.listCell, s.fontGrey]}>
+        <Text style={[s.listCell, s.fontGrey]} onPress={this.toggleBtns}>
           654.32
         </Text>
-        <Text style={[s.listCell, s.fontRed]}>
+        <Text style={[s.listCell, s.fontRed]} onPress={this.toggleBtns}>
           411.00
         </Text>
         <Button transparent onPress={this.toggleBtns}>
-          <View style={{paddingRight:10}}><Image style={s.upIcon} source={require('../../../assets/warehouse/down.png')}/></View>
+          <View style={{paddingRight: 10}}><Image style={s.upIcon}
+                                                  source={require('../../../assets/warehouse/down.png')}/></View>
         </Button>
       </View>
-        { showBtnRow &&
-        <View style={s.btnsRow}>
-          <View style={s.btnsWrapper}>
-            <Button block bordered onPress={this.showModal} style={s.btn}>
-              <Text style={s.btnTxt}>兑换</Text>
-            </Button>
-            <Button block bordered onPress={this.showModalSell} style={s.btn}>
-              <Text style={s.btnTxt}>卖出</Text>
-            </Button>
-            <Button block bordered onPress={() => this.props.navigation.navigate("PickUp")} style={s.btn}>
-              <Text style={s.btnTxt}>提货</Text>
-            </Button>
-          </View>
-        </View>}
+      {showBtnRow &&
+      <View style={s.btnsRow}>
+        <View style={s.btnsWrapper}>
+          <Button block bordered onPress={this.showModal} style={s.btn}>
+            <Text style={s.btnTxt}>兑换</Text>
+          </Button>
+          <Button block bordered onPress={this.showModalSell} style={s.btn}>
+            <Text style={s.btnTxt}>卖出</Text>
+          </Button>
+          <Button block bordered onPress={() => this.props.navigation.navigate("PickUp")} style={s.btn}>
+            <Text style={s.btnTxt}>提货</Text>
+          </Button>
+        </View>
+      </View>}
     </View>
   }
 
 
   render() {
-    const { data, showBtnRow } = this.state;
+    const {data, showBtnRow} = this.state;
     return (
       <Container style={s.container}>
         <Header style={s.firstHeader}>
@@ -209,7 +205,7 @@ class WareHouse extends Component {
             </Text>
           </View>
 
-          {this.renderRow(['name', 'count', 'count'])}
+          {this.renderRow(['普洱茶叶', '1', 'count'])}
 
         </Content>
 

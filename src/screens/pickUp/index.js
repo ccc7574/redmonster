@@ -32,13 +32,13 @@ class FixedLabel extends Component {
     };
   }
 
-  onValueChange1(value: string) {
+  onValueChange1(value) {
     this.setState({
       selected1: value
     });
   }
 
-  onValueChange2(value: string) {
+  onValueChange2(value) {
     this.setState({
       selected2: value
     });
@@ -119,38 +119,38 @@ class FixedLabel extends Component {
           </View>
           <View style={{backgroundColor: "#1A1A1A", marginTop: 15, paddingLeft: 15}}>
             <Content>
-              <View button style={styles.listItem}>
-                <Left>
-                  <Text style={styles.fontWhite}>提货方式</Text>
-                </Left>
-                <Right>
-                  <Form>
-                    <Picker
-                      mode="dropdown"
-                      iosIcon={<Icon name="ios-arrow-forward-outline"/>}
-                      placeholderIconColor="#999"
-                      style={{ width: undefined }}
-                      placeholder="请选择"
-                      placeholderStyle={{paddingRight: 0}}
-                      textStyle={{ color: "#ccc", paddingRight: 0 }}
-                      itemStyle={{
-                        backgroundColor: "#d3d3d3",
-                        marginLeft: 0,
-                        paddingLeft: 10
-                      }}
-                      itemTextStyle={{ color: "#788ad2" }}
-                      selectedValue={this.state.selected1}
-                      onValueChange={this.onValueChange1.bind(this)}
-                    >
-                      <Item label="Wallet" value="key0" />
-                      <Item label="ATM Card" value="key1" />
-                      <Item label="Debit Card" value="key2" />
-                      <Item label="Credit Card" value="key3" />
-                      <Item label="Net Banking" value="key4" />
-                    </Picker>
-                  </Form>
-                </Right>
-              </View>
+              {/*<View button style={styles.listItem}>*/}
+                {/*<Left>*/}
+                  {/*<Text style={styles.fontWhite}>提货方式</Text>*/}
+                {/*</Left>*/}
+                {/*<Right>*/}
+                  {/*<Form>*/}
+                    {/*<Picker*/}
+                      {/*mode="dropdown"*/}
+                      {/*iosIcon={<Icon name="ios-arrow-forward-outline"/>}*/}
+                      {/*placeholderIconColor="#999"*/}
+                      {/*style={{ width: undefined }}*/}
+                      {/*placeholder="请选择"*/}
+                      {/*placeholderStyle={{paddingRight: 0}}*/}
+                      {/*textStyle={{ color: "#ccc", paddingRight: 0 }}*/}
+                      {/*itemStyle={{*/}
+                        {/*backgroundColor: "#d3d3d3",*/}
+                        {/*marginLeft: 0,*/}
+                        {/*paddingLeft: 10*/}
+                      {/*}}*/}
+                      {/*itemTextStyle={{ color: "#788ad2" }}*/}
+                      {/*selectedValue={this.state.selected1}*/}
+                      {/*onValueChange={this.onValueChange1.bind(this)}*/}
+                    {/*>*/}
+                      {/*<Item label="Wallet" value="key0" />*/}
+                      {/*<Item label="ATM Card" value="key1" />*/}
+                      {/*<Item label="Debit Card" value="key2" />*/}
+                      {/*<Item label="Credit Card" value="key3" />*/}
+                      {/*<Item label="Net Banking" value="key4" />*/}
+                    {/*</Picker>*/}
+                  {/*</Form>*/}
+                {/*</Right>*/}
+              {/*</View>*/}
               <View button style={styles.listItem}>
                 <Left>
                   <Text style={styles.fontWhite}>发货方式</Text>

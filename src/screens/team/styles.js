@@ -112,7 +112,7 @@ export default {
     fontSize: 20
   },
   addButton: {
-    width: 87,
+    width: 92,
     height: 33,
     padding: 0,
     paddingTop: 0,
