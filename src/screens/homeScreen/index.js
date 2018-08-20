@@ -23,25 +23,23 @@ const {width: viewportWidth, height: viewportHeight} = Dimensions.get('window');
 const SLIDER_1_FIRST_ITEM = 1;
 import SliderEntry from './SliderEntry';
 import fs from "../footer/styles";
-
 const cardImage1 = require("../../../assets/tea1.png");
-const hlActive = require('../../../assets/home/hl-active.png');
 
 const ENTRIES1 = [
   {
     title: '五一放假通知',
     subtitle: '劳动节以及五一停牌放假通知: 劳动节放假时间为4月29日5月1日, 期间平台停运',
-    illustration: "https://i.imgur.com/UYiroysl.jpg"
+    illustration: "http://filewind.clobotics.cn/api/file/69c2f19da4534b981280b0c9694164f9"
   },
   {
     title: '春节放假通知',
     subtitle: '春节停牌放假通知: 劳动节放假时间为4月29日5月1日, 期间平台停运',
-    illustration: 'https://i.imgur.com/2nCt3Sbl.jpg'
+    illustration: 'http://filewind.clobotics.cn/api/file/69c2f19da4534b981280b0c9694164f9'
   },
   {
     title: '国庆节放假通知',
     subtitle: '国庆节停牌放假通知: 劳动节放假时间为4月29日5月1日, 期间平台停运',
-    illustration: 'https://i.imgur.com/lceHsT6l.jpg'
+    illustration: 'http://filewind.clobotics.cn/api/file/69c2f19da4534b981280b0c9694164f9'
   }
 ];
 
