@@ -21,13 +21,14 @@ import {
 } from "native-base";
 import styles from "./styles";
 
-
 const Head = require("../../../assets/login/head.png");
 const BgMsk = require( "../../../assets/login/bgMsk2x.png");
 
 const Bg = require("../../../assets/login/bg.png");
 const deviceHeight = Dimensions.get("window").height;
 const deviceWidth = Dimensions.get("window").width;
+const {serverAPI} = require('../utils');
+const axios = require('axios');
 
 class Register extends Component {
   constructor(props) {
@@ -62,9 +63,26 @@ class Register extends Component {
   }
 
   handleFormSubmit = () => {
-    let username=this.state.phone;
-    Alert.alert(username);
-  }
+    let phone = this.state.phone;
+    let password = this.state.password;
+    let referee = this.state.referee;
+    let code = this.state.code;
+    if (code === '666666') {
+      axios.post(`${serverAPI}/RM/api/users/create`, {
+        phone: phone,
+        type: 1,
+        password: password,
+        referee: referee,
+        name: '配包用户'
+      }).then(function (response) {
+        if(response.data.result==='success'){
+          Alert.alert('注册成功!');
+        }
+      })
+    } else {
+      Alert.alert('验证码错误!')
+    }
+  };
     render() {
     return (
       <Container style={styles.container}>
