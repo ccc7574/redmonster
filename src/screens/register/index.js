@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {Dimensions, Image} from "react-native";
+import {Dimensions, Image,Alert} from "react-native";
 import {
   Container,
   Header,
@@ -60,7 +60,12 @@ class Register extends Component {
         }
     });
   }
-  render() {
+
+  handleFormSubmit = () => {
+    let username=this.state.phone;
+    Alert.alert(username);
+  }
+    render() {
     return (
       <Container style={styles.container}>
         <Header style={{backgroundColor:'#000'}}>
@@ -118,11 +123,17 @@ class Register extends Component {
           <Form>
             <Item fixedLabel style={styles.itemRow}>
               <Icon active name="phone-portrait" style={styles.icon}/>
-              <Input placeholder="输入手机号"/>
+              <Input placeholder="输入手机号"
+                     ref= {(el) => { this.phone = el; }}
+                     onChangeText={(phone) => this.setState({phone})}
+                     value={this.state.phone}/>
             </Item>
             <Item fixedLabel style={{flexDirection: "row", alignItems: "center", height: 60}}>
               <Icon active name="chatboxes" style={styles.icon}/>
-              <Input placeholder="输入验证码"/>
+              <Input placeholder="输入验证码"
+                     ref= {(el) => { this.code = el; }}
+                     onChangeText={(code) => this.setState({code})}
+                     value={this.state.code}/>
               <View style={styles.codeBtn}>
                   <Text style={{color: "#D1B27A",fontSize:12}}>获取验证码</Text>
               </View>
@@ -130,12 +141,18 @@ class Register extends Component {
 
             <Item fixedLabel style={styles.itemRow}>
               <Icon active name="lock" style={styles.icon}/>
-              <Input secureTextEntry={!this.state.switchFlag} placeholder="请设置登录密码"/>
+              <Input secureTextEntry={!this.state.switchFlag} placeholder="请设置登录密码"
+                     ref= {(el) => { this.password = el; }}
+                     onChangeText={(password) => this.setState({password})}
+                     value={this.state.password}/>
               <Switch value={this.state.switchFlag} onTintColor="#4688F1" onValueChange={this.handleChange} style={{marginRight: 10}}/>
             </Item>
             <Item fixedLabel style={styles.itemRow}>
               <Icon active name="attach" style={styles.icon}/>
-              <Input placeholder="请输入推荐人手机号"/>
+              <Input placeholder="请输入推荐人手机号"
+                     ref= {(el) => { this.referee = el; }}
+                     onChangeText={(referee) => this.setState({referee})}
+                     value={this.state.referee}/>
             </Item>
           </Form>
           <ListItem style={{margin: 20, borderBottomWidth: 0}}>
@@ -153,7 +170,7 @@ class Register extends Component {
             </View>
             </Body>
           </ListItem>
-          <Button disabled={!this.state.checkbox} block rounded style={{ margin: 15, marginTop: 20,backgroundColor:"#CCAD75"}}>
+          <Button disabled={!this.state.checkbox} block rounded style={{ margin: 15, marginTop: 20,backgroundColor:"#CCAD75"}} onPress={this.handleFormSubmit}>
             <Text style={{fontSize: 18,color:"#1A1A1A"}}>确认</Text>
           </Button>
         </Content>

@@ -28,7 +28,7 @@ const cardImage1 = require("../../../assets/tea1.png");
 const ENTRIES1 = [
   {
     title: '五一放假通知',
-    subtitle: '劳动节以及五一停牌放假通知: 劳动节放假时间为4月29日5月1日, 期间平台停运',
+    subtitle: '劳动节以及十一停牌放假通知: 劳动节放假时间为4月29日5月1日, 期间平台停运',
     illustration: "http://filewind.clobotics.cn/api/file/69c2f19da4534b981280b0c9694164f9"
   },
   {
@@ -260,7 +260,7 @@ class HomeScreen extends Component {
             </Button>
             <Button style={fs.footerButton}
                     active={this.state.tab4}
-                    onPress={() => this.props.navigation.navigate("Mine")}
+                    onPress={() => this.props.navigation.navigate("Register")}
                     vertical
             >
               <View style={fs.footerView}>
