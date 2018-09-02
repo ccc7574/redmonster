@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import {Dimensions, Image,Alert} from "react-native";
+import {Dimensions, Image,Alert,AsyncStorage} from "react-native";
+
 import {
   Container,
   Header,
@@ -63,6 +64,7 @@ class Register extends Component {
   }
 
   handleFormSubmit = () => {
+    let props = this.props;
     let phone = this.state.phone;
     let password = this.state.password;
     let referee = this.state.referee;
@@ -76,8 +78,17 @@ class Register extends Component {
         name: '配包用户'
       }).then(function (response) {
         if(response.data.result==='success'){
-          Alert.alert('注册成功!');
+          let userObj = {
+            status: 'logined',
+            phone: phone,
+          };
+          AsyncStorage.setItem('user_status', JSON.stringify(userObj), () => {
+            Alert.alert('注册成功!');
+            props.navigation.goBack();
+          });
         }
+      }).catch(function (error) {
+        Alert.alert('密码长度不小于6位数!');
       })
     } else {
       Alert.alert('验证码错误!')

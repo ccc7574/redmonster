@@ -14,7 +14,7 @@ import {
   FooterTab,
   Icon
 } from "native-base";
-import {Dimensions, Image, TouchableHighlight} from "react-native";
+import {Dimensions, Image, TouchableHighlight,AsyncStorage} from "react-native";
 import {sliderWidth, itemWidth} from './SliderEntry.style';
 import Carousel from "react-native-snap-carousel";
 import styles from "./styles";
@@ -77,6 +77,10 @@ class HomeScreen extends Component {
         parallaxProps={parallaxProps}
       />
     );
+  }
+
+  accessUserInfo = (props) =>{
+    props.navigation.navigate("Register")
   }
 
   renderGoodsDiv = () => {
@@ -260,7 +264,15 @@ class HomeScreen extends Component {
             </Button>
             <Button style={fs.footerButton}
                     active={this.state.tab4}
-                    onPress={() => this.props.navigation.navigate("Register")}
+                    onPress={async () => {
+                      let userInfo = await AsyncStorage.getItem('user_status');
+                      userInfo = JSON.parse(userInfo);
+                      if (userInfo.status === 'logined') {
+                        this.props.navigation.navigate("Mine")
+                      } else {
+                        this.props.navigation.navigate("Register")
+                      }
+                    }}
                     vertical
             >
               <View style={fs.footerView}>
