@@ -78,10 +78,12 @@ class Register extends Component {
         name: '配包用户'
       }).then(function (response) {
         if(response.data.result==='success'){
+          let userInfo = response.data.data;
           let userObj = {
             status: 'logined',
-            phone: phone,
+            ...userInfo
           };
+          console.log(userObj);
           AsyncStorage.setItem('user_status', JSON.stringify(userObj), () => {
             Alert.alert('注册成功!');
             props.navigation.goBack();

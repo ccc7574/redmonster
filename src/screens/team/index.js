@@ -16,12 +16,12 @@ import fs from "../footer/styles";
 const tableHead = ["昵称", "账号", "本月消费", "本月消费商奖励", "本月业绩", "本月店铺奖励"];
 
 const DATA = [
-  ["李四四", "15098765432", "5000.25", "100.05", "50000.32", "0"],
-  ["李四四", "15098765432", "5000.25", "100.05", "50000.32", "0"],
-  ["李四四", "15098765432", "5000.25", "100.05", "50000.32", "0"],
-  ["李四四", "15098765432", "5000.25", "100.05", "50000.32", "0"],
-  ["李四四", "15098765432", "5000.25", "100.05", "50000.32", "0"],
-  ["李四四", "15098765432", "5000.25", "100.05", "50000.32", "0"],
+  ["赵云", "15098215432", "4000.25", "100.05", "40000.32", "0"],
+  ["钟馗", "15098435354", "5000.25", "100.05", "50000.32", "0"],
+  ["李白", "15098765643", "6000.25", "100.05", "60000.32", "0"],
+  ["司马懿", "15098765456", "5000.25", "100.05", "50000.32", "0"],
+  ["程咬金", "15098765483", "5000.25", "100.05", "50000.32", "0"],
+  ["夏侯惇", "15098675431", "5000.25", "100.05", "50000.32", "0"],
 ];
 
 const TopCell = ({ cellTitle, cellContent, contentStyle }) => {
@@ -160,13 +160,7 @@ class FixedLabel extends Component {
             <Button style={fs.footerButton}
                     active={this.state.tab4}
                     onPress={async () => {
-                      let userInfo = await AsyncStorage.getItem('user_status');
-                      userInfo = JSON.parse(userInfo);
-                      if (userInfo.status === 'logined') {
-                        this.props.navigation.navigate("Mine")
-                      } else {
-                        this.props.navigation.navigate("Register")
-                      }
+                      this.props.navigation.navigate("Register")
                     }}
                     vertical
             >

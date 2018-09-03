@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import {
   Container,
   Header,
@@ -17,10 +17,12 @@ import {
   Footer,
   FooterTab,
 } from "native-base";
-import { View, Image } from "react-native";
+import {View, Image, Alert, AsyncStorage} from "react-native";
 import styles from "./styles";
 
+const {serverAPI} = require('../utils');
 const pickUpImg = require("../../../assets/pickUp-img.png");
+const axios = require('axios');
 
 class FixedLabel extends Component {
   constructor(props) {
@@ -28,7 +30,8 @@ class FixedLabel extends Component {
     this.state = {
       selected1: undefined,
       selected2: undefined,
-      countAmt: 35
+      countAmt: 3,
+      productPrice: 922
     };
   }
 
@@ -45,20 +48,38 @@ class FixedLabel extends Component {
   }
 
   handleAdd = () => {
-    let { countAmt } = this.state;
+    let {countAmt} = this.state;
     this.setState({
       countAmt: countAmt + 1
     });
   };
 
   handleMinus = () => {
-    let { countAmt } = this.state;
+    let {countAmt} = this.state;
     countAmt = countAmt - 1;
     if (countAmt < 1) countAmt = 1;
     this.setState({
       countAmt
     });
   };
+
+  submitOrder = () => {
+    AsyncStorage.getItem("user_status").then((value) => {
+      let userInfo = JSON.parse(value);
+      axios.post(`${serverAPI}/RM/api/orders/create`, {
+        dealPrice: this.state.productPrice,
+        dealAmount: this.state.countAmt,
+        userId: userInfo.userId,
+        productId: 1
+      }).then(function (response) {
+        if(response.data.result==='success'){
+          Alert.alert('下单成功!');
+        }
+      }).catch(function (error) {
+        console.log(error);
+      })
+    })
+  }
 
   render() {
     return (
@@ -74,16 +95,16 @@ class FixedLabel extends Component {
             <Text style={styles.title}>买入申请</Text>
           </Title>
           </Body>
-          <Right />
+          <Right/>
         </Header>
 
-        <Content style={{ padding: 12}}>
+        <Content style={{padding: 12}}>
           <View style={{backgroundColor: "#1A1A1A", padding: 15}}>
             <View style={{flexDirection: "row", justifyContent: "flex-start", alignItems: "center", marginTop: 15}}>
               <Image style={{resizeMode: "cover", width: 68, height: 68, borderRadius: 5}} source={pickUpImg}/>
               <View style={{marginLeft: 15}}>
                 <Text style={{color: "#ccc", fontSize: 18}}>精品普洱茶饼(6年)</Text>
-                <Text style={{marginTop: 10, color: "#D0B17D", fontSize: 18}}>￥923.35</Text>
+                <Text style={{marginTop: 10, color: "#D0B17D", fontSize: 18}}>￥922</Text>
               </View>
             </View>
             <View style={{flexDirection: "row", justifyContent: "flex-end", alignItems: "center"}}>
@@ -113,24 +134,21 @@ class FixedLabel extends Component {
                     mode="dropdown"
                     iosIcon={<Icon name="ios-arrow-forward-outline"/>}
                     placeholderIconColor="#999"
-                    style={{ width: undefined }}
+                    style={{width: undefined}}
                     placeholder="2张可用"
                     placeholderStyle={{paddingRight: 0}}
-                    textStyle={{ color: "#ccc", paddingRight: 0 }}
+                    textStyle={{color: "#ccc", paddingRight: 0}}
                     itemStyle={{
                       backgroundColor: "#d3d3d3",
                       marginLeft: 0,
                       paddingLeft: 10
                     }}
-                    itemTextStyle={{ color: "#788ad2" }}
+                    itemTextStyle={{color: "#788ad2"}}
                     selectedValue={this.state.selected1}
                     onValueChange={this.onValueChange1.bind(this)}
                   >
-                    <Item label="Wallet" value="key0" />
-                    <Item label="ATM Card" value="key1" />
-                    <Item label="Debit Card" value="key2" />
-                    <Item label="Credit Card" value="key3" />
-                    <Item label="Net Banking" value="key4" />
+                    <Item label="8小时排单券" value="key0"/>
+                    <Item label="3天排单券" value="key1"/>
                   </Picker>
                 </Form>
               </Right>
@@ -145,42 +163,54 @@ class FixedLabel extends Component {
                     mode="dropdown"
                     iosIcon={<Icon name="ios-arrow-forward-outline"/>}
                     placeholderIconColor="#999"
-                    style={{ width: undefined }}
+                    style={{width: undefined}}
                     placeholder="-￥20"
                     placeholderStyle={{paddingRight: 0, color: "#D0B17D"}}
-                    textStyle={{ color: "#ccc", paddingRight: 0}}
+                    textStyle={{color: "#ccc", paddingRight: 0}}
                     itemStyle={{
                       backgroundColor: "#d3d3d3",
                       marginLeft: 0,
                       paddingLeft: 10
                     }}
-                    itemTextStyle={{ color: "#788ad2" }}
+                    itemTextStyle={{color: "#788ad2"}}
                     selectedValue={this.state.selected2}
                     onValueChange={this.onValueChange2.bind(this)}
                   >
-                    <Item label="顺丰速运" value="key5" />
-                    <Item label="圆通快递" value="key6" />
-                    <Item label="中通快递" value="key7" />
-                    <Item label="申通快递" value="key8" />
-                    <Item label="EMS邮政" value="key9" />
+                    <Item label="手续费5%折扣券" value="key5"/>
+                    <Item label="20元抵用券" value="key6"/>
                   </Picker>
                 </Form>
               </Right>
             </View>
             <View style={styles.listItem}>
               <Text style={styles.fontWhite}>可获得红积分</Text>
-              <Text style={{color: "#ccc", paddingRight: 15}}>2838</Text>
+              <Text style={{
+                color: "#ccc",
+                paddingRight: 15
+              }}>{(this.state.productPrice * this.state.countAmt).toFixed(2)}</Text>
             </View>
-            <View style={{flexDirection: "row", justifyContent: "space-between", alignItems: "flex-start", paddingTop: 15, paddingBottom: 15}}>
+            <View style={{
+              flexDirection: "row",
+              justifyContent: "space-between",
+              alignItems: "flex-start",
+              paddingTop: 15,
+              paddingBottom: 15
+            }}>
               <Text style={styles.fontWhite}>共三件商品</Text>
               <View>
                 <View style={{flexDirection: "row", justifyContent: "flex-end"}}>
                   <Text style={{color: "#aaa"}}>主推产品费：</Text>
-                  <Text style={{color: "#D0B17D", paddingRight: 15}}>$2768.34</Text>
+                  <Text style={{
+                    color: "#D0B17D",
+                    paddingRight: 15
+                  }}>{(this.state.productPrice * this.state.countAmt).toFixed(2)}</Text>
                 </View>
                 <View style={{flexDirection: "row", justifyContent: "flex-end", marginTop: 10}}>
                   <Text style={{color: "#aaa"}}>推广费：</Text>
-                  <Text style={{color: "#ccc", paddingRight: 15}}>$276.83</Text>
+                  <Text style={{
+                    color: "#ccc",
+                    paddingRight: 15
+                  }}>{(this.state.productPrice * this.state.countAmt / 10).toFixed(2)}</Text>
                 </View>
               </View>
             </View>
@@ -191,12 +221,15 @@ class FixedLabel extends Component {
             <View style={{width: "60%", height: "100%", backgroundColor: "#333", paddingTop: 5, paddingLeft: 10}}>
               <View style={{flexDirection: "row", justifyContent: "flex-start", alignItems: "center"}}>
                 <Text style={styles.fontWhite}>合计: </Text>
-                <Text style={{color: "#D0B17D", fontSize: 22}}>￥3025.17</Text>
+                <Text style={{
+                  color: "#D0B17D",
+                  fontSize: 22
+                }}>￥{(this.state.productPrice * this.state.countAmt - 20).toFixed(2)}</Text>
               </View>
               <Text style={{color: "#aaa", fontSize: 13}}>已优惠￥20</Text>
             </View>
             <Button full style={styles.buttonFull}>
-              <Text style={{color: "#000", fontSize: 20, fontWeight: "bold"}}>立刻下单</Text>
+              <Text style={{color: "#000", fontSize: 20, fontWeight: "bold"}} onPress={this.submitOrder}>立刻下单</Text>
             </Button>
           </View>
         </Footer>

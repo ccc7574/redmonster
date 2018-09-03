@@ -96,12 +96,12 @@ class HomeScreen extends Component {
             </View>
             <View style={{paddingTop: 15, flexDirection: "row"}}>
               <Text style={styles.productPrice}>当前价</Text>
-              <Text style={styles.productPriceDetail}>¥922.25</Text>
+              <Text style={styles.productPriceDetail}>922积分</Text>
             </View>
             <View style={styles.productBuy}>
               <Right>
                 <Button block bordered onPress={() => this.props.navigation.navigate("Buy")} style={styles.buyButton}>
-                  <Text style={styles.buyButtonTxt}>立即购买</Text>
+                  <Text style={styles.buyButtonTxt}>立即申购</Text>
                 </Button>
               </Right>
             </View>
@@ -117,8 +117,8 @@ class HomeScreen extends Component {
               <MoneyCell moneyNum={2} moneyUnit={"十"}/>
               <MoneyCell moneyNum={2} moneyUnit={"元"}/>
               <Text style={styles.point}>.</Text>
-              <MoneyCell moneyNum={2} moneyUnit={"角"}/>
-              <MoneyCell moneyNum={5} moneyUnit={"分"}/>
+              <MoneyCell moneyNum={0} moneyUnit={"角"}/>
+              <MoneyCell moneyNum={0} moneyUnit={"分"}/>
             </View>
             <View style={styles.priceIcon}>
               <TouchableHighlight onPress={() => this.props.navigation.navigate("History")}>
@@ -212,7 +212,6 @@ class HomeScreen extends Component {
               firstItem={SLIDER_1_FIRST_ITEM}
               inactiveSlideScale={0.94}
               inactiveSlideOpacity={0.7}
-              // inactiveSlideShift={20}
               containerCustomStyle={styles.slider}
               contentContainerCustomStyle={styles.sliderContentContainer}
               loop={true}
@@ -226,10 +225,7 @@ class HomeScreen extends Component {
           </View>
           <View style={styles.majorProductStart}><Text style={styles.majorProduct}>主打商品</Text></View>
           {this.renderGoodsDiv()}
-          {this.renderGoodsDiv()}
-
           {this.renderPurchaseOrders()}
-
         </Content>
         <Footer style={fs.footerTab}>
           <FooterTab style={fs.footerTab}>
