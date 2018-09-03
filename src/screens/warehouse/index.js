@@ -11,7 +11,7 @@ import {
   Footer,
   FooterTab,
 } from "native-base";
-import {Image} from "react-native";
+import {AsyncStorage, Image} from "react-native";
 import {View, Modal} from "react-native";
 import s from "./styles";
 import fs from "../footer/styles";
@@ -316,7 +316,15 @@ class WareHouse extends Component {
             </Button>
             <Button style={fs.footerButton}
                     active={this.state.tab4}
-                    onPress={() => this.props.navigation.navigate("Mine")}
+                    onPress={async () => {
+                      let userInfo = await AsyncStorage.getItem('user_status');
+                      userInfo = JSON.parse(userInfo);
+                      if (userInfo.status === 'logined') {
+                        this.props.navigation.navigate("Mine")
+                      } else {
+                        this.props.navigation.navigate("Register")
+                      }
+                    }}
                     vertical
             >
               <View style={fs.footerView}>

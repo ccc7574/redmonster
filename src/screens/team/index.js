@@ -8,7 +8,7 @@ import {
   Footer,
   FooterTab
 } from "native-base";
-import { View, Image } from "react-native";
+import {View, Image, AsyncStorage} from "react-native";
 import Header from "../../components/Header/index";
 import s from "./styles";
 import fs from "../footer/styles";
@@ -158,7 +158,16 @@ class FixedLabel extends Component {
               </View>
             </Button>
             <Button style={fs.footerButton}
-                    onPress={() => this.props.navigation.navigate("Mine")}
+                    active={this.state.tab4}
+                    onPress={async () => {
+                      let userInfo = await AsyncStorage.getItem('user_status');
+                      userInfo = JSON.parse(userInfo);
+                      if (userInfo.status === 'logined') {
+                        this.props.navigation.navigate("Mine")
+                      } else {
+                        this.props.navigation.navigate("Register")
+                      }
+                    }}
                     vertical
             >
               <View style={fs.footerView}>
