@@ -52,28 +52,38 @@ class WareHouse extends Component {
     })
   }
 
-  renderRow = (item)=> {
-    let { showBtnRow } = this.state;
+  renderRow = (item) => {
+    let {showBtnRow} = this.state;
     return <View>
       <View style={s.listRow}>
-        <Text style={[s.listCell, s.fontGrey]}>
+        <Text style={[s.listCell, s.fontGrey]} onPress={this.toggleBtns}>
           {item[0]}
         </Text>
-        <Text style={[s.listCell, s.fontGrey]}>
+        <Text style={[s.listCell, s.fontGrey]} onPress={this.toggleBtns}>
           {item[1]}
         </Text>
-        <Text style={[s.listCell, s.fontGrey]}>
-          {item[2]}
+        <Text style={[s.listCell, s.fontGrey]} onPress={this.toggleBtns}>
+          234.88
+        </Text>
+        <Text style={[s.listCell, s.fontGrey]} onPress={this.toggleBtns}>
+          654.32
+        </Text>
+        <Text style={[s.listCell, s.fontRed]} onPress={this.toggleBtns}>
+          411.00
         </Text>
         <Button transparent onPress={this.toggleBtns}>
-          <View style={{paddingRight:10}}><Image style={s.upIcon} source={require('../../../assets/warehouse/down.png')}/></View>
+          <View style={{paddingRight: 10}}><Image style={s.upIcon}
+                                                  source={require('../../../assets/warehouse/down.png')}/></View>
         </Button>
       </View>
-      { showBtnRow &&
+      {showBtnRow &&
       <View style={s.btnsRow}>
         <View style={s.btnsWrapper}>
-          <Button block bordered onPress={this.handleExchange} style={s.btn}>
+          <Button block bordered onPress={this.showModal} style={s.btn}>
             <Text style={s.btnTxt}>兑换</Text>
+          </Button>
+          <Button block bordered onPress={this.showModalSell} style={s.btn}>
+            <Text style={s.btnTxt}>卖出</Text>
           </Button>
           <Button block bordered onPress={() => this.props.navigation.navigate("PickUp")} style={s.btn}>
             <Text style={s.btnTxt}>提货</Text>
@@ -112,19 +122,25 @@ class WareHouse extends Component {
             </View>
           </View>
 
-          {/*<View style={s.listHeader}>*/}
-            {/*<Text style={[s.headerCell, s.fontGrey]}>*/}
-              {/*商品*/}
-            {/*</Text>*/}
-            {/*<Text style={[s.headerCell, s.fontGrey]}>*/}
-              {/*数量*/}
-            {/*</Text>*/}
-            {/*<Text style={[s.headerCell, s.fontGrey]}>*/}
-              {/*市场价*/}
-            {/*</Text>*/}
-          {/*</View>*/}
+          <View style={s.listHeader}>
+            <Text style={[s.headerCell, s.fontGrey]}>
+              商品
+            </Text>
+            <Text style={[s.headerCell, s.fontGrey]}>
+              数量
+            </Text>
+            <Text style={[s.headerCell, s.fontGrey]}>
+              提货均价
+            </Text>
+            <Text style={[s.headerCell, s.fontGrey]}>
+              现价
+            </Text>
+            <Text style={[s.headerCell, s.fontGrey]}>
+              利润
+            </Text>
+          </View>
 
-          {/*{this.renderRow(DATA)}*/}
+          {this.renderRow(['普洱茶叶', '1', 'count'])}
 
           <View style={s.emptyWrapper}>
             <Image

@@ -64,16 +64,19 @@ class FixedLabel extends Component {
   };
 
   submitOrder = () => {
+    let props = this.props;
     AsyncStorage.getItem("user_status").then((value) => {
       let userInfo = JSON.parse(value);
       axios.post(`${serverAPI}/RM/api/orders/create`, {
         dealPrice: this.state.productPrice,
         dealAmount: this.state.countAmt,
         userId: userInfo.userId,
-        productId: 1
+        productId: 1,
+        productName:'普洱茶'
       }).then(function (response) {
         if(response.data.result==='success'){
           Alert.alert('下单成功!');
+          props.navigation.navigate("WareHouse");
         }
       }).catch(function (error) {
         console.log(error);
