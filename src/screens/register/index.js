@@ -154,17 +154,23 @@ class Register extends Component {
           <Form>
             <Item fixedLabel style={styles.itemRow}>
               <Icon active name="phone-portrait" style={styles.icon}/>
-              <Input placeholder="输入手机号"
-                     ref= {(el) => { this.phone = el; }}
-                     onChangeText={(phone) => this.setState({phone})}
-                     value={this.state.phone}/>
+              <Input
+                placeholder="输入手机号"
+                ref={(el) => { this.phone = el; }}
+                onChangeText={(phone) => this.setState({phone})}
+                value={this.state.phone}
+                style={styles.input}
+              />
             </Item>
             <Item fixedLabel style={{flexDirection: "row", alignItems: "center", height: 60}}>
               <Icon active name="chatboxes" style={styles.icon}/>
-              <Input placeholder="输入验证码"
-                     ref= {(el) => { this.code = el; }}
-                     onChangeText={(code) => this.setState({code})}
-                     value={this.state.code}/>
+              <Input
+                placeholder="输入验证码"
+                ref={(el) => { this.code = el; }}
+                onChangeText={(code) => this.setState({code})}
+                value={this.state.code}
+                style={styles.input}
+              />
               <View style={styles.codeBtn}>
                   <Text style={{color: "#D1B27A",fontSize:12}}>获取验证码</Text>
               </View>
@@ -172,18 +178,24 @@ class Register extends Component {
 
             <Item fixedLabel style={styles.itemRow}>
               <Icon active name="lock" style={styles.icon}/>
-              <Input secureTextEntry={!this.state.switchFlag} placeholder="请设置登录密码"
-                     ref= {(el) => { this.password = el; }}
-                     onChangeText={(password) => this.setState({password})}
-                     value={this.state.password}/>
+              <Input
+                secureTextEntry={!this.state.switchFlag} placeholder="请设置登录密码"
+                ref={(el) => { this.password = el; }}
+                onChangeText={(password) => this.setState({password})}
+                value={this.state.password}
+                style={styles.input}
+              />
               <Switch value={this.state.switchFlag} onTintColor="#4688F1" onValueChange={this.handleChange} style={{marginRight: 10}}/>
             </Item>
             <Item fixedLabel style={styles.itemRow}>
               <Icon active name="attach" style={styles.icon}/>
-              <Input placeholder="请输入推荐人手机号"
-                     ref= {(el) => { this.referee = el; }}
-                     onChangeText={(referee) => this.setState({referee})}
-                     value={this.state.referee}/>
+              <Input
+                placeholder="请输入推荐人手机号"
+                ref={(el) => { this.referee = el; }}
+                onChangeText={(referee) => this.setState({referee})}
+                value={this.state.referee}
+                style={styles.input}
+              />
             </Item>
           </Form>
           <ListItem style={{margin: 20, borderBottomWidth: 0}}>

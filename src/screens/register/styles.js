@@ -27,5 +27,8 @@ export default StyleSheet.create({
   },
   fontColor: {
     color: "#666"
+  },
+  input: {
+    color: "#eee"
   }
 });
