@@ -40,10 +40,12 @@ class WareHouse extends Component {
 
   componentWillMount() {
     AsyncStorage.getItem("user_status").then((value) => {
-      let userInfo = JSON.parse(value);
-      axios.get(`${serverAPI}/rm/graphql`, {
+      const userInfo = value && JSON.parse(value) || {};
+      const { userId } = userInfo && userInfo || null;
+
+      userId && axios.get(`${serverAPI}/rm/graphql`, {
         params: {
-          query: `{ orderQueryWhere(userId:"${userInfo.userId}",type:0) {dealPrice dealAmount type productName} }`
+          query: `{ orderQueryWhere(userId:"${userId}",type:0) {dealPrice dealAmount type productName} }`
         }
       }).then((response) => {
         let orderArr = response.data.data.orderQueryWhere;
@@ -52,18 +54,20 @@ class WareHouse extends Component {
         this.setState({totalPrice:(item.dealAmount*item.dealPrice).toFixed(2)})
       }).catch(function (error) {
         console.log(error);
-      })
-      axios.get(`${serverAPI}/rm/graphql`, {
+      });
+
+      userId && axios.get(`${serverAPI}/rm/graphql`, {
         params: {
-          query: `{ UserQueryById(userId:"${userInfo.userId}") {phone balance} }`
+          query: `{ UserQueryById(userId:"${userId}") {phone balance} }`
         }
       }).then((response) => {
         let user = response.data.data.UserQueryById;
         this.setState({user});
       }).catch(function (error) {
         console.log(error);
-      })
-    })
+      });
+
+    });
   }
 
   handleAdd = () => {

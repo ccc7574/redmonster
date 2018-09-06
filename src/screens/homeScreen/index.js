@@ -262,11 +262,11 @@ class HomeScreen extends Component {
                     active={this.state.tab4}
                     onPress={async () => {
                       let userInfo = await AsyncStorage.getItem('user_status');
-                      userInfo = JSON.parse(userInfo);
-                      if (userInfo.status === 'logined') {
-                        this.props.navigation.navigate("Mine")
+                      userInfo = userInfo && JSON.parse(userInfo);
+                      if (userInfo && userInfo.status === 'logined') {
+                        this.props.navigation.navigate("Mine");
                       } else {
-                        this.props.navigation.navigate("Register")
+                        this.props.navigation.navigate("Register");
                       }
                     }}
                     vertical

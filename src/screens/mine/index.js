@@ -51,7 +51,9 @@ class Mine extends Component {
   }
 
   render() {
-    const { iptVal, totalAmt } = this.state;
+    const { iptVal, totalAmt, userInfo, type } = this.state;
+    const { phone } = userInfo && userInfo;
+
     return (
       <Container style={{backgroundColor: '#000'}}>
         <ScrollView>
@@ -85,9 +87,9 @@ class Mine extends Component {
                 />
               </View>
               <View style={s.disc}>
-                <View style={s.row1}><Text style={{fontSize: 16, color: '#d1b27a'}}>ID: {this.state.userInfo.phone}</Text></View>
+                <View style={s.row1}><Text style={{fontSize: 16, color: '#d1b27a'}}>ID: {phone}</Text></View>
                 <View style={s.row2}><Text style={{fontSize: 13, color: '#a5a5a5'}}>昵称 {'配包用户'}</Text></View>
-                <View style={s.row3}><Text style={{fontSize: 12, color: '#a5a5a5'}}>{this.state.type}</Text></View>
+                <View style={s.row3}><Text style={{fontSize: 12, color: '#a5a5a5'}}>{type}</Text></View>
               </View>
               <View style={s.qr}>
                 <Image
