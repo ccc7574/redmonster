@@ -1,4 +1,4 @@
 'use strict'
 
-const serverAPI = 'http://localhost:3000';
+const serverAPI = 'http://windapi-server-dev.chinanorth.cloudapp.chinacloudapi.cn:8000';
 module.exports = {serverAPI}

@@ -86,7 +86,7 @@ class Register extends Component {
           console.log(userObj);
           AsyncStorage.setItem('user_status', JSON.stringify(userObj), () => {
             Alert.alert('注册成功!');
-            props.navigation.goBack();
+            props.navigation.navigate("Home");
           });
         }
       }).catch(function (error) {

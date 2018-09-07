@@ -1,11 +1,20 @@
 {
   "expo": {
+    "name":"Red Monster",
     "sdkVersion": "25.0.0",
-    "icon": "./assets/nblogo.png",
-    "slug": "nativebasekitchensink",
+    "icon": "./assets/redmonsterlogo.png",
+    "description": "Red Monster Demo",
+    "version": "1.0.1",
+    "slug": "redmonster",
+    "ios": {
+      "bundleIdentifier": "com.aicareus.redmonster"
+    },
+    "android": {
+      "package": "com.aicareus.redmonster"
+    },
     "loading": {
       "hideExponentText": true,
-      "backgroundImage": "./assets/splashscreen.png"
+      "backgroundImage": "./assets/redmonster8.png"
     },
     "orientation": "portrait",
     "primaryColor": "#cccccc",
