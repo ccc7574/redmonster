@@ -300,7 +300,7 @@ export default StyleSheet.create({
 
   bottomTxt: {
     textAlign: "center",
-    color: "#308e83",
+    color: "#3D3D3D",
     fontSize: 15,
     marginTop: 15,
     marginBottom: 30
