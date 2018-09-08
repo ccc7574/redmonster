@@ -27,20 +27,16 @@ const cardImage1 = require("../../../assets/tea1.png");
 
 const ENTRIES1 = [
   {
-    title: '五一放假通知',
-    subtitle: '劳动节以及十一停牌放假通知: 劳动节放假时间为4月29日5月1日, 期间平台停运',
+    title: '品牌介绍',
+    subtitle: '深挖国产优质产品，重塑中国高端产品。',
     illustration: "http://filewind.clobotics.cn/api/file/69c2f19da4534b981280b0c9694164f9"
   },
   {
-    title: '春节放假通知',
-    subtitle: '春节停牌放假通知: 劳动节放假时间为4月29日5月1日, 期间平台停运',
+    title: '主打商品',
+    subtitle: '主打商品，红炉国际出品',
     illustration: 'http://filewind.clobotics.cn/api/file/69c2f19da4534b981280b0c9694164f9'
   },
-  {
-    title: '国庆节放假通知',
-    subtitle: '国庆节停牌放假通知: 劳动节放假时间为4月29日5月1日, 期间平台停运',
-    illustration: 'http://filewind.clobotics.cn/api/file/69c2f19da4534b981280b0c9694164f9'
-  }
+
 ];
 
 const MoneyCell = ({moneyNum, moneyUnit}) => {
@@ -75,6 +71,7 @@ class HomeScreen extends Component {
         even={(index + 1) % 2 === 0}
         parallax={true}
         parallaxProps={parallaxProps}
+        homeScreenProps={}
       />
     );
   }

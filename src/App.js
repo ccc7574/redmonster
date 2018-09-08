@@ -33,7 +33,8 @@ import PickUpOrderManagement from "./screens/pickUpOrderManagement";
 import CouponForQueue from './screens/couponForQueue';
 import Points from './screens/points';
 import Mine from './screens/mine';
-import Footer from './screens/footer/HLFooter'
+import Footer from './screens/footer/HLFooter';
+import Article from './screens/article';
 
 const Drawer = DrawerNavigator(
   {

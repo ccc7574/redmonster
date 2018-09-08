@@ -5,6 +5,9 @@ import { ParallaxImage } from 'react-native-snap-carousel';
 import styles from './SliderEntry.style';
 
 export default class SliderEntry extends Component {
+  constructor(props) {
+    super(props);
+  }
 
     static propTypes = {
         data: PropTypes.object.isRequired,
@@ -34,6 +37,10 @@ export default class SliderEntry extends Component {
         );
     }
 
+  toArticle = (props)=> {
+      props.navigation.navigate("Register")
+    }
+
     render () {
         const { data: { title, subtitle }, even } = this.props;
 
@@ -50,7 +57,7 @@ export default class SliderEntry extends Component {
             <TouchableOpacity
               activeOpacity={1}
               style={styles.slideInnerContainer}
-              onPress={() => { alert(`You've clicked '${title}'`); }}
+              onPress={() => { this.toArticle() }}
               >
                 <View style={styles.shadow} />
                 <View style={[styles.imageContainer, even ? styles.imageContainerEven : {}]}>
