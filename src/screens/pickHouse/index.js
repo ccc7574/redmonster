@@ -52,38 +52,28 @@ class WareHouse extends Component {
     })
   }
 
-  renderRow = (item) => {
-    let {showBtnRow} = this.state;
+  renderRow = (item)=> {
+    let { showBtnRow } = this.state;
     return <View>
       <View style={s.listRow}>
-        <Text style={[s.listCell, s.fontGrey]} onPress={this.toggleBtns}>
+        <Text style={[s.listCell, s.fontGrey]}>
           {item[0]}
         </Text>
-        <Text style={[s.listCell, s.fontGrey]} onPress={this.toggleBtns}>
+        <Text style={[s.listCell, s.fontGrey]}>
           {item[1]}
         </Text>
-        <Text style={[s.listCell, s.fontGrey]} onPress={this.toggleBtns}>
-          234.88
-        </Text>
-        <Text style={[s.listCell, s.fontGrey]} onPress={this.toggleBtns}>
-          654.32
-        </Text>
-        <Text style={[s.listCell, s.fontRed]} onPress={this.toggleBtns}>
-          411.00
+        <Text style={[s.listCell, s.fontGrey]}>
+          {item[2]}
         </Text>
         <Button transparent onPress={this.toggleBtns}>
-          <View style={{paddingRight: 10}}><Image style={s.upIcon}
-                                                  source={require('../../../assets/warehouse/down.png')}/></View>
+          <View style={{paddingRight:10}}><Image style={s.upIcon} source={require('../../../assets/warehouse/down.png')}/></View>
         </Button>
       </View>
-      {showBtnRow &&
+      { showBtnRow &&
       <View style={s.btnsRow}>
         <View style={s.btnsWrapper}>
-          <Button block bordered onPress={this.showModal} style={s.btn}>
+          <Button block bordered onPress={this.handleExchange} style={s.btn}>
             <Text style={s.btnTxt}>兑换</Text>
-          </Button>
-          <Button block bordered onPress={this.showModalSell} style={s.btn}>
-            <Text style={s.btnTxt}>卖出</Text>
           </Button>
           <Button block bordered onPress={() => this.props.navigation.navigate("PickUp")} style={s.btn}>
             <Text style={s.btnTxt}>提货</Text>
@@ -115,32 +105,26 @@ class WareHouse extends Component {
           <View style={s.upper}>
             <Text style={s.upperRowOne}>消费积分</Text>
             <View style={s.upperRowTwo}>
-              <Text style={s.upperRowTwoTxt}>2000</Text>
+              <Text style={s.upperRowTwoTxt}>0</Text>
               <Button block bordered onPress={this.handleUse} style={s.upperRowTwoBtn}>
                 <Text style={s.upperRowTwoBtnTxt}>消费</Text>
               </Button>
             </View>
           </View>
 
-          <View style={s.listHeader}>
-            <Text style={[s.headerCell, s.fontGrey]}>
-              商品
-            </Text>
-            <Text style={[s.headerCell, s.fontGrey]}>
-              数量
-            </Text>
-            <Text style={[s.headerCell, s.fontGrey]}>
-              提货均价
-            </Text>
-            <Text style={[s.headerCell, s.fontGrey]}>
-              现价
-            </Text>
-            <Text style={[s.headerCell, s.fontGrey]}>
-              利润
-            </Text>
-          </View>
+          {/*<View style={s.listHeader}>*/}
+            {/*<Text style={[s.headerCell, s.fontGrey]}>*/}
+              {/*商品*/}
+            {/*</Text>*/}
+            {/*<Text style={[s.headerCell, s.fontGrey]}>*/}
+              {/*数量*/}
+            {/*</Text>*/}
+            {/*<Text style={[s.headerCell, s.fontGrey]}>*/}
+              {/*市场价*/}
+            {/*</Text>*/}
+          {/*</View>*/}
 
-          {this.renderRow(['普洱茶叶', '1', 'count'])}
+          {/*{this.renderRow(DATA)}*/}
 
           <View style={s.emptyWrapper}>
             <Image
@@ -186,14 +170,17 @@ class WareHouse extends Component {
             </Button>
             <Button style={fs.footerButton}
                     active={this.state.tab4}
-                    onPress={async () => {
-                      let userInfo = await AsyncStorage.getItem('user_status');
-                      userInfo = userInfo && JSON.parse(userInfo);
-                      if (userInfo && userInfo.status === 'logined') {
-                        this.props.navigation.navigate("Mine")
-                      } else {
-                        this.props.navigation.navigate("Register")
-                      }
+                    onPress={() => {
+                      AsyncStorage.getItem("user_status").then((value) => {
+                        let userInfo = JSON.parse(value);
+                        if (userInfo && userInfo.status === 'logined') {
+                          this.props.navigation.navigate("Mine");
+                        } else {
+                          this.props.navigation.navigate("Register");
+                        }
+                      }).then(res => {
+                        //do something else
+                      });
                     }}
                     vertical
             >

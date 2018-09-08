@@ -13,7 +13,6 @@ import {
 } from "native-base";
 import styles from "./style";
 
-const drawerImage = require("../../../assets/logo-kitchen-sink.png");
 const datas = [
   {
     name: "Anatomy",
@@ -192,7 +191,6 @@ class SideBar extends Component {
           bounces={false}
           style={{ flex: 1, backgroundColor: "#fff", top: -1 }}
         >
-          <Image square style={styles.drawerImage} source={drawerImage} />
 
           <List
             dataArray={datas}

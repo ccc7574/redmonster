@@ -169,6 +169,16 @@ class Register extends Component {
                 style={styles.input}
               />
             </Item>
+            <Item fixedLabel style={styles.itemRow}>
+              <Icon active name="person" style={styles.icon}/>
+              <Input
+                placeholder="昵称"
+                ref={(el) => { this.nickName = el; }}
+                onChangeText={(nickName) => this.setState({nickName})}
+                value={this.state.nickName}
+                style={styles.input}
+              />
+            </Item>
             <Item fixedLabel style={{flexDirection: "row", alignItems: "center", height: 60}}>
               <Icon active name="chatboxes" style={styles.icon}/>
               <Input
