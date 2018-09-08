@@ -304,5 +304,9 @@ export default StyleSheet.create({
     fontSize: 15,
     marginTop: 15,
     marginBottom: 30
+  },
+  message: {
+    backgroundColor: 'transparent',
+
   }
 });

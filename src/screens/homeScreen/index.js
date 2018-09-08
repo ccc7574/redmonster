@@ -252,7 +252,9 @@ class HomeScreen extends Component {
           <Title style={styles.iconStyle}>红炉</Title>
           </Body>
           <Right>
-            <Image style={styles.headerIcon} source={require('../../../assets/home/message.png')}/>
+            <Button onPress={()=>{this.props.navigation.navigate('Message');}} style={styles.message}>
+              <Image style={styles.headerIcon} source={require('../../../assets/home/message.png')}/>
+            </Button>
           </Right>
         </Header>
         <Content>

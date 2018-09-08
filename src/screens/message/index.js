@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Image } from "react-native";
+import { Image,TouchableOpacity } from "react-native";
 import {
   Container,
   Header,
@@ -11,21 +11,16 @@ import {
   Left,
   Right,
   Body,
-  Input,
-  Form,
-  Item,
-  Thumbnail,
-  Label,
   View
 } from "native-base";
 
 import s from "./styles";
-import Img from '../../../assets/wallet.png';
 
-class Wallet extends Component {
+class Message extends Component {
   constructor(props) {
     super(props);
     this.state = {
+
     }
   }
 
@@ -46,9 +41,15 @@ class Wallet extends Component {
           <Right />
         </Header>
         <Content>
-          <View style={{marginTop: 85}}>
-            <Text style={s.test}>test</Text>
-          </View>
+          <TouchableOpacity style={s.listItemWrapper} onPress={()=>this.props.navigation.navigate('Article1')}>
+            <View style={s.redDot} />
+            <Text style={s.title}>主打商品</Text>
+            <Text style={s.date}>2018-9-7 19:30</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={s.listItemWrapper} onPress={()=>this.props.navigation.navigate('Article2')}>
+            <Text style={s.title}>品牌介绍</Text>
+            <Text style={s.date}>2018-9-7 19:30</Text>
+          </TouchableOpacity>
         </Content>
       </Container>
     );
@@ -56,4 +57,4 @@ class Wallet extends Component {
 }
 
 
-export default Wallet;
+export default Message;
