@@ -71,12 +71,11 @@ class HomeScreen extends Component {
         even={(index + 1) % 2 === 0}
         parallax={true}
         parallaxProps={parallaxProps}
+        clickCB={(title)=>{
+          console.log(title);
+        }}
       />
     );
-  }
-
-  accessUserInfo = (props) =>{
-    props.navigation.navigate("Register")
   }
 
   renderGoodsDiv = () => {
