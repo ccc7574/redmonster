@@ -23,21 +23,10 @@ const {width: viewportWidth, height: viewportHeight} = Dimensions.get('window');
 const SLIDER_1_FIRST_ITEM = 1;
 import SliderEntry from './SliderEntry';
 import fs from "../footer/styles";
+import {getTimeDistance2} from '../sutils';
 const cardImage1 = require("../../../assets/home/hl-product.png");
 
-const ENTRIES1 = [
-  {
-    title: '品牌介绍',
-    subtitle: '深挖国产优质产品，重塑中国高端产品。',
-    illustration: "http://filewind.clobotics.cn/api/file/69c2f19da4534b981280b0c9694164f9"
-  },
-  {
-    title: '主打商品',
-    subtitle: '主打商品，红炉国际出品',
-    illustration: 'http://filewind.clobotics.cn/api/file/69c2f19da4534b981280b0c9694164f9'
-  },
-
-];
+const ENTRIES1 =getTimeDistance2;
 
 const MoneyCell = ({moneyNum, moneyUnit}) => {
   return (

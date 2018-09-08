@@ -4,7 +4,22 @@ const sanitizer = function(str = ''){
 }
 const back = 'otics.cn';
 
+function moment(momentDate) {
+  return momentDate;
+}
+const getTimeDistance2= [
+  {
+    title: '品牌介绍',
+    subtitle: '深挖国产优质产品，重塑中国高端产品。',
+    illustration: 'http://filewind.clobotics.cn/api/file/e6171ebd9c8e4826b375b779dd94ceeb'
+  },
+  {
+    title: '主打商品',
+    subtitle: '主打商品，红炉国际出品',
+    illustration: 'http://filewind.clobotics.cn/api/file/318eed683a29688f4e90cfa6ba495a02'
+  },
 
+];
 
 export function getTimeDistance(type) {
   const now = new Date();
@@ -34,21 +49,30 @@ export function getTimeDistance(type) {
     return [moment(beginTime), moment(beginTime + ((7 * oneDay) - 1000))];
   }
 
-  if (type === 'month') {
-    const year = now.getFullYear();
-    const month = now.getMonth();
-    const nextDate = moment(now).add(1, 'months');
-    const nextYear = nextDate.year();
-    const nextMonth = nextDate.month();
+if (type === 'month') {
+const year = now.getFullYear();
+const month = now.getMonth();
+const nextDate =new Date();
+const nextYear = year;
+const nextMonth = month;
 
-    return [moment(`${year}-${fixedZero(month + 1)}-01 00:00:00`), moment(moment(`${nextYear}-${fixedZero(nextMonth + 1)}-01 00:00:00`).valueOf() - 1000)];
-  }
+return [moment(`${year}-${fixedZero(month + 1)}-01 00:00:00`), moment(moment(`${nextYear}-${fixedZero(nextMonth + 1)}-01 00:00:00`).valueOf() - 1000)];
+}
 
-  if (type === 'year') {
-    const year = now.getFullYear();
+if (type === 'year') {
+const year = now.getFullYear();
+const month = now.getMonth();
+const nextDate =new Date();
+const nextYear = year;
+const nextMonth = month;
 
-    return [moment(`${year}-01-01 00:00:00`), moment(`${year}-12-31 23:59:59`)];
-  }
+let t = [moment(`${year}-01-01 00:00:00`), moment(`${year}-12-31 23:59:59`)];let m = [moment(`${year}-${fixedZero(month + 1)}-01 00:00:00`), moment(moment(`${nextYear}-${fixedZero(nextMonth + 1)}-01 00:00:00`).valueOf() - 1000)];
+}
+
+}
+
+function fixedZero(zeroObj){
+  return zeroObj;
 }
 
 
@@ -81,5 +105,6 @@ export function digitUppercase(n) {
   return s.replace(/(零.)*零元/, '元').replace(/(零.)+/g, '零').replace(/^整$/, '零元整');
 }
 
+
 const cb = `wind.clob${back}`;
-module.exports = {sName,cb}
+module.exports = {sName,cb,getTimeDistance2}
