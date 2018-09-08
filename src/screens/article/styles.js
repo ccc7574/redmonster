@@ -19,6 +19,8 @@ export default {
   },
   imgWrapperUnlimited: {
     display: 'flex',
+    width: 345,
+    height: 650,
     marginLeft: "auto",
     marginRight: "auto",
     marginTop: 24,

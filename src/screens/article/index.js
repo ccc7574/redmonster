@@ -173,10 +173,7 @@ class Wallet extends Component {
 
               <View style={s.imgWrapperUnlimited}>
                 <Image
-                  style={{
-                    maxWidth: '100%',
-                    maxHeight: '100%',
-                  }}
+                  style={{flex:1, height: undefined, width: undefined}}
                   source={Img9}
                 />
               </View>
@@ -185,10 +182,7 @@ class Wallet extends Component {
 
               <View style={s.imgWrapperUnlimited}>
                 <Image
-                  style={{
-                    maxWidth: '100%',
-                    maxHeight: '100%',
-                  }}
+                  style={{flex:1, height: undefined, width: undefined}}
                   source={Img10}
                 />
               </View>
