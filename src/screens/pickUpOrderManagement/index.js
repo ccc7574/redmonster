@@ -19,7 +19,7 @@ import {
 } from "native-base";
 import { View, Image, TouchableHighlight, Modal } from "react-native";
 import styles from "./styles";
-import noOrder from "./images/noOrder.png";
+import noOrder from "../../../assets/noOrder.png";
 
 const pickUpImg = require("../../../assets/pickUp-img.png");
 

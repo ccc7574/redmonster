@@ -208,24 +208,26 @@ class Mine extends Component {
                 {/*<Icon style={s.arrowRight} name="arrow-forward"/>*/}
               {/*</View>*/}
             {/*</View>*/}
-            <View style={s.listItem}>
-              <View style={s.listItemLeft}>
-                <View style={s.listItemLeftImgWrapper}>
-                  <Image
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                    }}
-                    resizeMode={'contain'}
-                    source={Points}
-                  />
+            <TouchableHighlight onPress={() => this.props.navigation.navigate("IntegrationRecord")}>
+              <View style={s.listItem}>
+                <View style={s.listItemLeft}>
+                  <View style={s.listItemLeftImgWrapper}>
+                    <Image
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                      }}
+                      resizeMode={'contain'}
+                      source={Points}
+                    />
+                  </View>
+                  <Text style={s.listItemLeftTxt}>积分记录</Text>
                 </View>
-                <Text style={s.listItemLeftTxt}>积分记录</Text>
+                <View style={s.listItemRight}>
+                  <Icon style={s.arrowRight} name="arrow-forward"/>
+                </View>
               </View>
-              <View style={s.listItemRight}>
-                <Icon style={s.arrowRight} name="arrow-forward"/>
-              </View>
-            </View>
+            </TouchableHighlight>
             <TouchableHighlight onPress={() => this.props.navigation.navigate("PickUpOrderManagement")}>
               <View style={s.listItem}>
                 <View style={s.listItemLeft}>
