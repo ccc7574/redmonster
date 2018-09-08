@@ -10,19 +10,49 @@ export default {
     fontSize: 20
   },
   imgWrapper: {
-    width: 72,
-    height: 72,
+    width: 345,
+    height: 236,
     marginLeft: "auto",
     marginRight: "auto",
     marginTop: 24,
-
+    marginBottom: 20,
+  },
+  imgWrapperUnlimited: {
+    display: 'flex',
+    marginLeft: "auto",
+    marginRight: "auto",
+    marginTop: 24,
+    marginBottom: 20,
   },
   title: {
     marginTop: 19,
-    marginLeft: 15,
     fontSize: 18,
     fontWeight: '600',
     color: '#A5A5A5',
+  },
+  date: {
+    marginTop: 4,
+    fontSize: 11,
+    color: '#7f7f7f',
+  },
+  content: {
+    marginTop: 30,
+  },
+  p: {
+    textAlign: 'center',
+    color: '#a5a5a5',
+    marginBottom: 10,
+  },
+  pLeft: {
+    textAlign: 'left',
+    color: '#a5a5a5',
+    marginBottom: 10,
+  },
+  pRight: {
+    textAlign: 'right',
+    color: '#a5a5a5',
+    marginBottom: 10,
   }
+
 
 };
