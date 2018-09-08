@@ -15,8 +15,6 @@ import { View, Image } from "react-native";
 import styles from "./styles";
 import noOrder from "../../../assets/noOrder.png";
 
-const pickUpImg = require("../../../assets/pickUp-img.png");
-
 const NoOrder = () => {
   return (
     <View style={styles.noRecord}>
@@ -45,23 +43,13 @@ class FixedLabel extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      modalVisible: false,
+      integration: 0
     };
   }
 
-  handleConfirm = () => {
-    this.setState({
-      modalVisible: true
-    });
-  };
-
-  closeModal = () => {
-    this.setState({
-      modalVisible: false,
-    });
-  };
-
   render() {
+    const { integration } = this.state;
+
     return (
       <Container style={styles.container}>
         <Header style={{backgroundColor: "#1A1A1A", borderBottomWidth: 0}}>
@@ -79,10 +67,8 @@ class FixedLabel extends Component {
         </Header>
 
         <Content style={{ padding: 12}}>
-          <View>
-            <Text>
-
-            </Text>
+          <View style={styles.topList}>
+            <Text style={styles.currentNum}>当前积分：{integration}</Text>
           </View>
           <NoOrder />
         </Content>

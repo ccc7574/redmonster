@@ -19,4 +19,15 @@ export default {
     textAlign: "center",
     color: "#666",
   },
+  topList: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    height: 50,
+    paddingHorizontal: 15,
+    backgroundColor: "#1a1a1a",
+
+  },
+  currentNum: {
+    color: "#D1B27A"
+  }
 }
