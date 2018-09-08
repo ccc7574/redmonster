@@ -197,27 +197,30 @@ class WareHouse extends Component {
           <View style={s.topSec}>
             <View style={s.flexBetween}>
               <View style={s.flexItem}>
-                <Text style={[s.font13, s.fontGrey]}>可用余额(元)</Text>
-                <Text style={[s.amountFont, s.fontGold]}>{this.state.user.balance}</Text>
+                <Text style={[s.font13, s.fontGrey]}>可用余额(积分)</Text>
+                <Text style={[s.amountFont, s.fontGold]}>0.00</Text>
+                {/*<Text style={[s.amountFont, s.fontGold]}>{this.state.user.balance}</Text>*/}
               </View>
               <View style={s.flexItem}>
                 <View style={s.alignCenter}>
                   <Text style={[s.font13, s.fontGrey]}>批发积分</Text>
-                  <Button bordered style={s.goldBtn}>
-                    <Text style={s.font9}>去使用</Text>
-                  </Button>
+                  {/*<Button bordered style={s.goldBtn}>*/}
+                    {/*<Text style={s.font9}>去使用</Text>*/}
+                  {/*</Button>*/}
                 </View>
-                <Text style={[s.amountFont, s.fontGold]}>400.00</Text>
+                <Text style={[s.amountFont, s.fontGold]}>0.00</Text>
+                {/*<Text style={[s.amountFont, s.fontGold]}>400.00</Text>*/}
               </View>
             </View>
             <View style={s.rowSection2}>
               <View style={s.flexItem}>
-                <Text style={[s.font13, s.fontGrey]}>商品总值(元)</Text>
-                <Text style={[s.amountFont, s.fontGold]}>{this.state.totalPrice}</Text>
+                <Text style={[s.font13, s.fontGrey]}>商品总值(积分)</Text>
+                <Text style={[s.amountFont, s.fontGold]}>0.00</Text>
+                {/*<Text style={[s.amountFont, s.fontGold]}>{this.state.totalPrice}</Text>*/}
               </View>
               <View style={s.flexItem}>
-                <Text style={[s.font13, s.fontGrey]}>总利润(元)</Text>
-                <Text style={[s.amountFont, s.fontRed]}>200.00</Text>
+                <Text style={[s.font13, s.fontGrey]}>总利润(积分)</Text>
+                <Text style={[s.amountFont, s.fontRed]}>0.00</Text>
               </View>
             </View>
           </View>
@@ -253,7 +256,7 @@ class WareHouse extends Component {
             <View style={s.innerContainer}>
               <View style={s.modalContentBox}>
                 <Text style={s.modalHeader}>兑换申请</Text>
-                <Text style={s.modalContent}>精品普洱茶饼(6年)</Text>
+                <Text style={s.modalContent}>红炉熟普2012</Text>
                 <View style={s.countSec}>
                   <Button small style={{backgroundColor: "#4A4A4A"}} onPress={this.handleMinus}>
                     <Text style={{fontSize: 19}}>-</Text>
@@ -292,7 +295,7 @@ class WareHouse extends Component {
             <View style={s.innerContainer}>
               <View style={s.modalContentBox}>
                 <Text style={s.modalHeader}>卖出申请</Text>
-                <Text style={s.modalContent}>精品普洱茶饼(6年)</Text>
+                <Text style={s.modalContent}>红炉熟普2012</Text>
                 <View style={s.countSec}>
                   <Button small style={{backgroundColor: "#4A4A4A"}} onPress={this.handleMinusSell}>
                     <Text style={{color: "#aaa", fontSize: 19}}>-</Text>

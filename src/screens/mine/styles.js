@@ -91,6 +91,9 @@ export default {
     marginTop: 6,
     color: '#d1b27a',
   },
+  walletBox: {
+    alignItems: 'center'
+  },
   lists: {
     marginLeft: 10,
     marginRight: 10,

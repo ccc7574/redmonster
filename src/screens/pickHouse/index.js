@@ -105,10 +105,10 @@ class WareHouse extends Component {
           <View style={s.upper}>
             <Text style={s.upperRowOne}>消费积分</Text>
             <View style={s.upperRowTwo}>
-              <Text style={s.upperRowTwoTxt}>0</Text>
-              <Button block bordered onPress={this.handleUse} style={s.upperRowTwoBtn}>
-                <Text style={s.upperRowTwoBtnTxt}>消费</Text>
-              </Button>
+              <Text style={s.upperRowTwoTxt}>0.00</Text>
+              {/*<Button block bordered onPress={this.handleUse} style={s.upperRowTwoBtn}>*/}
+                {/*<Text style={s.upperRowTwoBtnTxt}>消费</Text>*/}
+              {/*</Button>*/}
             </View>
           </View>
 

@@ -29,6 +29,13 @@ class Wallet extends Component {
     }
   }
 
+  handleSaveMoney = () => {
+    alert('暂未开通')
+  };
+
+  handleWithdraw = () => {
+    alert('暂未开通')
+  };
 
   render() {
     const {  } = this.state;
@@ -36,7 +43,7 @@ class Wallet extends Component {
       <Container style={{backgroundColor: '#000',}}>
         <Header style={s.header}>
           <Left>
-            <Button transparent onPress={() => this.props.navigation.navigate("DrawerOpen")}>
+            <Button transparent onPress={() => this.props.navigation.goBack()}>
               <Icon style={s.wordCol} name="arrow-back" />
             </Button>
           </Left>
@@ -44,9 +51,9 @@ class Wallet extends Component {
           <Title style={s.wordBig}>我的钱包</Title>
           </Body>
           <Right>
-            <Button transparent onPress={() => this.props.navigation.goBack()}>
-              <Text style={s.wordCol}>账单</Text>
-            </Button>
+            {/*<Button transparent onPress={() => this.props.navigation.goBack()}>*/}
+              {/*<Text style={s.wordCol}>账单</Text>*/}
+            {/*</Button>*/}
           </Right>
         </Header>
         <Content>
@@ -61,14 +68,21 @@ class Wallet extends Component {
               />
             </View>
             <Text style={s.amtText}>账户余额(元)</Text>
-            <Text style={s.amt}>8888.00</Text>
+            <Text style={s.amt}>0.00</Text>
           </View>
 
           <View style={{marginTop: 85}}>
-            <Button block style={{ margin: 15, backgroundColor: '#D1B27A', borderRadius:28}}>
+            <Button block style={{ margin: 15, backgroundColor: '#D1B27A', borderRadius:28}} onPress={this.handleSaveMoney}>
               <Text style={{color: '#000',}}>储值优惠</Text>
             </Button>
-            <Button bordered borderColor={'#D1B27A'} borderWidth block style={{ margin: 15, marginTop: 10,  backgroundColor: '#000', borderRadius:28,borderWidth:3, borderColor:'#D1B27A' }}>
+            <Button
+              bordered
+              borderColor={'#D1B27A'}
+              borderWidth
+              block
+              style={{ margin: 15, marginTop: 10,  backgroundColor: '#000', borderRadius:28,borderWidth:3, borderColor:'#D1B27A' }}
+              onPress={this.handleWithdraw}
+            >
               <Text style={{color:'#D1B27A',}}>提现</Text>
             </Button>
           </View>

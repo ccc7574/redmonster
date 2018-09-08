@@ -105,30 +105,38 @@ class Mine extends Component {
 
             <View style={s.lower}>
               <View style={s.lowItem}>
-                <View style={s.lowImgWrapper}>
-                  <Image
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                    }}
-                    resizeMode={'contain'}
-                    source={Money}
-                  />
-                </View>
-                <Text style={s.lowTxt}>我的钱包</Text>
+                <TouchableHighlight onPress={() => this.props.navigation.navigate("Wallet")}>
+                  <View style={s.walletBox}>
+                    <View style={s.lowImgWrapper}>
+                      <Image
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                        }}
+                        resizeMode={'contain'}
+                        source={Money}
+                      />
+                    </View>
+                    <Text style={s.lowTxt}>我的钱包</Text>
+                  </View>
+                </TouchableHighlight>
               </View>
               <View style={s.lowItem}>
-                <View style={s.lowImgWrapper}>
-                  <Image
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                    }}
-                    resizeMode={'contain'}
-                    source={Wallet}
-                  />
-                </View>
-                <Text style={s.lowTxt}>银行卡</Text>
+                <TouchableHighlight onPress={() => alert('暂未开通')}>
+                  <View style={s.walletBox}>
+                    <View style={s.lowImgWrapper}>
+                      <Image
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                        }}
+                        resizeMode={'contain'}
+                        source={Wallet}
+                      />
+                    </View>
+                    <Text style={s.lowTxt}>银行卡</Text>
+                  </View>
+                </TouchableHighlight>
               </View>
             </View>
           </View>
