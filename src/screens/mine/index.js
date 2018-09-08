@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Image, ScrollView,AsyncStorage } from "react-native";
+import { Image, ScrollView,AsyncStorage,Alert } from "react-native";
 import {
   Container,
   Header,
@@ -319,7 +319,12 @@ class Mine extends Component {
           </View>
 
           <View style={s.logoutBtnWrapper}>
-            <Button full style={{height: 50, backgroundColor: '#1a1a1a',}}>
+            <Button full style={{height: 50, backgroundColor: '#1a1a1a'}}
+                    onPress={() => {
+                      AsyncStorage.clear();
+                      Alert.alert("退出成功!");
+                      this.props.navigation.navigate("Home");
+                    }}>
               <Text style={{color: '#a5a5a5',}}>退出登录</Text>
             </Button>
           </View>
@@ -354,7 +359,18 @@ class Mine extends Component {
             </Button>
             <Button style={fs.footerButton}
                     active={this.state.tab4}
-                    onPress={() => this.props.navigation.navigate("Mine")}
+                    onPress={() => {
+                      AsyncStorage.getItem("user_status").then((value) => {
+                        let userInfo = JSON.parse(value);
+                        if (userInfo && userInfo.status === 'logined') {
+                          this.props.navigation.navigate("Mine");
+                        } else {
+                          this.props.navigation.navigate("Register");
+                        }
+                      }).then(res => {
+                        //do something else
+                      });
+                    }}
                     vertical
             >
               <View style={fs.footerView}>

@@ -69,6 +69,14 @@ class Register extends Component {
     let password = this.state.password;
     let referee = this.state.referee;
     let code = this.state.code;
+    if(!(/^1[34578]\d{9}$/.test(phone))){
+      Alert.alert("手机号码有误，请重填");
+      return false;
+    }
+    if(!(/^1[34578]\d{9}$/.test(referee))){
+      Alert.alert("推荐人手机号码有误，请重填");
+      return false;
+    }
     if (code === '666666') {
       axios.post(`${serverAPI}/RM/api/users/create`, {
         phone: phone,
@@ -83,7 +91,6 @@ class Register extends Component {
             status: 'logined',
             ...userInfo
           };
-          console.log(userObj);
           AsyncStorage.setItem('user_status', JSON.stringify(userObj), () => {
             Alert.alert('注册成功!');
             props.navigation.navigate("Home");

@@ -190,9 +190,7 @@ class HomeScreen extends Component {
       <Container style={styles.container}>
         <Header style={styles.header}>
           <Left>
-            <Button transparent onPress={() => this.props.navigation.navigate("PickUpOrderManagement")}>
-              <Image style={styles.headerIcon} source={require('../../../assets/home/scan.png')}/>
-            </Button>
+
           </Left>
           <Body>
           <Title style={styles.iconStyle}>红炉</Title>
@@ -260,14 +258,17 @@ class HomeScreen extends Component {
             </Button>
             <Button style={fs.footerButton}
                     active={this.state.tab4}
-                    onPress={async () => {
-                      let userInfo = await AsyncStorage.getItem('user_status');
-                      userInfo = userInfo && JSON.parse(userInfo);
-                      if (userInfo && userInfo.status === 'logined') {
-                        this.props.navigation.navigate("Mine");
-                      } else {
-                        this.props.navigation.navigate("Register");
-                      }
+                    onPress={() => {
+                      AsyncStorage.getItem("user_status").then((value) => {
+                        let userInfo = JSON.parse(value);
+                        if (userInfo && userInfo.status === 'logined') {
+                          this.props.navigation.navigate("Mine");
+                        } else {
+                          this.props.navigation.navigate("Register");
+                        }
+                      }).then(res => {
+                          //do something else
+                        });
                     }}
                     vertical
             >

@@ -159,14 +159,17 @@ class FixedLabel extends Component {
             </Button>
             <Button style={fs.footerButton}
                     active={this.state.tab4}
-                    onPress={async () => {
-                      let userInfo = await AsyncStorage.getItem('user_status');
-                      userInfo = userInfo && JSON.parse(userInfo);
-                      if (userInfo && userInfo.status === 'logined') {
-                        this.props.navigation.navigate("Mine")
-                      } else {
-                        this.props.navigation.navigate("Register")
-                      }
+                    onPress={() => {
+                      AsyncStorage.getItem("user_status").then((value) => {
+                        let userInfo = JSON.parse(value);
+                        if (userInfo && userInfo.status === 'logined') {
+                          this.props.navigation.navigate("Mine");
+                        } else {
+                          this.props.navigation.navigate("Register");
+                        }
+                      }).then(res => {
+                        //do something else
+                      });
                     }}
                     vertical
             >
