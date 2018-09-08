@@ -21,7 +21,7 @@ import {View, Image, Alert, AsyncStorage} from "react-native";
 import styles from "./styles";
 
 const {serverAPI} = require('../utils');
-const pickUpImg = require("../../../assets/pickUp-img.png");
+const pickUpImg = require("../../../assets/home/hl-product.png");
 const axios = require('axios');
 
 class FixedLabel extends Component {
@@ -64,24 +64,26 @@ class FixedLabel extends Component {
   };
 
   submitOrder = () => {
-    let props = this.props;
-    AsyncStorage.getItem("user_status").then((value) => {
-      let userInfo = JSON.parse(value);
-      axios.post(`${serverAPI}/RM/api/orders/create`, {
-        dealPrice: this.state.productPrice,
-        dealAmount: this.state.countAmt,
-        userId: userInfo.userId,
-        productId: 1,
-        productName:'普洱茶'
-      }).then(function (response) {
-        if(response.data.result==='success'){
-          Alert.alert('下单成功!');
-          props.navigation.navigate("WareHouse");
-        }
-      }).catch(function (error) {
-        console.log(error);
-      })
-    })
+      Alert.alert('余额不足');
+
+    //   let props = this.props;
+    // AsyncStorage.getItem("user_status").then((value) => {
+    //   let userInfo = JSON.parse(value);
+    //   axios.post(`${serverAPI}/RM/api/orders/create`, {
+    //     dealPrice: this.state.productPrice,
+    //     dealAmount: this.state.countAmt,
+    //     userId: userInfo.userId,
+    //     productId: 1,
+    //     productName:'普洱茶'
+    //   }).then(function (response) {
+    //     if(response.data.result==='success'){
+    //       Alert.alert('下单成功!');
+    //       props.navigation.navigate("WareHouse");
+    //     }
+    //   }).catch(function (error) {
+    //     console.log(error);
+    //   })
+    // })
   }
 
   render() {
@@ -106,8 +108,8 @@ class FixedLabel extends Component {
             <View style={{flexDirection: "row", justifyContent: "flex-start", alignItems: "center", marginTop: 15}}>
               <Image style={{resizeMode: "cover", width: 68, height: 68, borderRadius: 5}} source={pickUpImg}/>
               <View style={{marginLeft: 15}}>
-                <Text style={{color: "#ccc", fontSize: 18}}>精品普洱茶饼(6年)</Text>
-                <Text style={{marginTop: 10, color: "#D0B17D", fontSize: 18}}>￥922</Text>
+                <Text style={{color: "#ccc", fontSize: 18}}>红炉熟普2012</Text>
+                <Text style={{marginTop: 10, color: "#D0B17D", fontSize: 18}}>300积分</Text>
               </View>
             </View>
             <View style={{flexDirection: "row", justifyContent: "flex-end", alignItems: "center"}}>
@@ -127,64 +129,64 @@ class FixedLabel extends Component {
               <Text style={styles.fontWhite}>支付方式</Text>
               <Text style={{color: "#ccc", paddingRight: 15}}>余额</Text>
             </View>
-            <View button style={styles.listItem}>
-              <Left>
-                <Text style={styles.fontWhite}>排单券</Text>
-              </Left>
-              <Right>
-                <Form>
-                  <Picker
-                    mode="dropdown"
-                    iosIcon={<Icon name="ios-arrow-forward-outline"/>}
-                    placeholderIconColor="#999"
-                    style={{width: undefined}}
-                    placeholder="2张可用"
-                    placeholderStyle={{paddingRight: 0}}
-                    textStyle={{color: "#ccc", paddingRight: 0}}
-                    itemStyle={{
-                      backgroundColor: "#d3d3d3",
-                      marginLeft: 0,
-                      paddingLeft: 10
-                    }}
-                    itemTextStyle={{color: "#788ad2"}}
-                    selectedValue={this.state.selected1}
-                    onValueChange={this.onValueChange1.bind(this)}
-                  >
-                    <Item label="8小时排单券" value="key0"/>
-                    <Item label="3天排单券" value="key1"/>
-                  </Picker>
-                </Form>
-              </Right>
-            </View>
-            <View button style={styles.listItem}>
-              <Left>
-                <Text style={styles.fontWhite}>优惠券</Text>
-              </Left>
-              <Right>
-                <Form>
-                  <Picker
-                    mode="dropdown"
-                    iosIcon={<Icon name="ios-arrow-forward-outline"/>}
-                    placeholderIconColor="#999"
-                    style={{width: undefined}}
-                    placeholder="-￥20"
-                    placeholderStyle={{paddingRight: 0, color: "#D0B17D"}}
-                    textStyle={{color: "#ccc", paddingRight: 0}}
-                    itemStyle={{
-                      backgroundColor: "#d3d3d3",
-                      marginLeft: 0,
-                      paddingLeft: 10
-                    }}
-                    itemTextStyle={{color: "#788ad2"}}
-                    selectedValue={this.state.selected2}
-                    onValueChange={this.onValueChange2.bind(this)}
-                  >
-                    <Item label="手续费5%折扣券" value="key5"/>
-                    <Item label="20元抵用券" value="key6"/>
-                  </Picker>
-                </Form>
-              </Right>
-            </View>
+            {/*<View button style={styles.listItem}>*/}
+              {/*<Left>*/}
+                {/*<Text style={styles.fontWhite}>排单券</Text>*/}
+              {/*</Left>*/}
+              {/*<Right>*/}
+                {/*<Form>*/}
+                  {/*<Picker*/}
+                    {/*mode="dropdown"*/}
+                    {/*iosIcon={<Icon name="ios-arrow-forward-outline"/>}*/}
+                    {/*placeholderIconColor="#999"*/}
+                    {/*style={{width: undefined}}*/}
+                    {/*placeholder="2张可用"*/}
+                    {/*placeholderStyle={{paddingRight: 0}}*/}
+                    {/*textStyle={{color: "#ccc", paddingRight: 0}}*/}
+                    {/*itemStyle={{*/}
+                      {/*backgroundColor: "#d3d3d3",*/}
+                      {/*marginLeft: 0,*/}
+                      {/*paddingLeft: 10*/}
+                    {/*}}*/}
+                    {/*itemTextStyle={{color: "#788ad2"}}*/}
+                    {/*selectedValue={this.state.selected1}*/}
+                    {/*onValueChange={this.onValueChange1.bind(this)}*/}
+                  {/*>*/}
+                    {/*<Item label="8小时排单券" value="key0"/>*/}
+                    {/*<Item label="3天排单券" value="key1"/>*/}
+                  {/*</Picker>*/}
+                {/*</Form>*/}
+              {/*</Right>*/}
+            {/*</View>*/}
+            {/*<View button style={styles.listItem}>*/}
+              {/*<Left>*/}
+                {/*<Text style={styles.fontWhite}>优惠券</Text>*/}
+              {/*</Left>*/}
+              {/*<Right>*/}
+                {/*<Form>*/}
+                  {/*<Picker*/}
+                    {/*mode="dropdown"*/}
+                    {/*iosIcon={<Icon name="ios-arrow-forward-outline"/>}*/}
+                    {/*placeholderIconColor="#999"*/}
+                    {/*style={{width: undefined}}*/}
+                    {/*placeholder="-￥20"*/}
+                    {/*placeholderStyle={{paddingRight: 0, color: "#D0B17D"}}*/}
+                    {/*textStyle={{color: "#ccc", paddingRight: 0}}*/}
+                    {/*itemStyle={{*/}
+                      {/*backgroundColor: "#d3d3d3",*/}
+                      {/*marginLeft: 0,*/}
+                      {/*paddingLeft: 10*/}
+                    {/*}}*/}
+                    {/*itemTextStyle={{color: "#788ad2"}}*/}
+                    {/*selectedValue={this.state.selected2}*/}
+                    {/*onValueChange={this.onValueChange2.bind(this)}*/}
+                  {/*>*/}
+                    {/*<Item label="手续费5%折扣券" value="key5"/>*/}
+                    {/*<Item label="20元抵用券" value="key6"/>*/}
+                  {/*</Picker>*/}
+                {/*</Form>*/}
+              {/*</Right>*/}
+            {/*</View>*/}
             <View style={styles.listItem}>
               <Text style={styles.fontWhite}>可获得红积分</Text>
               <Text style={{

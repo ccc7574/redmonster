@@ -23,7 +23,7 @@ const {width: viewportWidth, height: viewportHeight} = Dimensions.get('window');
 const SLIDER_1_FIRST_ITEM = 1;
 import SliderEntry from './SliderEntry';
 import fs from "../footer/styles";
-const cardImage1 = require("../../../assets/tea1.png");
+const cardImage1 = require("../../../assets/home/hl-product.png");
 
 const ENTRIES1 = [
   {
@@ -100,7 +100,7 @@ class HomeScreen extends Component {
           </View>
           <View style={{paddingLeft: 14, paddingTop: 5, width: '95%'}}>
             <View>
-              <Text style={styles.productTitle}>精品普洱茶饼(6年）</Text>
+              <Text style={styles.productTitle}>红炉熟普2012</Text>
             </View>
             <View style={{paddingTop: 15, flexDirection: "row"}}>
               <Text style={styles.productPrice}>当前价</Text>
