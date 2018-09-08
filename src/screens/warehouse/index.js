@@ -42,7 +42,6 @@ class WareHouse extends Component {
     AsyncStorage.getItem("user_status").then((value) => {
       const userInfo = value && JSON.parse(value) || {};
       const { userId } = userInfo && userInfo || null;
-      Alert.alert(serverAPI);
       userId && axios.get(`${serverAPI}/rm/graphql`, {
         params: {
           query: `{ orderQueryWhere(userId:"${userId}",type:0) {dealPrice dealAmount type productName} }`
