@@ -81,10 +81,10 @@ class HomeScreen extends Component {
   handleCarousel = (title)=> {
     switch (title) {
       case '主打商品':
-        this.props.navigation.navigate('Article');
+        this.props.navigation.navigate('Article1');
         break;
       case '品牌介绍':
-        this.props.navigation.navigate('Message');
+        this.props.navigation.navigate('Article2');
         break;
       default:
         break;
