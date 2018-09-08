@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Image } from "react-native";
+import { Image,Alert } from "react-native";
 import {
   Container,
   Header,
@@ -30,11 +30,11 @@ class Wallet extends Component {
   }
 
   handleSaveMoney = () => {
-    alert('暂未开通')
+    Alert.alert('暂未开通')
   };
 
   handleWithdraw = () => {
-    alert('暂未开通')
+    Alert.alert('暂未开通')
   };
 
   render() {

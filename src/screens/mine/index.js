@@ -122,7 +122,7 @@ class Mine extends Component {
                 </TouchableHighlight>
               </View>
               <View style={s.lowItem}>
-                <TouchableHighlight onPress={() => alert('暂未开通')}>
+                <TouchableHighlight onPress={() => Alert.alert('暂未开通')}>
                   <View style={s.walletBox}>
                     <View style={s.lowImgWrapper}>
                       <Image
