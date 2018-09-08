@@ -64,7 +64,7 @@ class HomeScreen extends Component {
     };
   }
 
-  _renderItemWithParallax({item, index}, parallaxProps) {
+  _renderItemWithParallax = ({item, index}, parallaxProps)=> {
     return (
       <SliderEntry
         data={item}
@@ -72,10 +72,23 @@ class HomeScreen extends Component {
         parallax={true}
         parallaxProps={parallaxProps}
         clickCB={(title)=>{
-          console.log(title);
+          this.handleCarousel(title)
         }}
       />
     );
+  }
+
+  handleCarousel = (title)=> {
+    switch (title) {
+      case '主打商品':
+        this.props.navigation.navigate('Article');
+        break;
+      case '品牌介绍':
+        this.props.navigation.navigate('Message');
+        break;
+      default:
+        break;
+    }
   }
 
   renderGoodsDiv = () => {

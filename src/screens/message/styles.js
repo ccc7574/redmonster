@@ -17,12 +17,19 @@ export default {
     marginTop: 24,
 
   },
-  title: {
-    marginTop: 19,
-    marginLeft: 15,
-    fontSize: 18,
-    fontWeight: '600',
-    color: '#A5A5A5',
+  amtText: {
+    marginTop: 10,
+    marginBottom: 10,
+    textAlign: "center",
+    color: "#818181",
+    fontSize: 13,
+  },
+  amt: {
+    fontSize: 54,
+    textAlign: "center",
+    color: "#D1B27A"
+  },
+  test: {
+    color: '#818181'
   }
-
 };

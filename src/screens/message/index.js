@@ -41,22 +41,13 @@ class Wallet extends Component {
             </Button>
           </Left>
           <Body>
-          <Title style={s.wordBig}>消息详情</Title>
+          <Title style={s.wordBig}>消息</Title>
           </Body>
           <Right />
         </Header>
         <Content>
-          <View style={{backgroundColor: '#1a1a1a', height: 224,}}>
-            <Text style={s.title}>主打商品</Text>
-            <View style={s.imgWrapper}>
-              <Image
-                style={{
-                  width: '100%',
-                  height: '100%',
-                }}
-                source={Img}
-              />
-            </View>
+          <View style={{marginTop: 85}}>
+            <Text style={s.test}>test</Text>
           </View>
         </Content>
       </Container>
