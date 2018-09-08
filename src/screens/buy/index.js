@@ -31,7 +31,7 @@ class FixedLabel extends Component {
       selected1: undefined,
       selected2: undefined,
       countAmt: 3,
-      productPrice: 922
+      productPrice: 300
     };
   }
 
@@ -204,14 +204,14 @@ class FixedLabel extends Component {
               <Text style={styles.fontWhite}>共三件商品</Text>
               <View>
                 <View style={{flexDirection: "row", justifyContent: "flex-end"}}>
-                  <Text style={{color: "#aaa"}}>主推产品费：</Text>
+                  <Text style={{color: "#aaa"}}>主推产品积分：</Text>
                   <Text style={{
                     color: "#D0B17D",
                     paddingRight: 15
                   }}>{(this.state.productPrice * this.state.countAmt).toFixed(2)}</Text>
                 </View>
                 <View style={{flexDirection: "row", justifyContent: "flex-end", marginTop: 10}}>
-                  <Text style={{color: "#aaa"}}>推广费：</Text>
+                  <Text style={{color: "#aaa"}}>推广积分：</Text>
                   <Text style={{
                     color: "#ccc",
                     paddingRight: 15
@@ -231,7 +231,7 @@ class FixedLabel extends Component {
                   fontSize: 22
                 }}>￥{(this.state.productPrice * this.state.countAmt - 20).toFixed(2)}</Text>
               </View>
-              <Text style={{color: "#aaa", fontSize: 13}}>已优惠￥20</Text>
+              {/*<Text style={{color: "#aaa", fontSize: 13}}>已优惠￥20</Text>*/}
             </View>
             <Button full style={styles.buttonFull}>
               <Text style={{color: "#000", fontSize: 20, fontWeight: "bold"}} onPress={this.submitOrder}>立刻下单</Text>
