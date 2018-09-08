@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Image, ScrollView,AsyncStorage,Alert } from "react-native";
+import { Image, ScrollView, AsyncStorage, Alert, TouchableHighlight } from "react-native";
 import {
   Container,
   Header,
@@ -62,15 +62,15 @@ class Mine extends Component {
 
             <Header style={s.header}>
               <Left style={s.left}>
-                <Button transparent onPress={() => this.props.navigation.navigate("DrawerOpen")}>
-                  <Icon style={s.leftIcon} name="settings" />
-                </Button>
+                {/*<Button transparent onPress={() => this.props.navigation.navigate("DrawerOpen")}>*/}
+                  {/*<Icon style={s.leftIcon} name="settings" />*/}
+                {/*</Button>*/}
               </Left>
               <Body/>
               <Right style={s.right}>
-                <Button transparent onPress={() => this.props.navigation.navigate("DrawerOpen")}>
-                  <Text style={s.rightIcon}>分享</Text>
-                </Button>
+                {/*<Button transparent onPress={() => this.props.navigation.navigate("DrawerOpen")}>*/}
+                  {/*<Text style={s.rightIcon}>分享</Text>*/}
+                {/*</Button>*/}
               </Right>
             </Header>
 
@@ -91,16 +91,16 @@ class Mine extends Component {
                 <View style={s.row2}><Text style={{fontSize: 13, color: '#a5a5a5'}}>昵称 {'配包用户'}</Text></View>
                 <View style={s.row3}><Text style={{fontSize: 12, color: '#a5a5a5'}}>{type}</Text></View>
               </View>
-              <View style={s.qr}>
-                <Image
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                  }}
-                  resizeMode={'contain'}
-                  source={QR}
-                />
-              </View>
+              {/*<View style={s.qr}>*/}
+                {/*<Image*/}
+                  {/*style={{*/}
+                    {/*width: "100%",*/}
+                    {/*height: "100%",*/}
+                  {/*}}*/}
+                  {/*resizeMode={'contain'}*/}
+                  {/*source={QR}*/}
+                {/*/>*/}
+              {/*</View>*/}
             </View>
 
             <View style={s.lower}>
@@ -134,80 +134,80 @@ class Mine extends Component {
           </View>
 
           <View style={s.lists}>
-            <View style={s.listItem}>
-              <View style={s.listItemLeft}>
-                <View style={s.listItemLeftImgWrapper}>
-                  <Image
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                    }}
-                    resizeMode={'contain'}
-                    source={Coupon}
-                  />
-                </View>
-                <Text style={s.listItemLeftTxt}>我的优惠券</Text>
-              </View>
-              <View style={s.listItemRight}>
-                <Text style={s.listItemRightTxt}>2张可用</Text>
-                <Icon style={s.arrowRight} name="arrow-forward"/>
-              </View>
-            </View>
-            <View style={s.listItem}>
-              <View style={s.listItemLeft}>
-                <View style={s.listItemLeftImgWrapper}>
-                  <Image
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                    }}
-                    resizeMode={'contain'}
-                    source={Coupon}
-                  />
-                </View>
-                <Text style={s.listItemLeftTxt}>我的排单券</Text>
-              </View>
-              <View style={s.listItemRight}>
-                <Text style={s.listItemRightTxt}>2张可用</Text>
-                <Icon style={s.arrowRight} name="arrow-forward"/>
-              </View>
-            </View>
-            <View style={s.listItem}>
-              <View style={s.listItemLeft}>
-                <View style={s.listItemLeftImgWrapper}>
-                  <Image
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                    }}
-                    resizeMode={'contain'}
-                    source={Coupon2}
-                  />
-                </View>
-                <Text style={s.listItemLeftTxt}>我的排单券</Text>
-              </View>
-              <View style={s.listItemRight}>
-                <Icon style={s.arrowRight} name="arrow-forward"/>
-              </View>
-            </View>
-            <View style={s.listItem}>
-              <View style={s.listItemLeft}>
-                <View style={s.listItemLeftImgWrapper}>
-                  <Image
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                    }}
-                    resizeMode={'contain'}
-                    source={Transfer}
-                  />
-                </View>
-                <Text style={s.listItemLeftTxt}>我要转账</Text>
-              </View>
-              <View style={s.listItemRight}>
-                <Icon style={s.arrowRight} name="arrow-forward"/>
-              </View>
-            </View>
+            {/*<View style={s.listItem}>*/}
+              {/*<View style={s.listItemLeft}>*/}
+                {/*<View style={s.listItemLeftImgWrapper}>*/}
+                  {/*<Image*/}
+                    {/*style={{*/}
+                      {/*width: "100%",*/}
+                      {/*height: "100%",*/}
+                    {/*}}*/}
+                    {/*resizeMode={'contain'}*/}
+                    {/*source={Coupon}*/}
+                  {/*/>*/}
+                {/*</View>*/}
+                {/*<Text style={s.listItemLeftTxt}>我的优惠券</Text>*/}
+              {/*</View>*/}
+              {/*<View style={s.listItemRight}>*/}
+                {/*<Text style={s.listItemRightTxt}>2张可用</Text>*/}
+                {/*<Icon style={s.arrowRight} name="arrow-forward"/>*/}
+              {/*</View>*/}
+            {/*</View>*/}
+            {/*<View style={s.listItem}>*/}
+              {/*<View style={s.listItemLeft}>*/}
+                {/*<View style={s.listItemLeftImgWrapper}>*/}
+                  {/*<Image*/}
+                    {/*style={{*/}
+                      {/*width: "100%",*/}
+                      {/*height: "100%",*/}
+                    {/*}}*/}
+                    {/*resizeMode={'contain'}*/}
+                    {/*source={Coupon}*/}
+                  {/*/>*/}
+                {/*</View>*/}
+                {/*<Text style={s.listItemLeftTxt}>我的排单券</Text>*/}
+              {/*</View>*/}
+              {/*<View style={s.listItemRight}>*/}
+                {/*<Text style={s.listItemRightTxt}>2张可用</Text>*/}
+                {/*<Icon style={s.arrowRight} name="arrow-forward"/>*/}
+              {/*</View>*/}
+            {/*</View>*/}
+            {/*<View style={s.listItem}>*/}
+              {/*<View style={s.listItemLeft}>*/}
+                {/*<View style={s.listItemLeftImgWrapper}>*/}
+                  {/*<Image*/}
+                    {/*style={{*/}
+                      {/*width: "100%",*/}
+                      {/*height: "100%",*/}
+                    {/*}}*/}
+                    {/*resizeMode={'contain'}*/}
+                    {/*source={Coupon2}*/}
+                  {/*/>*/}
+                {/*</View>*/}
+                {/*<Text style={s.listItemLeftTxt}>我的排单券</Text>*/}
+              {/*</View>*/}
+              {/*<View style={s.listItemRight}>*/}
+                {/*<Icon style={s.arrowRight} name="arrow-forward"/>*/}
+              {/*</View>*/}
+            {/*</View>*/}
+            {/*<View style={s.listItem}>*/}
+              {/*<View style={s.listItemLeft}>*/}
+                {/*<View style={s.listItemLeftImgWrapper}>*/}
+                  {/*<Image*/}
+                    {/*style={{*/}
+                      {/*width: "100%",*/}
+                      {/*height: "100%",*/}
+                    {/*}}*/}
+                    {/*resizeMode={'contain'}*/}
+                    {/*source={Transfer}*/}
+                  {/*/>*/}
+                {/*</View>*/}
+                {/*<Text style={s.listItemLeftTxt}>我要转账</Text>*/}
+              {/*</View>*/}
+              {/*<View style={s.listItemRight}>*/}
+                {/*<Icon style={s.arrowRight} name="arrow-forward"/>*/}
+              {/*</View>*/}
+            {/*</View>*/}
             <View style={s.listItem}>
               <View style={s.listItemLeft}>
                 <View style={s.listItemLeftImgWrapper}>
@@ -226,24 +226,26 @@ class Mine extends Component {
                 <Icon style={s.arrowRight} name="arrow-forward"/>
               </View>
             </View>
-            <View style={s.listItem}>
-              <View style={s.listItemLeft}>
-                <View style={s.listItemLeftImgWrapper}>
-                  <Image
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                    }}
-                    resizeMode={'contain'}
-                    source={Record}
-                  />
+            <TouchableHighlight onPress={() => this.props.navigation.navigate("PickUpOrderManagement")}>
+              <View style={s.listItem}>
+                <View style={s.listItemLeft}>
+                  <View style={s.listItemLeftImgWrapper}>
+                    <Image
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                      }}
+                      resizeMode={'contain'}
+                      source={Record}
+                    />
+                  </View>
+                  <Text style={s.listItemLeftTxt}>提货记录</Text>
                 </View>
-                <Text style={s.listItemLeftTxt}>提货记录</Text>
+                <View style={s.listItemRight}>
+                  <Icon style={s.arrowRight} name="arrow-forward"/>
+                </View>
               </View>
-              <View style={s.listItemRight}>
-                <Icon style={s.arrowRight} name="arrow-forward"/>
-              </View>
-            </View>
+            </TouchableHighlight>
             <View style={s.listItem}>
               <View style={s.listItemLeft}>
                 <View style={s.listItemLeftImgWrapper}>
@@ -262,60 +264,60 @@ class Mine extends Component {
                 <Icon style={s.arrowRight} name="arrow-forward"/>
               </View>
             </View>
-            <View style={s.listItem}>
-              <View style={s.listItemLeft}>
-                <View style={s.listItemLeftImgWrapper}>
-                  <Image
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                    }}
-                    resizeMode={'contain'}
-                    source={Service}
-                  />
-                </View>
-                <Text style={s.listItemLeftTxt}>我的客服</Text>
-              </View>
-              <View style={s.listItemRight}>
-                <Icon style={s.arrowRight} name="arrow-forward"/>
-              </View>
-            </View>
-            <View style={s.listItem}>
-              <View style={s.listItemLeft}>
-                <View style={s.listItemLeftImgWrapper}>
-                  <Image
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                    }}
-                    resizeMode={'contain'}
-                    source={Feedback}
-                  />
-                </View>
-                <Text style={s.listItemLeftTxt}>我要反馈</Text>
-              </View>
-              <View style={s.listItemRight}>
-                <Icon style={s.arrowRight} name="arrow-forward"/>
-              </View>
-            </View>
-            <View style={s.listItem}>
-              <View style={s.listItemLeft}>
-                <View style={s.listItemLeftImgWrapper}>
-                  <Image
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                    }}
-                    resizeMode={'contain'}
-                    source={Rules}
-                  />
-                </View>
-                <Text style={s.listItemLeftTxt}>平台规则</Text>
-              </View>
-              <View style={s.listItemRight}>
-                <Icon style={s.arrowRight} name="arrow-forward"/>
-              </View>
-            </View>
+            {/*<View style={s.listItem}>*/}
+              {/*<View style={s.listItemLeft}>*/}
+                {/*<View style={s.listItemLeftImgWrapper}>*/}
+                  {/*<Image*/}
+                    {/*style={{*/}
+                      {/*width: "100%",*/}
+                      {/*height: "100%",*/}
+                    {/*}}*/}
+                    {/*resizeMode={'contain'}*/}
+                    {/*source={Service}*/}
+                  {/*/>*/}
+                {/*</View>*/}
+                {/*<Text style={s.listItemLeftTxt}>我的客服</Text>*/}
+              {/*</View>*/}
+              {/*<View style={s.listItemRight}>*/}
+                {/*<Icon style={s.arrowRight} name="arrow-forward"/>*/}
+              {/*</View>*/}
+            {/*</View>*/}
+            {/*<View style={s.listItem}>*/}
+              {/*<View style={s.listItemLeft}>*/}
+                {/*<View style={s.listItemLeftImgWrapper}>*/}
+                  {/*<Image*/}
+                    {/*style={{*/}
+                      {/*width: "100%",*/}
+                      {/*height: "100%",*/}
+                    {/*}}*/}
+                    {/*resizeMode={'contain'}*/}
+                    {/*source={Feedback}*/}
+                  {/*/>*/}
+                {/*</View>*/}
+                {/*<Text style={s.listItemLeftTxt}>我要反馈</Text>*/}
+              {/*</View>*/}
+              {/*<View style={s.listItemRight}>*/}
+                {/*<Icon style={s.arrowRight} name="arrow-forward"/>*/}
+              {/*</View>*/}
+            {/*</View>*/}
+            {/*<View style={s.listItem}>*/}
+              {/*<View style={s.listItemLeft}>*/}
+                {/*<View style={s.listItemLeftImgWrapper}>*/}
+                  {/*<Image*/}
+                    {/*style={{*/}
+                      {/*width: "100%",*/}
+                      {/*height: "100%",*/}
+                    {/*}}*/}
+                    {/*resizeMode={'contain'}*/}
+                    {/*source={Rules}*/}
+                  {/*/>*/}
+                {/*</View>*/}
+                {/*<Text style={s.listItemLeftTxt}>平台规则</Text>*/}
+              {/*</View>*/}
+              {/*<View style={s.listItemRight}>*/}
+                {/*<Icon style={s.arrowRight} name="arrow-forward"/>*/}
+              {/*</View>*/}
+            {/*</View>*/}
           </View>
 
           <View style={s.logoutBtnWrapper}>

@@ -99,4 +99,9 @@ export default {
     color: "#D0B17D",
     fontSize: 19,
   },
+  noRecord: {
+    marginTop: 30,
+    textAlign: "center",
+    color: "#AAA",
+  },
 };
