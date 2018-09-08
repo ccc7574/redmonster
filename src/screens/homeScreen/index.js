@@ -117,11 +117,11 @@ class HomeScreen extends Component {
               <MoneyCell moneyNum={0} moneyUnit={"角"}/>
               <MoneyCell moneyNum={0} moneyUnit={"分"}/>
             </View>
-            <View style={styles.priceIcon}>
-              <TouchableHighlight onPress={() => this.props.navigation.navigate("History")}>
-                <Icon name="arrow-forward" style={{color: "#666"}}/>
-              </TouchableHighlight>
-            </View>
+            {/*<View style={styles.priceIcon}>*/}
+              {/*<TouchableHighlight onPress={() => this.props.navigation.navigate("History")}>*/}
+                {/*<Icon name="arrow-forward" style={{color: "#666"}}/>*/}
+              {/*</TouchableHighlight>*/}
+            {/*</View>*/}
           </View>
           <View/>
         </View>

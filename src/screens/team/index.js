@@ -16,12 +16,12 @@ import fs from "../footer/styles";
 const tableHead = ["昵称", "账号", "本月消费", "本月消费商奖励", "本月业绩", "本月店铺奖励"];
 
 const DATA = [
-  ["赵云", "15098215432", "4000.25", "100.05", "40000.32", "0"],
-  ["钟馗", "15098435354", "5000.25", "100.05", "50000.32", "0"],
-  ["李白", "15098765643", "6000.25", "100.05", "60000.32", "0"],
-  ["司马懿", "15098765456", "5000.25", "100.05", "50000.32", "0"],
-  ["程咬金", "15098765483", "5000.25", "100.05", "50000.32", "0"],
-  ["夏侯惇", "15098675431", "5000.25", "100.05", "50000.32", "0"],
+  ["赵云", "15098215432", "4000.25", "100.05", "40000.32", "0.00"],
+  ["钟馗", "15098435354", "5000.25", "100.05", "50000.32", "0.00"],
+  ["李白", "15098765643", "6000.25", "100.05", "60000.32", "0.00"],
+  ["司马懿", "15098765456", "5000.25", "100.05", "50000.32", "0.00"],
+  ["程咬金", "15098765483", "5000.25", "100.05", "50000.32", "0.00"],
+  ["夏侯惇", "15098675431", "5000.25", "100.05", "50000.32", "0.00"],
 ];
 
 const TopCell = ({ cellTitle, cellContent, contentStyle }) => {
@@ -52,8 +52,8 @@ class FixedLabel extends Component {
       <Container style={s.container}>
         <Header
           title="客户"
-          rightContent="历史记录"
-          rightLinkUrl="TeamDrive"
+          // rightContent="历史记录"
+          // rightLinkUrl="TeamDrive"
           navigation={this.props.navigation}
         />
         <Content style={s.content}>
@@ -64,14 +64,14 @@ class FixedLabel extends Component {
               contentStyle={{color: "#D1B27A"}}
             />
             <TopCell
-              cellTitle="累计推荐奖励(元)"
-              cellContent={6518.70}
-              contentStyle={{color: "#E83032"}}
+              cellTitle="累计推荐奖励(积分)"
+              cellContent={"0.00"}
+              contentStyle={{color: "#E83032",textAlign: "center"}}
             />
             <TopCell
-              cellTitle="店铺总盈利(元)"
-              cellContent={0}
-              contentStyle={{color: "#E83032"}}
+              cellTitle="店铺总盈利(积分)"
+              cellContent={"0.00"}
+              contentStyle={{color: "#E83032",textAlign: "center"}}
             />
           </View>
           <View style={s.topRow}>
@@ -81,15 +81,15 @@ class FixedLabel extends Component {
               contentStyle={{color: "#D1B27A"}}
             />
             <TopCell
-              cellTitle="本月推荐奖励(元)"
-              cellContent={6518.70}
-              contentStyle={{color: "#E83032"}}
+              cellTitle="本月推荐奖励(积分)"
+              cellContent={"0.00"}
+              contentStyle={{color: "#E83032",textAlign: "left"}}
             />
-            <View style={{flex: 1}}>
-              <Button block bordered style={s.addButton}>
-                <Text style={s.addButtonTxt}>立刻开店</Text>
-              </Button>
-            </View>
+            {/*<View style={{flex: 1}}>*/}
+              {/*<Button block bordered style={s.addButton}>*/}
+                {/*<Text style={s.addButtonTxt}>立刻开店</Text>*/}
+              {/*</Button>*/}
+            {/*</View>*/}
           </View>
           <View style={s.listHead}>
             { tableHead && tableHead.map((item, key) => {
@@ -122,11 +122,11 @@ class FixedLabel extends Component {
             />
           </View>
 
-          <View style={s.pagination}>
-            <Text style={s.bottomPage}>上一页</Text>
-            <Text style={s.bottomPageNum}>2/3</Text>
-            <Text style={s.bottomPage}>下一页</Text>
-          </View>
+          {/*<View style={s.pagination}>*/}
+            {/*<Text style={s.bottomPage}>上一页</Text>*/}
+            {/*<Text style={s.bottomPageNum}>2/3</Text>*/}
+            {/*<Text style={s.bottomPage}>下一页</Text>*/}
+          {/*</View>*/}
           {/*<Text style={s.bottomTip}>已显示全部</Text>*/}
         </Content>
 
