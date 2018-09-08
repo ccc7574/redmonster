@@ -60,31 +60,33 @@ class FixedLabel extends Component {
         </Header>
 
         <Content style={{ padding: 12}}>
-          <View style={{backgroundColor: "#1A1A1A", marginTop: 15, paddingTop: 15}}>
-            <View style={{paddingHorizontal: 15}}>
-              <View style={{flexDirection: "row", justifyContent: "space-between"}}>
-                <Text style={[styles.fontWhite, styles.font14]}>提货订单编号：12345678901234</Text>
-                <Text style={{marginLeft: 15, color: "#D1B27A"}}>已提货</Text>
-              </View>
-              <View style={{flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginTop: 15}}>
-                <View style={{flexDirection: "row", justifyContent: "flex-start", alignItems: "center"}}>
-                  <Image style={{resizeMode: "cover", width: 68, height: 68, borderRadius: 5}} source={pickUpImg}/>
-                  <View style={{marginLeft: 15}}>
-                    <Text style={{color: "#ccc", fontSize: 18}}>精品普洱茶饼(6年)</Text>
-                    <Text style={{marginTop: 10, color: "#999", fontSize: 14}}>2018-06-10</Text>
-                  </View>
-                </View>
-                <Text style={{color: "#ccc",}}>x8</Text>
-              </View>
-            </View>
-            <View style={styles.deleteRow}>
-              <View style={{flexDirection: "row", justifyContent: "flex-start", alignItems: "center"}}>
-                <Text style={[styles.fontWhite, styles.font14]}>物流单号：</Text>
-                <Text style={[styles.fontWhite, styles.font14]}>1234567891230</Text>
-              </View>
-              <Icon name="trash" style={styles.fontWhite} onPress={this.handleConfirm}/>
-            </View>
-          </View>
+          <Text style={styles.noRecord}>暂无提货记录</Text>
+
+          {/*<View style={{backgroundColor: "#1A1A1A", marginTop: 15, paddingTop: 15}}>*/}
+            {/*<View style={{paddingHorizontal: 15}}>*/}
+              {/*<View style={{flexDirection: "row", justifyContent: "space-between"}}>*/}
+                {/*<Text style={[styles.fontWhite, styles.font14]}>提货订单编号：12345678901234</Text>*/}
+                {/*<Text style={{marginLeft: 15, color: "#D1B27A"}}>已提货</Text>*/}
+              {/*</View>*/}
+              {/*<View style={{flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginTop: 15}}>*/}
+                {/*<View style={{flexDirection: "row", justifyContent: "flex-start", alignItems: "center"}}>*/}
+                  {/*<Image style={{resizeMode: "cover", width: 68, height: 68, borderRadius: 5}} source={pickUpImg}/>*/}
+                  {/*<View style={{marginLeft: 15}}>*/}
+                    {/*<Text style={{color: "#ccc", fontSize: 18}}>精品普洱茶饼(6年)</Text>*/}
+                    {/*<Text style={{marginTop: 10, color: "#999", fontSize: 14}}>2018-06-10</Text>*/}
+                  {/*</View>*/}
+                {/*</View>*/}
+                {/*<Text style={{color: "#ccc",}}>x8</Text>*/}
+              {/*</View>*/}
+            {/*</View>*/}
+            {/*<View style={styles.deleteRow}>*/}
+              {/*<View style={{flexDirection: "row", justifyContent: "flex-start", alignItems: "center"}}>*/}
+                {/*<Text style={[styles.fontWhite, styles.font14]}>物流单号：</Text>*/}
+                {/*<Text style={[styles.fontWhite, styles.font14]}>1234567891230</Text>*/}
+              {/*</View>*/}
+              {/*<Icon name="trash" style={styles.fontWhite} onPress={this.handleConfirm}/>*/}
+            {/*</View>*/}
+          {/*</View>*/}
         </Content>
 
         <Modal
