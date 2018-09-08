@@ -11,11 +11,6 @@ import {
   Left,
   Right,
   Body,
-  Input,
-  Form,
-  Item,
-  Thumbnail,
-  Label,
   View
 } from "native-base";
 
@@ -32,7 +27,7 @@ import Img9 from '../../../assets/article/product9.png';
 import Img10 from '../../../assets/article/product10.png';
 import Img11 from '../../../assets/article/product11.png';
 
-class Wallet extends Component {
+class Article1 extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -213,4 +208,4 @@ class Wallet extends Component {
 }
 
 
-export default Wallet;
+export default Article1;

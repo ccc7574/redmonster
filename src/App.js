@@ -35,7 +35,8 @@ import CouponForQueue from './screens/couponForQueue';
 import Points from './screens/points';
 import Mine from './screens/mine';
 import Footer from './screens/footer/HLFooter';
-import Article from './screens/article';
+import Article1 from './screens/article1';
+import Article2 from './screens/article2';
 import Message from './screens/message';
 
 const Drawer = DrawerNavigator(
@@ -87,7 +88,8 @@ const AppNavigator = StackNavigator(
     Points: {screen: Points},
     Mine: {screen: Mine},
     IntegrationRecord: {screen: IntegrationRecord},
-    Article: {screen: Article},
+    Article1: {screen: Article1},
+    Article2: {screen: Article2},
     Message: {screen: Message},
   },
   {
