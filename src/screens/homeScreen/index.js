@@ -145,55 +145,112 @@ class HomeScreen extends Component {
     let dateString = date.toLocaleDateString();
     return (
       <View style={{marginTop: 15}}>
-        <Text style={styles.deadline}>优先排单截止时间</Text>
+        {/*<Text style={styles.deadline}>优先排单截止时间</Text>*/}
         <View style={styles.orderTitle}>
           <Text style={styles.majorProduct}>进货订单</Text>
-          <Text style={styles.orderTime}>{dateString}</Text>
+          {/*<Text style={styles.orderTime}>{dateString}</Text>*/}
         </View>
+          <Text style={styles.bottomTxt}>暂无进货订单</Text>
 
-        <View style={styles.orderDetail}>
-          <View style={styles.orderBoxTitle}>
-            <View style={styles.orderBoxTitleLeft}>
-              <Text style={styles.orderGoods}>精品普洱茶饼(6年)</Text>
-              <Text style={styles.orderGoodsNum}> x6</Text>
-            </View>
-            <Text style={styles.cancelOrder}>取消排单</Text>
-          </View>
-          <View style={styles.orderPrice}>
-            <Text style={styles.fontGrey}>当前价</Text>
-            <Text style={styles.priceLeft}> ￥922.25</Text>
-          </View>
-          <View style={styles.orderBottom}>
-            <Text style={styles.orderBTime}>2018/6/20 10:30:45</Text>
-            <Text style={styles.orderStatus}>未成交</Text>
-          </View>
-        </View>
+        {/*<View style={styles.orderDetail}>*/}
+          {/*<View style={styles.orderBoxTitle}>*/}
+            {/*<View style={styles.orderBoxTitleLeft}>*/}
+              {/*<Text style={styles.orderGoods}>精品普洱茶饼(6年)</Text>*/}
+              {/*<Text style={styles.orderGoodsNum}> x6</Text>*/}
+            {/*</View>*/}
+            {/*<Text style={styles.cancelOrder}>取消排单</Text>*/}
+          {/*</View>*/}
+          {/*<View style={styles.orderPrice}>*/}
+            {/*<Text style={styles.fontGrey}>当前价</Text>*/}
+            {/*<Text style={styles.priceLeft}> ￥922.25</Text>*/}
+          {/*</View>*/}
+          {/*<View style={styles.orderBottom}>*/}
+            {/*<Text style={styles.orderBTime}>2018/6/20 10:30:45</Text>*/}
+            {/*<Text style={styles.orderStatus}>未成交</Text>*/}
+          {/*</View>*/}
+        {/*</View>*/}
 
-        <View style={styles.orderDetail}>
-          <View style={styles.orderBoxTitle}>
-            <View style={styles.orderBoxTitleLeft}>
-              <Text style={styles.orderGoods}>精品普洱茶饼(6年)</Text>
-              <Text style={styles.orderGoodsNum}> x6</Text>
-            </View>
-          </View>
-          <Image style={styles.orderCompleteImg} source={require("../../../assets/home/order-complete.png")}/>
-          <View style={styles.orderPrice}>
-            <Text style={styles.fontGrey}>当前价</Text>
-            <Text style={styles.priceLeft}> ￥478.08</Text>
-          </View>
-          <View style={styles.orderBottom}>
-            <Text style={styles.orderBTime}>2018/6/08 15:30:45</Text>
-            <View style={styles.orderStatusBox}>
-              <Text style={styles.orderStatus}>已完成 (5/5)</Text>
-              <Icon name="arrow-down" style={styles.statusIcon}/>
-            </View>
-          </View>
-        </View>
+        {/*<View style={styles.orderDetail}>*/}
+          {/*<View style={styles.orderBoxTitle}>*/}
+            {/*<View style={styles.orderBoxTitleLeft}>*/}
+              {/*<Text style={styles.orderGoods}>精品普洱茶饼(6年)</Text>*/}
+              {/*<Text style={styles.orderGoodsNum}> x6</Text>*/}
+            {/*</View>*/}
+          {/*</View>*/}
+          {/*<Image style={styles.orderCompleteImg} source={require("../../../assets/home/order-complete.png")}/>*/}
+          {/*<View style={styles.orderPrice}>*/}
+            {/*<Text style={styles.fontGrey}>当前价</Text>*/}
+            {/*<Text style={styles.priceLeft}> ￥478.08</Text>*/}
+          {/*</View>*/}
+          {/*<View style={styles.orderBottom}>*/}
+            {/*<Text style={styles.orderBTime}>2018/6/08 15:30:45</Text>*/}
+            {/*<View style={styles.orderStatusBox}>*/}
+              {/*<Text style={styles.orderStatus}>已完成 (5/5)</Text>*/}
+              {/*<Icon name="arrow-down" style={styles.statusIcon}/>*/}
+            {/*</View>*/}
+          {/*</View>*/}
+        {/*</View>*/}
 
-        <Text style={styles.bottomTxt}>隐藏已完成申购</Text>
+        {/*<Text style={styles.bottomTxt}>隐藏已完成申购</Text>*/}
       </View>
     );
   };
+
+    renderSaleOrders = () => {
+        let date = new Date();
+        let dateString = date.toLocaleDateString();
+        return (
+            <View style={{marginTop: 15}}>
+                {/*<Text style={styles.deadline}>优先排单截止时间</Text>*/}
+                <View style={styles.orderTitle}>
+                    <Text style={styles.majorProduct}>出货订单</Text>
+                    {/*<Text style={styles.orderTime}>{dateString}</Text>*/}
+                </View>
+                <Text style={styles.bottomTxt}>暂无出货订单</Text>
+
+                {/*<View style={styles.orderDetail}>*/}
+                {/*<View style={styles.orderBoxTitle}>*/}
+                {/*<View style={styles.orderBoxTitleLeft}>*/}
+                {/*<Text style={styles.orderGoods}>精品普洱茶饼(6年)</Text>*/}
+                {/*<Text style={styles.orderGoodsNum}> x6</Text>*/}
+                {/*</View>*/}
+                {/*<Text style={styles.cancelOrder}>取消排单</Text>*/}
+                {/*</View>*/}
+                {/*<View style={styles.orderPrice}>*/}
+                {/*<Text style={styles.fontGrey}>当前价</Text>*/}
+                {/*<Text style={styles.priceLeft}> ￥922.25</Text>*/}
+                {/*</View>*/}
+                {/*<View style={styles.orderBottom}>*/}
+                {/*<Text style={styles.orderBTime}>2018/6/20 10:30:45</Text>*/}
+                {/*<Text style={styles.orderStatus}>未成交</Text>*/}
+                {/*</View>*/}
+                {/*</View>*/}
+
+                {/*<View style={styles.orderDetail}>*/}
+                {/*<View style={styles.orderBoxTitle}>*/}
+                {/*<View style={styles.orderBoxTitleLeft}>*/}
+                {/*<Text style={styles.orderGoods}>精品普洱茶饼(6年)</Text>*/}
+                {/*<Text style={styles.orderGoodsNum}> x6</Text>*/}
+                {/*</View>*/}
+                {/*</View>*/}
+                {/*<Image style={styles.orderCompleteImg} source={require("../../../assets/home/order-complete.png")}/>*/}
+                {/*<View style={styles.orderPrice}>*/}
+                {/*<Text style={styles.fontGrey}>当前价</Text>*/}
+                {/*<Text style={styles.priceLeft}> ￥478.08</Text>*/}
+                {/*</View>*/}
+                {/*<View style={styles.orderBottom}>*/}
+                {/*<Text style={styles.orderBTime}>2018/6/08 15:30:45</Text>*/}
+                {/*<View style={styles.orderStatusBox}>*/}
+                {/*<Text style={styles.orderStatus}>已完成 (5/5)</Text>*/}
+                {/*<Icon name="arrow-down" style={styles.statusIcon}/>*/}
+                {/*</View>*/}
+                {/*</View>*/}
+                {/*</View>*/}
+
+                {/*<Text style={styles.bottomTxt}>隐藏已完成申购</Text>*/}
+            </View>
+        );
+    };
 
   render() {
     return (
@@ -234,6 +291,7 @@ class HomeScreen extends Component {
           <View style={styles.majorProductStart}><Text style={styles.majorProduct}>主打商品</Text></View>
           {this.renderGoodsDiv()}
           {this.renderPurchaseOrders()}
+          {this.renderSaleOrders()}
         </Content>
         <Footer style={fs.footerTab}>
           <FooterTab style={fs.footerTab}>
