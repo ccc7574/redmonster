@@ -104,7 +104,7 @@ class HomeScreen extends Component {
             </View>
             <View style={{paddingTop: 15, flexDirection: "row"}}>
               <Text style={styles.productPrice}>当前价</Text>
-              <Text style={styles.productPriceDetail}>922积分</Text>
+              <Text style={styles.productPriceDetail}>300积分</Text>
             </View>
             <View style={styles.productBuy}>
               <Right>
@@ -117,13 +117,13 @@ class HomeScreen extends Component {
         </View>
         <View style={styles.productDivider}/>
         <View style={styles.priceDiv}>
-          <View><Text style={styles.nextHour}>实时价</Text></View>
+          <View><Text style={styles.nextHour}>批发价</Text></View>
           <View style={styles.priceDetails}>
             <View style={styles.moneyContainer}>
               <MoneyCell moneyNum={0} moneyUnit={"千"}/>
-              <MoneyCell moneyNum={9} moneyUnit={"百"}/>
-              <MoneyCell moneyNum={2} moneyUnit={"十"}/>
-              <MoneyCell moneyNum={2} moneyUnit={"元"}/>
+              <MoneyCell moneyNum={3} moneyUnit={"百"}/>
+              <MoneyCell moneyNum={0} moneyUnit={"十"}/>
+              <MoneyCell moneyNum={0} moneyUnit={"元"}/>
               <Text style={styles.point}>.</Text>
               <MoneyCell moneyNum={0} moneyUnit={"角"}/>
               <MoneyCell moneyNum={0} moneyUnit={"分"}/>
@@ -141,12 +141,14 @@ class HomeScreen extends Component {
   };
 
   renderPurchaseOrders = () => {
+    let date = new Date();
+    let dateString = date.toLocaleDateString();
     return (
       <View style={{marginTop: 15}}>
         <Text style={styles.deadline}>优先排单截止时间</Text>
         <View style={styles.orderTitle}>
           <Text style={styles.majorProduct}>进货订单</Text>
-          <Text style={styles.orderTime}>2018-06-02 17:30</Text>
+          <Text style={styles.orderTime}>{dateString}</Text>
         </View>
 
         <View style={styles.orderDetail}>
