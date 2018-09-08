@@ -18,7 +18,6 @@ export default {
     marginBottom: 20,
   },
   imgWrapperUnlimited: {
-    display: 'flex',
     width: 345,
     height: 650,
     marginLeft: "auto",
@@ -38,6 +37,7 @@ export default {
     color: '#7f7f7f',
   },
   content: {
+    display: 'flex',
     marginTop: 30,
   },
   p: {

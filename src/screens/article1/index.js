@@ -102,9 +102,11 @@ class Article1 extends Component {
               <View style={s.imgWrapper}>
                 <Image
                   style={{
+                    flex:1,
                     width: '100%',
                     height: '100%',
                   }}
+                  resizeMode="contain"
                   source={Img4}
                 />
               </View>
@@ -145,6 +147,7 @@ class Article1 extends Component {
                     width: '100%',
                     height: '100%',
                   }}
+                  resizeMode="contain"
                   source={Img7}
                 />
               </View>
@@ -159,7 +162,11 @@ class Article1 extends Component {
 
               <View style={s.imgWrapperUnlimited}>
                 <Image
-                  style={{flex:1, height: undefined, width: undefined}}
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                  }}
+                  resizeMode="contain"
                   source={Img8}
                 />
               </View>
@@ -168,7 +175,11 @@ class Article1 extends Component {
 
               <View style={s.imgWrapperUnlimited}>
                 <Image
-                  style={{flex:1, height: undefined, width: undefined}}
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                  }}
+                  resizeMode="contain"
                   source={Img9}
                 />
               </View>
@@ -177,7 +188,11 @@ class Article1 extends Component {
 
               <View style={s.imgWrapperUnlimited}>
                 <Image
-                  style={{flex:1, height: undefined, width: undefined}}
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                  }}
+                  resizeMode="contain"
                   source={Img10}
                 />
               </View>
@@ -191,6 +206,7 @@ class Article1 extends Component {
                     width: '100%',
                     height: '100%',
                   }}
+                  resizeMode="contain"
                   source={Img11}
                 />
               </View>

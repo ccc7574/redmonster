@@ -63,6 +63,7 @@ class Article2 extends Component {
                     width: '100%',
                     height: '100%',
                   }}
+                  resizeMode="contain"
                   source={Img1}
                 />
               </View>
@@ -77,6 +78,7 @@ class Article2 extends Component {
                     width: '100%',
                     height: '100%',
                   }}
+                  resizeMode="contain"
                   source={Img2}
                 />
               </View>
@@ -90,6 +92,7 @@ class Article2 extends Component {
                     width: '100%',
                     height: '100%',
                   }}
+                  resizeMode="contain"
                   source={Img3}
                 />
               </View>
@@ -102,6 +105,7 @@ class Article2 extends Component {
                     width: '100%',
                     height: '100%',
                   }}
+                  resizeMode="contain"
                   source={Img4}
                 />
               </View>
@@ -114,6 +118,7 @@ class Article2 extends Component {
                     width: '100%',
                     height: '100%',
                   }}
+                  resizeMode="contain"
                   source={Img5}
                 />
               </View>
@@ -127,6 +132,7 @@ class Article2 extends Component {
                     width: '100%',
                     height: '100%',
                   }}
+                  resizeMode="contain"
                   source={Img6}
                 />
               </View>
@@ -140,6 +146,7 @@ class Article2 extends Component {
                     width: '100%',
                     height: '100%',
                   }}
+                  resizeMode="contain"
                   source={Img7}
                 />
               </View>
@@ -152,6 +159,7 @@ class Article2 extends Component {
                     width: '100%',
                     height: '100%',
                   }}
+                  resizeMode="contain"
                   source={Img8}
                 />
               </View>
@@ -167,6 +175,7 @@ class Article2 extends Component {
                     width: '100%',
                     height: '100%',
                   }}
+                  resizeMode="contain"
                   source={Img9}
                 />
               </View>
@@ -182,6 +191,7 @@ class Article2 extends Component {
                     width: '100%',
                     height: '100%',
                   }}
+                  resizeMode="contain"
                   source={Img10}
                 />
               </View>
@@ -197,6 +207,7 @@ class Article2 extends Component {
                     width: '100%',
                     height: '100%',
                   }}
+                  resizeMode="contain"
                   source={Img11}
                 />
               </View>
