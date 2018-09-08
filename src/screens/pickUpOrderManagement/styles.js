@@ -100,8 +100,13 @@ export default {
     fontSize: 19,
   },
   noRecord: {
-    marginTop: 30,
+    marginTop: 60,
+    alignItems: "center",
+    height: 150,
+  },
+  noRecordTxt: {
+    marginTop: 12,
     textAlign: "center",
-    color: "#AAA",
+    color: "#666",
   },
 };

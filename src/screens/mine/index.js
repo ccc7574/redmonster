@@ -246,24 +246,26 @@ class Mine extends Component {
                 </View>
               </View>
             </TouchableHighlight>
-            <View style={s.listItem}>
-              <View style={s.listItemLeft}>
-                <View style={s.listItemLeftImgWrapper}>
-                  <Image
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                    }}
-                    resizeMode={'contain'}
-                    source={Address}
-                  />
+            <TouchableHighlight onPress={() => this.props.navigation.navigate("PickUpAddress")}>
+              <View style={s.listItem}>
+                <View style={s.listItemLeft}>
+                  <View style={s.listItemLeftImgWrapper}>
+                    <Image
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                      }}
+                      resizeMode={'contain'}
+                      source={Address}
+                    />
+                  </View>
+                  <Text style={s.listItemLeftTxt}>地址管理</Text>
                 </View>
-                <Text style={s.listItemLeftTxt}>地址管理</Text>
+                <View style={s.listItemRight}>
+                  <Icon style={s.arrowRight} name="arrow-forward"/>
+                </View>
               </View>
-              <View style={s.listItemRight}>
-                <Icon style={s.arrowRight} name="arrow-forward"/>
-              </View>
-            </View>
+            </TouchableHighlight>
             {/*<View style={s.listItem}>*/}
               {/*<View style={s.listItemLeft}>*/}
                 {/*<View style={s.listItemLeftImgWrapper}>*/}
