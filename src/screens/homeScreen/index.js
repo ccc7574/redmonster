@@ -71,7 +71,6 @@ class HomeScreen extends Component {
         even={(index + 1) % 2 === 0}
         parallax={true}
         parallaxProps={parallaxProps}
-        homeScreenProps={}
       />
     );
   }
