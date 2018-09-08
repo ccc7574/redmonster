@@ -15,17 +15,17 @@ import {
 } from "native-base";
 
 import s from "./styles";
-import Img1 from '../../../assets/article/product1.png';
-import Img2 from '../../../assets/article/product2.png';
-import Img3 from '../../../assets/article/product3.png';
-import Img4 from '../../../assets/article/product4.png';
-import Img5 from '../../../assets/article/product5.png';
-import Img6 from '../../../assets/article/product6.png';
-import Img7 from '../../../assets/article/product7.png';
-import Img8 from '../../../assets/article/product8.png';
-import Img9 from '../../../assets/article/product9.png';
-import Img10 from '../../../assets/article/product10.png';
-import Img11 from '../../../assets/article/product11.png';
+import Img1 from '../../../assets/article/brand1.png';
+import Img2 from '../../../assets/article/brand2.png';
+import Img3 from '../../../assets/article/brand3.png';
+import Img4 from '../../../assets/article/brand4.png';
+import Img5 from '../../../assets/article/brand5.png';
+import Img6 from '../../../assets/article/brand6.png';
+import Img7 from '../../../assets/article/brand7.png';
+import Img8 from '../../../assets/article/brand8.png';
+import Img9 from '../../../assets/article/brand9.png';
+import Img10 from '../../../assets/article/brand10.png';
+import Img11 from '../../../assets/article/brand11.png';
 
 class Article2 extends Component {
   constructor(props) {
@@ -52,12 +52,10 @@ class Article2 extends Component {
         </Header>
         <Content style={{backgroundColor: '#000',}}>
           <View style={{ height: '100%', paddingLeft: 15, paddingRight: 15}}>
-            <Text style={s.title}>主打商品</Text>
+            <Text style={s.title}>品牌介绍</Text>
             <Text style={s.date}>2018-9-7 19:30</Text>
             <View style={s.content}>
-              <Text style={s.p}>绿蚁新醅酒，红泥小火炉。</Text>
-              <Text style={s.p}>晚来天欲雪，能饮一杯无？</Text>
-              <Text style={s.pRight}>——白居易《问刘十九》</Text>
+              <Text style={s.pLeft}><Text style={{color: '#a5a5a5', fontWeight: '700'}}>红炉</Text>——深挖国产优质产品，重塑中国高端品牌。</Text>
 
               <View style={s.imgWrapper}>
                 <Image
@@ -69,7 +67,9 @@ class Article2 extends Component {
                 />
               </View>
 
-              <Text style={s.p}>红炉熟普2012，珍稀，珍贵，品味高雅，只与最珍视的挚友一起分享。</Text>
+              <Text style={s.pLeft}>白居易有诗云：绿蚁新醅酒，红泥小火炉。晚来天欲雪，能饮一杯无？</Text>
+              <Text style={s.pLeft}>“红炉”二字正是源于此处，代表了一种禅意、优雅的生活态度，也象征着一个品牌的淬炼，一个民族的蒸蒸日上。</Text>
+              <Text style={s.pLeft}>红炉国际贸易无锡有限公司总部设立在江苏无锡，主营普洱纯料古树陈茶和各类精选商品。</Text>
 
               <View style={s.imgWrapper}>
                 <Image
@@ -81,8 +81,8 @@ class Article2 extends Component {
                 />
               </View>
 
-              <Text style={s.p}>2012年纯料深山古树普洱陈茶，</Text>
-              <Text style={s.p}>传统与现代融合的普洱茶精品。</Text>
+              <Text style={s.pLeft}>由于茶叶市场“水很深”，普通人很难鉴别茶叶的树龄、产地、发酵时间、有益物质含量等信息。再加上各个产地、不同品种的茶叶太多，导致了目前茶叶市场太混乱。</Text>
+              <Text style={s.pLeft}>要么价格能接受，但是买回来质量不好、口感不好；要么茶叶口感还可以，但价格过于高，感觉买贵了；再要么茶叶包装上面一堆唬人的名头，但买回来发现并不好喝，也不一定能保证产地树龄等信息的真实性。</Text>
 
               <View style={s.imgWrapper}>
                 <Image
@@ -94,10 +94,7 @@ class Article2 extends Component {
                 />
               </View>
 
-              <Text style={s.p}>千金易得，好茶难寻。</Text>
-              <Text style={s.p}>高品质的普洱古树茶，要到普洱古茶树生长的源头去寻找。</Text>
-              <Text style={s.p}>红炉茶叶来自云南普洱市无量山深处老乌山，</Text>
-              <Text style={s.p}>周边环境没有人类污染，生长过程没有人工干预。</Text>
+              <Text style={s.pLeft}>红炉致力于帮助广大消费者解决这些痛点，专心做好茶，回归茶的本质，做干净，真实，好喝的茶叶。</Text>
 
               <View style={s.imgWrapper}>
                 <Image
@@ -109,9 +106,7 @@ class Article2 extends Component {
                 />
               </View>
 
-              <Text style={s.p}>每年清明时节短短几天的采茶季，山下的采茶工人花费五个小时从汽车无法通行的山路来到老乌山深处，</Text>
-              <Text style={s.p}>架上梯子爬到树顶，将当年最新的老树新芽小心地采摘下来，用千百年传承下来的传统工艺进行初步加工。</Text>
-              <Text style={s.p}>手工的温度，传承着匠心，只为将老乌山的味道完整地保留。</Text>
+              <Text style={s.pLeft}>以茶叶市场作为切入点，红炉分析了很多陷入瓶颈的国产商品运营模式，总结出了由于同质化恶性竞争所形成的恶性循环闭环：同质化竞争、价格战导致商家产品卖不出价格，只能靠压缩生产成本、降低产品质量来盈利，而这种做法又进一步导致了消费者不愿意购买劣质国产产品，市场持续缩小，竞争更加剧烈。</Text>
 
               <View style={s.imgWrapper}>
                 <Image
@@ -123,8 +118,8 @@ class Article2 extends Component {
                 />
               </View>
 
-              <Text style={s.p}>初加工的茶叶由采茶工人一袋袋地搬运到山下的茶厂，利用现代化流水线设备进行精加工。</Text>
-              <Text style={s.p}>从除尘、除菌、分拣、渥堆环境、炒制均匀度等各个方面全方位把控加工精度，精心打磨，将一饼好茶呈现给世人。</Text>
+              <Text style={s.pLeft}>而目前国内的消费者已经具有了一定的购买力，许多人出国旅游购买国外名牌产品都是可以用疯狂扫货来形容，各种代购大行其道，出现了买国外大牌大手大脚，买国内品牌精打细算的怪现象。</Text>
+              <Text style={s.pLeft}>究其本质，是因为大部分国产品牌、平台口碑已经做差了，无论是想要买好货的消费者还是能生产优质产品的生产厂家，都亟需一个优秀的品牌来提供公信力。</Text>
 
               <View style={s.imgWrapper}>
                 <Image
@@ -136,8 +131,8 @@ class Article2 extends Component {
                 />
               </View>
 
-              <Text style={s.p}>红炉茶叶坚持原产地发酵，生长地就是发酵地。24小时365天严格把控仓库温湿度，茶叶在发酵过程中得到升华和重生。</Text>
-              <Text style={s.p}>发酵时间越久，茶叶中的多酚类化合物的酶类和非酶类氧化越完全，发酵产生的活性物质和微量元素不仅使得茶叶口感变得甘醇顺喉，也使得茶叶具有了抗癌、抗衰老、降三高、清肠道等保健功效。</Text>
+              <Text style={s.pLeft}>目前大多数有优质商品购买需求的消费者都会选择国外品牌，而这些国外品牌的产品却往往是中国厂家代工生产的。消费者买到的产品价格过高，而生产优质产品的厂家却利润微薄。</Text>
+              <Text style={s.pLeft}>红炉品牌的建立就是为了打破这种僵局，靠用心做产品在消费者心中建立信任。整合国内外品牌优势，深挖国产优质产品，重塑中国高端品牌。</Text>
 
               <View style={s.imgWrapper}>
                 <Image
@@ -149,41 +144,52 @@ class Article2 extends Component {
                 />
               </View>
 
-              <Text style={s.p}>红炉只做真材实料的纯料古树陈茶，坚决不用台地茶和其他年份的茶叶掺杂。</Text>
-              <Text style={s.p}>由于古茶树生长环境特定，古树数量稀有，采摘期短和加工、仓储要求严苛，每年的古树普洱都是产量固定、不可再生的。</Text>
-              <Text style={s.p}>随着人们生活水平的提高，国内外爱茶、懂茶的人越来越多，愿意购买高档茶品饮的消费者越来越多，高品质的老茶越喝越少。</Text>
-              <Text style={s.p}>市场供需关系和普洱茶本身越存越好的特性都会使红炉纯料古树普洱陈茶的价值越来越高。</Text>
-              <Text style={s.p}>购买商品和获取更多产品信息，请登录红炉支付宝商城</Text>
-              <Text style={s.p}>方法一：在支付宝首页搜索栏搜索“红炉茶叶”。</Text>
-              <Text style={s.pLeft}>第一步，点击支付宝初始页面上方的搜索栏</Text>
+              <Text style={s.pLeft}>红炉通过大量、专业的品牌分析总结出塑造高端品牌的方式，也是红炉一直坚持的品牌定位：品质，高贵，稀有。</Text>
 
-              <View style={s.imgWrapperUnlimited}>
+              <View style={s.imgWrapper}>
                 <Image
-                  style={{flex:1, height: undefined, width: undefined}}
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                  }}
                   source={Img8}
                 />
               </View>
 
-              <Text style={s.pLeft}>第二步，输入“红炉茶叶”并点击唯一店铺。</Text>
+              <Text style={s.pLeft}>品质</Text>
+              <Text style={s.pLeft}>做质量：通过从原材料到生产销售的全链监控严格把关，保证品质；</Text>
+              <Text style={s.pLeft}>做质感：注重用户体验，深挖优质产品，找到专业、专注的大师作；</Text>
+              <Text style={s.pLeft}>设计感：与优秀设计师团队深度合作，将每一件产品打磨成艺术品。</Text>
 
-              <View style={s.imgWrapperUnlimited}>
+              <View style={s.imgWrapper}>
                 <Image
-                  style={{flex:1, height: undefined, width: undefined}}
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                  }}
                   source={Img9}
                 />
               </View>
 
-              <Text style={s.p}>方法二：打开支付宝“扫一扫”，扫描下方二维码。</Text>
+              <Text style={s.pLeft}>高贵</Text>
+              <Text style={s.pLeft}>有文化：每一件优质国产产品的背后都是一种千百年文化的历史积淀；</Text>
+              <Text style={s.pLeft}>有态度：或狂放，或婉约，或浪漫，或优雅，通过红炉，找回这些态度；</Text>
+              <Text style={s.pLeft}>懂生活：好的产品会让人感受到生活的乐趣，红炉用心，让您开心。</Text>
 
-              <View style={s.imgWrapperUnlimited}>
+              <View style={s.imgWrapper}>
                 <Image
-                  style={{flex:1, height: undefined, width: undefined}}
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                  }}
                   source={Img10}
                 />
               </View>
 
-              <Text style={s.p}>红炉国际是一家国产原创高端品牌。</Text>
-              <Text style={s.p}>红炉茶叶，专心做好茶。</Text>
+              <Text style={s.pLeft}>稀有</Text>
+              <Text style={s.pLeft}>原材料：如果是别人都能给你的东西，那我就不给你了，我要给你的是别人没有的；</Text>
+              <Text style={s.pLeft}>工艺：我们对工艺的要求是，一个不起眼的小细节，都会让你会心一笑；</Text>
+              <Text style={s.pLeft}>年代：真正珍稀的，是时光，那些融入了时光的珍品，我将为你亲手奉上。</Text>
 
               <View style={s.imgWrapper}>
                 <Image
@@ -195,9 +201,10 @@ class Article2 extends Component {
                 />
               </View>
 
-              <Text style={s.p}>选择红炉，选择放心，选择高雅。</Text>
-              <Text style={s.p}>红炉茶叶，期待与您邂逅。</Text>
-
+              <Text style={s.pLeft}>中国茶叶市场每年超过3000亿销售额，生存着7万家茶叶企业，而年销售额超过10亿的企业寥寥无几，没有一家能在A股上市。</Text>
+              <Text style={s.pLeft}>茶叶市场多年来一直以原材料的形式在售卖产品。价格不透明，挑选困难等问题持续困扰广大消费者。</Text>
+              <Text style={s.pLeft}>红炉力图帮助茶叶市场改变现状，做到茶叶产品品牌化，标准化，价格透明化，为消费者的选择带来根本上的便利。成为茶叶行业中国自主品牌的领航者。</Text>
+              <Text style={s.pRight}>——总裁寄语</Text>
 
             </View>
           </View>
