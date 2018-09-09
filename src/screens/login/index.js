@@ -69,6 +69,8 @@ class Login extends Component {
         AsyncStorage.setItem('user_status', JSON.stringify(userObj), () => {
           props.navigation.navigate("Home");
         });
+      }else{
+        Alert.alert('用户名密码错误!');
       }
     }).catch(function (error) {
       Alert.alert('用户名密码错误!');
