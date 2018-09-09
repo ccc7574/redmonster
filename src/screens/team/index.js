@@ -44,9 +44,9 @@ class FixedLabel extends Component {
       selected2: undefined,
       countAmt: 35,
       activeTab: 1,
-        users:[],
-        newAddQty:0,
-        userQty:0
+      users:[],
+      newAddQty:0,
+      userQty:0
     };
   }
 
@@ -57,9 +57,9 @@ class FixedLabel extends Component {
             this.setState({userQty: 0});
             this.setState({newAddQty: 0});
             userInfo = {};
-            userInfo.phone = "18699287811";
+            // userInfo.phone = "18699287811";
             console.log('没有登录')
-            // return;
+            return;
           }
           axios.get(`http://192.168.14.139:3000/rm/graphql`, {
               params: {
