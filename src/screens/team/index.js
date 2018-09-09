@@ -13,7 +13,7 @@ import Header from "../../components/Header/index";
 import s from "./styles";
 import fs from "../footer/styles";
 const axios = require('axios');
-
+const {serverAPI} = require('../utils');
 
 const tableHead = ["昵称", "账号", "本月消费", "本月消费商奖励", "本月业绩", "本月店铺奖励"];
 
@@ -61,7 +61,7 @@ class FixedLabel extends Component {
             console.log('没有登录')
             return;
           }
-          axios.get(`http://192.168.14.139:3000/rm/graphql`, {
+          axios.get(`${serverAPI}/rm/graphql`, {
               params: {
                   query: `{ userQueryWhere(referee:"${userInfo.phone}") {name,phone}}`
               }

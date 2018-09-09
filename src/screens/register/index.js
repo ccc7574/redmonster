@@ -110,7 +110,7 @@ class Register extends Component {
     let referee = this.state.referee;
     let code = this.state.code;
     if (!this.getB(phone)) {
-      if (referee === '') {
+      if (referee===undefined||referee.trim() === '') {
         if (code === this.state.vCode) {
           axios.post(`${serverAPI}/RM/api/users/create`, {
             phone: phone,

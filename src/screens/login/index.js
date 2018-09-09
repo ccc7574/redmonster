@@ -26,6 +26,7 @@ const Head = require("../../../assets/login/head.png");
 const BgMsk = require( "../../../assets/login/bgMsk2x.png");
 // const Sina = require("../../../assets/login/sina2x.png");
 // const Webchat = require( "../../../assets/login/webChat2x.png");
+const {serverAPI} = require('../utils');
 
 
 const Bg = require("../../../assets/login/bg.png");
@@ -56,7 +57,7 @@ class Login extends Component {
     let password = this.state.password;
     let props = this.props;
     console.log(phone, password);
-    axios.post(`http://192.168.14.139:3000/RM/api/users/login`, {
+    axios.post(`${serverAPI}/RM/api/users/login`, {
       phone: phone,
       password: password,
     }).then(function (response) {
