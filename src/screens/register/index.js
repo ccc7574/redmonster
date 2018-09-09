@@ -112,7 +112,7 @@ class Register extends Component {
     if (!this.getB(phone)) {
       if (referee === '') {
         if (code === this.state.vCode) {
-          axios.post(`http://localhost:3000/RM/api/users/create`, {
+          axios.post(`${serverAPI}/RM/api/users/create`, {
             phone: phone,
             type: 1,
             password: password,
@@ -137,7 +137,7 @@ class Register extends Component {
           Alert.alert('验证码错误!请重试发送验证码')
         }
       }else{
-        axios.get(`http://localhost:3000/rm/graphql`, {
+        axios.get(`${serverAPI}/rm/graphql`, {
           params: {
             query: `{ userQueryWhere(phone:"${referee}") {userId} }`
           }
@@ -147,7 +147,7 @@ class Register extends Component {
             Alert.alert(`未找到手机号:${referee}推荐人`);
           }else{
             if (code === this.state.vCode) {
-              axios.post(`http://localhost:3000/RM/api/users/create`, {
+              axios.post(`${serverAPI}/RM/api/users/create`, {
                 phone: phone,
                 type: 1,
                 password: password,
