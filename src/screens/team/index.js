@@ -8,10 +8,12 @@ import {
   Footer,
   FooterTab
 } from "native-base";
-import {View, Image, AsyncStorage} from "react-native";
+import {View, Image, Alert, AsyncStorage} from "react-native";
 import Header from "../../components/Header/index";
 import s from "./styles";
 import fs from "../footer/styles";
+const axios = require('axios');
+
 
 const tableHead = ["昵称", "账号", "本月消费", "本月消费商奖励", "本月业绩", "本月店铺奖励"];
 
@@ -42,12 +44,48 @@ class FixedLabel extends Component {
       selected2: undefined,
       countAmt: 35,
       activeTab: 1,
+        users:[],
+        newAddQty:0,
+        userQty:0
     };
   }
 
-  render() {
-    const { tableHead } = this.state;
+  componentWillMount(){
+      AsyncStorage.getItem("user_status").then((value) => {
+          let userInfo = JSON.parse(value);
+          if(null == userInfo){
+            this.setState({userQty: 0});
+            this.setState({newAddQty: 0});
+            userInfo = {};
+            userInfo.phone = "18699287811";
+            console.log('没有登录')
+            // return;
+          }
+          axios.get(`http://192.168.14.139:3000/rm/graphql`, {
+              params: {
+                  query: `{ userQueryWhere(referee:"${userInfo.phone}") {name,phone}}`
+              }
+          }).then((response) => {
+              let user = response.data.data.userQueryWhere;
+              console.log(user);
+              if(user.length >0){
+                  let usersAry = [];
+                  for (let i = 0; i < user.length; i++) {
+                      let obj = user[i];
+                      let objAry = [obj.name,obj.phone,"0.00","0.00","0.00"];
+                      usersAry.push(objAry);
+                  }
+                  this.setState({users: usersAry});
+              }
+          })
+      })
+          .then(res => {
+              //do something else
+          });
+  }
 
+  render() {
+    const { tableHead,users } = this.state;
     return (
       <Container style={s.container}>
         <Header
@@ -60,7 +98,7 @@ class FixedLabel extends Component {
           <View style={s.topRow}>
             <TopCell
               cellTitle="客户人数"
-              cellContent={25}
+              cellContent={this.state.userQty}
               contentStyle={{color: "#D1B27A"}}
             />
             <TopCell
@@ -77,7 +115,7 @@ class FixedLabel extends Component {
           <View style={s.topRow}>
             <TopCell
               cellTitle="本月新增人数"
-              cellContent={2}
+              cellContent={this.state.newAddQty}
               contentStyle={{color: "#D1B27A"}}
             />
             <TopCell
@@ -103,23 +141,23 @@ class FixedLabel extends Component {
             })}
           </View>
           <View>
-            <List
-              style={s.listTable}
-              dataArray={DATA}
-              renderRow={data => (
-                <View style={s.listItem}>
-                  { data && data.map((item, key) => {
-                    let width = 100 / data.length - 2 + "%";
-                    let color = (key === 3 || key === 5) ? "#E83032" : "#A5A5A5";
-                    return (
-                      <Text style={[s.listCell, s.fontWhite, { width, color }]} key={key}>
-                        {item}
-                      </Text>
-                    )})
-                  }
-                </View>
-              )}
-            />
+              <List
+                  style={s.listTable}
+                  dataArray={users}
+                  renderRow={data => (
+                      <View style={s.listItem}>
+                          { data && data.map((item, key) => {
+                              let width = 100 / data.length - 2 + "%";
+                              let color = (key === 3 || key === 5) ? "#E83032" : "#A5A5A5";
+                              return (
+                                  <Text style={[s.listCell, s.fontWhite, { width, color }]} key={key}>
+                                      {item}
+                                  </Text>
+                              )})
+                          }
+                      </View>
+                  )}
+              />
           </View>
 
           {/*<View style={s.pagination}>*/}
