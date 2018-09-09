@@ -112,10 +112,10 @@ class HomeScreen extends Component {
               <MoneyCell moneyNum={0} moneyUnit={"千"}/>
               <MoneyCell moneyNum={3} moneyUnit={"百"}/>
               <MoneyCell moneyNum={0} moneyUnit={"十"}/>
-              <MoneyCell moneyNum={0} moneyUnit={"元"}/>
+              <MoneyCell moneyNum={0} moneyUnit={"个"}/>
               <Text style={styles.point}>.</Text>
-              <MoneyCell moneyNum={0} moneyUnit={"角"}/>
-              <MoneyCell moneyNum={0} moneyUnit={"分"}/>
+              <MoneyCell moneyNum={0} moneyUnit={""}/>
+              <MoneyCell moneyNum={0} moneyUnit={""}/>
             </View>
             {/*<View style={styles.priceIcon}>*/}
               {/*<TouchableHighlight onPress={() => this.props.navigation.navigate("History")}>*/}
