@@ -110,44 +110,72 @@ class Register extends Component {
     let referee = this.state.referee;
     let code = this.state.code;
     if (!this.getB(phone)) {
-      axios.get(`http://localhost:3000/rm/graphql`, {
-        params: {
-          query: `{ userQueryWhere(phone:"${referee}") {userId} }`
+      if (referee === '') {
+        if (code === this.state.vCode) {
+          axios.post(`http://localhost:3000/RM/api/users/create`, {
+            phone: phone,
+            type: 1,
+            password: password,
+            referee: referee,
+            name: name
+          }).then(function (response) {
+            if (response.data.result === 'success') {
+              let userInfo = response.data.data;
+              let userObj = {
+                status: 'logined',
+                ...userInfo
+              };
+              AsyncStorage.setItem('user_status', JSON.stringify(userObj), () => {
+                Alert.alert('注册成功!');
+                props.navigation.navigate("Home");
+              });
+            }
+          }).catch(function (error) {
+            Alert.alert('密码长度不小于6位数!');
+          })
+        } else {
+          Alert.alert('验证码错误!请重试发送验证码')
         }
-      }).then((response) => {
-        let user = response.data.data.userQueryWhere;
-        if (user.length === 0) {
-          Alert.alert(`未找到手机号:${referee}推荐人`);
-        }else{
-          if (code === this.state.vCode) {
-            axios.post(`http://localhost:3000/RM/api/users/create`, {
-              phone: phone,
-              type: 1,
-              password: password,
-              referee: referee,
-              name: name
-            }).then(function (response) {
-              if (response.data.result === 'success') {
-                let userInfo = response.data.data;
-                let userObj = {
-                  status: 'logined',
-                  ...userInfo
-                };
-                AsyncStorage.setItem('user_status', JSON.stringify(userObj), () => {
-                  Alert.alert('注册成功!');
-                  props.navigation.navigate("Home");
-                });
-              }
-            }).catch(function (error) {
-              Alert.alert('密码长度不小于6位数!');
-            })
-          } else {
-            Alert.alert('验证码错误!请重试发送验证码')
+      }else{
+        axios.get(`http://localhost:3000/rm/graphql`, {
+          params: {
+            query: `{ userQueryWhere(phone:"${referee}") {userId} }`
           }
-        }
-      }).catch(function (error) {
-        console.log(error);
-      });
+        }).then((response) => {
+          let user = response.data.data.userQueryWhere;
+          if (user.length === 0) {
+            Alert.alert(`未找到手机号:${referee}推荐人`);
+          }else{
+            if (code === this.state.vCode) {
+              axios.post(`http://localhost:3000/RM/api/users/create`, {
+                phone: phone,
+                type: 1,
+                password: password,
+                referee: referee,
+                name: name
+              }).then(function (response) {
+                if (response.data.result === 'success') {
+                  let userInfo = response.data.data;
+                  let userObj = {
+                    status: 'logined',
+                    ...userInfo
+                  };
+                  AsyncStorage.setItem('user_status', JSON.stringify(userObj), () => {
+                    Alert.alert('注册成功!');
+                    props.navigation.navigate("Home");
+                  });
+                }
+              }).catch(function (error) {
+                Alert.alert('密码长度不小于6位数!');
+              })
+            } else {
+              Alert.alert('验证码错误!请重试发送验证码')
+            }
+          }
+        }).catch(function (error) {
+          console.log(error);
+        });
+      }
       return false;
     }
     // if (!this.getB(referee)) {

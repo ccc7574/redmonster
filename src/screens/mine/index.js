@@ -14,19 +14,19 @@ import {
   FooterTab,
 } from "native-base";
 import s from './styles';
-import QR from '../../../assets/mine/qrcode.png';
+// import QR from '../../../assets/mine/qrcode.png';
 import Wallet from '../../../assets/mine/walletIcon.png';
 import Money from '../../../assets/mine/moneyIcon.png';
 import Avatar from '../../../assets/mine/avatar.png';
-import Coupon from '../../../assets/mine/coupon.png';
-import Coupon2 from '../../../assets/mine/coupon2.png';
-import Transfer from '../../../assets/mine/transfer.png';
+// import Coupon from '../../../assets/mine/coupon.png';
+// import Coupon2 from '../../../assets/mine/coupon2.png';
+// import Transfer from '../../../assets/mine/transfer.png';
 import Points from '../../../assets/mine/points.png';
 import Record from '../../../assets/mine/record.png';
 import Address from '../../../assets/mine/address.png';
-import Service from '../../../assets/mine/service.png';
-import Feedback from '../../../assets/mine/feedback.png';
-import Rules from '../../../assets/mine/rules.png';
+// import Service from '../../../assets/mine/service.png';
+// import Feedback from '../../../assets/mine/feedback.png';
+// import Rules from '../../../assets/mine/rules.png';
 import fs from "../footer/styles";
 
 class Mine extends Component {
