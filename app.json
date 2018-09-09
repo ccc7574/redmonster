@@ -1,16 +1,16 @@
 {
   "expo": {
-    "name":"Red Monster",
+    "name":"Hong Lu",
     "sdkVersion": "25.0.0",
     "icon": "./assets/redmonsterlogo.png",
-    "description": "Red Monster Demo",
+    "description": "Hong Lu",
     "version": "1.0.1",
-    "slug": "redmonster",
+    "slug": "honglu",
     "ios": {
-      "bundleIdentifier": "com.aicareus.redmonster"
+      "bundleIdentifier": "com.honglu.honglu"
     },
     "android": {
-      "package": "com.aicareus.redmonster"
+      "package": "com.honglu.honglu"
     },
     "loading": {
       "hideExponentText": true,
