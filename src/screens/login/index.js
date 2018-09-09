@@ -56,7 +56,7 @@ class Login extends Component {
     let phone = this.state.phone;
     let password = this.state.password;
     let props = this.props;
-    console.log(phone, password);
+    // console.log(phone, password);
     axios.post(`${serverAPI}/RM/api/users/login`, {
       phone: phone,
       password: password,

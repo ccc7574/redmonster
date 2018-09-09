@@ -187,13 +187,13 @@ class FixedLabel extends Component {
                 {/*</Form>*/}
               {/*</Right>*/}
             {/*</View>*/}
-            <View style={styles.listItem}>
-              <Text style={styles.fontWhite}>可获得红积分</Text>
-              <Text style={{
-                color: "#ccc",
-                paddingRight: 15
-              }}>{(this.state.productPrice * this.state.countAmt).toFixed(2)}</Text>
-            </View>
+            {/*<View style={styles.listItem}>*/}
+              {/*<Text style={styles.fontWhite}>可获得红积分</Text>*/}
+              {/*<Text style={{*/}
+                {/*color: "#ccc",*/}
+                {/*paddingRight: 15*/}
+              {/*}}>{(this.state.productPrice * this.state.countAmt).toFixed(2)}</Text>*/}
+            {/*</View>*/}
             <View style={{
               flexDirection: "row",
               justifyContent: "space-between",
@@ -201,23 +201,23 @@ class FixedLabel extends Component {
               paddingTop: 15,
               paddingBottom: 15
             }}>
-              <Text style={styles.fontWhite}>共三件商品</Text>
-              <View>
-                <View style={{flexDirection: "row", justifyContent: "flex-end"}}>
-                  <Text style={{color: "#aaa"}}>主推产品积分：</Text>
-                  <Text style={{
-                    color: "#D0B17D",
-                    paddingRight: 15
-                  }}>{(this.state.productPrice * this.state.countAmt).toFixed(2)}</Text>
-                </View>
-                <View style={{flexDirection: "row", justifyContent: "flex-end", marginTop: 10}}>
-                  <Text style={{color: "#aaa"}}>推广积分：</Text>
-                  <Text style={{
-                    color: "#ccc",
-                    paddingRight: 15
-                  }}>{(this.state.productPrice * this.state.countAmt / 10).toFixed(2)}</Text>
-                </View>
-              </View>
+              <Text style={styles.fontWhite}>共{this.state.countAmt}件商品</Text>
+              {/*<View>*/}
+                {/*<View style={{flexDirection: "row", justifyContent: "flex-end"}}>*/}
+                  {/*<Text style={{color: "#aaa"}}>主推产品积分：</Text>*/}
+                  {/*<Text style={{*/}
+                    {/*color: "#D0B17D",*/}
+                    {/*paddingRight: 15*/}
+                  {/*}}>{(this.state.productPrice * this.state.countAmt).toFixed(2)}</Text>*/}
+                {/*</View>*/}
+                {/*<View style={{flexDirection: "row", justifyContent: "flex-end", marginTop: 10}}>*/}
+                  {/*<Text style={{color: "#aaa"}}>推广积分：</Text>*/}
+                  {/*<Text style={{*/}
+                    {/*color: "#ccc",*/}
+                    {/*paddingRight: 15*/}
+                  {/*}}>{(this.state.productPrice * this.state.countAmt / 10).toFixed(2)}</Text>*/}
+                {/*</View>*/}
+              {/*</View>*/}
             </View>
           </View>
         </Content>
@@ -229,7 +229,7 @@ class FixedLabel extends Component {
                 <Text style={{
                   color: "#D0B17D",
                   fontSize: 22
-                }}>￥{(this.state.productPrice * this.state.countAmt - 20).toFixed(2)}</Text>
+                }}>{(this.state.productPrice * this.state.countAmt).toFixed(2)}积分</Text>
               </View>
               {/*<Text style={{color: "#aaa", fontSize: 13}}>已优惠￥20</Text>*/}
             </View>
