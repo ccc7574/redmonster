@@ -121,13 +121,11 @@ class FixedLabel extends Component {
             <TopCell
               cellTitle="本月推荐奖励(积分)"
               cellContent={"0.00"}
-              contentStyle={{color: "#E83032",textAlign: "left"}}
+              contentStyle={{color: "#E83032",textAlign: "center"}}
             />
-            {/*<View style={{flex: 1}}>*/}
-              {/*<Button block bordered style={s.addButton}>*/}
-                {/*<Text style={s.addButtonTxt}>立刻开店</Text>*/}
-              {/*</Button>*/}
-            {/*</View>*/}
+            <View style={{flex: 1}}>
+                <Text style={s.addButtonTxt}></Text>
+            </View>
           </View>
           <View style={s.listHead}>
             { tableHead && tableHead.map((item, key) => {
