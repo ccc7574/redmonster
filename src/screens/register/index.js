@@ -91,15 +91,34 @@ class Register extends Component {
     if (this.getB(phone)) {
       Alert.alert("手机号码有误无法收到验证码，请重填");
     } else {
-      axios.post(`http://144.202.117.213:2000/member/register/sms/${phone}/1`, {}).then(function (response) {
-        let messageCode = response.data.payload.phoneVerifyCode;
-        self.setState({vCode:messageCode})
-      })
+      if(this.isAlreadyRegisted(phone)){
+          Alert.alert("该手机号已经注册，请重填");
+          return;
+      }else {
+          axios.post(`http://144.202.117.213:2000/member/register/sms/${phone}/1`, {}).then(function (response) {
+              let messageCode = response.data.payload.phoneVerifyCode;
+              self.setState({vCode:messageCode})
+          })
+      }
     }
   }
 
   getB(phone) {
     return !(/^1[34578]\d{9}$/.test(phone));
+  }
+
+  async isAlreadyRegisted(phone){
+    await axios.get(`${serverAPI}/rm/graphql`, {
+          params: {
+              query: `{ userQueryWhere(phone:"${phone}") {userId} }`
+          }
+      }).then((response) => {
+          let user = response.data.data.userQueryWhere;
+          if(null != user){
+            console.log("该手机号已注册",phone);
+            return true;
+          }
+      });
   }
 
   handleFormSubmit = () => {
@@ -110,6 +129,11 @@ class Register extends Component {
     let referee = this.state.referee;
     let code = this.state.code;
     if (!this.getB(phone)) {
+      if(isAlreadyRegisted(phone)){
+        Alert.alert("该手机号已经注册，请重填");
+        return;
+      }
+
       if (referee===undefined||referee.trim() === '') {
         if (code === this.state.vCode) {
           axios.post(`${serverAPI}/RM/api/users/create`, {
