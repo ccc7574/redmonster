@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {AsyncStorage, Dimensions, Image,View} from "react-native";
+import {AsyncStorage, Dimensions, Image,View,Alert} from "react-native";
 import {
   Container,
   Header,
@@ -31,6 +31,7 @@ const BgMsk = require( "../../../assets/login/bgMsk2x.png");
 const Bg = require("../../../assets/login/bg.png");
 const deviceHeight = Dimensions.get("window").height;
 const deviceWidth = Dimensions.get("window").width;
+const axios = require('axios');
 
 class Login extends Component {
   constructor(props) {
@@ -49,6 +50,30 @@ class Login extends Component {
     this.setState({
       switchFlag: !switchFlag
     });
+  };
+  userLogin = () => {
+    let phone = this.state.phone;
+    let password = this.state.password;
+    let props = this.props;
+    console.log(phone, password);
+    axios.post(`http://192.168.14.139:3000/RM/api/users/login`, {
+      phone: phone,
+      password: password,
+    }).then(function (response) {
+      if (response.data.result === 'success') {
+        console.log(response.data.data);
+        // let userInfo = response.data.data;
+        // let userObj = {
+        //   status: 'logined',
+        //   ...userInfo
+        // };
+        // AsyncStorage.setItem('user_status', JSON.stringify(userObj), () => {
+        //   props.navigation.navigate("Home");
+        // });
+      }
+    }).catch(function (error) {
+      Alert.alert('用户名密码错误!');
+    })
   };
   render() {
     return (
@@ -107,16 +132,25 @@ class Login extends Component {
             <Item fixedLabel style={styles.itemRow}>
               <Icon active name="phone-portrait" style={styles.icon}/>
               <Input placeholder="手机号码"                style={styles.input}
+                     ref={(el) => {
+                       this.phone = el;
+                     }}
+                     onChangeText={(phone) => this.setState({phone})}
+                     value={this.state.phone}
               />
             </Item>
             <Item fixedLabel style={styles.itemRow}>
               <Icon active name="lock" style={styles.icon}/>
               <Input secureTextEntry={!this.state.switchFlag} placeholder="登录密码"                style={styles.input}
+                     ref={(el) => {
+                       this.password = el;
+                     }}
+                     onChangeText={(password) => this.setState({password})}
               />
               <Switch value={this.state.switchFlag} onTintColor="#4688F1" onValueChange={this.handleChange} style={{marginRight: 10}}/>
             </Item>
           </Form>
-          <Button block rounded style={{...styles.btnLogin,width:deviceWidth-114,}}>
+          <Button block rounded style={{...styles.btnLogin,width:deviceWidth-114}} onPress={this.userLogin}>
             <Text style={{fontSize: 18,color:"#1A1A1A"}}>登 录</Text>
           </Button>
           <Button block rounded transparent bordered
@@ -178,7 +212,6 @@ class Login extends Component {
                         if (userInfo && userInfo.status === 'logined') {
                           this.props.navigation.navigate("Mine");
                         } else {
-                          this.props.navigation.navigate("Login");
                         }
                       }).then(res => {
                         //do something else

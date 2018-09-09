@@ -187,7 +187,6 @@ class FixedLabel extends Component {
               </View>
             </Button>
             <Button style={fs.footerButton}
-                    onPress={() => this.props.navigation.navigate("Team")}
                     vertical
             >
               <View style={fs.footerView}>
@@ -203,7 +202,7 @@ class FixedLabel extends Component {
                         if (userInfo && userInfo.status === 'logined') {
                           this.props.navigation.navigate("Mine");
                         } else {
-                          this.props.navigation.navigate("Register");
+                          this.props.navigation.navigate("Login");
                         }
                       }).then(res => {
                         //do something else

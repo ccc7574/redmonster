@@ -91,7 +91,7 @@ class Register extends Component {
     if (this.getB(phone)) {
       Alert.alert("手机号码有误无法收到验证码，请重填");
     } else {
-      axios.post(`http://144.202.117.213:2000/member/register/sms/${phone}/1`, {}).then(function (response) {
+      axios.post(`http://144.202.117.213:2000/member/register/sms/${phone}/2`, {}).then(function (response) {
         let messageCode = response.data.payload.phoneVerifyCode;
         self.setState({vCode:messageCode})
       })
@@ -116,7 +116,6 @@ class Register extends Component {
         }
       }).then((response) => {
         let user = response.data.data.userQueryWhere;
-        console.log(user.length);
         if (user.length === 0) {
           Alert.alert(`未找到手机号:${referee}推荐人`);
         }else{
