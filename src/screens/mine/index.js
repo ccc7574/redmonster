@@ -379,7 +379,7 @@ class Mine extends Component {
                         if (userInfo && userInfo.status === 'logined') {
                           this.props.navigation.navigate("Mine");
                         } else {
-                          this.props.navigation.navigate("Register");
+                          this.props.navigation.navigate("Login");
                         }
                       }).then(res => {
                         //do something else

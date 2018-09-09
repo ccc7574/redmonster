@@ -1,12 +1,9 @@
-
+import {colors} from "../homeScreen/styles";
 
 export default {
+  flex: 1,
   container: {
-    // backgroundColor: "rgba(0, 0, 0, .6)",
-    padding: 10,
-    position:'relative',
-      backgroundColor:"#000",
-      flex: 1,
+    backgroundColor: "#000"
   },
   header: {
     marginTop: 50,
@@ -15,6 +12,9 @@ export default {
     textAlign: "center",
     color: "#4688F1",
     backgroundColor:"#1a1a1a"
+  },
+  headerIcon:{
+    width:22,height:22
   },
     title: {
         paddingHorizontal: 30,
@@ -28,6 +28,13 @@ export default {
     width: 20,
     color:"#CCAD75"
   },
+  header:{
+    backgroundColor: colors.hlGray
+  },
+  input: {
+    color: "#eee"
+  },
+  iconStyle:{fontSize: 20, color: '#A5A5A5'},
   itemRow: {
     height: 60,
   },
