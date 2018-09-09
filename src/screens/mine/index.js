@@ -92,7 +92,7 @@ class Mine extends Component {
               </View>
               <View style={s.disc}>
                 <View style={s.row1}><Text style={{fontSize: 16, color: '#d1b27a'}}>ID: {phone}</Text></View>
-                <View style={s.row2}><Text style={{fontSize: 13, color: '#a5a5a5'}}>昵称 {phone}</Text></View>
+                <View style={s.row2}><Text style={{fontSize: 13, color: '#a5a5a5'}}>昵称 {name ? name : phone}</Text></View>
                 <View style={s.row3}><Text style={{fontSize: 12, color: '#a5a5a5'}}>{type}</Text></View>
               </View>
               {/*<View style={s.qr}>*/}
