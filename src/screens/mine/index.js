@@ -35,7 +35,7 @@ class Mine extends Component {
     this.state = {
       id: 0,
       name: '',
-      type: '旗舰店',
+      type: '',
       userInfo: ''
     }
   }
@@ -50,9 +50,13 @@ class Mine extends Component {
       });
   }
 
+  handleAddress = () => {
+    Alert.alert("暂不可用");
+  };
+
   render() {
     const { iptVal, totalAmt, userInfo, type } = this.state;
-    const { phone,name } = userInfo && userInfo;
+    const { phone, name } = userInfo && userInfo;
 
     return (
       <Container style={{backgroundColor: '#000'}}>
@@ -88,7 +92,7 @@ class Mine extends Component {
               </View>
               <View style={s.disc}>
                 <View style={s.row1}><Text style={{fontSize: 16, color: '#d1b27a'}}>ID: {phone}</Text></View>
-                <View style={s.row2}><Text style={{fontSize: 13, color: '#a5a5a5'}}>昵称 {name}</Text></View>
+                <View style={s.row2}><Text style={{fontSize: 13, color: '#a5a5a5'}}>昵称 {phone}</Text></View>
                 <View style={s.row3}><Text style={{fontSize: 12, color: '#a5a5a5'}}>{type}</Text></View>
               </View>
               {/*<View style={s.qr}>*/}
@@ -122,7 +126,7 @@ class Mine extends Component {
                 </TouchableHighlight>
               </View>
               <View style={s.lowItem}>
-                <TouchableHighlight onPress={() => Alert.alert('暂未开通')}>
+                <TouchableHighlight onPress={() => this.props.navigation.navigate("BindCard")}>
                   <View style={s.walletBox}>
                     <View style={s.lowImgWrapper}>
                       <Image
@@ -256,7 +260,7 @@ class Mine extends Component {
                 </View>
               </View>
             </TouchableHighlight>
-            <TouchableHighlight onPress={() => this.props.navigation.navigate("PickUpAddress")}>
+            <TouchableHighlight onPress={() => this.handleAddress()}>
               <View style={s.listItem}>
                 <View style={s.listItemLeft}>
                   <View style={s.listItemLeftImgWrapper}>

@@ -40,5 +40,15 @@ export default {
   lowerText: {
     fontSize: 24,
     color: '#e7e7e7',
-  }
+  },
+  noRecord: {
+    marginTop: 60,
+    alignItems: "center",
+    height: 150,
+  },
+  noRecordTxt: {
+    marginTop: 12,
+    textAlign: "center",
+    color: "#666",
+  },
 }
