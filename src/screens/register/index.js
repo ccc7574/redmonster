@@ -110,7 +110,7 @@ class Register extends Component {
     let referee = this.state.referee;
     let code = this.state.code;
     if (!this.getB(phone)) {
-      axios.get(`${serverAPI}/rm/graphql`, {
+      axios.get(`http://localhost:3000/rm/graphql`, {
         params: {
           query: `{ userQueryWhere(phone:"${referee}") {userId} }`
         }
@@ -121,7 +121,7 @@ class Register extends Component {
           Alert.alert(`未找到手机号:${referee}推荐人`);
         }else{
           if (code === this.state.vCode) {
-            axios.post(`${serverAPI}/RM/api/users/create`, {
+            axios.post(`http://localhost:3000/RM/api/users/create`, {
               phone: phone,
               type: 1,
               password: password,
