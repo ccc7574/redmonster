@@ -61,15 +61,14 @@ class Login extends Component {
       password: password,
     }).then(function (response) {
       if (response.data.result === 'success') {
-        console.log(response.data.data);
-        // let userInfo = response.data.data;
-        // let userObj = {
-        //   status: 'logined',
-        //   ...userInfo
-        // };
-        // AsyncStorage.setItem('user_status', JSON.stringify(userObj), () => {
-        //   props.navigation.navigate("Home");
-        // });
+        let userInfo = response.data.data;
+        let userObj = {
+          status: 'logined',
+          ...userInfo
+        };
+        AsyncStorage.setItem('user_status', JSON.stringify(userObj), () => {
+          props.navigation.navigate("Home");
+        });
       }
     }).catch(function (error) {
       Alert.alert('用户名密码错误!');
