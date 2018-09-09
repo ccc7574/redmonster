@@ -42,7 +42,7 @@ class Message extends Component {
         </Header>
         <Content>
           <TouchableOpacity style={s.listItemWrapper} onPress={()=>this.props.navigation.navigate('Article1')}>
-            <View style={s.redDot} />
+            {/*<View style={s.redDot} />*/}
             <Text style={s.title}>主打商品</Text>
             <Text style={s.date}>2018-9-7 19:30</Text>
           </TouchableOpacity>
