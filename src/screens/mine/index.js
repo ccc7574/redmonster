@@ -34,7 +34,7 @@ class Mine extends Component {
     super(props);
     this.state = {
       id: 0,
-      nickName: '',
+      name: '',
       type: '旗舰店',
       userInfo: ''
     }
