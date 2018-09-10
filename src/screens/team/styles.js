@@ -98,7 +98,8 @@ export default {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    padding: 10,
+    paddingVertical: 15,
+    paddingHorizontal: 10,
   },
   topCell: {
     flex: 1,

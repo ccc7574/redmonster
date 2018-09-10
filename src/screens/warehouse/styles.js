@@ -197,9 +197,8 @@ export default {
   },
   topSec: {
     width: '100%',
-    height: 158,
-    paddingVertical: 24,
-    paddingHorizontal: 20,
+    paddingVertical: 15,
+    paddingHorizontal: 10,
     backgroundColor: "#1A1A1A"
   },
   fontGold: {
