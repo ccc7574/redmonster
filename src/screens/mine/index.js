@@ -17,7 +17,7 @@ import s from './styles';
 // import QR from '../../../assets/mine/qrcode.png';
 import Wallet from '../../../assets/mine/walletIcon.png';
 import Money from '../../../assets/mine/moneyIcon.png';
-import Avatar from '../../../assets/mine/avatar.png';
+import Avatar from '../../../assets/mine/avatar2.png';
 // import Coupon from '../../../assets/mine/coupon.png';
 // import Coupon2 from '../../../assets/mine/coupon2.png';
 // import Transfer from '../../../assets/mine/transfer.png';
