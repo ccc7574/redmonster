@@ -114,7 +114,7 @@ class Register extends Component {
           }
       }).then((response) => {
           let user = response.data.data.userQueryWhere;
-          if(null != user){
+          if(user.length!==0){
             console.log("该手机号已注册",phone);
             return true;
           }
