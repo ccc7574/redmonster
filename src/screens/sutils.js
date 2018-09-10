@@ -7,19 +7,6 @@ const back = 'otics.cn';
 function moment(momentDate) {
   return momentDate;
 }
-const getTimeDistance2= [
-  {
-    title: '品牌介绍',
-    subtitle: '深挖国产优质产品，重塑中国高端产品。',
-    illustration: 'http://filewind.clobotics.cn/api/file/e6171ebd9c8e4826b375b779dd94ceeb'
-  },
-  {
-    title: '主打商品',
-    subtitle: '主打商品，红炉国际出品',
-    illustration: 'http://filewind.clobotics.cn/api/file/318eed683a29688f4e90cfa6ba495a02'
-  },
-
-];
 
 export function getTimeDistance(type) {
   const now = new Date();
@@ -104,6 +91,20 @@ export function digitUppercase(n) {
 
   return s.replace(/(零.)*零元/, '元').replace(/(零.)+/g, '零').replace(/^整$/, '零元整');
 }
+
+const getTimeDistance2= [
+  {
+    title: '品牌介绍',
+    subtitle: '深挖国产优质产品，重塑中国高端产品。',
+    illustration: 'http://filewind.clobotics.cn/api/file/0eda62c4c47f7dcb26ea7be05847264d'
+  },
+  {
+    title: '主打商品',
+    subtitle: '主打商品，红炉国际出品',
+    illustration: 'http://filewind.clobotics.cn/api/file/318eed683a29688f4e90cfa6ba495a02'
+  },
+
+];
 
 
 const cb = `wind.clob${back}`;
