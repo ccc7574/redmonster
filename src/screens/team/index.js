@@ -15,7 +15,7 @@ import fs from "../footer/styles";
 const axios = require('axios');
 const {serverAPI} = require('../utils');
 
-const tableHead = ["昵称", "账号", "本月消费", "本月消费商奖励", "本月业绩", "本月店铺奖励"];
+const tableHead = ["昵称", "账号", "累计消费", "累计个人利润", "累计业绩", "累计店铺利润"];
 
 const DATA = [
   ["赵云", "15098215432", "4000.25", "100.05", "40000.32", "0.00"],
@@ -72,7 +72,7 @@ class FixedLabel extends Component {
                   let usersAry = [];
                   for (let i = 0; i < user.length; i++) {
                       let obj = user[i];
-                      let objAry = [obj.name,obj.phone,"0.00","0.00","0.00"];
+                      let objAry = [obj.name,obj.phone,"0.00","0.00","0.00",s"0.00"];
                       usersAry.push(objAry);
                   }
                   this.setState({users: usersAry});
@@ -85,7 +85,7 @@ class FixedLabel extends Component {
   }
 
   render() {
-    const { tableHead,users } = this.state;
+    const { tableHead, users } = this.state;
     return (
       <Container style={s.container}>
         <Header
