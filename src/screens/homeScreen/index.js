@@ -14,7 +14,7 @@ import {
   FooterTab,
   Icon
 } from "native-base";
-import {Dimensions, Image, TouchableHighlight,AsyncStorage} from "react-native";
+import {Dimensions, Image, TouchableHighlight, AsyncStorage} from "react-native";
 import {sliderWidth, itemWidth} from './SliderEntry.style';
 import Carousel from "react-native-snap-carousel";
 import styles from "./styles";
@@ -78,32 +78,38 @@ class HomeScreen extends Component {
       default:
         break;
     }
-  }
+  };
+
+  handleProduct = () => {
+    this.props.navigation.navigate("Products")
+  };
 
   renderGoodsDiv = () => {
     return (
       <View style={styles.mb}>
-        <View style={styles.productContent}>
-          <View style={styles.productImageContainer}>
-            <Image style={styles.productImage} source={cardImage1}/>
+        <TouchableHighlight onPress={() => this.handleProduct()}>
+          <View style={styles.productContent}>
+            <View style={styles.productImageContainer}>
+              <Image style={styles.productImage} source={cardImage1}/>
+            </View>
+            <View style={{paddingLeft: 14, paddingTop: 5, width: '95%'}}>
+              <View>
+                <Text style={styles.productTitle}>红炉熟普2012</Text>
+              </View>
+              <View style={{paddingTop: 15, flexDirection: "row"}}>
+                <Text style={styles.productPrice}>当前价</Text>
+                <Text style={styles.productPriceDetail}>300积分</Text>
+              </View>
+              <View style={styles.productBuy}>
+                <Right>
+                  <Button block bordered onPress={() => this.props.navigation.navigate("Buy")} style={styles.buyButton}>
+                    <Text style={styles.buyButtonTxt}>立即申购</Text>
+                  </Button>
+                </Right>
+              </View>
+            </View>
           </View>
-          <View style={{paddingLeft: 14, paddingTop: 5, width: '95%'}}>
-            <View>
-              <Text style={styles.productTitle}>红炉熟普2012</Text>
-            </View>
-            <View style={{paddingTop: 15, flexDirection: "row"}}>
-              <Text style={styles.productPrice}>当前价</Text>
-              <Text style={styles.productPriceDetail}>300积分</Text>
-            </View>
-            <View style={styles.productBuy}>
-              <Right>
-                <Button block bordered onPress={() => this.props.navigation.navigate("Buy")} style={styles.buyButton}>
-                  <Text style={styles.buyButtonTxt}>立即申购</Text>
-                </Button>
-              </Right>
-            </View>
-          </View>
-        </View>
+        </TouchableHighlight>
         <View style={styles.productDivider}/>
         <View style={styles.priceDiv}>
           <View><Text style={styles.nextHour}>批发价</Text></View>

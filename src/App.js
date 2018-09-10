@@ -38,6 +38,7 @@ import Footer from './screens/footer/HLFooter';
 import Article1 from './screens/article1';
 import Article2 from './screens/article2';
 import Message from './screens/message';
+import Products from './screens/products';
 
 const Drawer = DrawerNavigator(
   {
@@ -91,6 +92,7 @@ const AppNavigator = StackNavigator(
     Article1: {screen: Article1},
     Article2: {screen: Article2},
     Message: {screen: Message},
+    Products: {screen: Products},
   },
   {
     initialRouteName: "Drawer",
