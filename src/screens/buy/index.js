@@ -17,7 +17,7 @@ import {
   Footer,
   FooterTab,
 } from "native-base";
-import {View, Image, Alert, AsyncStorage} from "react-native";
+import {View, Image, Alert, AsyncStorage, TouchableHighlight} from "react-native";
 import styles from "./styles";
 
 const {serverAPI} = require('../utils');
@@ -105,13 +105,15 @@ class FixedLabel extends Component {
 
         <Content style={{padding: 12}}>
           <View style={{backgroundColor: "#1A1A1A", padding: 15}}>
-            <View style={{flexDirection: "row", justifyContent: "flex-start", alignItems: "center", marginTop: 15}}>
-              <Image style={{resizeMode: "cover", width: 68, height: 68, borderRadius: 5}} source={pickUpImg}/>
-              <View style={{marginLeft: 15}}>
-                <Text style={{color: "#ccc", fontSize: 18}}>红炉熟普2012</Text>
-                <Text style={{marginTop: 10, color: "#D0B17D", fontSize: 18}}>300积分</Text>
+            <TouchableHighlight onPress={() => this.props.navigation.navigate("Products")}>
+              <View style={{flexDirection: "row", justifyContent: "flex-start", alignItems: "center", marginTop: 15}}>
+                <Image style={{resizeMode: "cover", width: 68, height: 68, borderRadius: 5}} source={pickUpImg}/>
+                <View style={{marginLeft: 15}}>
+                  <Text style={{color: "#ccc", fontSize: 18}}>红炉熟普2012</Text>
+                  <Text style={{marginTop: 10, color: "#D0B17D", fontSize: 18}}>300积分</Text>
+                </View>
               </View>
-            </View>
+            </TouchableHighlight>
             <View style={{flexDirection: "row", justifyContent: "flex-end", alignItems: "center"}}>
               <Button small style={{backgroundColor: "#4A4A4A"}} onPress={this.handleMinus}>
                 <Text style={{color: "#ccc", fontSize: 19}}>-</Text>
