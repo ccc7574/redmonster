@@ -98,7 +98,7 @@ class HomeScreen extends Component {
               </View>
               <View style={{paddingTop: 15, flexDirection: "row"}}>
                 <Text style={styles.productPrice}>当前价</Text>
-                <Text style={styles.productPriceDetail}>300积分</Text>
+                <Text style={styles.productPriceDetail}>1200积分</Text>
               </View>
               <View style={styles.productBuy}>
                 <Right>
