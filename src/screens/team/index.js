@@ -67,12 +67,12 @@ class FixedLabel extends Component {
               }
           }).then((response) => {
               let user = response.data.data.userQueryWhere;
-              console.log(user);
+              // console.log(user);
               if(user.length >0){
                   let usersAry = [];
                   for (let i = 0; i < user.length; i++) {
                       let obj = user[i];
-                      let objAry = [obj.name,obj.phone,"0.00","0.00","0.00",s"0.00"];
+                      let objAry = [obj.name,obj.phone,"0.00","0.00","0.00","0.00"];
                       usersAry.push(objAry);
                   }
                   this.setState({users: usersAry});

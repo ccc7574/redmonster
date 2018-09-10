@@ -38,7 +38,7 @@ class Wallet extends Component {
   };
 
   render() {
-    const {  } = this.state;
+
     return (
       <Container style={{backgroundColor: '#000',}}>
         <Header style={s.header}>

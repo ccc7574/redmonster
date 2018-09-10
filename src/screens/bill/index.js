@@ -46,7 +46,7 @@ class Bill extends Component {
   }
 
   render() {
-    const {  } = this.state;
+
     return (
       <Container style={{backgroundColor: '#fff'}}>
         <Header style={s.header}>

@@ -36,7 +36,7 @@ class Article1 extends Component {
 
 
   render() {
-    const {  } = this.state;
+
     return (
       <Container style={{backgroundColor: '#1a1a1a',}}>
         <Header style={s.header}>
