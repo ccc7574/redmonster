@@ -174,19 +174,6 @@ class WareHouse extends Component {
     }
   }
 
-  checkLoginAndJump = (jumpVal) =>{
-      AsyncStorage.getItem("user_status").then((value) => {
-        let userInfo = JSON.parse(value);
-        if (userInfo && userInfo.status === 'logined') {
-          this.props.navigation.navigate(jumpVal);
-        } else {
-          this.props.navigation.navigate("Login");
-        }
-      }).then(res => {
-        //do something else
-      });
-  }
-
 
   render() {
     const {data, showBtnRow} = this.state;
@@ -391,7 +378,18 @@ class WareHouse extends Component {
             </Button>
             <Button style={fs.footerButton}
                     active={this.state.tab4}
-                    onPress={this.checkLoginAndJump('Mine')}
+                    onPress={() => {
+                      AsyncStorage.getItem("user_status").then((value) => {
+                        let userInfo = JSON.parse(value);
+                        if (userInfo && userInfo.status === 'logined') {
+                          this.props.navigation.navigate("Mine");
+                        } else {
+                          this.props.navigation.navigate("Login");
+                        }
+                      }).then(res => {
+                        //do something else
+                      });
+                    }}
                     vertical
             >
               <View style={fs.footerView}>
