@@ -91,7 +91,7 @@ export default {
   },
   listCell: {
     textAlign: "center",
-    fontSize: 11
+    fontSize: 12
   },
   topRow: {
     backgroundColor: "#1A1A1A",
