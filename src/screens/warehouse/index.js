@@ -196,13 +196,13 @@ class WareHouse extends Component {
           <View style={s.topSec}>
             <View style={s.flexBetween}>
               <View style={s.flexItem}>
-                <Text style={[s.font13, s.fontGrey]}>可用余额(积分)</Text>
+                <Text style={[s.fontSmall, s.fontGrey]}>可用余额(积分)</Text>
                 <Text style={[s.amountFont, s.fontGold]}>0.00</Text>
                 {/*<Text style={[s.amountFont, s.fontGold]}>{this.state.user.balance}</Text>*/}
               </View>
               <View style={s.flexItem}>
                 <View style={s.alignCenter}>
-                  <Text style={[s.font13, s.fontGrey]}>批发积分</Text>
+                  <Text style={[s.fontSmall, s.fontGrey]}>批发积分</Text>
                   {/*<Button bordered style={s.goldBtn}>*/}
                     {/*<Text style={s.font9}>去使用</Text>*/}
                   {/*</Button>*/}
@@ -213,12 +213,12 @@ class WareHouse extends Component {
             </View>
             <View style={s.rowSection2}>
               <View style={s.flexItem}>
-                <Text style={[s.font13, s.fontGrey]}>商品总值(积分)</Text>
+                <Text style={[s.fontSmall, s.fontGrey]}>商品总值(积分)</Text>
                 <Text style={[s.amountFont, s.fontGold]}>0.00</Text>
                 {/*<Text style={[s.amountFont, s.fontGold]}>{this.state.totalPrice}</Text>*/}
               </View>
               <View style={s.flexItem}>
-                <Text style={[s.font13, s.fontGrey]}>总利润(积分)</Text>
+                <Text style={[s.fontSmall, s.fontGrey]}>总利润(积分)</Text>
                 <Text style={[s.amountFont, s.fontRed]}>0.00</Text>
               </View>
             </View>

@@ -104,12 +104,12 @@ class FixedLabel extends Component {
             <TopCell
               cellTitle="累计推荐奖励(积分)"
               cellContent={"0.00"}
-              contentStyle={{color: "#E83032",textAlign: "center"}}
+              contentStyle={{color: "#E83032"}}
             />
             <TopCell
               cellTitle="店铺总盈利(积分)"
               cellContent={"0.00"}
-              contentStyle={{color: "#E83032",textAlign: "center"}}
+              contentStyle={{color: "#E83032"}}
             />
           </View>
           <View style={s.topRow}>
@@ -121,7 +121,7 @@ class FixedLabel extends Component {
             <TopCell
               cellTitle="本月推荐奖励(积分)"
               cellContent={"0.00"}
-              contentStyle={{color: "#E83032",textAlign: "center"}}
+              contentStyle={{color: "#E83032"}}
             />
             <View style={{flex: 1}}>
                 <Text style={s.addButtonTxt}></Text>

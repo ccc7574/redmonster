@@ -109,7 +109,8 @@ export default {
   },
   cellContent: {
     marginTop: 5,
-    fontSize: 20
+    fontSize: 22,
+    fontWeight: 'bold',
   },
   addButton: {
     width: 92,

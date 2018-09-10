@@ -104,7 +104,7 @@ export default {
   headerCell:{
     flex: 1,
     textAlign: "center",
-    fontSize: 14
+    fontSize: 12
   },
   listRow: {
     display: 'flex',
@@ -196,8 +196,8 @@ export default {
     borderRightColor: borderColor,
   },
   topSec: {
-    width:375,
-    height:158,
+    width: '100%',
+    height: 158,
     paddingVertical: 24,
     paddingHorizontal: 20,
     backgroundColor: "#1A1A1A"
@@ -262,8 +262,8 @@ export default {
     paddingRight:4
   },
   amountFont: {
-    marginTop: 3,
-    fontSize: 24,
+    marginTop: 5,
+    fontSize: 22,
     fontWeight:'bold'
   },
   sellBtn: {
