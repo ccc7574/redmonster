@@ -56,9 +56,13 @@ class Mine extends Component {
   };
 
   handleConfirm = () => {
-    AsyncStorage.clear();
-    Alert.alert("退出成功!");
-    this.props.navigation.navigate("Home");
+    this.setState({
+      modalVisible: false
+    }, () => {
+      AsyncStorage.clear();
+      Alert.alert("退出成功!");
+      this.props.navigation.navigate("Home");
+    });
   };
 
   closeModal = () => {
