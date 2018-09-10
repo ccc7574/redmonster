@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Image, ScrollView, AsyncStorage, Alert, TouchableHighlight } from "react-native";
+import { Image, ScrollView, AsyncStorage, Alert, TouchableHighlight, Modal } from "react-native";
 import {
   Container,
   Header,
@@ -36,7 +36,8 @@ class Mine extends Component {
       id: 0,
       name: '',
       type: '',
-      userInfo: ''
+      userInfo: '',
+      modalVisible: false,
     }
   }
 
@@ -52,6 +53,18 @@ class Mine extends Component {
 
   handleAddress = () => {
     Alert.alert("暂不可用");
+  };
+
+  handleConfirm = () => {
+    AsyncStorage.clear();
+    Alert.alert("退出成功!");
+    this.props.navigation.navigate("Home");
+  };
+
+  closeModal = () => {
+    this.setState({
+      modalVisible: false
+    })
   };
 
   render() {
@@ -339,13 +352,35 @@ class Mine extends Component {
           <View style={s.logoutBtnWrapper}>
             <Button full style={{height: 50, backgroundColor: '#1a1a1a'}}
                     onPress={() => {
-                      AsyncStorage.clear();
-                      Alert.alert("退出成功!");
-                      this.props.navigation.navigate("Home");
+                      this.setState({ modalVisible: true });
                     }}>
               <Text style={{color: '#a5a5a5',}}>退出登录</Text>
             </Button>
           </View>
+
+          <Modal
+            animationType="fade"
+            transparent={true}
+            visible={this.state.modalVisible}
+            onRequestClose={this.closeModal}
+          >
+            <View style={[s.modalContainer, s.modalBackgroundStyle]}>
+              <View style={s.innerContainer}>
+                <View style={s.modalContentBox}>
+                  <Text style={s.modalContent}>是否退出登录?</Text>
+                </View>
+                <View style={s.modalFoot}>
+                  <Button style={[s.footBtn, s.borderRight]} onPress={this.closeModal}>
+                    <Text style={s.cancelBtn}>取消</Text>
+                  </Button>
+                  <Button style={s.footBtn} onPress={this.handleConfirm}>
+                    <Text style={s.confirmBtn}>确定</Text>
+                  </Button>
+                </View>
+              </View>
+            </View>
+          </Modal>
+
         </ScrollView>
         <Footer style={fs.footerTab}>
           <FooterTab style={fs.footerTab}>
