@@ -31,7 +31,7 @@ class FixedLabel extends Component {
       selected1: undefined,
       selected2: undefined,
       countAmt: 3,
-      productPrice: 300
+      productPrice: 1200
     };
   }
 
@@ -87,6 +87,8 @@ class FixedLabel extends Component {
   }
 
   render() {
+    const { productPrice } = this.state;
+
     return (
       <Container style={styles.container}>
         <Header style={{backgroundColor: "#1A1A1A", borderBottomWidth: 0}}>
@@ -110,7 +112,7 @@ class FixedLabel extends Component {
                 <Image style={{resizeMode: "cover", width: 68, height: 68, borderRadius: 5}} source={pickUpImg}/>
                 <View style={{marginLeft: 15}}>
                   <Text style={{color: "#ccc", fontSize: 18}}>红炉熟普2012</Text>
-                  <Text style={{marginTop: 10, color: "#D0B17D", fontSize: 18}}>300积分</Text>
+                  <Text style={{marginTop: 10, color: "#D0B17D", fontSize: 18}}>{productPrice}积分</Text>
                 </View>
               </View>
             </TouchableHighlight>
