@@ -385,6 +385,7 @@ class Mine extends Component {
         <Footer style={fs.footerTab}>
           <FooterTab style={fs.footerTab}>
             <Button style={fs.footerButton}
+                    active={this.state.tab1}
                     onPress={() => this.props.navigation.navigate("Home")}
                     vertical
             >
@@ -394,7 +395,19 @@ class Mine extends Component {
               </View>
             </Button>
             <Button vertical style={fs.footerButton}
-                    onPress={() => this.props.navigation.navigate("WareHouse")}>
+                    active={this.state.tab2}
+                    onPress={() => {
+                        AsyncStorage.getItem("user_status").then((value) => {
+                            let userInfo = JSON.parse(value);
+                            if (userInfo && userInfo.status === 'logined') {
+                                this.props.navigation.navigate("WareHouse");
+                            }else {
+                                this.props.navigation.navigate("Login");
+                            }
+                        }).then(res => {
+                            //do something else
+                        });
+                    }}>
               <View style={fs.footerView}>
                 <Image style={fs.footerImage} source={{uri:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAABGdBTUEAALGPC/xhBQAABLlJREFUWAntmV1oI1UUx5ukMdmudmtjlVJafFEoQh9k3XWh9klFWBb86i4IShXJQ6VKsLYPTVrSL2htTVEp2H0p9mVtrQVXFkHxoVjclcUnfdmHtRQLKn5lY0m6pom/M86Mk/TO5INN3ZVcuDl37vmfc/9z5s69505qam6x4joovv39/YfdbvedXq/XU2DMzO+U+fn5P1W4ihPu6+urb2xsHGTw09S7s9ms45gulysL7hdwa4lEYjIWi/1mJe5obAWW0+7t7b29qalpFdvHy7HH5st4PH5qbm7uD8O+1mhUQgYCgSB+hWyKiE1SP6edzmQyykAxZbLoPMguagRsZ319/WvIKFUrlSTs5vE+LaNA9L3R0dGxf4Ys6vfiyMjIHSDD+HgyGAxOLiws/CWW7qLMywD19PTchlmjmEL4YqkuDBtkoKGhwW/YV4ywMUC50nbalOvwv7K7aSNsF5AqYbvI3Kj+aoRvVCTt/BxIhPX8wI6Dsl92PZWiYoR3dnYyFqKyiZRUWIe9ugHNTMYwrhjhlZWV6+xS3+sDdbO9GgSMsZ2ky+PxnNEBmzMzM0kDXMlcQsY4Sz1JpE81Nzd/Ojw8/AXX10VhV7hJL9PhEfRP6BjxYUZYmTXZOSunnyQmCokIpEseC7tZkqaBAyUsNxkOhx8las/RvBfejicOSO6B22LaLo+Pj18Q+2qpRuD/FIGcN7e7u9vT3t7+LDf4FC/HPchC63QazBVekPfHxsa+cgpMJBI5wYv3Apj7qYWWU1nGfsTvGn4/pL1/WeNI429ra1uA6PMASi0pnL+B83dVhqy/r9A/i2+fSu/Ux6qxtLW1FVxcXEwJzrzT1tbWV4UsgCxyFXEZvXlnKqdgDhG1k+iOIWeHhoYuT0xM5Jzf6HsYfQyfstN9jc0nSG1wpF2RA+xRsM8IJ7h9C3BawBrhUCh0CMVL0oGMRaPR16VdTBkYGIj5/f7PsDvOdtqDTQ7h2traF+nzMvilVCr12PT0dILrogpP5i2AIeEGx3f4qJLU5iifjwJ0NosXWbCL8qaDdALn9UuZnzkFovdJB/LjUsjqNh+IFG51dXXaCVyLMB1uHMoLKCmdvEglFWx38SE2qpfU6HPMIWwGTONbOLnS6bS2QxrOTDwRzlk5TIVDA7IFbYrB5A+h4rKPcL7RzXZdJVzpJ1KNcDXCeRHYNyXYYpXH6zy7A7lUcTEIx1knE7JWUo6Wwea4bvOzwlbrw+8xha5Q10NCCNA1alzA5oLPYVFOpy9T5Q+RYeo3tFm71RuJ3D06H/mDfGWXxMmDzWkOjStcm4V84Ay6c+jkrPb23t7eR9juOvkFJ8nPg9RR2ndhexa/QXFqZmvJZDJKEnMC0APUearoa3CuSdWPVYfTpfX19bV8HH2rXV1dS/iTtDVEMhQSjNU238Z6jd/vSJqEuFbME+zGxsa1zs7O8zg6jKaJ6gIs+79TTUHkKrg3+WstvLy8rP0PoXnWfzY3NzMdHR0XfD6fTLkWsPIVSHC2fsHtov8J7DnIBkmaftDd/TsljA6Rg4ODRxBHiIY5Zax6Szu9vb39q5FcW/qVTTkktLS0BFCaT1YFJNGRFz8+NTWlzVsV5pbp+xtDhbvUgXRfogAAAABJRU5ErkJggg==',cache: 'only-if-cached'}}/>
                 <Text style={fs.footerText}>仓库</Text>
@@ -402,7 +415,18 @@ class Mine extends Component {
             </Button>
             <Button style={fs.footerButton}
                     active={this.state.tab3}
-                    onPress={() => this.props.navigation.navigate("Team")}
+                    onPress={() => {
+                        AsyncStorage.getItem("user_status").then((value) => {
+                            let userInfo = JSON.parse(value);
+                            if (userInfo && userInfo.status === 'logined') {
+                                this.props.navigation.navigate("Team");
+                            }else {
+                                this.props.navigation.navigate("Login");
+                            }
+                        }).then(res => {
+                            //do something else
+                        });
+                    }}
                     vertical
             >
               <View style={fs.footerView}>

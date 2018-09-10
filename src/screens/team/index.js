@@ -178,13 +178,36 @@ class FixedLabel extends Component {
               </View>
             </Button>
             <Button vertical style={fs.footerButton}
-                    onPress={() => this.props.navigation.navigate("WareHouse")}>
+                    onPress={() => {
+                        AsyncStorage.getItem("user_status").then((value) => {
+                            let userInfo = JSON.parse(value);
+                            if (null == userInfo || userInfo.status !== 'logined') {
+                                this.props.navigation.navigate("Login");
+                            }else {
+                                this.props.navigation.navigate("WareHouse");
+                            }
+                        }).then(res => {
+                            //do something else
+                        });
+                    }}>
               <View style={fs.footerView}>
                 <Image style={fs.footerImage} source={require("../../../assets/home/storage.png")}/>
                 <Text style={fs.footerText}>仓库</Text>
               </View>
             </Button>
             <Button style={fs.footerButton}
+                    onPress={() =>{
+                        AsyncStorage.getItem("user_status").then((value) => {
+                            let userInfo = JSON.parse(value);
+                            if (null == userInfo || userInfo.status !== 'logined') {
+                                this.props.navigation.navigate("Login");
+                            }else {
+                                this.props.navigation.navigate("Team");
+                            }
+                        }).then(res => {
+                            //do something else
+                        });
+                    }}
                     vertical
             >
               <View style={fs.footerView}>
