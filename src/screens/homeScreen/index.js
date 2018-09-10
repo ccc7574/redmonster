@@ -115,8 +115,8 @@ class HomeScreen extends Component {
           <View><Text style={styles.nextHour}>批发价</Text></View>
           <View style={styles.priceDetails}>
             <View style={styles.moneyContainer}>
-              <MoneyCell moneyNum={0} moneyUnit={"千"}/>
-              <MoneyCell moneyNum={3} moneyUnit={"百"}/>
+              <MoneyCell moneyNum={1} moneyUnit={"千"}/>
+              <MoneyCell moneyNum={2} moneyUnit={"百"}/>
               <MoneyCell moneyNum={0} moneyUnit={"十"}/>
               <MoneyCell moneyNum={0} moneyUnit={"个"}/>
               <Text style={styles.point}>.</Text>
