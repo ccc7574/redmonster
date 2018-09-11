@@ -24,11 +24,11 @@ export default StyleSheet.create({
     marginTop:15,
     backgroundColor:'#1A1A1A',
     borderRadius:2,
-    width:355,
+    // width:355,
     height:248,
   },
   productContent:{
-    width:355,
+    // width:355,
     height:141,
     padding:14,
     flexDirection: "row"

@@ -51,7 +51,7 @@ export default {
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    marginTop: 20,
+    marginTop: 30,
   },
   listTable: {
     marginBottom: 30,

@@ -33,7 +33,7 @@ class FixedLabel extends Component {
       countAmt: 3,
       saleAmt: 1,
       purchaseAmt: 2,
-      productPrice: 1200
+      productPrice: 300
     };
   }
 

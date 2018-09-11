@@ -111,8 +111,8 @@ class HomeScreen extends Component {
                 <Text style={styles.productTitle}>红炉熟普2012</Text>
               </View>
               <View style={{paddingTop: 15, flexDirection: "row"}}>
-                <Text style={styles.productPrice}>当前价</Text>
-                <Text style={styles.productPriceDetail}>1200积分</Text>
+                <Text style={styles.productPrice}>批发价</Text>
+                <Text style={styles.productPriceDetail}>300积分</Text>
               </View>
               <View style={styles.productBuy}>
                 <Right>
@@ -137,7 +137,7 @@ class HomeScreen extends Component {
         </TouchableHighlight>
         <View style={styles.productDivider}/>
         <View style={styles.priceDiv}>
-          <View><Text style={styles.nextHour}>批发价</Text></View>
+          <View><Text style={styles.nextHour}>零售价</Text></View>
           <View style={styles.priceDetails}>
             <View style={styles.moneyContainer}>
               <MoneyCell moneyNum={1} moneyUnit={"千"}/>
