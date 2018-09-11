@@ -67,13 +67,13 @@ class Wallet extends Component {
                 source={Img}
               />
             </View>
-            <Text style={s.amtText}>账户余额(元)</Text>
+            <Text style={s.amtText}>账户积分</Text>
             <Text style={s.amt}>0.00</Text>
           </View>
 
           <View style={{marginTop: 85}}>
             <Button block style={{ margin: 15, backgroundColor: '#D1B27A', borderRadius:28}} onPress={this.handleSaveMoney}>
-              <Text style={{color: '#000',}}>储值优惠</Text>
+              <Text style={{color: '#000',}}>购买积分</Text>
             </Button>
             <Button
               bordered
