@@ -31,6 +31,8 @@ class FixedLabel extends Component {
       selected1: undefined,
       selected2: undefined,
       countAmt: 3,
+      saleAmt: 1,
+      purchaseAmt: 2,
       productPrice: 1200
     };
   }
@@ -49,9 +51,11 @@ class FixedLabel extends Component {
 
   handleAdd = () => {
     let {countAmt} = this.state;
+    countAmt += 1;
     this.setState({
-      countAmt: countAmt + 1
+      countAmt: countAmt
     });
+    this.handleSaleAndPurchaseAmt(countAmt);
   };
 
   handleMinus = () => {
@@ -61,6 +65,39 @@ class FixedLabel extends Component {
     this.setState({
       countAmt
     });
+    this.handleSaleAndPurchaseAmt(countAmt);
+
+  };
+
+  handleSaleAndPurchaseAmt = (countAmt) =>{
+      let countTimes = parseInt(countAmt / 3);
+      let lastCountAmt = countAmt % 3;
+      let pAmt = 0;
+      let sAmt = 0;
+      console.log("countAmt" + countAmt);
+      console.log("countTimes" + countTimes);
+      console.log("lastCountAmt" + lastCountAmt);
+
+      if(countTimes > 0){
+          pAmt = countTimes * 2;
+          sAmt = countTimes * 1;
+      }
+
+      if(3 == lastCountAmt){
+          pAmt += 2;
+          sAmt += 1;
+      }else if(2 == lastCountAmt){
+          pAmt += 1;
+          sAmt += 1;
+      }else if(1 == lastCountAmt){
+          pAmt += 0;
+          sAmt += 1;
+      }
+
+      this.setState({
+          purchaseAmt: pAmt,
+          saleAmt: sAmt
+      });
   };
 
   submitOrder = () => {
@@ -130,8 +167,8 @@ class FixedLabel extends Component {
           </View>
           <View style={{backgroundColor: "#1A1A1A", marginTop: 15, paddingLeft: 15}}>
             <View style={styles.listItem}>
-              <Text style={styles.fontWhite}>支付方式</Text>
-              <Text style={{color: "#ccc", paddingRight: 15}}>余额</Text>
+              <Text style={styles.fontWhite}>提货仓数量</Text>
+              <Text style={{color: "#ccc", paddingRight: 15}}>{this.state.saleAmt}</Text>
             </View>
             {/*<View button style={styles.listItem}>*/}
               {/*<Left>*/}
@@ -198,31 +235,35 @@ class FixedLabel extends Component {
                 {/*paddingRight: 15*/}
               {/*}}>{(this.state.productPrice * this.state.countAmt).toFixed(2)}</Text>*/}
             {/*</View>*/}
-            <View style={{
-              flexDirection: "row",
-              justifyContent: "space-between",
-              alignItems: "flex-start",
-              paddingTop: 15,
-              paddingBottom: 15
-            }}>
-              <Text style={styles.fontWhite}>共{this.state.countAmt}件商品</Text>
-              {/*<View>*/}
-                {/*<View style={{flexDirection: "row", justifyContent: "flex-end"}}>*/}
-                  {/*<Text style={{color: "#aaa"}}>主推产品积分：</Text>*/}
-                  {/*<Text style={{*/}
-                    {/*color: "#D0B17D",*/}
-                    {/*paddingRight: 15*/}
-                  {/*}}>{(this.state.productPrice * this.state.countAmt).toFixed(2)}</Text>*/}
-                {/*</View>*/}
-                {/*<View style={{flexDirection: "row", justifyContent: "flex-end", marginTop: 10}}>*/}
-                  {/*<Text style={{color: "#aaa"}}>推广积分：</Text>*/}
-                  {/*<Text style={{*/}
-                    {/*color: "#ccc",*/}
-                    {/*paddingRight: 15*/}
-                  {/*}}>{(this.state.productPrice * this.state.countAmt / 10).toFixed(2)}</Text>*/}
-                {/*</View>*/}
-              {/*</View>*/}
-            </View>
+              <View style={styles.listItem}>
+                  <Text style={styles.fontWhite}>批发仓数量</Text>
+                  <Text style={{color: "#ccc", paddingRight: 15}}>{this.state.purchaseAmt}</Text>
+              </View>
+            {/*<View style={{*/}
+              {/*flexDirection: "row",*/}
+              {/*justifyContent: "space-between",*/}
+              {/*alignItems: "flex-start",*/}
+              {/*paddingTop: 15,*/}
+              {/*paddingBottom: 15*/}
+            {/*}}>*/}
+              {/*<Text style={styles.fontWhite}>共{this.state.countAmt}件商品</Text>*/}
+              {/*/!*<View>*!/*/}
+                {/*/!*<View style={{flexDirection: "row", justifyContent: "flex-end"}}>*!/*/}
+                  {/*/!*<Text style={{color: "#aaa"}}>主推产品积分：</Text>*!/*/}
+                  {/*/!*<Text style={{*!/*/}
+                    {/*/!*color: "#D0B17D",*!/*/}
+                    {/*/!*paddingRight: 15*!/*/}
+                  {/*/!*}}>{(this.state.productPrice * this.state.countAmt).toFixed(2)}</Text>*!/*/}
+                {/*/!*</View>*!/*/}
+                {/*/!*<View style={{flexDirection: "row", justifyContent: "flex-end", marginTop: 10}}>*!/*/}
+                  {/*/!*<Text style={{color: "#aaa"}}>推广积分：</Text>*!/*/}
+                  {/*/!*<Text style={{*!/*/}
+                    {/*/!*color: "#ccc",*!/*/}
+                    {/*/!*paddingRight: 15*!/*/}
+                  {/*/!*}}>{(this.state.productPrice * this.state.countAmt / 10).toFixed(2)}</Text>*!/*/}
+                {/*/!*</View>*!/*/}
+              {/*/!*</View>*!/*/}
+            {/*</View>*/}
           </View>
         </Content>
         <Footer style={{borderTopWidth: 0}}>
