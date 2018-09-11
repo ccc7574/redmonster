@@ -84,6 +84,19 @@ class HomeScreen extends Component {
     this.props.navigation.navigate("Products")
   };
 
+  checkLoginAndJump = (jumpVal) =>{
+    AsyncStorage.getItem("user_status").then((value) => {
+      let userInfo = JSON.parse(value);
+      if (userInfo && userInfo.status === 'logined') {
+        this.props.navigation.navigate(jumpVal);
+      } else {
+        this.props.navigation.navigate("Login");
+      }
+    }).then(res => {
+      //do something else
+    });
+  }
+
   renderGoodsDiv = () => {
     return (
       <View style={styles.mb}>
