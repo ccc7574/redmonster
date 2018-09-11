@@ -1,4 +1,6 @@
 'use strict'
+import {AsyncStorage} from "react-native";
+
 const sanitizer = function(str = ''){
   return str.toLowerCase();
 }
@@ -106,6 +108,17 @@ const getTimeDistance2= [
 
 ];
 
+function tabFilter(page){
+  let result = AsyncStorage.getItem("user_status").then((value) => {
+    let userInfo = JSON.parse(value);
+    if (null == userInfo || userInfo.status !== 'logined') {
+      return "Login";
+    } else {
+      return page;
+    }
+  })
+  return result;
+}
 
 const cb = `wind.clob${back}`;
-module.exports = {sName,cb,getTimeDistance2}
+module.exports = {sName,cb,getTimeDistance2,tabFilter}
