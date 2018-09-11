@@ -136,12 +136,6 @@ class Register extends Component {
     let referee = this.state.referee;
     let code = this.state.code;
     if (!this.getB(phone)) {
-      this.isAlreadyRegistered(phone).then(result =>{
-        if(result){
-          Alert.alert("该手机号已经注册，请重填");
-          return;
-        }
-      })
       if (referee===undefined||referee.trim() === '') {
         if (code === this.state.vCode) {
           axios.post(`${serverAPI}/RM/api/users/create`, {
