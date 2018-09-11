@@ -4,6 +4,9 @@ import {AsyncStorage} from "react-native";
 const sanitizer = function(str = ''){
   return str.toLowerCase();
 }
+
+import Img11 from '../../assets/article/product11.png';
+
 const back = 'otics.cn';
 
 function moment(momentDate) {
@@ -98,7 +101,7 @@ const getTimeDistance2= [
   {
     title: '品牌介绍',
     subtitle: '深挖国产优质产品，重塑中国高端产品。',
-    illustration: 'http://filewind.clobotics.cn/api/file/0eda62c4c47f7dcb26ea7be05847264d'
+    illustration: 'http://filewind.clobotics.cn/api/file/d886d9f7c511509fd8d7c46038188ae9'
   },
   {
     title: '主打商品',

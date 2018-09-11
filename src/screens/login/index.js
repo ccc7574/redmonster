@@ -57,7 +57,14 @@ class Login extends Component {
     let phone = this.state.phone;
     let password = this.state.password;
     let props = this.props;
-    // console.log(phone, password);
+    if(!phone){
+      Alert.alert('请输入手机号!');
+      return;
+    }
+    if (!password) {
+      Alert.alert('请输入密码!');
+      return;
+    }
     axios.post(`${serverAPI}/RM/api/users/login`, {
       phone: phone,
       password: password,
@@ -76,7 +83,7 @@ class Login extends Component {
       }
     }).catch(function (error) {
       Alert.alert('用户名密码错误!');
-    })
+    });
   };
   render() {
     return (

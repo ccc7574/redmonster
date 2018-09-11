@@ -122,7 +122,9 @@ class Register extends Component {
             console.log("该手机号已注册",phone);
             flag = true;
           }
-      });
+      }).catch((err=>{
+      console.log(err);
+    }));
     return flag;
   }
 
@@ -161,6 +163,7 @@ class Register extends Component {
               });
             }
           }).catch(function (error) {
+            console.log(error);
             Alert.alert('密码长度不小于6位数!');
           })
         } else {
