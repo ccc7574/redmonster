@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import {
   Container,
   Content,
@@ -12,8 +12,11 @@ import {View, Image, Alert, AsyncStorage} from "react-native";
 import Header from "../../components/Header/index";
 import s from "./styles";
 import fs from "../footer/styles";
+
 const axios = require('axios');
 const {serverAPI} = require('../utils');
+import {tabFilter} from '../sutils';
+
 
 const tableHead = ["昵称", "账号", "累计消费", "累计个人利润", "累计业绩", "累计店铺利润"];
 
@@ -26,7 +29,7 @@ const DATA = [
   ["夏侯惇", "15098675431", "5000.25", "100.05", "50000.32", "0.00"],
 ];
 
-const TopCell = ({ cellTitle, cellContent, contentStyle }) => {
+const TopCell = ({cellTitle, cellContent, contentStyle}) => {
   return (
     <View style={s.topCell}>
       <Text style={s.cellTitle}>{cellTitle}</Text>
@@ -44,48 +47,48 @@ class FixedLabel extends Component {
       selected2: undefined,
       countAmt: 35,
       activeTab: 1,
-      users:[],
-      newAddQty:0,
-      userQty:0
+      users: [],
+      newAddQty: 0,
+      userQty: 0
     };
   }
 
-  componentWillMount(){
-      AsyncStorage.getItem("user_status").then((value) => {
-          let userInfo = JSON.parse(value);
-          if(null == userInfo){
-            this.setState({userQty: 0});
-            this.setState({newAddQty: 0});
-            userInfo = {};
-            // userInfo.phone = "18699287811";
-            console.log('没有登录')
-            return;
+  componentWillMount() {
+    AsyncStorage.getItem("user_status").then((value) => {
+      let userInfo = JSON.parse(value);
+      if (null == userInfo) {
+        this.setState({userQty: 0});
+        this.setState({newAddQty: 0});
+        userInfo = {};
+        // userInfo.phone = "18699287811";
+        console.log('没有登录')
+        return;
+      }
+      axios.get(`${serverAPI}/rm/graphql`, {
+        params: {
+          query: `{ userQueryWhere(referee:"${userInfo.phone}") {name,phone}}`
+        }
+      }).then((response) => {
+        let user = response.data.data.userQueryWhere;
+        // console.log(user);
+        if (user.length > 0) {
+          let usersAry = [];
+          for (let i = 0; i < user.length; i++) {
+            let obj = user[i];
+            let objAry = [obj.name, obj.phone, "0.00", "0.00", "0.00", "0.00"];
+            usersAry.push(objAry);
           }
-          axios.get(`${serverAPI}/rm/graphql`, {
-              params: {
-                  query: `{ userQueryWhere(referee:"${userInfo.phone}") {name,phone}}`
-              }
-          }).then((response) => {
-              let user = response.data.data.userQueryWhere;
-              // console.log(user);
-              if(user.length >0){
-                  let usersAry = [];
-                  for (let i = 0; i < user.length; i++) {
-                      let obj = user[i];
-                      let objAry = [obj.name,obj.phone,"0.00","0.00","0.00","0.00"];
-                      usersAry.push(objAry);
-                  }
-                  this.setState({users: usersAry});
-              }
-          })
+          this.setState({users: usersAry});
+        }
       })
-          .then(res => {
-              //do something else
-          });
+    })
+      .then(res => {
+        //do something else
+      });
   }
 
   render() {
-    const { tableHead, users } = this.state;
+    const {tableHead, users} = this.state;
     return (
       <Container style={s.container}>
         <Header
@@ -124,44 +127,45 @@ class FixedLabel extends Component {
               contentStyle={{color: "#E83032"}}
             />
             <View style={{flex: 1}}>
-                <Text style={s.addButtonTxt}></Text>
+              <Text style={s.addButtonTxt}></Text>
             </View>
           </View>
           <View style={s.listHead}>
-            { tableHead && tableHead.map((item, key) => {
+            {tableHead && tableHead.map((item, key) => {
               let width = 100 / tableHead.length - 2 + "%";
               let color = "#A5A5A5";
               return (
-                <Text style={[s.listCell, s.fontWhite, { width, color }]} key={key}>
+                <Text style={[s.listCell, s.fontWhite, {width, color}]} key={key}>
                   {item}
                 </Text>
               );
             })}
           </View>
           <View>
-              <List
-                  style={s.listTable}
-                  dataArray={users}
-                  renderRow={data => (
-                      <View style={s.listItem}>
-                          { data && data.map((item, key) => {
-                              let width = 100 / data.length - 2 + "%";
-                              let color = (key === 3 || key === 5) ? "#E83032" : "#A5A5A5";
-                              return (
-                                  <Text style={[s.listCell, s.fontWhite, { width, color }]} key={key}>
-                                      {item}
-                                  </Text>
-                              )})
-                          }
-                      </View>
-                  )}
-              />
+            <List
+              style={s.listTable}
+              dataArray={users}
+              renderRow={data => (
+                <View style={s.listItem}>
+                  {data && data.map((item, key) => {
+                    let width = 100 / data.length - 2 + "%";
+                    let color = (key === 3 || key === 5) ? "#E83032" : "#A5A5A5";
+                    return (
+                      <Text style={[s.listCell, s.fontWhite, {width, color}]} key={key}>
+                        {item}
+                      </Text>
+                    )
+                  })
+                  }
+                </View>
+              )}
+            />
           </View>
 
           {/*<View style={s.pagination}>*/}
-            {/*<Text style={s.bottomPage}>上一页</Text>*/}
-            {/*<Text style={s.bottomPageNum}>2/3</Text>*/}
-            {/*<Text style={s.bottomPage}>下一页</Text>*/}
+          {/*<Text style={s.bottomPage}>上一页</Text>*/}
+          {/*<Text style={s.bottomPageNum}>2/3</Text>*/}
+          {/*<Text style={s.bottomPage}>下一页</Text>*/}
           {/*</View>*/}
           {/*<Text style={s.bottomTip}>已显示全部</Text>*/}
         </Content>
@@ -179,34 +183,28 @@ class FixedLabel extends Component {
             </Button>
             <Button vertical style={fs.footerButton}
                     onPress={() => {
-                        AsyncStorage.getItem("user_status").then((value) => {
-                            let userInfo = JSON.parse(value);
-                            if (null == userInfo || userInfo.status !== 'logined') {
-                                this.props.navigation.navigate("Login");
-                            }else {
-                                this.props.navigation.navigate("WareHouse");
-                            }
-                        }).then(res => {
-                            //do something else
-                        });
-                    }}>
+                      tabFilter('WareHouse').then(data => {
+                        this.props.navigation.navigate(data);
+                      });
+                    }
+                    }>
               <View style={fs.footerView}>
                 <Image style={fs.footerImage} source={require("../../../assets/home/storage.png")}/>
                 <Text style={fs.footerText}>仓库</Text>
               </View>
             </Button>
             <Button style={fs.footerButton}
-                    onPress={() =>{
-                        AsyncStorage.getItem("user_status").then((value) => {
-                            let userInfo = JSON.parse(value);
-                            if (null == userInfo || userInfo.status !== 'logined') {
-                                this.props.navigation.navigate("Login");
-                            }else {
-                                this.props.navigation.navigate("Team");
-                            }
-                        }).then(res => {
-                            //do something else
-                        });
+                    onPress={() => {
+                      AsyncStorage.getItem("user_status").then((value) => {
+                        let userInfo = JSON.parse(value);
+                        if (null == userInfo || userInfo.status !== 'logined') {
+                          this.props.navigation.navigate("Login");
+                        } else {
+                          this.props.navigation.navigate("Team");
+                        }
+                      }).then(res => {
+                        //do something else
+                      });
                     }}
                     vertical
             >
@@ -218,15 +216,8 @@ class FixedLabel extends Component {
             <Button style={fs.footerButton}
                     active={this.state.tab4}
                     onPress={() => {
-                      AsyncStorage.getItem("user_status").then((value) => {
-                        let userInfo = JSON.parse(value);
-                        if (userInfo && userInfo.status === 'logined') {
-                          this.props.navigation.navigate("Mine");
-                        } else {
-                          this.props.navigation.navigate("Login");
-                        }
-                      }).then(res => {
-                        //do something else
+                      tabFilter('Mine').then(data => {
+                        this.props.navigation.navigate(data);
                       });
                     }}
                     vertical
