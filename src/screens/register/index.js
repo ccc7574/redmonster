@@ -82,6 +82,7 @@ class Register extends Component {
     let self = this;
     if (this.state.vStatus === true) {
       Alert.alert("请稍后重试");
+      return;
     }
     let phone = this.state.phone;
     this.setState({vStatus: true});
@@ -91,15 +92,17 @@ class Register extends Component {
     if (this.getB(phone)) {
       Alert.alert("手机号码有误无法收到验证码，请重填");
     } else {
-      if(this.isAlreadyRegisted(phone)){
+      this.isAlreadyRegistered(phone).then(result =>{
+        if(result){
           Alert.alert("该手机号已经注册，请重填");
           return;
-      }else {
+        }else{
           axios.post(`http://144.202.117.213:2000/member/register/sms/${phone}/1`, {}).then(function (response) {
-              let messageCode = response.data.payload.phoneVerifyCode;
-              self.setState({vCode:messageCode})
+            let messageCode = response.data.payload.phoneVerifyCode;
+            self.setState({vCode:messageCode})
           })
-      }
+        }
+      });
     }
   }
 
@@ -107,7 +110,8 @@ class Register extends Component {
     return !(/^1[34578]\d{9}$/.test(phone));
   }
 
-  async isAlreadyRegisted(phone){
+  async isAlreadyRegistered(phone){
+    let flag = false;
     await axios.get(`${serverAPI}/rm/graphql`, {
           params: {
               query: `{ userQueryWhere(phone:"${phone}") {userId} }`
@@ -116,9 +120,10 @@ class Register extends Component {
           let user = response.data.data.userQueryWhere;
           if(user.length!==0){
             console.log("该手机号已注册",phone);
-            return true;
+            flag = true;
           }
       });
+    return flag;
   }
 
   handleFormSubmit = () => {
@@ -129,11 +134,12 @@ class Register extends Component {
     let referee = this.state.referee;
     let code = this.state.code;
     if (!this.getB(phone)) {
-      if(isAlreadyRegisted(phone)){
-        Alert.alert("该手机号已经注册，请重填");
-        return;
-      }
-
+      this.isAlreadyRegistered(phone).then(result =>{
+        if(result){
+          Alert.alert("该手机号已经注册，请重填");
+          return;
+        }
+      })
       if (referee===undefined||referee.trim() === '') {
         if (code === this.state.vCode) {
           axios.post(`${serverAPI}/RM/api/users/create`, {
