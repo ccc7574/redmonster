@@ -101,7 +101,7 @@ const getTimeDistance2= [
   {
     title: '品牌介绍',
     subtitle: '深挖国产优质产品，重塑中国高端产品。',
-    illustration: 'http://filewind.clobotics.cn/api/file/d886d9f7c511509fd8d7c46038188ae9'
+    illustration: 'http://filewind.clobotics.cn/api/file/4370de04acbe9862d3c28e7e5236346b'
   },
   {
     title: '主打商品',
