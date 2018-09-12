@@ -51,14 +51,21 @@ const Drawer = DrawerNavigator(
     contentOptions: {
       activeTintColor: "#e91e63"
     },
+    navigationOptions: {
+      drawerLockMode: 'locked-closed'
+    },
     contentComponent: props => <HomeScreen/>
   }
 );
 
 const AppNavigator = StackNavigator(
   {
-    // Drawer: {screen: Drawer},
-    HomeScreen: {screen: HomeScreen},
+    Drawer:
+      {screen: Drawer,
+        navigationOptions: () => ({
+          drawerLockMode: 'locked-closed'
+        })},
+    // HomeScreen: {screen: HomeScreen},
     Default: {screen: Default},
     Outline: {screen: Outline},
     Rounded: {screen: Rounded},
@@ -95,8 +102,8 @@ const AppNavigator = StackNavigator(
     Products: {screen: Products},
   },
   {
-    initialRouteName: "HomeScreen",
-    headerMode: "none"
+    initialRouteName: "Drawer",
+    headerMode: "none",
   }
 );
 
