@@ -61,7 +61,7 @@ class FixedLabel extends Component {
         this.setState({newAddQty: 0});
         userInfo = {};
         // userInfo.phone = "18699287811";
-        console.log('没有登录')
+        console.log('没有登录');
         return;
       }
       axios.get(`${serverAPI}/rm/graphql`, {
@@ -79,6 +79,10 @@ class FixedLabel extends Component {
             usersAry.push(objAry);
           }
           this.setState({users: usersAry});
+          if(null != usersAry){
+              this.setState({userQty: usersAry.length});
+              this.setState({newAddQty: usersAry.length});
+          }
         }
       })
     })
