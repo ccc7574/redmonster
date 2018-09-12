@@ -2,7 +2,6 @@ import React from "react";
 import {Root} from "native-base";
 import {StackNavigator, DrawerNavigator} from "react-navigation";
 
-import Header from "./screens/Header/";
 import Default from "./screens/button/default";
 import Outline from "./screens/button/outline";
 import Rounded from "./screens/button/rounded";
@@ -34,7 +33,6 @@ import IntegrationRecord from './screens/integrationRecord';
 import CouponForQueue from './screens/couponForQueue';
 import Points from './screens/points';
 import Mine from './screens/mine';
-import Footer from './screens/footer/HLFooter';
 import Article1 from './screens/article1';
 import Article2 from './screens/article2';
 import Message from './screens/message';
@@ -43,8 +41,6 @@ import Products from './screens/products';
 const Drawer = DrawerNavigator(
   {
     Home: {screen: HomeScreen},
-    Header: {screen: Header},
-    Footer: {screen: Footer}
   },
   {
     initialRouteName: "Home",
