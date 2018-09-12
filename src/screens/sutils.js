@@ -100,7 +100,7 @@ export function digitUppercase(n) {
 const getTimeDistance2= [
   {
     title: '品牌介绍',
-    subtitle: '深挖国产优质产品，重塑中国高端产品。',
+    subtitle: '深挖国产优质产品，重塑国产高端品牌。',
     illustration: 'http://filewind.clobotics.cn/api/file/4370de04acbe9862d3c28e7e5236346b'
   },
   {
