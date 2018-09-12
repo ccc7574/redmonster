@@ -57,8 +57,8 @@ const Drawer = DrawerNavigator(
 
 const AppNavigator = StackNavigator(
   {
-    Drawer: {screen: Drawer},
-
+    // Drawer: {screen: Drawer},
+    HomeScreen: {screen: HomeScreen},
     Default: {screen: Default},
     Outline: {screen: Outline},
     Rounded: {screen: Rounded},
@@ -95,7 +95,7 @@ const AppNavigator = StackNavigator(
     Products: {screen: Products},
   },
   {
-    initialRouteName: "Drawer",
+    initialRouteName: "HomeScreen",
     headerMode: "none"
   }
 );
