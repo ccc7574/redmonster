@@ -20,14 +20,14 @@ import {tabFilter} from '../sutils';
 
 const tableHead = ["昵称", "账号", "累计消费", "累计个人利润", "累计业绩", "累计店铺利润"];
 
-const DATA = [
-  ["赵云", "15098215432", "4000.25", "100.05", "40000.32", "0.00"],
-  ["钟馗", "15098435354", "5000.25", "100.05", "50000.32", "0.00"],
-  ["李白", "15098765643", "6000.25", "100.05", "60000.32", "0.00"],
-  ["司马懿", "15098765456", "5000.25", "100.05", "50000.32", "0.00"],
-  ["程咬金", "15098765483", "5000.25", "100.05", "50000.32", "0.00"],
-  ["夏侯惇", "15098675431", "5000.25", "100.05", "50000.32", "0.00"],
-];
+// const DATA = [
+//   ["赵云", "15098215432", "4000.25", "100.05", "40000.32", "0.00"],
+//   ["钟馗", "15098435354", "5000.25", "100.05", "50000.32", "0.00"],
+//   ["李白", "15098765643", "6000.25", "100.05", "60000.32", "0.00"],
+//   ["司马懿", "15098765456", "5000.25", "100.05", "50000.32", "0.00"],
+//   ["程咬金", "15098765483", "5000.25", "100.05", "50000.32", "0.00"],
+//   ["夏侯惇", "15098675431", "5000.25", "100.05", "50000.32", "0.00"],
+// ];
 
 const TopCell = ({cellTitle, cellContent, contentStyle}) => {
   return (
@@ -119,21 +119,21 @@ class FixedLabel extends Component {
               contentStyle={{color: "#E83032"}}
             />
           </View>
-          <View style={s.topRow}>
-            <TopCell
-              cellTitle="本月新增人数"
-              cellContent={this.state.newAddQty}
-              contentStyle={{color: "#D1B27A"}}
-            />
-            <TopCell
-              cellTitle="本月推荐奖励(积分)"
-              cellContent={"0.00"}
-              contentStyle={{color: "#E83032"}}
-            />
-            <View style={{flex: 1}}>
-              <Text style={s.addButtonTxt}></Text>
-            </View>
-          </View>
+          {/*<View style={s.topRow}>*/}
+            {/*<TopCell*/}
+              {/*cellTitle="本月新增人数"*/}
+              {/*cellContent={this.state.newAddQty}*/}
+              {/*contentStyle={{color: "#D1B27A"}}*/}
+            {/*/>*/}
+            {/*<TopCell*/}
+              {/*cellTitle="本月推荐奖励(积分)"*/}
+              {/*cellContent={"0.00"}*/}
+              {/*contentStyle={{color: "#E83032"}}*/}
+            {/*/>*/}
+            {/*<View style={{flex: 1}}>*/}
+              {/*<Text style={s.addButtonTxt}></Text>*/}
+            {/*</View>*/}
+          {/*</View>*/}
           <View style={s.listHead}>
             {tableHead && tableHead.map((item, key) => {
               let width = 100 / tableHead.length - 2 + "%";
