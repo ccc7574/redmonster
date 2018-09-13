@@ -4,7 +4,7 @@
     "sdkVersion": "25.0.0",
     "icon": "./assets/redmonsterlogo.png",
     "description": "Hong Lu",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "slug": "honglu",
     "ios": {
       "bundleIdentifier": "com.honglu.honglu"
