@@ -12,7 +12,6 @@ export default {
   listItemWrapper: {
     position: 'relative',
     display: 'flex',
-    width: 375,
     height: 78,
     backgroundColor: '#1a1a1a',
     paddingTop:13,
@@ -23,7 +22,6 @@ export default {
   listItem: {
     position: 'relative',
     display: 'flex',
-    width: 375,
     height: 78,
     backgroundColor: 'transparent',
     paddingTop:13,
