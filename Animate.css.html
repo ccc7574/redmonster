@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<!-- saved from url=(0038)https://daneden.github.io/animate.css/ -->
+<html lang="en" class="gr__daneden_github_io">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Clobotics</title>
+
+    <meta name="viewport" content="initial-scale=1, minimal-ui">
+
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+    <link rel="dns-prefetch" href="https://code.jquery.com/">
+
+    <link href="./Animate.css_files/css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="./Animate.css_files/animate.min.css">
+    <link rel="stylesheet" href="./Animate.css_files/style.css">
+</head>
+<body data-gr-c-s-loaded="true" style="">
+<header class="site__header island">
+    <div class="wrap">
+        <img src="Animate.css_files/clobotics.png" width="345" height="178">
+        <span id="animationSandbox" style="display: block;"> <span class="beta subhead site__title" id="animationValue">Value shares that we own</span></span>
+        <span class="beta subhead site__title" style="font-size: 12px;" id="animationPer"></span>
+    </div>
+</header><!-- /.site__header -->
+
+<main class="site__content island" role="content">
+    <div class="wrap">
+        <form>
+            <input type="number" placeholder="number of shares" class="input js--animations">
+            <button class="butt js--triggerAnimation">hit $$$</button>
+        </form>
+        <div class="hideResult" id="result">
+
+            <div style="vertical-align: middle;">
+                <div><img src="./Animate.css_files/jet.jpg" width="300" height="200"></div>
+            </div>
+            <div style="text-align: center;vertical-align: middle;line-height: 45px; color: #D4AF37; font-size:35px;"
+                 id="jet"></div>
+
+
+            <div style="vertical-align: middle;">
+                <div><img src="./Animate.css_files/house.jpg" width="300" height="200"></div>
+            </div>
+            <div style="text-align: center;vertical-align: middle;line-height: 45px; color: #D4AF37; font-size:35px;"
+                 id="house"></div>
+
+            <div style="vertical-align: middle;">
+                <div><img src="./Animate.css_files/lbjn.jpg" width="300" height="171"></div>
+            </div>
+            <div style="text-align: center;vertical-align: middle;line-height: 45px; color: #D4AF37; font-size:35px;"
+                 id="car"></div>
+            <div style="vertical-align: middle;">
+                <div><img src="./Animate.css_files/chanel.jpg" width="300" height="178"></div>
+            </div>
+            <div style="text-align: center;vertical-align: middle;line-height: 45px; color: #D4AF37; font-size:35px;"
+                 id="bag"></div>
+            <div style="vertical-align: middle;">
+                <div><img src="./Animate.css_files/phone.png" width="300" height="212"></div>
+            </div>
+            <div style="text-align: center;vertical-align: middle;line-height: 45px; color: #D4AF37; font-size:35px;"
+                 id="phone"></div>
+            <div style="vertical-align: middle;">
+                <div><img src="./Animate.css_files/kouhong.png" width="300" height="231"></div>
+            </div>
+            <div style="text-align: center;vertical-align: middle;line-height: 45px; color: #D4AF37; font-size:35px;"
+                 id="kouhong"></div>
+        </div>
+        <hr>
+        <p>
+            <small>Clobotics Confidential.</small>
+        </p>
+    </div>
+</main><!-- /.site__content -->
+<script src="./Animate.css_files/jquery-1.10.2.min.js"></script>
+<script>
+  function testAnim(x, total) {
+    $('#animationSandbox').removeClass().addClass(x + ' animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+      // $(this).removeClass();
+      let anin = 'lightSpeedIn';
+      $('#animationValue').text(total).addClass('spanYellow');
+      $('#animationPer').text('$0.6109 per Share').addClass('spanYellow');
+      $('#animationSandbox').removeClass().addClass(anin + ' animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+        $('#result').removeClass().addClass(anin + ' animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend')
+      });
+    });
+  };
+
+  $(document).ready(function () {
+    $('.js--triggerAnimation').click(function (e) {
+      var count = $('.js--animations').val();
+      let total = 0.6109 * count;
+      let houseT = total / 1500000;
+      $("#house").text('X' + parseFloat(houseT).toFixed(3));
+      let jetT = total / 2000000;
+      $("#jet").text('X' + parseFloat(jetT).toFixed(3));
+      let carT = total / 500000;
+      $("#car").text('X' + parseFloat(carT).toFixed(3));
+      let bagT = total / 4000;
+      $("#bag").text('X' + parseFloat(bagT).toFixed(3));
+      let phoneT = total / 2000;
+      $("#phone").text('X' + parseFloat(phoneT).toFixed(3));
+      let makeupT = total / 70;
+      $("#kouhong").text('X' + parseFloat(makeupT).toFixed(3));
+      e.preventDefault();
+      var anim = 'zoomOutUp';
+      testAnim(anim, '$' + formatMoney(total, 2));
+    });
+  });
+
+  function formatMoney(amount, decimalCount = 2, decimal = ".", thousands = ",") {
+    try {
+      decimalCount = Math.abs(decimalCount);
+      decimalCount = isNaN(decimalCount) ? 2 : decimalCount;
+
+      const negativeSign = amount < 0 ? "-" : "";
+
+      let i = parseInt(amount = Math.abs(Number(amount) || 0).toFixed(decimalCount)).toString();
+      let j = (i.length > 3) ? i.length % 3 : 0;
+
+      return negativeSign + (j ? i.substr(0, j) + thousands : '') + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + thousands) + (decimalCount ? decimal + Math.abs(amount - i).toFixed(decimalCount).slice(2) : "");
+    } catch (e) {
+      console.log(e)
+    }
+  };
+
+</script>
+
+
+</body>
+</html>

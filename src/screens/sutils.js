@@ -123,5 +123,17 @@ function tabFilter(page){
   return result;
 }
 
+function pageFilter(){
+  let result = AsyncStorage.getItem("user_status").then((value) => {
+    let userInfo = JSON.parse(value);
+    if (null == userInfo || userInfo.status !== 'logined') {
+      return false;
+    }else{
+      return true;
+    }
+  });
+  return result;
+}
+
 const cb = `wind.clob${back}`;
-module.exports = {sName,cb,getTimeDistance2,tabFilter}
+module.exports = {sName,cb,getTimeDistance2,tabFilter,pageFilter}
