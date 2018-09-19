@@ -40,7 +40,7 @@ import Products from './screens/products';
 
 const Drawer = DrawerNavigator(
   {
-    Home: {screen: HomeScreen},
+    Home: {screen: Article2},
   },
   {
     initialRouteName: "Home",

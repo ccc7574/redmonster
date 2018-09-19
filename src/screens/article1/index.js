@@ -46,7 +46,7 @@ class Article1 extends Component {
             </Button>
           </Left>
           <Body>
-          <Title style={s.wordBig}>消息详情</Title>
+          <Title style={s.wordBig}>主打商品</Title>
           </Body>
           <Right />
         </Header>
